@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-09T12:02:03.507Z",
+  "status": "IMPLEMENTED_AND_VALIDATED_LOCALLY",
+  "scope": {
+    "project": "SlingSip landing page",
+    "location": "landing/",
+    "framework": "Standalone Vite + TypeScript + GSAP",
+    "desktopApplication": "UNCHANGED",
+    "deployed": false,
+    "published": false,
+    "desktopDataTouched": false,
+    "futureIntegrationsImplemented": false
+  },
+  "sourceBrief": "User-supplied SLINGSIP LANDING PAGE - INTERACTION STORYBOARD, attachment 7243b242-5aa0-4e49-9a97-4283c7e1c4b0",
+  "versions": {
+    "node": "v24.21.0",
+    "landingPackage": "1.0.0",
+    "gsap": "3.15.0",
+    "vite": "8.3.4",
+    "typescript": "6.0.3",
+    "@playwright/test": "1.63.0"
+  },
+  "architecture": {
+    "mascot": "One persistent traveler; existing approved PNG poses; no new character identity",
+    "motion": "GSAP + ScrollTrigger; geometry-derived ordered viewport-relative frames; desktop pin lasts 2.15 viewport heights; SVG web retraction before reconnection",
+    "pointer": "One smoothed demand-driven RAF on desktop fine pointers; approximately 10px/8px mascot offset, <=2.4 degree dashboard tilt; stops when converged or hidden",
+    "reducedMotion": "No cinematic pin, large swing or cursor parallax; reminder/progress remain usable together; live preference changes clean up contexts",
+    "data": "Browser-only demonstrations. No desktop bridge, IPC, persistence, profile data, settings writes, scheduler or installer changes.",
+    "future": "Gmail/email, interview, meeting and smart sidekick alerts are labeled COMING IN V2 concepts only.",
+    "downloads": "Public unauthenticated latest-release API; exact official stable x64 EXE URL validation; 5s timeout; safe releases-page fallback; no automatic download or install",
+    "storyPercentages": "Approximate narrative beats from responsive section geometry; not a rigid global scroll-percentage timeline"
+  },
+  "checks": [
+    {
+      "name": "Production build and strict TypeScript",
+      "command": "npm --prefix landing run build",
+      "result": "PASS",
+      "modules": 14,
+      "output": "landing/dist/",
+      "bundles": [
+        {
+          "path": "landing/dist/assets/index-CiRqjLT2.css",
+          "bytes": 34720,
+          "gzipBytes": 8472,
+          "sha256": "0506f9b41a74b2a66220bb06d1bddd700e1a3e9d471eb6adf666736b7a0ed904"
+        },
+        {
+          "path": "landing/dist/assets/index-x4JjWNJX.js",
+          "bytes": 132826,
+          "gzipBytes": 51272,
+          "sha256": "eacc84babfa6a42d79993a6565dc569141ba3cec9a1c820a5f4a19c6c5b9b838"
+        }
+      ]
+    },
+    {
+      "name": "Browser regression suite",
+      "command": "npm --prefix landing test",
+      "result": "PASS",
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "durationSeconds": 44.8,
+      "browser": "Installed Microsoft Edge, headless Chromium engine on Windows",
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 768,
+          "height": 844
+        },
+        {
+          "width": 1366,
+          "height": 844
+        }
+      ],
+      "coverage": [
+        "Approved asset responses and real dashboard captures; no desktop APIs",
+        "Manual Drank it, bottle delivery, 50% progress completion, reverse travel, same traveler identity and old-web cleanup",
+        "Tray keyboard close/reopen, inert state and focus; pointer close without unwanted scroll after reopen settles",
+        "Reduced-motion controls and live preference changes without duplicate actors or pin spacers",
+        "Responsive layout, horizontal overflow and accessible download/navigation",
+        "Release 404/403, prerelease, foreign URL, missing installer and request-timeout fallbacks",
+        "Missing pose asset fallback and JavaScript-disabled content",
+        "Bounded cursor offsets and pause/resume on simulated document visibility events",
+        "Validated installer link navigation via mocked text response; no real EXE fetched"
+      ]
+    },
+    {
+      "name": "Screenshot gallery",
+      "command": "node landing/scripts/capture-page.mjs",
+      "result": "PASS",
+      "views": 12,
+      "pageErrors": 0,
+      "githubResponse": "Mocked 404; release-unavailable notice is intentional",
+      "gallery": "docs/previews/landing/index.html"
+    },
+    {
+      "name": "Existing approved artwork",
+      "result": "PASS",
+      "copies": [
+        {
+          "source": "public/slingsip-logo.svg",
+          "output": "landing/dist/assets/logo.svg",
+          "bytes": 584,
+          "sha256": "ab1e57829144ca718242e2a44a836dd9b8b8736f86743318ad1f510f373056ba",
+          "byteIdentical": true
+        },
+        {
+          "source": "public/assets/onboarding/slingsip/welcome-hero.png",
+          "output": "landing/dist/assets/swing.png",
+          "bytes": 1146075,
+          "sha256": "5507fb5a6d2e147c65dbb91017248f183af44bb205d147a2bd0e4617e3f06026",
+          "byteIdentical": true
+        },
+        {
+          "source": "public/assets/onboarding/slingsip/routine-upside-down.png",
+          "output": "landing/dist/assets/ask.png",
+          "bytes": 1010100,
+          "sha256": "495cf9463df2b6750b16688e6b43a5178281651f66b5632c9c5a84a6a0041ef9",
+          "byteIdentical": true
+        },
+        {
+          "source": "public/assets/onboarding/slingsip/success-ready.png",
+          "output": "landing/dist/assets/success.png",
+          "bytes": 1226351,
+          "sha256": "86933bf2f5c495c377057c834d65c2ca0d8f5ab8d17a190610e7770d49359ef3",
+          "byteIdentical": true
+        },
+        {
+          "source": "public/assets/onboarding/slingsip/tour-dashboard.png",
+          "output": "landing/dist/assets/point.png",
+          "bytes": 1183267,
+          "sha256": "247f4b36f32e1068fda1d06c3d36b30effa96198a07a90f2cbd0db7d2a771e0b",
+          "byteIdentical": true
+        },
+        {
+          "source": "public/assets/onboarding/slingsip/profile-idle.png",
+          "output": "landing/dist/assets/idle.png",
+          "bytes": 1127573,
+          "sha256": "ffb3ff0fba3ec0719679bd95b4e14a85e80f6873f2d5bc6a12126be031630b53",
+          "byteIdentical": true
+        },
+        {
+          "source": "landing/artwork/dashboard-500.png",
+          "output": "landing/dist/assets/dashboard-500.png",
+          "bytes": 551706,
+          "sha256": "d3cb8206da51838160aa54601e37085173720f332b13a68dcc6300479936ade9",
+          "byteIdentical": true
+        },
+        {
+          "source": "landing/artwork/dashboard-1000.png",
+          "output": "landing/dist/assets/dashboard-1000.png",
+          "bytes": 552133,
+          "sha256": "ab110b94fb1159e37b3f3ede5f1ca7c900d2f6e326252d4496a3aa3bd934bdc8",
+          "byteIdentical": true
+        },
+        {
+          "source": "landing/artwork/dashboard-1500.png",
+          "output": "landing/dist/assets/dashboard-1500.png",
+          "bytes": 553080,
+          "sha256": "b573c8dae20d0941225c18a62d7791a04218116041bb003883a846de28651e74",
+          "byteIdentical": true
+        }
+      ],
+      "bottle": "Existing public/assets/companion/slingsip/props/bottle.png wrapped in its existing SLINGSIP_SPRITE_GEOMETRY.bottle SVG mask; original unchanged"
+    },
+    {
+      "name": "Real desktop dashboard captures",
+      "result": "PASS",
+      "command": "npm --prefix landing run capture:dashboard",
+      "sampleProfile": "Alex",
+      "waterMl": [
+        500,
+        1000,
+        1500
+      ],
+      "goalMl": 2000,
+      "profileIsolation": "%TEMP%/mizu-overlay-tests/landing-capture-*",
+      "behavior": "Only its own isolated production dashboard is shown inactive/captured/closed. Normal user profile/startup and running app are not touched."
+    },
+    {
+      "name": "Desktop source and release architecture preserved",
+      "command": "git diff --exit-code -- electron src shared public package.json package-lock.json angular.json release.config.json scripts tests",
+      "result": "PASS",
+      "note": "Compared to existing HEAD. Only root README and new landing/review documentation are changed."
+    },
+    {
+      "name": "Git whitespace and ignored generated output",
+      "commands": [
+        "git diff --check",
+        "git check-ignore landing/node_modules landing/dist landing/public/assets test-results/landing"
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "Dependency install audit",
+      "command": "npm install --prefix landing --ignore-scripts",
+      "result": "PASS",
+      "reportedVulnerabilities": 0
+    },
+    {
+      "name": "Live public release API",
+      "url": "https://api.github.com/repos/ak-ak-k/slingsip/releases/latest",
+      "httpStatus": 404,
+      "result": "FALLBACK_EXPECTED",
+      "note": "No compatible public release available during implementation. Valid EXE behavior verified with fixtures only; no release created."
+    }
+  ],
+  "issuesResolved": [
+    "Decorative mobile hero orbit caused horizontal overflow; clipped to hero.",
+    "Fast scrolling could finish progress at 48%; final state now explicitly completes at 50%.",
+    "Bottle feedback overlapped a reminder button; moved to the free hand with separated feedback.",
+    "Future section badge could scroll beneath header; made sticky with persistent per-card V2 labels.",
+    "Screenshot automation could target X during reopen movement; wait for settle and assert closed scene before capture. Pointer regression covers stable interaction."
+  ],
+  "limitations": [
+    "Live installer navigation awaits a compatible public GitHub release; fallback remains available.",
+    "Firefox, Safari and physical mobile devices have not been exercised.",
+    "Visibility regression simulates document hidden events; this is not an OS-level minimized-window test.",
+    "Existing raster poses are used for body/expression direction; independent eye/head rig animation requires appropriate artwork.",
+    "Existing bottle raster/mask remains the approved source; no replacement high-resolution artwork was invented.",
+    "Full desktop regression suite was not rerun for this isolated landing page. Previously documented desktop native-pointer harness limitation is unchanged."
+  ],
+  "manualChecklist": [
+    "Open the local preview; slowly scroll down and back up through every chapter.",
+    "Click Drank it before auto celebration; check bottle pendulum and uncluttered feedback; finish at 50%.",
+    "Close/reopen the mock dashboard with pointer and Tab/Enter.",
+    "Resize and toggle reduced motion; content and controls must remain usable.",
+    "Review V2 labels and current unsigned warning.",
+    "After publishing separately is authorized, verify real official installer download with a compatible stable release.",
+    "Review on Safari/Firefox and a physical mobile device before hosting."
+  ],
+  "screenshots": [
+    {
+      "path": "docs/previews/landing/01-hero-desktop.png",
+      "bytes": 650171,
+      "sha256": "4c3ed480791cff25af9282032ae1e33df03aa58b39b22438c85fac3753ab1ce6"
+    },
+    {
+      "path": "docs/previews/landing/02-reminder-desktop.png",
+      "bytes": 809492,
+      "sha256": "fdd48dd861c361f5f2adaa7b88c3bba2cbcf6f863be0e4cbb262b251180bf0a5"
+    },
+    {
+      "path": "docs/previews/landing/03-bottle-success.png",
+      "bytes": 812376,
+      "sha256": "b3839997ff08ca5a75935d30528b46fce8caf4083cfc21b9d347fa4ae071c8d8"
+    },
+    {
+      "path": "docs/previews/landing/04-progress-story.png",
+      "bytes": 588915,
+      "sha256": "527425c14c163b15ef37bd566d18bec0b6b88e1eb493742039216efeac2422de"
+    },
+    {
+      "path": "docs/previews/landing/05-real-dashboard.png",
+      "bytes": 519979,
+      "sha256": "986be0e03fc3d31063f8cb6ef1f1d5fa49bc6967b3e00f0043518d31284b49e9"
+    },
+    {
+      "path": "docs/previews/landing/06-details.png",
+      "bytes": 504190,
+      "sha256": "af3f9121c9f3cd6a10aa3556c468c8c572b52ad49a8cbca6599a515a4fb39858"
+    },
+    {
+      "path": "docs/previews/landing/07-close-to-tray.png",
+      "bytes": 399065,
+      "sha256": "c371ea29a73571268689f2545a37af5b7cc1427cdf1c75ca003e8fc4af25bd47"
+    },
+    {
+      "path": "docs/previews/landing/08-future-v2.png",
+      "bytes": 561809,
+      "sha256": "66d303c399f166012d488ccd5f75c5710e6928e2186807264f107ad071c16c38"
+    },
+    {
+      "path": "docs/previews/landing/09-download.png",
+      "bytes": 527549,
+      "sha256": "a0ab3a97d10116988ea112013d0e4657c11c92375fb5305423fbfd06f0ea6a31"
+    },
+    {
+      "path": "docs/previews/landing/10-hero-mobile.png",
+      "bytes": 268571,
+      "sha256": "cf4563927d57dc945588d8e26d3f98923cd56ed47d3ec8ba96113e549f846c16"
+    },
+    {
+      "path": "docs/previews/landing/11-future-mobile.png",
+      "bytes": 229769,
+      "sha256": "31db4cb204a4e03dcc7fb117b7cc6a187c86bb0dcddbc2b52485154a7a9c5920"
+    },
+    {
+      "path": "docs/previews/landing/12-reduced-motion-mobile.png",
+      "bytes": 212044,
+      "sha256": "ce9a8ac9529af5774fc1ec9c821443ab7b810c48731f24c4b2da2dbd8b8ccf74"
+    }
+  ]
+}

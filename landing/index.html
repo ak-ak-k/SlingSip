@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d17" />
+  <meta name="description" content="Meet SlingSip, your playful desktop hydration sidekick. Gentle reminders, a little web-swinging company, and stronger daily habits. Free for Windows." />
+  <meta property="og:title" content="SlingSip — Stay hydrated. Keep moving." />
+  <meta property="og:description" content="A little company for your next water break. Meet your desktop hydration sidekick." />
+  <meta property="og:type" content="website" />
+  <title>SlingSip — Stay hydrated. Keep moving.</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+  <link rel="preload" as="image" href="./assets/swing.png" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 5 11 4v7H3zm10-1 8-1v8h-8zM3 13h8v7l-8-1zm10 0h8v8l-8-1z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.4-.4 7-1.7 7-7.6a6 6 0 0 0-1.7-4.2A5.5 5.5 0 0 0 19.2.4S17.9 0 15 2a14 14 0 0 0-7 0C5.1 0 3.8.4 3.8.4a5.5 5.5 0 0 0-.1 3.1A6 6 0 0 0 2 7.7c0 5.9 3.6 7.2 7 7.6A3.5 3.5 0 0 0 8 18v4" transform="translate(1 1) scale(.9)"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2C9 7 5 10 5 15a7 7 0 0 0 14 0c0-5-4-8-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4M12 2V1"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 21V11m8 10V3m8 18V7" stroke-width="3"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c2 7 7 6 7 13a7 7 0 0 1-14 0c0-3 2-6 4-8 0 3 1 4 2 4 2-2 2-5 1-9Z"/></symbol>
+      <symbol id="i-tray" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4M7 12h3l2 2 2-2h3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m7 7 10 10M7 17 17 7"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 10h18M8 2v5m8-5v5m-8 8h3"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="SlingSip home"><img src="./assets/logo.svg" width="36" height="36" alt="" /><span>SlingSip<span class="mint">.</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a><a href="#dashboard">Inside SlingSip</a><a href="#future">What’s next <span class="nav-v2">V2</span></a>
+    </nav>
+    <a class="nav-download" href="#download">Get SlingSip <svg class="icon"><use href="#i-arrow"/></svg></a>
+  </header>
+
+  <div class="ambient-world" aria-hidden="true">
+    <div class="ambient-halo"></div>
+    <svg class="city" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice">
+      <defs><linearGradient id="city-fade" x2="0" y2="1"><stop stop-color="#193c4d" stop-opacity=".45"/><stop offset="1" stop-color="#080d17"/></linearGradient><pattern id="city-windows" width="32" height="38" patternUnits="userSpaceOnUse"><rect x="9" y="10" width="3" height="9" fill="#72daca" opacity=".3"/></pattern></defs>
+      <path fill="url(#city-fade)" d="M0 700V320h70v-90h72v170h70V120h85v100h45v200h70V250h100v170h64V140h90v-50h42v350h100V280h90v-90h72v220h70V100h85v210h82V220h110v170h67V170h95v200h70V270h83v430Z"/>
+      <path fill="url(#city-windows)" d="M0 700V320h70v-90h72v170h70V120h85v100h45v200h70V250h100v170h64V140h90v-50h42v350h100V280h90v-90h72v220h70V100h85v210h82V220h110v170h67V170h95v200h70V270h83v430Z"/>
+    </svg>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div class="companion-world" aria-hidden="true">
+    <svg class="journey-web" width="100%" height="100%"><path class="old-web" pathLength="1"/><path class="active-web" pathLength="1"/><path class="bottle-web" pathLength="1"/></svg>
+    <div class="traveler" data-pose="swing"><div class="traveler-parallax"><div class="traveler-glow"></div><img class="traveler-art" src="./assets/swing.png" alt="" width="1254" height="1254" fetchpriority="high" /></div></div>
+    <div class="delivery-bottle"><img src="./assets/bottle.svg" alt="" width="90" height="180"/><span class="water-feedback">+250 ml</span><i></i><i></i><i></i></div>
+  </div>
+
+  <main id="main">
+    <section class="hero section-shell" id="home" aria-labelledby="hero-title" data-scene="hero">
+      <div class="hero-copy">
+        <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> A LITTLE COMPANY. A HEALTHIER DAY.</div>
+        <h1 id="hero-title"><span class="headline-line"><span>Stay</span> <span>hydrated.</span></span><span class="headline-line mint"><span>Keep</span> <span>moving.</span></span></h1>
+        <p class="hero-description">Meet the sidekick that swings into your day.<br />A gentle nudge to sip, reset, and keep going.</p>
+        <div class="hero-actions"><a class="button primary download-link" href="https://github.com/ak-ak-k/slingsip/releases" target="_blank" rel="noopener noreferrer" aria-describedby="hero-unsigned"><svg class="icon"><use href="#i-windows"/></svg><span>Download for Windows</span><svg class="icon small"><use href="#i-arrow"/></svg></a><a class="story-link" href="#how-it-works"><span class="play-icon">▷</span> Meet your sidekick</a></div>
+        <div class="hero-meta"><span class="release-version">v1.0.0</span><span>Windows 10 / 11 · x64</span><span>Free. Local-first.</span></div>
+        <p class="unsigned-note hero-unsigned" id="hero-unsigned">Currently unsigned · Windows may show an Unknown Publisher / SmartScreen warning.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><svg viewBox="0 0 700 600"><ellipse cx="360" cy="310" rx="292" ry="210" transform="rotate(-28 360 310)"/><path d="M50 400Q380 650 660 100"/><circle cx="595" cy="150" r="4"/></svg><span class="orbit-coordinate">YOUR NEXT BREAK, WITH A LITTLE CHARACTER.</span></div>
+      <div class="hero-note"><div class="note-icon"><svg class="icon"><use href="#i-drop"/></svg></div><div><strong>A small sip goes a long way.</strong><span>Your next water break has company.</span></div><span class="note-spark">✦</span></div>
+      <div class="hero-bottom"><a class="scroll-cue" href="#how-it-works"><span class="scroll-line"></span> SCROLL. SIP. SEE WHAT HAPPENS.</a><span class="chapter-label">01 <span>/</span> THE INTRODUCTION</span></div>
+    </section>
+
+    <section class="bridge section-shell" aria-label="Meet your hydration sidekick" data-scene="bridge">
+      <div class="bridge-copy"><span class="eyebrow" data-reveal>YOUR DAY HAS ENOUGH TABS OPEN.</span><h2 data-reveal>Let one little sidekick<br />look out for <em>you.</em></h2><p data-reveal>A water break shouldn’t feel like another task.<br />SlingSip makes it a moment worth taking.</p></div>
+      <svg class="bridge-thread" viewBox="0 0 1200 440" preserveAspectRatio="none" aria-hidden="true"><path d="M1000 0C1000 230 170 100 230 440" pathLength="1"/></svg>
+    </section>
+
+    <section class="how-section" id="how-it-works" aria-labelledby="how-title" data-scene="how">
+      <div class="story-pin section-shell">
+        <div class="section-top"><span class="eyebrow">A BETTER BREAK, IN THREE LITTLE STEPS</span><span class="chapter-label">02 <span>/</span> HOW IT WORKS</span></div>
+        <div class="how-layout">
+          <div class="how-copy"><h2 id="how-title">A nudge.<br />A sip.<br /><em>A little win.</em></h2><p>No noisy alarms. Just a friendly face<br />and one small step toward your goal.</p>
+            <ol class="story-steps"><li class="is-active" data-step="0"><span>01</span><div><strong>A reminder with personality.</strong><p>Your sidekick swings in when it’s time.</p></div></li><li data-step="1"><span>02</span><div><strong>You sip. SlingSip celebrates.</strong><p>One click, a happy sidekick, a little progress.</p></div></li><li data-step="2"><span>03</span><div><strong>Small sips. Strong habits.</strong><p>Watch those little wins add up.</p></div></li></ol>
+          </div>
+          <div class="demo-stage">
+            <div class="demo-label"><span class="status-dot"></span> TRY A LITTLE WATER BREAK</div>
+            <div class="reminder-card story-panel" id="demo-reminder"><div class="bubble-brand"><img src="./assets/logo.svg" alt="" width="19" height="19"/> SLINGSIP · WATER BREAK</div><h3 data-reminder-title>Time to hydrate!</h3><p data-reminder-copy>A little water. A little reset. Drink 250 ml?</p><div class="mini-progress"><span></span></div><div class="reminder-buttons"><button class="button primary" id="demo-drank" type="button">Drank it <svg class="icon small"><use href="#i-check"/></svg></button><button class="button secondary" id="demo-later" type="button">Remind me later</button></div><div class="demo-caption" role="status" aria-live="polite">An interactive preview. Your real routine stays in the app.</div></div>
+            <div class="progress-story story-panel" id="demo-progress"><div class="bubble-brand"><svg class="icon small"><use href="#i-drop"/></svg> ONE GLASS CLOSER</div><div class="story-progress-ring"><svg viewBox="0 0 180 180" aria-hidden="true"><circle class="ring-track" cx="90" cy="90" r="74"/><circle class="ring-fill" cx="90" cy="90" r="74" pathLength="100"/></svg><div><strong data-story-percent>0%</strong><span>of your daily goal</span></div></div><h3>Small sips. Strong habits.</h3><p><span data-story-water>0</span> / 2000 ml. Every glass counts.</p><div class="mini-chart" aria-label="Illustrative daily progress chart"><i style="--bar:.32"></i><i style="--bar:.6"></i><i style="--bar:.45"></i><i style="--bar:.78"></i><i style="--bar:.67"></i><i style="--bar:1"></i><i style="--bar:.86"></i></div></div>
+            <span class="scene-annotation" aria-hidden="true">a little encouragement, delivered.</span>
+          </div>
+        </div>
+        <div class="story-scroll"><span class="story-scroll-fill"></span></div>
+      </div>
+    </section>
+
+    <section class="dashboard-section section-shell" id="dashboard" aria-labelledby="dashboard-title" data-scene="dashboard">
+      <div class="centered-heading"><span class="eyebrow" data-reveal>YOUR HABITS. A LITTLE MORE VISIBLE.</span><h2 id="dashboard-title" data-reveal>A home for your<br /><em>healthier day.</em></h2><p data-reveal>Your progress, your rhythm, your little wins.<br />Everything you need. A quiet place to keep going.</p></div>
+      <div class="dashboard-perspective"><div class="dashboard-preview"><div class="window-bar"><div class="window-brand"><img src="./assets/logo.svg" width="18" height="18" alt=""/>SlingSip</div><span>Your desktop hydration companion</span><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div></div><div class="dashboard-image-stack"><img class="dashboard-screen" src="./assets/dashboard-500.png" alt="The SlingSip desktop dashboard showing hydration progress, remaining water, reminders, history and a two-day streak." width="1440" height="1000" loading="lazy"/><img class="dashboard-layer layer-progress" src="./assets/dashboard-500.png" alt="" width="1440" height="1000" loading="lazy" aria-hidden="true"/><img class="dashboard-layer layer-metrics" src="./assets/dashboard-500.png" alt="" width="1440" height="1000" loading="lazy" aria-hidden="true"/></div></div><div class="dashboard-float"><svg class="icon"><use href="#i-drop"/></svg><div><strong data-dashboard-water>500 / 2000 ml</strong><span><b data-dashboard-remaining>1500 ml</b> to go. You’ve got this.</span></div><span class="dashboard-float-percent" data-dashboard-percent>25%</span></div></div>
+      <div class="dashboard-footer"><span><span class="status-dot"></span> The real SlingSip dashboard · sample profile</span><span>Your data stays on your desktop. <svg class="icon small"><use href="#i-lock"/></svg></span></div>
+    </section>
+
+    <section class="features-section section-shell" id="details" aria-labelledby="features-title" data-scene="features">
+      <div class="section-top"><span class="eyebrow">THOUGHTFULLY OUT OF YOUR WAY</span><span class="chapter-label">04 <span>/</span> THE SMALL DETAILS</span></div>
+      <h2 id="features-title" data-reveal>Small details.<br /><em>A big difference.</em></h2>
+      <div class="feature-grid">
+        <article class="feature-card" data-feature="reminders"><div class="feature-icon"><svg class="icon feature-bell"><use href="#i-bell"/></svg></div><span class="feature-number">01</span><h3>Gentle reminders</h3><p>A break that fits your routine.<br />Sip now, or swing back later.</p><div class="feature-bottom"><span class="status-dot"></span> YOUR RHYTHM, YOUR RULES</div></article>
+        <article class="feature-card" data-feature="progress"><div class="feature-icon"><svg class="icon"><use href="#i-chart"/></svg></div><span class="feature-number">02</span><h3>Progress you can feel</h3><p>Every glass is a little win.<br />See your day fill up, sip by sip.</p><div class="feature-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="feature-card" data-feature="streaks"><div class="feature-icon coral"><svg class="icon feature-flame"><use href="#i-flame"/></svg></div><span class="feature-number">03</span><h3>Habits with momentum</h3><p>A day becomes a streak.<br />Build something worth keeping.</p><div class="feature-streak" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div></article>
+        <article class="feature-card" data-feature="tray"><div class="feature-icon"><svg class="icon"><use href="#i-tray"/></svg></div><span class="feature-number">04</span><h3>At home on your desktop</h3><p>Close the window. Keep the company.<br />SlingSip is still there in your tray.</p><div class="feature-tray" aria-hidden="true"><svg class="icon"><use href="#i-tray"/></svg><svg class="icon"><use href="#i-drop"/></svg><svg class="icon"><use href="#i-check"/></svg><span>READY WHEN YOU ARE</span></div></article>
+      </div>
+    </section>
+
+    <section class="tray-section section-shell" id="background" aria-labelledby="tray-title" data-scene="tray">
+      <div class="tray-copy"><span class="eyebrow" data-reveal>LESS WINDOW. MORE COMPANION.</span><h2 id="tray-title" data-reveal>Quiet when you<br />don’t need it.<br /><em>Right there<br />when you do.</em></h2><p data-reveal>Close the dashboard and get back to your flow.<br />Your reminders keep their rhythm in the background.</p><div class="tray-explainer"><span class="status-dot"></span><span data-tray-status>Try closing this little dashboard →</span></div></div>
+      <div class="desktop-demo" aria-label="Interactive demonstration of close-to-tray behavior"><div class="desktop-landscape" aria-hidden="true"></div><div class="tray-window"><div class="window-bar"><div class="window-brand"><img src="./assets/logo.svg" alt="" width="18" height="18"/>SlingSip</div><button type="button" class="window-close" aria-label="Close the demo dashboard to tray"><svg class="icon small"><use href="#i-close"/></svg></button></div><img src="./assets/dashboard-1000.png" width="1440" height="1000" loading="lazy" alt="SlingSip dashboard preview"/></div><div class="tray-reminder"><img src="./assets/logo.svg" width="28" height="28" alt=""/><div><strong>A little water break?</strong><span>Right on time. Just for you.</span></div></div><div class="mock-taskbar"><svg class="icon"><use href="#i-windows"/></svg><div class="taskbar-search">Your space to focus.</div><div class="taskbar-spacer"></div><button type="button" class="tray-open" aria-label="Reopen the demo SlingSip dashboard" title="SlingSip — Your hydration sidekick"><img src="./assets/logo.svg" width="27" height="27" alt=""/><span class="tray-tooltip">Still here. Open SlingSip.</span></button><span class="taskbar-clock">4:30 PM</span></div><span class="desktop-demo-label">DESKTOP BEHAVIOR · INTERACTIVE PREVIEW</span></div>
+    </section>
+
+    <section class="future-section section-shell" id="future" aria-labelledby="future-title" data-scene="future">
+      <div class="future-scan" aria-hidden="true"></div><span class="future-badge">COMING IN V2</span><div class="future-heading"><h2 id="future-title" data-reveal>A little sidekick.<br /><em>Bigger possibilities.</em></h2><p data-reveal>Today, a healthier rhythm. Tomorrow, a little more support.<br />A glimpse at the ideas we’re exploring next.</p></div>
+      <div class="future-grid"><article class="future-card"><svg class="icon"><use href="#i-mail"/></svg><h3>Gmail / Email Alerts</h3><p>A quiet heads-up for the things that matter.</p><span>COMING IN V2</span></article><article class="future-card"><svg class="icon"><use href="#i-spark"/></svg><h3>Interview Invites</h3><p>A little company for your next big step.</p><span>COMING IN V2</span></article><article class="future-card"><svg class="icon"><use href="#i-calendar"/></svg><h3>Meeting Reminders</h3><p>The right nudge, before the next conversation.</p><span>COMING IN V2</span></article><article class="future-card"><svg class="icon"><use href="#i-bell"/></svg><h3>Smart Sidekick Alerts</h3><p>More moments your sidekick could look out for.</p><span>COMING IN V2</span></article></div>
+      <div class="future-notification"><div class="future-notification-icon"><svg class="icon"><use href="#i-calendar"/></svg></div><div><span>CONCEPT PREVIEW · COMING IN V2</span><strong>Interview invite</strong><p>Tomorrow · 11:30 AM</p></div><span class="future-notification-spark">✦</span></div><p class="future-note">Planned concepts, not available in v1. No email or calendar connection is needed to use SlingSip today.</p>
+    </section>
+
+    <section class="download-section section-shell" id="download" aria-labelledby="download-title" data-scene="download">
+      <div class="download-orbit" aria-hidden="true"></div><div class="download-panel"><span class="eyebrow" data-reveal>YOUR NEXT CHAPTER STARTS WITH A SIP.</span><h2 id="download-title" data-reveal>Ready to<br /><em>stay hydrated?</em></h2><p data-reveal>A little company. A healthier day.<br />Your desktop sidekick is ready when you are.</p><a class="button primary download-link finale-cta" href="https://github.com/ak-ak-k/slingsip/releases" target="_blank" rel="noopener noreferrer" aria-describedby="download-unsigned release-status"><svg class="icon"><use href="#i-windows"/></svg><span>Download SlingSip for Windows</span><svg class="icon small"><use href="#i-arrow"/></svg><svg class="button-web" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true"><path d="M20 1H380Q399 1 399 20V44Q399 63 380 63H20Q1 63 1 44V20Q1 1 20 1" pathLength="1"/></svg></a><div class="download-meta"><span class="release-version">v1.0.0</span><span>Windows 10 / 11</span><span>x64</span></div><div class="download-warning" id="download-unsigned"><svg class="icon small"><use href="#i-lock"/></svg><p>This build is currently unsigned.<br /><span>Windows may show an Unknown Publisher / SmartScreen warning.<br />Download only from the official SlingSip GitHub repository.</span></p></div><p id="release-status" class="release-status" role="status" aria-live="polite">Checking the latest Windows release…</p><a class="github-link" href="https://github.com/ak-ak-k/slingsip" target="_blank" rel="noopener noreferrer"><svg class="icon small"><use href="#i-github"/></svg> Take a look on GitHub <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><a class="wordmark" href="#home"><img src="./assets/logo.svg" alt="" width="30" height="30"/><span>SlingSip<span class="mint">.</span></span></a><p>Small sips. Strong habits.</p><div><span>Made by Aditya Kirtane</span><a href="https://github.com/ak-ak-k/slingsip" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
+  <noscript><p class="noscript-note">The story animations need JavaScript. You can still explore the page and find SlingSip on <a href="https://github.com/ak-ak-k/slingsip/releases">GitHub Releases</a>.</p></noscript>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>

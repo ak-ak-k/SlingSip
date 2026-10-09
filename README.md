@@ -12,6 +12,8 @@ SlingSip is a local-first desktop application built with Angular and Electron. I
 
 **Portfolio Showcase Coming Soon**
 
+A separate [SlingSip landing page](landing/README.md) is available locally. It follows the companion-led scroll storyboard, uses the approved artwork and real dashboard captures, and has its own build dependencies. Run `npm --prefix landing ci`, then `npm --prefix landing run dev`. It is not included in the Electron installer or deployed.
+
 The [demo freeze guide](docs/slingsip-demo-freeze.md) includes production setup and a 60-second recording sequence.
 
 ## Product features
