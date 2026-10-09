@@ -1,0 +1,36 @@
+<div class="page" data-testid="settings-page">
+  <div class="eyebrow">MAKE IT YOUR RITUAL</div><h1>A rhythm <span>that fits you.</span></h1>
+  <p class="intro">Small adjustments for your day. Your logged water stays with you.</p>
+  @if (!desktop.nativeAvailable) { <div class="notice">Open SlingSip in Electron to save your settings.</div> }
+  @if (saved()) { <div class="notice" role="status" data-testid="settings-saved">Settings saved. Your next break follows the new routine.</div> }
+  @if (desktop.error()) { <div class="notice error" role="alert">{{ desktop.error() }}</div> }
+  @if (desktop.snapshot()?.storageError) { <div class="notice error" role="alert">{{ desktop.snapshot()?.storageError }}</div> }
+  <form (submit)="save($event)" novalidate>
+    <section class="card" aria-labelledby="water-title"><div class="kicker">HYDRATION</div><h2 id="water-title">A glass at a time.</h2><p class="group-intro">Choose a goal and a glass that fit your routine.</p>
+      <div class="fields">
+        <label>Daily goal <span class="input-wrap"><input data-testid="daily-goal" type="number" [min]="limits.goalMin" [max]="limits.goalMax" step="1" [value]="draft().dailyGoalMl" (input)="number('dailyGoalMl', $event)" [attr.aria-invalid]="!!errors()['goal']" aria-describedby="goal-hint"><span>ml</span></span><small id="goal-hint" [class.invalid]="errors()['goal']">{{ errors()['goal'] || '500–5000 ml per day' }}</small></label>
+        <label>Glass size <span class="input-wrap"><input data-testid="glass-size" type="number" [min]="limits.glassMin" [max]="limits.glassMax" step="1" [value]="draft().glassSizeMl" (input)="number('glassSizeMl', $event)" [attr.aria-invalid]="!!errors()['glass']" aria-describedby="glass-hint"><span>ml</span></span><small id="glass-hint" [class.invalid]="errors()['glass']">{{ errors()['glass'] || 'The amount logged with each glass' }}</small></label>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="schedule-title"><div class="kicker">SCHEDULE</div><h2 id="schedule-title">Space for a water break.</h2><p class="group-intro">SlingSip spreads your water breaks across these hours.</p>
+      <div class="fields hours"><label>Working start<input data-testid="working-start" type="time" [value]="draft().workingStart" (input)="time('workingStart', $event)" [attr.aria-invalid]="!!errors()['hours']" aria-describedby="hours-hint"></label><label>Working end<input data-testid="working-end" type="time" [value]="draft().workingEnd" (input)="time('workingEnd', $event)" [attr.aria-invalid]="!!errors()['hours']" aria-describedby="hours-hint"></label></div>
+      <small id="hours-hint" [class.invalid]="errors()['hours']">{{ errors()['hours'] || 'Local time. Start included; end excluded.' }}</small>
+    </section>
+    <section class="card" aria-labelledby="reminders-title"><div class="kicker">REMINDERS</div><h2 id="reminders-title">A gentle nudge.</h2>
+      <label class="preference"><span><strong>Automatic reminders</strong><small>Water breaks during your working hours.</small></span><input data-testid="reminders-enabled" type="checkbox" [checked]="draft().remindersEnabled" (change)="toggle('remindersEnabled', $event)"></label>
+      @if (!draft().remindersEnabled) { <p class="hint">Reminders are off. You can still log water from Overview or the tray.</p> }
+      @else if (desktop.snapshot()?.scheduler.remindersPaused) { <p class="hint">Paused for this session. Resume from Overview or the tray.</p> }
+      <label class="retry">Remind me again after <span class="input-wrap"><input data-testid="retry-minutes" type="number" [min]="limits.retryMin" [max]="limits.retryMax" step="1" [value]="draft().retryIntervalMinutes" (input)="number('retryIntervalMinutes', $event)" [attr.aria-invalid]="!!errors()['retry']" aria-describedby="retry-hint"><span>minutes</span></span><small id="retry-hint" [class.invalid]="errors()['retry']">{{ errors()['retry'] || 'Used when you postpone or miss a reminder' }}</small></label>
+    </section>
+    <section class="card" aria-labelledby="desktop-title"><div class="kicker">DESKTOP</div><h2 id="desktop-title">Your desktop stays yours.</h2><p class="group-intro">SlingSip appears for a water break, then rests offscreen.</p>
+      <dl class="desktop-preferences"><div><dt>Companion</dt><dd>{{ !desktop.snapshot() ? 'Unavailable' : desktop.overlayVisible() ? 'Visible' : desktop.snapshot()?.reminderRetry?.pending ? 'Waiting to return' : 'Resting offscreen' }}</dd></div><div><dt>Mouse input</dt><dd>{{ !desktop.snapshot() ? 'Unavailable' : desktop.snapshot()?.overlay?.interactive ? 'Overlay interactive' : 'Passes through' }}</dd></div><div><dt>Tray</dt><dd>{{ desktop.snapshot()?.tray?.available ? 'Available' : 'Unavailable' }}</dd></div></dl>
+      <p class="hint">The speech bubble and painted character accept clicks during a reminder. Empty space lets you keep using your desktop.</p>
+    </section>
+    <section class="card startup-card" aria-labelledby="startup-title"><div class="kicker">STARTUP</div><h2 id="startup-title">A quiet start.</h2>
+      <label class="preference"><span><strong>Launch with Windows</strong><small>SlingSip starts quietly in your tray when you sign in.</small></span><input data-testid="launch-startup" type="checkbox" [checked]="draft().launchAtStartup" (change)="toggle('launchAtStartup', $event)" [disabled]="!startup()?.supported"></label>
+      <p class="hint" data-testid="startup-status">{{ startup()?.error || (startup()?.supported ? (startup()?.enabled ? 'Windows startup: enabled' : 'Windows startup: off') : 'Windows startup is available in the desktop app.') }}</p>
+    </section>
+    <div class="save-row"><button class="primary" data-testid="save-settings" type="submit" [disabled]="!valid() || !dirty() || !desktop.snapshot() || desktop.busy()">{{ desktop.busy() ? 'Saving…' : 'Save settings' }}</button><button class="secondary" type="button" (click)="reset()" [disabled]="!dirty() || desktop.busy()">Discard changes</button><span>Changes apply when you save.</span></div>
+  </form>
+  <app-companion-preferences />
+</div>

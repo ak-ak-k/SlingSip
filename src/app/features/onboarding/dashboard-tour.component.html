@@ -1,0 +1,14 @@
+<dialog class="tour-layer" aria-labelledby="tour-heading" aria-describedby="tour-copy" data-testid="dashboard-tour" (cancel)="skip($event)">
+  @if (target(); as rect) {
+    <div class="spotlight" aria-hidden="true" data-testid="tour-spotlight" [style.left.px]="rect.x" [style.top.px]="rect.y" [style.width.px]="rect.width" [style.height.px]="rect.height"></div>
+  } @else { <div class="shade" aria-hidden="true"></div> }
+  <section class="tour-card" [style.left.px]="position().x" [style.top.px]="position().y">
+    <header><span class="eyebrow">YOUR DESKTOP SIDEKICK</span><button class="skip" data-testid="tour-skip" type="button" (click)="skip()">Skip</button></header>
+    <div class="tour-content">
+      @if (!imageFailed()) { <img src="assets/onboarding/slingsip/tour-dashboard.png" alt="" aria-hidden="true" (error)="imageFailed.set(true)"> }
+      <div><span class="step-number" aria-live="polite">Step {{ index() + 1 }} of {{ steps.length }}</span><h2 id="tour-heading">{{ steps[index()].title }}</h2></div>
+    </div>
+    <p id="tour-copy">{{ steps[index()].copy }}</p>
+    <footer><button class="secondary" type="button" (click)="back()" [disabled]="index() === 0">Back</button><span class="dots" aria-hidden="true">@for (step of steps; track step.title; let i = $index) { <i [class.current]="i === index()"></i> }</span><button class="primary" type="button" data-testid="tour-next" (click)="next()">{{ index() === steps.length - 1 ? 'Done' : 'Next' }} <span aria-hidden="true">→</span></button></footer>
+  </section>
+</dialog>

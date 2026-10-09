@@ -1,0 +1,28 @@
+<div class="page-content">
+  <app-overview-hero />
+  @if (!state.desktop.nativeAvailable) { <div class="notice" role="status">Open the SlingSip desktop app to see your progress and manage your routine.</div> }
+  @if (state.desktop.error()) { <div class="notice error" role="alert">{{ state.desktop.error() }}</div> }
+  @if (state.snapshot()?.storageError || state.snapshot()?.schedulerError) { <div class="notice error" role="alert">{{ state.snapshot()?.storageError ?? state.snapshot()?.schedulerError }}</div> }
+  <div class="overview-grid">
+    <app-today-progress class="today" />
+    <app-remaining-water class="remaining" />
+    <app-next-break class="next-break" />
+    <app-reminder-status class="reminders" />
+    <app-streak-card class="streak" />
+    <app-quick-actions class="actions" />
+    <app-daily-schedule class="schedule" />
+    <app-history-preview class="history" />
+    <app-desktop-integration class="integration" />
+  </div>
+  @if (state.snapshot()?.developmentMode) {
+    <details class="development-tools" open><summary>Development tools</summary><div>
+      <button class="secondary" type="button" data-testid="toggle-overlay" (click)="state.desktop.showOverlay()" [disabled]="state.desktop.busy() || !!state.snapshot()?.scheduler?.reminderActive">Trigger Swing In · Dev ↗</button>
+      <button class="secondary" type="button" data-testid="delayed-reminder" (click)="state.desktop.scheduleDevelopmentReminder()" [disabled]="state.desktop.busy() || !!state.snapshot()?.scheduler?.reminderActive">Schedule test in 15 seconds · Development</button>
+      <span class="muted">Completed test runs: <strong data-testid="test-clicks">{{ state.desktop.testClicks() }}</strong></span>
+      <button class="secondary" type="button" (click)="state.desktop.resetTestClicks()" [disabled]="state.desktop.busy() || !state.desktop.testClicks()">Reset test runs</button>
+      <button class="secondary" type="button" data-testid="animation-lab-open" (click)="labOpen.set(true)">Animation lab</button>
+    </div></details>
+  }
+  @if (state.snapshot()?.developmentMode && labOpen()) { <app-animation-lab (closed)="labOpen.set(false)" /> }
+  <footer class="page-footer">Small habits. A healthier day.</footer>
+</div>

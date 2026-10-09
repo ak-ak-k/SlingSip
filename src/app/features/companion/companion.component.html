@@ -1,0 +1,20 @@
+<main #stage class="transparent-stage" data-testid="companion" aria-label="SlingSip desktop hydration companion">
+  <div class="bubble-anchor" [style.left.px]="reminder.bubblePosition().left" [style.top.px]="reminder.bubblePosition().top"
+    [style.width.px]="reminder.bubblePosition().width" [style.--tail-x]="reminder.bubblePosition().tail + 'px'"
+    [class.bubble-side]="reminder.bubblePosition().side"
+    [style.visibility]="reminder.bubbleVisible() ? 'visible' : 'hidden'" [attr.data-reminder-active]="reminder.reminderActive()">
+    <app-speech-bubble [heading]="reminder.heading()" [message]="reminder.message()" [state]="animation.state.current()"
+      [visible]="reminder.bubbleVisible()" [error]="reminder.error() ?? animation.error() ?? desktop.error()">
+      <div class="water-progress" aria-live="polite">
+        <div><span data-testid="hydration-progress">{{ reminder.hydration.currentWater() }} / {{ reminder.hydration.dailyGoal() }} ml</span><span>{{ reminder.hydration.progressPercentage() | number:'1.0-0' }}%</span></div>
+        <div class="water-track" role="progressbar" aria-label="Daily water progress" aria-valuemin="0" [attr.aria-valuemax]="reminder.hydration.dailyGoal()" [attr.aria-valuenow]="reminder.hydration.currentWater()"><span [style.width.%]="reminder.hydration.progressPercentage()"></span></div>
+      </div>
+      <div class="bubble-actions">
+        <button type="button" data-testid="drank-it" (click)="reminder.drankIt()" [disabled]="!reminder.canDrink()" [style.visibility]="reminder.success() ? 'hidden' : 'inherit'">Drank it</button>
+        <button class="later-button" type="button" (click)="reminder.remindLater()" [disabled]="!reminder.canPostpone()" [style.visibility]="animation.state.current() === 'reminder' ? 'inherit' : 'hidden'">Remind me later</button>
+      </div>
+      <div class="bubble-utilities"><button type="button" (click)="desktop.openDashboard()" [disabled]="desktop.busy()">Open dashboard ↗</button><button type="button" (click)="desktop.hideOverlay()" [disabled]="desktop.busy()">{{ desktop.snapshot()?.developmentMode ? 'Hide test' : 'Hide reminder' }}</button></div>
+    </app-speech-bubble>
+  </div>
+  <app-companion-character [waterFeedback]="reminder.heading()" />
+</main>

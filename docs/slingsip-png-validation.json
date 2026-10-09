@@ -1,0 +1,397 @@
+{
+  "date": "2026-10-07",
+  "typecheck": "passed",
+  "productionRendererAndElectronBuild": "passed",
+  "completeSuite": {
+    "startTime": "2026-10-07T08:02:04.057Z",
+    "duration": 957132.306,
+    "expected": 89,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0,
+    "note": "Full run passed 89/90. Its sole failure was DOMPoint serialization in a test helper; the helper now returns plain numeric x/y. No application change followed this run."
+  },
+  "targetedRerun": {
+    "startTime": "2026-10-07T08:19:23.984Z",
+    "duration": 62661.397000000004,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "checks": [
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+        "status": "expected",
+        "errors": []
+      }
+    ]
+  },
+  "finalVerified": {
+    "total": 90,
+    "passed": 90,
+    "failed": 0,
+    "skipped": 0,
+    "note": "90 distinct checks verified across the complete run and targeted rerun; the first full-run command itself returned failure."
+  },
+  "initialFailures": [
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+      "status": "unexpected",
+      "errors": [
+        "Error: page.evaluate: TypeError: Failed to construct 'MouseEvent': Failed to read the 'clientX' property from 'MouseEventInit': The provided double value is non-finite.\n    at eval (eval at evaluate (:311:30), <anonymous>:2:30)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:311:30), <anonymous>:2:30)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\advanced-companion.spec.mjs:142:35\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\advanced-companion.spec.mjs:142:5"
+      ]
+    }
+  ],
+  "remainingFailures": [],
+  "physicalWindowsPointer": {
+    "status": "passed",
+    "assertionsRetained": true,
+    "note": "The preceding build's native-helper error was not reproduced on the current desktop. Additional physical DPI/display combinations remain manual."
+  },
+  "pngChecks": [
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Production PNGs retain their original alpha and bytes; clipping excludes sheet captions and neighboring heads",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "PNG poses follow the unchanged path progress, invert only once, release webs and attach a bounded damped bottle",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native default uses five PNG swing frames, authored alpha/hit silhouettes, ask/happy, immediate water and PNG bottle; hidden work stops",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native inverted PNG stays inverted, pauses idle, returns to normal success; lab stays isolated and reduced motion skips frame cycling",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native Later and Ignore show the supplied disappointed head, exit left, preserve retry/window and cancel without extra water",
+      "status": "expected",
+      "errors": []
+    }
+  ],
+  "fallbackChecks": [
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Named production-style clips map without eighteen placeholder-specific names, and root travel is removed",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Web grip aliases and model normalization keep the attachment fixed while real limbs move",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Facial moods compose with blink, reset to neutral and discover independent left/right channels",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Success, Later and Ignore body sequences fit the existing business phases and continuously sample generic SwingIn",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Missing final files explicitly fall back to existing temporary GLBs without claiming production assets",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Temporary pack supplies genuinely different body frames and authored anchors for all requested clips",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Two-web choreography clears the old strand before the next cast at all entry/exit variants and DIP sizes",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Bottle web uses each frame hand, drops before 10-degree damped swing, feedback, retract and stays on desktop",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Native sprite fallback changes body frames while the existing path moves, idles without JS RAF and delivers dynamic water feedback",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Local GLB is a skinned original rig with all clips, real skeletal movement and facial morphs",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Bottle is a real GLB prop and dynamic 3D web endpoints release without leftover geometry",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native 3D overlay has alpha, plays bodily clips and two-web handoffs, smiles, blinks, delivers one glass and cleans up",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native 3D pause/reduced motion/retry and isolated lab preserve 2D dashboard and saved water",
+      "status": "expected",
+      "errors": []
+    }
+  ],
+  "assetIntegrity": {
+    "originalPngFilesChanged": false,
+    "builtPngHashesMatchOriginalAndAudit": 11,
+    "assets": {
+      "idle": {
+        "sha256": "326c9d8edaa808e9ed0cb2da7341c01e161fe508edd84eefbc8c1b9ae9a4e0ce",
+        "width": 173,
+        "height": 260,
+        "hasAuthoredAlpha": true
+      },
+      "ask": {
+        "sha256": "0e41f42bf23f54cf536ed99c30bf9b0c99dfa5b4bff1ee13cba4440c7b92cf9a",
+        "width": 180,
+        "height": 260,
+        "hasAuthoredAlpha": true
+      },
+      "happy": {
+        "sha256": "4a624230d3c59b02ba33b406d3381d4ad88e26554ac932d96eed6a6302bac8b2",
+        "width": 180,
+        "height": 260,
+        "hasAuthoredAlpha": true
+      },
+      "disappointed": {
+        "sha256": "9ad0da61a51a252775f2ded283425ebf709b968e2817c60b046c5bdb6ed4a4df",
+        "width": 270,
+        "height": 175,
+        "hasAuthoredAlpha": true
+      },
+      "upsideDown": {
+        "sha256": "9a79ec28c032e9dc70c509a0023ad98743851e6865c1e99f1f646b4aff98bcdc",
+        "width": 170,
+        "height": 260,
+        "hasAuthoredAlpha": true
+      },
+      "swing1": {
+        "sha256": "3c076c11b4316cfe5bca45a6cd199094e988a00aaa9a36beaf6d48dfe15a1168",
+        "width": 143,
+        "height": 175,
+        "hasAuthoredAlpha": true
+      },
+      "swing2": {
+        "sha256": "f625519d532a132f69fc645ba51a37ee33b21861d3d832a1df2b1086083af41f",
+        "width": 145,
+        "height": 175,
+        "hasAuthoredAlpha": true
+      },
+      "swing3": {
+        "sha256": "4eabe49c9f66ed1d69a84656a80c5e643136a279a321ede6087dff826ca28f5b",
+        "width": 150,
+        "height": 175,
+        "hasAuthoredAlpha": true
+      },
+      "swing4": {
+        "sha256": "420ca790a6cf4e3e02a90c5ad4c9a5a3b49016667e627bbbce8a6f72505f71ed",
+        "width": 150,
+        "height": 172,
+        "hasAuthoredAlpha": true
+      },
+      "swing5": {
+        "sha256": "5ab7c1886cc41a7d3de8ea987ca01ee5f65a65ca92731a270ad18820bf16c6e1",
+        "width": 150,
+        "height": 175,
+        "hasAuthoredAlpha": true
+      },
+      "bottle": {
+        "sha256": "2ef42e8d9949047b24e37512718c448467c2ad6819109450aa83de8f20798975",
+        "width": 115,
+        "height": 185,
+        "hasAuthoredAlpha": true
+      }
+    }
+  },
+  "capture": {
+    "flows": [
+      {
+        "name": "Classic",
+        "frames": 19,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask"
+        ],
+        "maxSampledBottleRotation": 0
+      },
+      {
+        "name": "High",
+        "frames": 21,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask"
+        ],
+        "maxSampledBottleRotation": 0
+      },
+      {
+        "name": "Fast Zip",
+        "frames": 17,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask"
+        ],
+        "maxSampledBottleRotation": 0
+      },
+      {
+        "name": "Upside Down",
+        "frames": 21,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ],
+        "poses": [
+          "upsideDown"
+        ],
+        "maxSampledBottleRotation": 0
+      },
+      {
+        "name": "Success",
+        "frames": 33,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder",
+          "success",
+          "delivering-bottle",
+          "swinging-out-right"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask",
+          "happy"
+        ],
+        "maxSampledBottleRotation": 8.02950849304837
+      },
+      {
+        "name": "Later",
+        "frames": 31,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder",
+          "waiting",
+          "swinging-back-left"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask",
+          "disappointed"
+        ],
+        "maxSampledBottleRotation": 0
+      },
+      {
+        "name": "Ignore",
+        "frames": 79,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder",
+          "waiting",
+          "swinging-back-left"
+        ],
+        "poses": [
+          "swing1",
+          "swing2",
+          "swing3",
+          "swing4",
+          "swing5",
+          "ask",
+          "disappointed"
+        ],
+        "maxSampledBottleRotation": 0
+      }
+    ],
+    "totalFrames": 221,
+    "galleryScreenshots": 26,
+    "rendererErrors": [],
+    "artifact": "docs/previews/png-companion/motion-review.html",
+    "note": "Sampled native screenshots; not an FPS or CPU benchmark."
+  },
+  "untouched": [
+    "dashboard design",
+    "hydration",
+    "scheduler",
+    "persistence",
+    "history",
+    "settings implementation",
+    "tray",
+    "Windows startup implementation",
+    "IPC",
+    "trajectory/controller and reminder timing"
+  ],
+  "limitations": [
+    "Low-resolution source crops and clipped limbs/cape/hand",
+    "Disappointed source is a head strip composited onto supplied idle body",
+    "No independent eyes/head or skeletal interpolation in full-pose PNGs",
+    "Some grip connections use visible hood/boot regions",
+    "Interior source checker/color fringes cannot all be restored by exterior clipping"
+  ],
+  "deployment": "none"
+}

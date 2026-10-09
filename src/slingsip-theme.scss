@@ -1,0 +1,51 @@
+// One palette for every Angular window. The document itself stays transparent.
+:root {
+  --slingsip-bg: #09121c;
+  --slingsip-surface: #13212e;
+  --slingsip-surface-2: #1b2d3d;
+  --slingsip-text: #eff7fb;
+  --slingsip-text-muted: #a4b7c7;
+  --slingsip-accent-primary: #8ce8ca;
+  --slingsip-accent-cyan: #39d7e5;
+  --slingsip-accent-secondary: #ed4058;
+  --slingsip-ink: #09242b;
+  --slingsip-error: color-mix(in srgb, var(--slingsip-accent-secondary) 45%, var(--slingsip-text));
+  --slingsip-border: color-mix(in srgb, var(--slingsip-text) 12%, transparent);
+  --slingsip-border-accent: color-mix(in srgb, var(--slingsip-accent-cyan) 24%, transparent);
+  --slingsip-border-strong: color-mix(in srgb, var(--slingsip-accent-cyan) 48%, transparent);
+  --slingsip-border-secondary: color-mix(in srgb, var(--slingsip-accent-secondary) 24%, transparent);
+  --slingsip-glow-primary: color-mix(in srgb, var(--slingsip-accent-cyan) 16%, transparent);
+  --slingsip-glow-secondary: color-mix(in srgb, var(--slingsip-accent-secondary) 8%, transparent);
+  --slingsip-tint: color-mix(in srgb, var(--slingsip-accent-primary) 7%, transparent);
+  --slingsip-tint-soft: color-mix(in srgb, var(--slingsip-accent-primary) 4%, transparent);
+  --slingsip-highlight: color-mix(in srgb, var(--slingsip-text) 4%, transparent);
+  --slingsip-track: color-mix(in srgb, var(--slingsip-text-muted) 14%, transparent);
+  --slingsip-shadow: color-mix(in srgb, var(--slingsip-bg) 38%, transparent);
+  --slingsip-shadow-soft: color-mix(in srgb, var(--slingsip-bg) 18%, transparent);
+  --slingsip-backdrop: color-mix(in srgb, var(--slingsip-bg) 80%, transparent);
+  --slingsip-sidebar: color-mix(in srgb, var(--slingsip-bg) 88%, transparent);
+  --slingsip-field: color-mix(in srgb, var(--slingsip-bg) 74%, transparent);
+  --slingsip-panel-top: color-mix(in srgb, var(--slingsip-surface-2) 88%, transparent);
+  --slingsip-panel-bottom: color-mix(in srgb, var(--slingsip-surface) 96%, transparent);
+  --slingsip-panel-fill: linear-gradient(135deg, var(--slingsip-panel-top), var(--slingsip-panel-bottom));
+  --slingsip-button-fill: linear-gradient(120deg, var(--slingsip-accent-primary), var(--slingsip-accent-cyan));
+  --slingsip-button-hover: color-mix(in srgb, var(--slingsip-accent-primary) 80%, var(--slingsip-text));
+  --slingsip-progress-fill: linear-gradient(90deg, var(--slingsip-accent-cyan), var(--slingsip-accent-primary));
+  --slingsip-web: color-mix(in srgb, var(--slingsip-accent-cyan) 18%, var(--slingsip-text));
+  --slingsip-radius-card: 18px;
+  --slingsip-radius-control: 10px;
+  --slingsip-motion-control: 160ms;
+
+  // Compatibility aliases for the existing components; no window owns a palette.
+  --canvas: var(--slingsip-bg);
+  --surface: var(--slingsip-surface);
+  --surface-raised: var(--slingsip-surface-2);
+  --line: var(--slingsip-border);
+  --text: var(--slingsip-text);
+  --muted: var(--slingsip-text-muted);
+  --mint: var(--slingsip-accent-primary);
+  --cyan: var(--slingsip-accent-cyan);
+  --coral: var(--slingsip-accent-secondary);
+  --glow: var(--slingsip-glow-primary);
+  --drop-detail: var(--slingsip-ink);
+}

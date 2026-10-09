@@ -1,0 +1,464 @@
+{
+  "profile": "qa-observe-df55dc9c-e237-49cb-8717-6d2d471a60e1",
+  "createdAt": "2026-10-08T10:05:40.212Z",
+  "platform": "win32",
+  "samples": [
+    {
+      "name": "hidden/dashboard-open",
+      "durationMs": 5000,
+      "rafDelta": 0,
+      "work": {
+        "raf": 0,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      },
+      "cpuPercent": 2.172525326231167,
+      "privateMB": 173.79296875,
+      "workingSetMB": 593.59765625,
+      "heapMB": 3.9739418029785156,
+      "processes": [
+        {
+          "pid": 19288,
+          "type": "Browser",
+          "cpuPercent": 0.32316316851910404,
+          "workingSetMB": 146.46875,
+          "privateMB": 44.15625
+        },
+        {
+          "pid": 18964,
+          "type": "GPU",
+          "cpuPercent": 0.7397762884049535,
+          "workingSetMB": 112.67578125,
+          "privateMB": 14.6875
+        },
+        {
+          "pid": 17036,
+          "type": "Utility",
+          "cpuPercent": 0.019451653744415934,
+          "workingSetMB": 81.796875,
+          "privateMB": 11.4453125
+        },
+        {
+          "pid": 9184,
+          "type": "Tab",
+          "cpuPercent": 0.0009120300652953722,
+          "workingSetMB": 101.79296875,
+          "privateMB": 34.734375
+        },
+        {
+          "pid": 18312,
+          "type": "Tab",
+          "cpuPercent": 1.0892221854973978,
+          "workingSetMB": 150.86328125,
+          "privateMB": 68.76953125
+        }
+      ]
+    },
+    {
+      "name": "hidden/dashboard-closed",
+      "durationMs": 8000,
+      "rafDelta": 0,
+      "work": {
+        "raf": 1,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      },
+      "cpuPercent": 0.0640099947775239,
+      "privateMB": 105.078125,
+      "workingSetMB": 423.57421875,
+      "heapMB": 4.001953125,
+      "processes": [
+        {
+          "pid": 19288,
+          "type": "Browser",
+          "cpuPercent": 0.0640099947775239,
+          "workingSetMB": 146.44921875,
+          "privateMB": 44.2578125
+        },
+        {
+          "pid": 18964,
+          "type": "GPU",
+          "cpuPercent": 0,
+          "workingSetMB": 93.48828125,
+          "privateMB": 14.640625
+        },
+        {
+          "pid": 17036,
+          "type": "Utility",
+          "cpuPercent": 0,
+          "workingSetMB": 81.796875,
+          "privateMB": 11.4453125
+        },
+        {
+          "pid": 9184,
+          "type": "Tab",
+          "cpuPercent": 0,
+          "workingSetMB": 101.83984375,
+          "privateMB": 34.734375
+        }
+      ]
+    },
+    {
+      "name": "visible/hanging-idle",
+      "durationMs": 5000,
+      "rafDelta": 0,
+      "work": {
+        "raf": 110,
+        "intervals": 1,
+        "animations": 1,
+        "images": 6,
+        "mascots": 1
+      },
+      "cpuPercent": 13.01777562571555,
+      "privateMB": 169.703125,
+      "workingSetMB": 605.421875,
+      "heapMB": 5.537239074707031,
+      "processes": [
+        {
+          "pid": 19288,
+          "type": "Browser",
+          "cpuPercent": 3.672142728566431,
+          "workingSetMB": 153.7421875,
+          "privateMB": 42.83203125
+        },
+        {
+          "pid": 18964,
+          "type": "GPU",
+          "cpuPercent": 8.576292783618847,
+          "workingSetMB": 123.19140625,
+          "privateMB": 17.8984375
+        },
+        {
+          "pid": 17036,
+          "type": "Utility",
+          "cpuPercent": 0.001863002488731582,
+          "workingSetMB": 81.7890625,
+          "privateMB": 11.41796875
+        },
+        {
+          "pid": 9184,
+          "type": "Tab",
+          "cpuPercent": 0.7577825055974984,
+          "workingSetMB": 113.65625,
+          "privateMB": 44.875
+        },
+        {
+          "pid": 18608,
+          "type": "Tab",
+          "cpuPercent": 0.009694605444042896,
+          "workingSetMB": 133.04296875,
+          "privateMB": 52.6796875
+        }
+      ]
+    },
+    {
+      "name": "hidden/after-six-cycles",
+      "durationMs": 8000,
+      "rafDelta": 0,
+      "work": {
+        "raf": 1855,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      },
+      "cpuPercent": 0.04213012195052809,
+      "privateMB": 177.58203125,
+      "workingSetMB": 622.0390625,
+      "heapMB": 4.9052886962890625,
+      "processes": [
+        {
+          "pid": 19288,
+          "type": "Browser",
+          "cpuPercent": 0.013203330287115598,
+          "workingSetMB": 154.984375,
+          "privateMB": 41.8203125
+        },
+        {
+          "pid": 18964,
+          "type": "GPU",
+          "cpuPercent": 0.013284525557565966,
+          "workingSetMB": 118.4921875,
+          "privateMB": 15.41796875
+        },
+        {
+          "pid": 17036,
+          "type": "Utility",
+          "cpuPercent": 0.0010711313670484267,
+          "workingSetMB": 81.67578125,
+          "privateMB": 11.26171875
+        },
+        {
+          "pid": 9184,
+          "type": "Tab",
+          "cpuPercent": 0.010458362974209783,
+          "workingSetMB": 126.921875,
+          "privateMB": 50.4296875
+        },
+        {
+          "pid": 18608,
+          "type": "Tab",
+          "cpuPercent": 0.004112771764588317,
+          "workingSetMB": 139.96484375,
+          "privateMB": 58.65234375
+        }
+      ]
+    }
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "heapMB": 4.458660125732422,
+      "work": {
+        "raf": 284,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    },
+    {
+      "cycle": 2,
+      "heapMB": 4.6001434326171875,
+      "work": {
+        "raf": 618,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    },
+    {
+      "cycle": 3,
+      "heapMB": 4.709007263183594,
+      "work": {
+        "raf": 934,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    },
+    {
+      "cycle": 4,
+      "heapMB": 4.743320465087891,
+      "work": {
+        "raf": 1211,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    },
+    {
+      "cycle": 5,
+      "heapMB": 4.820281982421875,
+      "work": {
+        "raf": 1523,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    },
+    {
+      "cycle": 6,
+      "heapMB": 4.880287170410156,
+      "work": {
+        "raf": 1855,
+        "intervals": 0,
+        "animations": 0,
+        "images": 0,
+        "mascots": 0
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "finalState": {
+    "revision": 86,
+    "appVersion": "0.1.0",
+    "electronVersion": "44.5.1",
+    "angularVersion": "22.2.1",
+    "platform": "win32",
+    "display": {
+      "id": 734882164,
+      "label": "DELL E2218HN",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "workArea": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1032
+      },
+      "scaleFactor": 1
+    },
+    "dashboardOpen": true,
+    "dashboardBounds": {
+      "x": 388,
+      "y": 137,
+      "width": 1144,
+      "height": 781
+    },
+    "hydration": {
+      "dailyGoal": 2000,
+      "glassSize": 250,
+      "currentWater": 1500
+    },
+    "hydrationState": {
+      "schemaVersion": 2,
+      "history": [],
+      "date": "2026-10-08",
+      "currentWaterMl": 1500,
+      "settings": {
+        "dailyGoalMl": 2000,
+        "glassSizeMl": 250,
+        "retryIntervalMinutes": 5,
+        "workingStart": "10:00",
+        "workingEnd": "18:00",
+        "remindersEnabled": true,
+        "launchAtStartup": false
+      },
+      "lastReminderAt": "2026-10-08T10:06:47.163Z",
+      "lastDrinkAt": "2026-10-08T10:06:50.017Z"
+    },
+    "scheduler": {
+      "nextReminderAt": "2026-10-08T10:30:00.000Z",
+      "todaySchedule": [
+        "2026-10-08T04:30:00.000Z",
+        "2026-10-08T05:30:00.000Z",
+        "2026-10-08T06:30:00.000Z",
+        "2026-10-08T07:30:00.000Z",
+        "2026-10-08T08:30:00.000Z",
+        "2026-10-08T09:30:00.000Z",
+        "2026-10-08T10:30:00.000Z",
+        "2026-10-08T11:30:00.000Z"
+      ],
+      "workingHoursActive": true,
+      "reminderActive": false,
+      "remindersEnabled": true,
+      "remindersPaused": false
+    },
+    "developmentMode": false,
+    "companionPreferences": {
+      "soundEffects": false,
+      "soundVolume": 0.2,
+      "lowPowerAnimations": false,
+      "cursorAwareness": true,
+      "characterReactions": true
+    },
+    "companionPreferencesError": null,
+    "userProfile": {
+      "displayName": "Test User",
+      "createdAt": "2026-10-01T10:00:00.000Z",
+      "hasCompletedOnboarding": true
+    },
+    "userProfileError": null,
+    "displayActive": true,
+    "storageError": null,
+    "schedulerError": null,
+    "reminderTiming": {
+      "retryIntervalMs": 300000,
+      "successDisplayMs": 2000
+    },
+    "history": [
+      {
+        "date": "2026-10-08",
+        "goalMl": 2000,
+        "consumedMl": 1500,
+        "percentage": 75,
+        "completed": false,
+        "lastDrinkAt": "2026-10-08T10:06:50.017Z"
+      }
+    ],
+    "streaks": {
+      "currentStreak": 0,
+      "bestStreak": 0,
+      "weekCompletedDays": 0
+    },
+    "startup": {
+      "supported": false,
+      "enabled": false,
+      "error": "Startup registration is disabled in isolated tests."
+    },
+    "tray": {
+      "available": true,
+      "error": null
+    },
+    "creditedReminder": {
+      "revision": 11,
+      "addedWater": 250
+    },
+    "reminderRetry": {
+      "pending": false,
+      "retryAt": null,
+      "count": 0
+    },
+    "overlay": {
+      "visible": false,
+      "interactive": false,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1032
+      },
+      "layoutRevision": 7,
+      "visibilityRevision": 12,
+      "testClicks": 0
+    }
+  },
+  "security": [
+    {
+      "role": "dashboard",
+      "preferences": {
+        "allowRunningInsecureContent": false,
+        "contextIsolation": true,
+        "disableDialogs": false,
+        "disablePopups": false,
+        "enableBlinkFeatures": "",
+        "experimentalFeatures": false,
+        "javascript": true,
+        "nodeIntegration": false,
+        "nodeIntegrationInSubFrames": false,
+        "nodeIntegrationInWorker": false,
+        "safeDialogs": false,
+        "safeDialogsMessage": "",
+        "sandbox": true,
+        "webSecurity": true,
+        "webviewTag": false
+      }
+    },
+    {
+      "role": "companion",
+      "preferences": {
+        "allowRunningInsecureContent": false,
+        "contextIsolation": true,
+        "disableDialogs": false,
+        "disablePopups": false,
+        "enableBlinkFeatures": "",
+        "experimentalFeatures": false,
+        "javascript": true,
+        "nodeIntegration": false,
+        "nodeIntegrationInSubFrames": false,
+        "nodeIntegrationInWorker": false,
+        "safeDialogs": false,
+        "safeDialogsMessage": "",
+        "sandbox": true,
+        "webSecurity": true,
+        "webviewTag": false
+      }
+    }
+  ],
+  "stderr": "",
+  "ownedProcessExited": true
+}

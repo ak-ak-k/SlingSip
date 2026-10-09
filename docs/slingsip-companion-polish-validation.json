@@ -1,0 +1,677 @@
+{
+  "date": "2026-10-08",
+  "scope": "Existing companion visual polish only; no deployment",
+  "checks": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    "broad": {
+      "command": "npx playwright test tests/character-motion.spec.mjs tests/advanced-companion.spec.mjs tests/body-rendering.spec.mjs tests/png-companion.spec.mjs tests/final-qa.spec.mjs tests/dashboard-redesign.spec.mjs tests/companion-polish.spec.mjs --reporter=list,json",
+      "stats": {
+        "startTime": "2026-10-08T05:19:47.752Z",
+        "duration": 465381.42,
+        "expected": 33,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      }
+    },
+    "finalFocused": {
+      "command": "npx playwright test tests/advanced-companion.spec.mjs tests/character-motion.spec.mjs tests/companion-polish.spec.mjs --grep 'Native preferences save/restart|Native swing success|Larger work-area layouts|Exit paths travel|Local curved webs|Native visual polish' --reporter=list,json",
+      "stats": {
+        "startTime": "2026-10-08T05:28:38.460Z",
+        "duration": 117173.704,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  },
+  "coverage": {
+    "uniqueChecks": 35,
+    "latestPassing": 35,
+    "unresolvedFailures": 0,
+    "completeRepositorySuiteRun": false,
+    "initialFailures": [
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "durationMs": 49808,
+            "errors": [
+              "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  getByTestId('character')\nExpected: \"reminder\"\nReceived: \"swinging-in\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" getByTestId('character') with timeout 10000ms\n  - waiting for getByTestId('character')\n    23 × locator resolved to <div data-y=\"258\" data-look=\"0,0\" data-variant=\"zip\" data-assets=\"ready\" data-body-progress=\"0\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" _ngcontent-ng-c2477036825=\"\" data-x=\"-307.89818181818185\" data-body-state=\"swing-grab\" data-rotation=\"-6.310673516958308\" class=\"character is-low-power is-inactive\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\n       - unexpected value \"swinging-in\"\n\n\n  162 |     const idle=await overlay.evaluate(() => window.__rafCount);await overlay.waitForTimeout(400);expect(await overlay.evaluate(() => window.__rafCount)).toBe(idle);\n  163 |     await dashboard.evaluate(p => window.desktopCompanion.updateCompanionPreferences(p),{...preferences,soundEffects:false,lowPowerAnimations:true});\n> 164 |     await dashboard.getByTestId('toggle-overlay').click();await expect(character).toHaveAttribute('data-state','reminder');\n      |                                                                                   ^\n  165 |     await expect(character).toHaveClass(/is-low-power/);\n  166 |     await overlay.evaluate(() => document.dispatchEvent(new MouseEvent('mousemove',{clientX:innerWidth * .6,clientY:innerHeight * .6,bubbles:true})));\n  167 |     await expect(character).toHaveAttribute('data-look','0,0');\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\advanced-companion.spec.mjs:164:83"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Native swing success logs immediately, delivers a bottle, exits right, stops RAF and reuses the window",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "durationMs": 23464,
+            "errors": [
+              "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 1\n\n  Array [\n+   \"hidden\",\n    \"swinging-in\",\n    \"arriving\",\n    \"reminder\",\n    \"success\",\n    \"delivering-bottle\",\n    \"swinging-out-right\",\n-   \"hidden\",\n  ]\n\n  151 |     await expect(character).toHaveAttribute('data-state', 'hidden');\n  152 |     const frames = await overlay.evaluate(() => window.__frames);\n> 153 |     expect([...new Set(frames.map(p => p.state))]).toEqual(['swinging-in', 'arriving', 'reminder', 'success', 'delivering-bottle', 'swinging-out-right', 'hidden']);\n      |                                                    ^\n  154 |     const firstEntry = frames.find(p => p.state === 'swinging-in');\n  155 |     expect(firstEntry.x < 0 || firstEntry.y < 0).toBe(true);\n  156 |     expect(frames.filter(p => p.state === 'swinging-out-right').at(-1).x).toBeGreaterThan(await overlay.evaluate(() => innerWidth));\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\character-motion.spec.mjs:153:52"
+            ]
+          }
+        ]
+      }
+    ],
+    "followUp": "Corrected ordered-frame observation, limited visual context sampling to entry, rebuilt and reran both failures and all four polish checks. The preferences assertions were unchanged."
+  },
+  "visualTuning": {
+    "mascotScale": 1.2,
+    "aspectRatio": "160:220",
+    "bottleRelativeScale": 1.5,
+    "bottlePhaseMs": 1200,
+    "bottleVisibleMs": 984,
+    "bottleOpaqueHoldMs": 816,
+    "bottlePendulumPeakDegrees": "8-10",
+    "mainWebMaxMascotHeights": 1.12,
+    "mainWebOpacity": 0.56,
+    "exitDirections": {
+      "later": "left",
+      "ignore": "left",
+      "success": "right"
+    }
+  },
+  "limits": [
+    "Native captures use one 1920x1032 DIP Windows work area; other dimensions/DPI are geometry fixtures.",
+    "The dashboard-hero fallback follows current Overview header geometry; scrolling is not tracked and active placement is frozen.",
+    "Physical Windows pointer automation was not rerun; existing click-through implementation and assertions were retained."
+  ],
+  "cleanup": {
+    "remainingTestElectronProcesses": 0,
+    "existingUserApplicationLeftRunning": true
+  },
+  "cases": [
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Four authored entry weights are conditional on the last variant and never repeat",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 178,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "All four paths settle at one local-DIP reminder and keep web grips anatomical at desktop/DPI sizes",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 36524,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Finite frame owner pauses without RAF or time jumps, caps rendering and aborts cleanly",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Visual/audio preferences validate independently, restore safely and start muted",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 11,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Lab previews every variant, local cursor/reactions and exits without water or scheduler side effects",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 37801,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 56159,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Production behavior hides the animation lab and rejects development triggers",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 16339,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Temporary pack supplies genuinely different body frames and authored anchors for all requested clips",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 299,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Two-web choreography clears the old strand before the next cast at all entry/exit variants and DIP sizes",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 155,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Bottle web uses each frame hand, drops before 10-degree damped swing, feedback, retract and stays on desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 37,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Native approved-pose fallback changes body frames while the existing path moves, idles without JS RAF and delivers dynamic water feedback",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 23253,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing states allow complete success and later flows without walking or invalid shortcuts",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 11,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing timing and trajectory are independent of 30, 60 and 144 Hz, including stalls",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 6,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Responsive arcs enter left, dip, rise and exit either edge; entry web length stays fixed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1681,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Arrival brakes smoothly, recoils and preserves body and web continuity into either exit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 8,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Bottle stays on the animated hand and lowers within desktop bounds during a short delivery",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 250,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Native swing success logs immediately, delivers a bottle, exits right, stops RAF and reuses the window",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 29552,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Reduced motion keeps the reminder usable without travel or ambient frame loops",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 20217,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Larger work-area layouts prefer free dashboard gutters and keep fallback panels above action cards",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 48,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Exit paths travel monotonically toward their chosen edge, retain opacity and clear the full mascot",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 326,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Local curved webs retain their sockets and release order; bottle visibility is 984ms with an 816ms opaque hold",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 624,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Native visual polish keeps real drink immediate, curved socket attachment, explicit exits and hidden cleanup",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 29194,
+          "errors": []
+        }
+      ],
+      "run": "final-focused"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard labels use local days and ceil the actual deadline without a seconds loop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Next break reflects goal, OFF, pause, hidden retry, active and exhausted scheduling",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 26,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Manual Open companion respects single reminder, pause, OFF and goal without changing automatic hours",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard actions share canonical intake, prompt credits, tray state, pause and final-glass clamping",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 23220,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "New dashboard commands reject companion roles and malformed pause without exposing Node",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 16210,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard layouts, real history and schedule, keyboard and reduced motion at desktop and compact sizes",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 21317,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "final-qa.spec.mjs",
+      "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 41040,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "final-qa.spec.mjs",
+      "title": "Failure of optional development completion telemetry cannot keep a successful reminder visible",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 22891,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Production PNGs retain their original alpha and bytes; clipping excludes sheet captions and neighboring heads",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 99,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "PNG poses follow the unchanged path progress, invert only once, release webs and attach a bounded damped bottle",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 95,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native default uses five PNG swing frames, authored alpha/hit silhouettes, ask/happy, immediate water and PNG bottle; hidden work stops",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 23374,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native inverted PNG stays inverted, pauses idle, returns to normal success; lab stays isolated and reduced motion skips frame cycling",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 27027,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native Later and Ignore show the supplied disappointed head, exit left, preserve retry/window and cancel without extra water",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 46474,
+          "errors": []
+        }
+      ],
+      "run": "broad"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "electron/desktop-ipc.ts",
+      "sha256": "fd3d814f63cacc3db4926d9d86170f1b0b8d1b177c456eaadaf9e9ae2292b5bc"
+    },
+    {
+      "file": "shared/desktop-contract.ts",
+      "sha256": "a9b3bd8e9df26867ee59933864314959467f228f92e7422ff574a834e2f5b96b"
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-config.ts",
+      "sha256": "e1bdb93afedc02c2ddf8202166b38231f7a5e6d1bf0ccd2018b7b3477cb927fd"
+    },
+    {
+      "file": "src/app/features/companion/animation/companion-placement.ts",
+      "sha256": "eeceab88ff6cf8d2a583f4ecf14b16e1414e5542edd2d819dd761a4702bd97c6"
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-motion.ts",
+      "sha256": "bfc5f35d6a8a439b344bed1e42ef188db8b66c05fd53503ab8b33ab6608736e8"
+    },
+    {
+      "file": "src/app/features/companion/animation/companion-motion.service.ts",
+      "sha256": "46ef3f460378fdb2e955781de8fe4ceea8ed6b61bd45b010f62c44d637624c3e"
+    },
+    {
+      "file": "src/app/features/companion/animation/web-geometry.ts",
+      "sha256": "4dbeec1a8426f5c73ca008a109c257458f9dae9329ec19858b443f29cefb24fe"
+    },
+    {
+      "file": "src/app/features/companion/animation/body-choreography.ts",
+      "sha256": "2767332c6c23c5cd3fcf87d950a4ed30865b42be99e4faf42d881b79d77cfb42"
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-assets.ts",
+      "sha256": "bf742486748de83ad11fc95b0d52cb6fdc2be2bc35e625aaa46d2dd536067351"
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-png-choreography.ts",
+      "sha256": "8b815933d09e95735071048465c3e7a02d6b1476f2e5caee01d50833386aef59"
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-png-renderer.component.ts",
+      "sha256": "8e144b631b87f025cfb809d9beb21c479fa6968c773360d28f6a0775c87894ad"
+    },
+    {
+      "file": "src/app/features/companion/web-renderer.component.ts",
+      "sha256": "7bf6ea2336de62016325c515fade7071ff957999fa3c95ba3960417bff93289d"
+    },
+    {
+      "file": "src/app/features/companion/companion.component.ts",
+      "sha256": "2e310c6fb115dd07b56a98110d75c46a3284247269f5a840e46b025855865b91"
+    },
+    {
+      "file": "src/app/features/companion/companion.component.html",
+      "sha256": "4f75c6ba3a91a63b7508d839ead1279179b93285071a34efb46c8a1d35675b03"
+    },
+    {
+      "file": "src/app/features/companion/reminder-interaction.service.ts",
+      "sha256": "b2e7362d35853204318260f095846cff4aedac5b8857c3d805dc162089ddf88f"
+    },
+    {
+      "file": "src/app/features/companion/speech-bubble.component.scss",
+      "sha256": "175523813c9967ba9f288faa37cda80d284c542620f309bc96b6c640d477a538"
+    },
+    {
+      "file": "tests/helpers/companion-visuals.mjs",
+      "sha256": "c319b3d13e4df268ecf363f53c366a57eead0f28a8fba1af814fbe7ebd3d7e2a"
+    },
+    {
+      "file": "tests/character-motion.spec.mjs",
+      "sha256": "660d1f136fe86332b781bbc248fc4117ea2fd9ed8bb8503f5f9489caee4d5eb0"
+    },
+    {
+      "file": "tests/companion-polish.spec.mjs",
+      "sha256": "e1c1ccab82e09ba4eb37fe37fea2b954dad80682a165b294773f357234521a14"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "docs/previews/companion-polish/bottle.png",
+      "width": 1920,
+      "height": 1032,
+      "sha256": "8f2fcde1dd25109fe99a0b80a3462045556e320d28ce42813a0e94b75942e84d"
+    },
+    {
+      "file": "docs/previews/companion-polish/dashboard-maximized.png",
+      "width": 1920,
+      "height": 1009,
+      "sha256": "f422d5d7b3a89f2e6de44c5d45cb80fbcfec2cdea0d31f1bb4f1fca8e2f3068b"
+    },
+    {
+      "file": "docs/previews/companion-polish/dashboard.png",
+      "width": 1144,
+      "height": 781,
+      "sha256": "71f4bde669bc7de587bd408f9cb3045d73697936266a6ed2a324aaca24dd0248"
+    },
+    {
+      "file": "docs/previews/companion-polish/exit-left.png",
+      "width": 1920,
+      "height": 1032,
+      "sha256": "cc9c5cac8629ac057894704e0ff31fdd44006b9ab2d124d26aac7c8658513d8e"
+    },
+    {
+      "file": "docs/previews/companion-polish/exit-right.png",
+      "width": 1920,
+      "height": 1032,
+      "sha256": "2034d533dad89f2bba0185840917a0c3a35ff2ae5b5da3f4b639ae15799f01bf"
+    },
+    {
+      "file": "docs/previews/companion-polish/reminder-maximized.png",
+      "width": 1920,
+      "height": 1032,
+      "sha256": "e0598e3ed51c732c9d16ab955c42e1452003559ea01ef946d6ed3802042c90f3"
+    },
+    {
+      "file": "docs/previews/companion-polish/reminder.png",
+      "width": 1920,
+      "height": 1032,
+      "sha256": "49f26d17e65c06166b3de62a0698641a3b9690ceb34566c4aa0fa0d2508b1e31"
+    }
+  ]
+}

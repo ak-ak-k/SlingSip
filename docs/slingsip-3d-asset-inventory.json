@@ -1,0 +1,16 @@
+{
+  "assets": [
+    {
+      "path": "src/assets/3d/character/slingsip-character.glb",
+      "status": "missing",
+      "error": "ENOENT: no such file or directory, open 'D:\\Aditya\\pratice\\project\\Desktop Companion\\src\\assets\\3d\\character\\slingsip-character.glb'"
+    },
+    {
+      "path": "src/assets/3d/props/slingsip-bottle.glb",
+      "status": "missing",
+      "error": "ENOENT: no such file or directory, open 'D:\\Aditya\\pratice\\project\\Desktop Companion\\src\\assets\\3d\\props\\slingsip-bottle.glb'"
+    }
+  ],
+  "finalCompatibilityVerified": false,
+  "note": "Inventory only; run native GLTFLoader validation after providing actual GLBs. Existing development placeholders are not final assets."
+}

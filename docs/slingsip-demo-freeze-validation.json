@@ -1,0 +1,1328 @@
+{
+  "createdAt": "2026-10-08T11:07:57.434Z",
+  "freezeStatus": "READY FOR DEMO WITH ONE KNOWN TEST-HARNESS LIMITATION",
+  "appVersion": "0.1.0",
+  "scope": {
+    "documentationAndVerificationOnly": true,
+    "featuresAdded": false,
+    "redesignPerformed": false,
+    "productionCodeChanged": false,
+    "testCodeChanged": false,
+    "dependenciesChanged": false,
+    "normalProfileTouched": false,
+    "normalStartupEntryTouched": false,
+    "deployed": false,
+    "portfolioWebsiteCreated": false,
+    "releasePublished": false,
+    "automatedPhysicalPointerRerun": false
+  },
+  "environmentSeparation": {
+    "passed": true,
+    "productionLaunch": "npm start",
+    "launchScript": "scripts/start-electron.mjs removes ELECTRON_RUN_AS_NODE and ELECTRON_RENDERER_URL.",
+    "angularProductionDefault": true,
+    "strictProductionCsp": true,
+    "developmentCspSeparate": true,
+    "observedRendererUrls": [
+      "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard",
+      "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard/history",
+      "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard/settings",
+      "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/companion"
+    ],
+    "observedDevelopmentMode": false,
+    "productionDevUiAbsent": true,
+    "productionDevIpcRejected": true,
+    "normalLaunchSingleInstanceCaveat": "Quit the current tray instance and stop a dev supervisor before switching modes; X alone retains the old owner."
+  },
+  "sourcePreservation": {
+    "baseline": ".cache/slingsip-demo-freeze-before.json",
+    "filesChecked": 197,
+    "changedFiles": [],
+    "files": [
+      {
+        "file": "src/app/app.component.ts",
+        "sha256": "63ae68f0e2d0e8790cfaab4ee7e5bb0e46d92a1feb4c233be874fb055e995864"
+      },
+      {
+        "file": "src/app/app.config.ts",
+        "sha256": "4e97cf93c5305d1bd8b002e34f5df69c62689b910e90f4a4ea665bca246432a0"
+      },
+      {
+        "file": "src/app/app.routes.ts",
+        "sha256": "623dad7b044bf952c9cbc9af8d688a622b27df8766853be235b0c42ff1ce8838"
+      },
+      {
+        "file": "src/app/core/services/desktop.service.ts",
+        "sha256": "e19aa391f20ac9b983020a98ac104f656fbc528002159a17953534a86006ecc5"
+      },
+      {
+        "file": "src/app/core/services/hydration.service.ts",
+        "sha256": "7c7c07b7fa82ce799b9957edef5ae217fccac2309f7fca36d732e27fc3abc305"
+      },
+      {
+        "file": "src/app/core/services/local-profile.service.ts",
+        "sha256": "88cbd491631649b7d09dc0ad7128596e63da1e8f03139f192375ce5a4b8c272c"
+      },
+      {
+        "file": "src/app/features/companion/animation/animation-renderer.component.ts",
+        "sha256": "de8f2ead62ee48ffe6d5e3e9eae27dba7780e8ddac3f8f5d1b54a74640256198"
+      },
+      {
+        "file": "src/app/features/companion/animation/audio.service.ts",
+        "sha256": "dd7010f33789532effac47120513028d3c343f6cb5e04251f71cddaafa3283d8"
+      },
+      {
+        "file": "src/app/features/companion/animation/body-animation.model.ts",
+        "sha256": "133d657570fef3c7d7278ce991f7905a84efaeb1784ae134bfa18a75900d06b9"
+      },
+      {
+        "file": "src/app/features/companion/animation/body-choreography.ts",
+        "sha256": "2767332c6c23c5cd3fcf87d950a4ed30865b42be99e4faf42d881b79d77cfb42"
+      },
+      {
+        "file": "src/app/features/companion/animation/body-sprite-renderer.component.ts",
+        "sha256": "09e58692a71049a4dc10a7941bae169f732f32c53f5197db5358072d5e670e6d"
+      },
+      {
+        "file": "src/app/features/companion/animation/character-assets.ts",
+        "sha256": "6e343b91630616e701890984f8b3317cd568ec1c7215d6978dd9f5c8ba02cf49"
+      },
+      {
+        "file": "src/app/features/companion/animation/character-state.service.ts",
+        "sha256": "bd7c169d5dc5e53d81bba8b907e29b827b6e53ddb80c5e35e5867b88a99e741e"
+      },
+      {
+        "file": "src/app/features/companion/animation/character.model.ts",
+        "sha256": "aad1c1f5dadbd89f4e3ff93dcd142931c495adb3661a60bd30f69f611d102e15"
+      },
+      {
+        "file": "src/app/features/companion/animation/companion-motion.service.ts",
+        "sha256": "46ef3f460378fdb2e955781de8fe4ceea8ed6b61bd45b010f62c44d637624c3e"
+      },
+      {
+        "file": "src/app/features/companion/animation/companion-placement.ts",
+        "sha256": "eeceab88ff6cf8d2a583f4ecf14b16e1414e5542edd2d819dd761a4702bd97c6"
+      },
+      {
+        "file": "src/app/features/companion/animation/entry-variants.ts",
+        "sha256": "3cdc56545b3603e6173324179acd8857ac6f9175bfbf495781463cb344e54a55"
+      },
+      {
+        "file": "src/app/features/companion/animation/slingsip-asset-loader.service.ts",
+        "sha256": "11d9d5bde33d317ff855fd31d3ca7ae48135cf1deb41af5e8f75bfd3354832d3"
+      },
+      {
+        "file": "src/app/features/companion/animation/slingsip-assets.ts",
+        "sha256": "bf742486748de83ad11fc95b0d52cb6fdc2be2bc35e625aaa46d2dd536067351"
+      },
+      {
+        "file": "src/app/features/companion/animation/slingsip-png-choreography.ts",
+        "sha256": "8b815933d09e95735071048465c3e7a02d6b1476f2e5caee01d50833386aef59"
+      },
+      {
+        "file": "src/app/features/companion/animation/slingsip-png-renderer.component.ts",
+        "sha256": "8e144b631b87f025cfb809d9beb21c479fa6968c773360d28f6a0775c87894ad"
+      },
+      {
+        "file": "src/app/features/companion/animation/slingsip-sprite-geometry.ts",
+        "sha256": "6e269737821b92c61a01dff4edca4724efe9918c8c3e425ad1fd3956afe9f3d0"
+      },
+      {
+        "file": "src/app/features/companion/animation/sprite-animation.component.ts",
+        "sha256": "e10ea1265dea4e5dd030f000eb3e40c7edf33f336f771999920a3e2e86dd7d97"
+      },
+      {
+        "file": "src/app/features/companion/animation/swing-animation.service.ts",
+        "sha256": "75ba7bbda2d3f22269e07491c6d50ac91c91510571b3c462b5b5e6730b5cad4a"
+      },
+      {
+        "file": "src/app/features/companion/animation/swing-config.ts",
+        "sha256": "e1bdb93afedc02c2ddf8202166b38231f7a5e6d1bf0ccd2018b7b3477cb927fd"
+      },
+      {
+        "file": "src/app/features/companion/animation/swing-controller.ts",
+        "sha256": "c05ce7637917ee2e10121ccd3b19c91ff2fea94494e665ddc4c78dadb7d50965"
+      },
+      {
+        "file": "src/app/features/companion/animation/swing-motion.ts",
+        "sha256": "bfc5f35d6a8a439b344bed1e42ef188db8b66c05fd53503ab8b33ab6608736e8"
+      },
+      {
+        "file": "src/app/features/companion/animation/temporary-body-pack.ts",
+        "sha256": "949d52b5cd87e4362d7ab3ceaf26d99a82b1557d28a28fa8f553849b55c3ebd8"
+      },
+      {
+        "file": "src/app/features/companion/animation/web-geometry.ts",
+        "sha256": "4dbeec1a8426f5c73ca008a109c257458f9dae9329ec19858b443f29cefb24fe"
+      },
+      {
+        "file": "src/app/features/companion/animation/webm-player.ts",
+        "sha256": "eebbd931640776b12cf9ac438ac9a4c62d7291ab42f771bb52f969cae4d28620"
+      },
+      {
+        "file": "src/app/features/companion/animation-lab.component.ts",
+        "sha256": "bd6c901b654645309fc5b61157635bee577fa67ba464a0def862a52cbb04d0fd"
+      },
+      {
+        "file": "src/app/features/companion/companion-3d.component.ts",
+        "sha256": "93292c67287cc83a0a36030927ef24e7fd3efbba5ca33a37b969b9bcadb32ca1"
+      },
+      {
+        "file": "src/app/features/companion/companion-character.component.html",
+        "sha256": "59b9325262b1f6bac0ede18a25f4763188d38fa527fdc4c26ffe520f0f1c7071"
+      },
+      {
+        "file": "src/app/features/companion/companion-character.component.scss",
+        "sha256": "f0bd118e2971bcdd732e24013ca363c91a14d70dc9cd27005b1ca0858c96af68"
+      },
+      {
+        "file": "src/app/features/companion/companion-character.component.ts",
+        "sha256": "773e6a496affc4e4bbc6ba0a421484023d4290ee1385b0b160bf464fed5bf014"
+      },
+      {
+        "file": "src/app/features/companion/companion-input.service.ts",
+        "sha256": "5404725eafc2c2f2e259e18bdf469ec5f55672b865a87807e1e62ef81e6419a3"
+      },
+      {
+        "file": "src/app/features/companion/companion.component.html",
+        "sha256": "4f75c6ba3a91a63b7508d839ead1279179b93285071a34efb46c8a1d35675b03"
+      },
+      {
+        "file": "src/app/features/companion/companion.component.scss",
+        "sha256": "23ffdb04d1a54584d77637ee861525d2f966ca13754620ad20b1fa3ed1157273"
+      },
+      {
+        "file": "src/app/features/companion/companion.component.ts",
+        "sha256": "2e310c6fb115dd07b56a98110d75c46a3284247269f5a840e46b025855865b91"
+      },
+      {
+        "file": "src/app/features/companion/reminder-interaction.service.ts",
+        "sha256": "ea6bc6b005b7c536b43a5ce9727da5b1c259462abf43d22c2c0f874885fe0b5e"
+      },
+      {
+        "file": "src/app/features/companion/speech-bubble.component.html",
+        "sha256": "f5d5ae41f1c8cd07a4e14485b25cbc2a761c07e3567ae0034dd1f5e77251e512"
+      },
+      {
+        "file": "src/app/features/companion/speech-bubble.component.scss",
+        "sha256": "175523813c9967ba9f288faa37cda80d284c542620f309bc96b6c640d477a538"
+      },
+      {
+        "file": "src/app/features/companion/speech-bubble.component.ts",
+        "sha256": "b2c3402223e10c809873defc0ba0d14c94004d3d4c5c520238f9c07893a22a4c"
+      },
+      {
+        "file": "src/app/features/companion/three/bottle-controller.ts",
+        "sha256": "902be410e41879cd6b98e9dd25ed5b893c706de5ef67b55cbc598623f5cd6c22"
+      },
+      {
+        "file": "src/app/features/companion/three/character-animation-controller.ts",
+        "sha256": "4ad46ef616e2eaeeed13ea0dfffc1274326ce65a26eb4a372eee652e42ca1e09"
+      },
+      {
+        "file": "src/app/features/companion/three/character-animation-sequence.ts",
+        "sha256": "79848bc4a7090ffc6e775bc7bdb0aa3d09d1b5619428984c8155cb796a2a55a7"
+      },
+      {
+        "file": "src/app/features/companion/three/character-facial-controller.ts",
+        "sha256": "ff053e8342ac74c64a5ae5ec575c050a8fc8542ab6dd027bc5e661a8c58d06e1"
+      },
+      {
+        "file": "src/app/features/companion/three/character-model-controller.ts",
+        "sha256": "21293cf1fd7e7e14ba55f3668d95fc3fc1f6c47f564727d8b3505ce7cb2ecf01"
+      },
+      {
+        "file": "src/app/features/companion/three/companion-3d-assets.ts",
+        "sha256": "35e5ff49ab9afa99d94db709094dd49a7f2f9c02adf6f33024d944f244bcc780"
+      },
+      {
+        "file": "src/app/features/companion/three/companion-3d-scene.ts",
+        "sha256": "5798e04b072706d89f265ab909226c861a81ac7d818a79f00d5aee6f3fcd50da"
+      },
+      {
+        "file": "src/app/features/companion/three/companion-visual-hit-test.service.ts",
+        "sha256": "2abab907b74111f8ae9537670e4bf4693f31245fc3aaaa7ec3a4564204238147"
+      },
+      {
+        "file": "src/app/features/companion/three/web-controller.ts",
+        "sha256": "2da322f137ed1c329a6b748b800aa4175086bfbdedf1583c94f79cc9357c6c2b"
+      },
+      {
+        "file": "src/app/features/companion/web-renderer.component.ts",
+        "sha256": "7bf6ea2336de62016325c515fade7071ff957999fa3c95ba3960417bff93289d"
+      },
+      {
+        "file": "src/app/features/dashboard/daily-schedule.component.ts",
+        "sha256": "0600871064305044b485abd70950b2b6b797cb221ed8a9e417e65fca4ba0220c"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard-shell.component.html",
+        "sha256": "ca907c69dc1e4af86c08946261a04cc1bc95cc5c1d3e33d577f6ec27e25bb48e"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard-shell.component.scss",
+        "sha256": "2fc1f5c81c199e6932486be4ad55896b0c5d3505e0c88daed6e10720b70dbab8"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard-shell.component.ts",
+        "sha256": "886ba1897f63ac00a11a923dbdcf80fd90fe2d51079a64897aaefae732bb832f"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard.component.html",
+        "sha256": "bee250e2e42aa28414e1c124e5c7f44b5553e1e52bf19f85d7c9ea013496cb70"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard.component.scss",
+        "sha256": "4f6983468aa82e237ee7ef9c30113d58c52a014b367f7def2c663dcdc71c0f4f"
+      },
+      {
+        "file": "src/app/features/dashboard/dashboard.component.ts",
+        "sha256": "785dd3a4e3d7d282a4583ee89c2380c74c2bff6cf06e3ac5696dca1e043cc672"
+      },
+      {
+        "file": "src/app/features/dashboard/desktop-integration.component.ts",
+        "sha256": "77f2f487c71b4ddbfb5aeaf37d413690bdf80bbb08d450c37638ce131dd806cc"
+      },
+      {
+        "file": "src/app/features/dashboard/history-preview.component.ts",
+        "sha256": "38b102b7d81cfcd8ed2aad9db6ea7d0c5ff5f26b6594c2e5c5d3957af3f0d066"
+      },
+      {
+        "file": "src/app/features/dashboard/next-break.component.ts",
+        "sha256": "9b26a93d84542be7dc25234ed1fd29d0570c3374b801a99997cfb2c82f26fd2a"
+      },
+      {
+        "file": "src/app/features/dashboard/overview-card.scss",
+        "sha256": "5119810d30fad6a5cd88bd70806eacfadef34ed2f54d10e9fef51a38ae809d33"
+      },
+      {
+        "file": "src/app/features/dashboard/overview-format.ts",
+        "sha256": "d0a965ad9306ac44303692e5df7136f71c11d03e18e414e52a12f2bb6bb8dd63"
+      },
+      {
+        "file": "src/app/features/dashboard/overview-hero.component.scss",
+        "sha256": "ac52048a55dd23fbb92a67320d06aba5c19a58a05c87da4d1306347d38d4663b"
+      },
+      {
+        "file": "src/app/features/dashboard/overview-hero.component.ts",
+        "sha256": "f26c58ac214477df72bd1d95a3bc2f9133ee601402bda0e3fe7350748fe7a0cc"
+      },
+      {
+        "file": "src/app/features/dashboard/overview-state.service.ts",
+        "sha256": "5050f2ee0a3919c343edd9b497f634507bad3450e957662779bc338baa341ef7"
+      },
+      {
+        "file": "src/app/features/dashboard/quick-actions.component.ts",
+        "sha256": "ddf0383af6421c4f08180ff620f85d176476746204c370db87d98d456d9ab8df"
+      },
+      {
+        "file": "src/app/features/dashboard/remaining-water.component.ts",
+        "sha256": "8533a35c12a2aff7feb1112b827069ae960a5ba0d5498fd40bc58f0ac67ef2cc"
+      },
+      {
+        "file": "src/app/features/dashboard/reminder-status.component.ts",
+        "sha256": "dd19c80430b65c0ed5b5115720e6dd13079ce6c6cdd4730002ec4f533135fdef"
+      },
+      {
+        "file": "src/app/features/dashboard/ritual-page.scss",
+        "sha256": "0c4469ca381707b877e62f0fa85ab94279091399219a4f31c1a3468b0e881494"
+      },
+      {
+        "file": "src/app/features/dashboard/streak-card.component.ts",
+        "sha256": "c6447b48d512b25cecfb0e8a15a13fa6ed98e256eb8ab68f99cbbd858808c659"
+      },
+      {
+        "file": "src/app/features/dashboard/today-progress.component.html",
+        "sha256": "1046dc175dfffe19ecf350f3f4b364ed19e0ab01594189953bfb89ef90916e35"
+      },
+      {
+        "file": "src/app/features/dashboard/today-progress.component.scss",
+        "sha256": "a19c05463be209c48467af5a2ca296c9df788a82ae8a1dc9c2fdb3b6eaac3a7f"
+      },
+      {
+        "file": "src/app/features/dashboard/today-progress.component.ts",
+        "sha256": "c36464744b141430f2e3672734965a9ec16945a71a0420bcda0a338295e33473"
+      },
+      {
+        "file": "src/app/features/history/history.component.html",
+        "sha256": "4f4d188191e8f6964d9792dc7fc4358bf9e1740de8d2af596460244cdb56d054"
+      },
+      {
+        "file": "src/app/features/history/history.component.scss",
+        "sha256": "262542d6e0f93bdaf11aadf045b355191d488735d2ec01f13f443b1ec961174d"
+      },
+      {
+        "file": "src/app/features/history/history.component.ts",
+        "sha256": "379f40402a51dd7cfb6512651109fa19d8cb076245edfa0001ddf1b47b56fc35"
+      },
+      {
+        "file": "src/app/features/onboarding/dashboard-tour.component.html",
+        "sha256": "e64d7b427abdf24c240be73a4f4095331482bc9d50079a8d1483172f99e27eb7"
+      },
+      {
+        "file": "src/app/features/onboarding/dashboard-tour.component.scss",
+        "sha256": "abcda5677a584db99439ff2de7626f3b56eba392057ded3d37538dbbb00f6af2"
+      },
+      {
+        "file": "src/app/features/onboarding/dashboard-tour.component.ts",
+        "sha256": "38cf8cbb399f3188bea1f996aae3c1fcf4c21f0024987002fd0ddd66e6ee2ea6"
+      },
+      {
+        "file": "src/app/features/onboarding/onboarding.component.html",
+        "sha256": "bf2fdb939fcee403e532c5636b514d7a9416ab958205eede8faf21b881d2dbb3"
+      },
+      {
+        "file": "src/app/features/onboarding/onboarding.component.scss",
+        "sha256": "27aa8c1466e811da16101d46d291d4ecdcd732bb2f41a7e8777aac6ae4ed81e9"
+      },
+      {
+        "file": "src/app/features/onboarding/onboarding.component.ts",
+        "sha256": "3b69d1a1ee60e4a079ba50791092845a475c23f350c7b49dc3007a5ec25a902f"
+      },
+      {
+        "file": "src/app/features/onboarding/onboarding.service.ts",
+        "sha256": "3e896fe20c9015f084b1c0c5225a66c2a7bddd76b55468d39b431cba8048928c"
+      },
+      {
+        "file": "src/app/features/onboarding/tour-position.ts",
+        "sha256": "c2abe55b9db5b6b92d3030eca2841599c2d5df0e08377a85e10149794110af1d"
+      },
+      {
+        "file": "src/app/features/profile/profile-chip.component.html",
+        "sha256": "39410f464ed956dff581c8f4d7e603e5b770a29ffe8983a4fe191252bbfd808b"
+      },
+      {
+        "file": "src/app/features/profile/profile-chip.component.scss",
+        "sha256": "af3f939520e8415d3712a415e2abbe2918f961fefad09bb38ab2468350a57788"
+      },
+      {
+        "file": "src/app/features/profile/profile-chip.component.ts",
+        "sha256": "212cd27434a648c425749e5e17662ff1526249a17866eb008f04d76790b29d23"
+      },
+      {
+        "file": "src/app/features/settings/companion-preferences.component.ts",
+        "sha256": "d740ac12843e0efafc9f2cf4ade40e2fdc5b36ba61c20412396e3d622166e18d"
+      },
+      {
+        "file": "src/app/features/settings/settings.component.html",
+        "sha256": "c7bdd04fc21f265b2723f4ffe7c0ab6431cfcffe91dff0f31929bc70bd5c638f"
+      },
+      {
+        "file": "src/app/features/settings/settings.component.scss",
+        "sha256": "93be9658bba6152df697331aba6ec5a10bc623eca7b891bf83118a891099595b"
+      },
+      {
+        "file": "src/app/features/settings/settings.component.ts",
+        "sha256": "733f84601b4f1a818a43a93463c0a25e87b294488e34315973e2b6eb2a302fe2"
+      },
+      {
+        "file": "src/app/shared/drop.component.ts",
+        "sha256": "537c035def80df3259d749e91aa509052ba06c74d2a4aa498e627b59b887e9ff"
+      },
+      {
+        "file": "src/app/shared/slingsip-artwork.component.ts",
+        "sha256": "4c5b50cca26fcdb3022957b6a5c61e93d1d047b2802dac24653cf25d6b7b3b54"
+      },
+      {
+        "file": "src/app/shared/ui-icon.component.ts",
+        "sha256": "5566c538ba868568bfb589777f57f02514041eb8fbec2ac670072513ea8c50e1"
+      },
+      {
+        "file": "src/dashboard-theme.scss",
+        "sha256": "9e2bf77a247162f2bec7f20a1fbe3127ed0820893eeb9851369c873ff163f6ab"
+      },
+      {
+        "file": "src/index.development.html",
+        "sha256": "25a827b921859ac9af26f6abc2b97186977a050e5db0e3125e3fa66a0b235d34"
+      },
+      {
+        "file": "src/index.html",
+        "sha256": "d093435250a9082e0f8b0169e21ed4f2e87d1037cdc1c5b57fc5592282a86626"
+      },
+      {
+        "file": "src/main.ts",
+        "sha256": "81e57c2a84d8da9e8221d8faa9b543c59eae67a8877952e1c53b33c6f549748b"
+      },
+      {
+        "file": "src/slingsip-theme.scss",
+        "sha256": "290b5983b496b7236ca79ce4d543adc27c7edf6c0386188773cc7a2ab76cb7b8"
+      },
+      {
+        "file": "src/styles.scss",
+        "sha256": "11780f07384f66305a1524944980dfdbed64ef080593f2df417a614542e2ca6d"
+      },
+      {
+        "file": "electron/app-identity.ts",
+        "sha256": "5e7cb2881e8751be53e1fe188878a59ad54ea814bbcf701f7427493760fe8387"
+      },
+      {
+        "file": "electron/companion-preferences-storage.ts",
+        "sha256": "50346effc12f6e691037b35bc0ac42f760f20f579cdc27b77e3663a5c80c3d95"
+      },
+      {
+        "file": "electron/desktop-ipc.ts",
+        "sha256": "f4520208f3ee9065404e78fb223bf7a3c9ddad84995d6319d62cddecad023ca1"
+      },
+      {
+        "file": "electron/hydration-runtime.ts",
+        "sha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61"
+      },
+      {
+        "file": "electron/hydration-storage.ts",
+        "sha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2"
+      },
+      {
+        "file": "electron/main.ts",
+        "sha256": "1c0847d8e5b6ce4d1c6f2c2cf4920bdb64e48c2d7ba6953307982bbb606a20b7"
+      },
+      {
+        "file": "electron/preload.ts",
+        "sha256": "07ed5a7587562f19e5740000566b845f0bea7e182c1849c7bf48a76bdcd11b61"
+      },
+      {
+        "file": "electron/reminder-scheduler.ts",
+        "sha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645"
+      },
+      {
+        "file": "electron/restart-controller.ts",
+        "sha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b"
+      },
+      {
+        "file": "electron/tray-controller.ts",
+        "sha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15"
+      },
+      {
+        "file": "electron/tray-icon.ts",
+        "sha256": "152b96ac2ab078a147fddab056dcb83272355942c589695b44a44b46b2e4c789"
+      },
+      {
+        "file": "electron/user-profile-storage.ts",
+        "sha256": "8909bd994df4843922fb58d2e51de3952b8759c759f498eeb77834d2fd48d88b"
+      },
+      {
+        "file": "electron/window-geometry.ts",
+        "sha256": "e9ea1c027de50a409a115ee0f59fc4cd6bb2ea9fe14af7c788c7c60a99f52f97"
+      },
+      {
+        "file": "electron/window-manager.ts",
+        "sha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6"
+      },
+      {
+        "file": "electron/windows-startup.ts",
+        "sha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8"
+      },
+      {
+        "file": "shared/companion-preferences.ts",
+        "sha256": "c3f2f1ff0f10e7387ac820a17dc814b1cd80143c2deb3f02813699b21341d67f"
+      },
+      {
+        "file": "shared/desktop-contract.ts",
+        "sha256": "ab60c8c0934ab070f7decb908e92aaa489b528ae29d68bfd6e9edc34f15f0e0f"
+      },
+      {
+        "file": "shared/development-contract.ts",
+        "sha256": "b2412b6ce4cad35bac2b20cd0cfb55b188fc1735d383ec7bd8c2f10a44dd5805"
+      },
+      {
+        "file": "shared/hydration-history.ts",
+        "sha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574"
+      },
+      {
+        "file": "shared/hydration-schedule.ts",
+        "sha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131"
+      },
+      {
+        "file": "shared/hydration-settings.ts",
+        "sha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16"
+      },
+      {
+        "file": "shared/hydration.ts",
+        "sha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f"
+      },
+      {
+        "file": "shared/product-contract.ts",
+        "sha256": "80b517706688691c60d69cf5ecaa5ce9cbbaacaab8741559bfc26ed27f70b9f1"
+      },
+      {
+        "file": "shared/reminder-policy.ts",
+        "sha256": "426cf5e8552cb500263b4a1071aa810278368d9fa5fdd1b0a8aee3ac7f486bcb"
+      },
+      {
+        "file": "shared/user-profile.ts",
+        "sha256": "30dbf33f4501a804814e67c4431bfc81130f1c0ee0b174b5cc538459f87eaf3e"
+      },
+      {
+        "file": "scripts/build-electron.mjs",
+        "sha256": "0768dfd333e42e94c9f07497b8ab5490ffb61e8a98ffb2b29ceb22eb78b85824"
+      },
+      {
+        "file": "scripts/build-png-review.mjs",
+        "sha256": "8f37c538d76a90ea1b9e42aa2afc6d73ed37086b93a2f03852b3d5f10e1121c9"
+      },
+      {
+        "file": "scripts/build-reference-review.mjs",
+        "sha256": "6e3e5c862c46844f0483a8d6b46ce5ba2edccccb133db141de922b9982dc68cb"
+      },
+      {
+        "file": "scripts/capture-png-companion.mjs",
+        "sha256": "48055f65bb1bcbc5f7ddc7ab860d9b230c51e08be415667316116d83c53a0c02"
+      },
+      {
+        "file": "scripts/capture-reference-style.mjs",
+        "sha256": "d9116c22f35bd25967bf8599356bd32d9e7fa877ccf94531cf5442c159dbee61"
+      },
+      {
+        "file": "scripts/capture-visual-identity.mjs",
+        "sha256": "09ef7a657186bfe84e0feef855ffdd68b9336bc7ca98929bd4b0e443b9af3f50"
+      },
+      {
+        "file": "scripts/create-development-character.mjs",
+        "sha256": "eb84ba20b56f751b8c3ea8c8fb076a0d3114972839a697dbf33fb2ed02515b19"
+      },
+      {
+        "file": "scripts/dev-workflow.mjs",
+        "sha256": "e25ec3a0300ec443dce00ca1280103b63e62a2a0ee7a9da1c0dfba4cf0b9bbda"
+      },
+      {
+        "file": "scripts/dev.mjs",
+        "sha256": "7e0b5623698ee2ce03aaf9a87f5b6b8d3b0776c4be624e508461021a5d935a7d"
+      },
+      {
+        "file": "scripts/generate-placeholder-3d.mjs",
+        "sha256": "4bc3b9a0d0afe3e9f461f9769d4fb58e2ae89f27bb23b015739ebe1530b4027f"
+      },
+      {
+        "file": "scripts/generate-temporary-body-frames.mjs",
+        "sha256": "1550472a5f078f05e4241afbfac4e85dbc5d0c42b943b4207231e570b0aff22b"
+      },
+      {
+        "file": "scripts/inspect-3d-assets.mjs",
+        "sha256": "74604354759c1c739407ffc9773d3b5a1e2f2baefcba402d3809dd702507804d"
+      },
+      {
+        "file": "scripts/lib/png-rgba.mjs",
+        "sha256": "ea350710cce4e1101980e1bbbdd4f31c647344156f1b42ebc32ccd713df3ad22"
+      },
+      {
+        "file": "scripts/placeholder-3d.mjs",
+        "sha256": "e7d87363a390803cb31becfe6e39cb4711033d5a92bce88b946e6544261409a6"
+      },
+      {
+        "file": "scripts/prepare-slingsip-pngs.mjs",
+        "sha256": "208f2d62c53f08b46f2845e4d9c256bb93f77381904f85bfb23514d0851d4c49"
+      },
+      {
+        "file": "scripts/qa-desktop.mjs",
+        "sha256": "438b33bf099db75357741300e9f4410cc66c3ba8c931c3e763de8309c208ecfa"
+      },
+      {
+        "file": "scripts/start-electron.mjs",
+        "sha256": "25784bef3c2ed4be75aa9278bb7c834e24069cc2fab30b37586e24e65c9249f3"
+      },
+      {
+        "file": "tests/advanced-companion.spec.mjs",
+        "sha256": "9622afd19bb736f1a7c610859542c2241f3a56a20c00c462c5374bde1b3b247c"
+      },
+      {
+        "file": "tests/asset-integration.spec.mjs",
+        "sha256": "edb8a3258cca2cb86d277c259dab7592004dcf1224f72250595bfd013806a07b"
+      },
+      {
+        "file": "tests/body-rendering.spec.mjs",
+        "sha256": "d5f80c86451f522a119fc668520f8e147da2a39ad824b088c9ddfa2c8bcbd344"
+      },
+      {
+        "file": "tests/branding.spec.mjs",
+        "sha256": "33d75e363bed5fff101f15f271734b19583eb02d44578cf3272c1a34ff5b7456"
+      },
+      {
+        "file": "tests/character-motion.spec.mjs",
+        "sha256": "96defb0ceaff5ced68c830ebbf03cdfc8c2c0088bf15de939f00b76b26786146"
+      },
+      {
+        "file": "tests/companion-polish.spec.mjs",
+        "sha256": "e3bb4cf22baa2105b0bce6655004a264d0514283a9627476cf842f2b637acbf7"
+      },
+      {
+        "file": "tests/dashboard-redesign.spec.mjs",
+        "sha256": "13f73fc96af8e4692acf325d8e90235b26a97e4729fb98ee8fac33600726f691"
+      },
+      {
+        "file": "tests/development-refresh.spec.mjs",
+        "sha256": "a067601b18a814efca266a37834e0263fca46861bfe54310fa9876bc2e60c7f8"
+      },
+      {
+        "file": "tests/final-qa.spec.mjs",
+        "sha256": "7c9b15e93d15e8bcf4dc3e35cb636f1329e013bdabdb84a9dd3db06d5bde9a94"
+      },
+      {
+        "file": "tests/helpers/companion-visuals.mjs",
+        "sha256": "c319b3d13e4df268ecf363f53c366a57eead0f28a8fba1af814fbe7ebd3d7e2a"
+      },
+      {
+        "file": "tests/helpers/existing-user-electron.mjs",
+        "sha256": "79d3f8bbdf46e8ea3348a5d21851539e2c505c328e435a426c7b6681db4e97c7"
+      },
+      {
+        "file": "tests/hydration-history.spec.mjs",
+        "sha256": "abb94e25b3c4627873bcb3890c88fb6e7f213b987e5bd11a3fb89a99460603fa"
+      },
+      {
+        "file": "tests/hydration-interaction.spec.mjs",
+        "sha256": "e743ce22af022ee465aefd240848eac0172fb6d9bd6e0fb9c5b47f3f50d37053"
+      },
+      {
+        "file": "tests/hydration-persistence.spec.mjs",
+        "sha256": "cfbe63ae9e2c3a93ad25c7edfc20c9181ab9b58002ccd72ce7cfe637b5db99b8"
+      },
+      {
+        "file": "tests/hydration-scheduler.spec.mjs",
+        "sha256": "ab5928381ba083ae064111b2e1127236795b2192f39dc2c3f6100b81cf545952"
+      },
+      {
+        "file": "tests/onboarding.spec.mjs",
+        "sha256": "84651ed8de4388174a1708a44fbacb8702d1e9de26dd2746d5ffacf29085b269"
+      },
+      {
+        "file": "tests/phase-one.spec.mjs",
+        "sha256": "1f7a1a15102be4e2fadd91ced61f99b80f36db04ea4c8097b139edc18d5d20b6"
+      },
+      {
+        "file": "tests/phase-six.spec.mjs",
+        "sha256": "a14c805f97378bf716cb7de992823a54406f16c78caa7b32065d5573c86fd6a1"
+      },
+      {
+        "file": "tests/png-companion.spec.mjs",
+        "sha256": "593a259b2fc01812e429a9d133d4dd51ede49aced97339fa9112fe523f5880e9"
+      },
+      {
+        "file": "tests/restart.spec.mjs",
+        "sha256": "af4b4a725e305effdb41ec9de874efc93514d7efcc6b3e69bad63484cfbacef7"
+      },
+      {
+        "file": "tests/three-companion.spec.mjs",
+        "sha256": "963b3a2eb273244ea246decb11df8f26cff3a1bc2b764daa3fa6b3d6b2581f3e"
+      },
+      {
+        "file": "tests/webm-player.spec.mjs",
+        "sha256": "18c22be750afc2452f43d6a7e116c37f6d8abb6f762eca3ce864e86c20e71dbc"
+      },
+      {
+        "file": "tests/window-geometry.spec.mjs",
+        "sha256": "4ee73a947f8c01d4f731d7036492403e96c562f532f21640515665bb5d923136"
+      },
+      {
+        "file": "public/assets/character/companion-guardian.svg",
+        "sha256": "e426a27458544f4ed967bff5855b4d97faa23848afcb405dcf2d70a4de27bcbb"
+      },
+      {
+        "file": "public/assets/character/development/idle.svg",
+        "sha256": "ba797d3b852f752c3038935f9fd787eec5914820f221cbfa097bc97595cd0e20"
+      },
+      {
+        "file": "public/assets/character/development/walk.svg",
+        "sha256": "6b993a22f37d8659acf928c333feb60f05ad3fa380842caec7515066001ae1fc"
+      },
+      {
+        "file": "public/assets/character/temporary-3d/bottle.glb",
+        "sha256": "b8bdabbf6cca21221113b28d24d4ea00b9d58a48b6dd3dab68d45f5b59ca6cc1"
+      },
+      {
+        "file": "public/assets/character/temporary-3d/guardian.glb",
+        "sha256": "ce941bf38b7347a75f73e5aa765e1820b042d00a085795c80bc6bb6191a3d489"
+      },
+      {
+        "file": "public/assets/character/temporary-body/frames.svg",
+        "sha256": "ef4e26af944c5dba80720677beba389310f25d673e402bd7eeb5cb23fae2b4fc"
+      },
+      {
+        "file": "public/assets/character/temporary-body/manifest.json",
+        "sha256": "cc650f0ca12a7e1d618d6c1a44934b611999a63579078eb6d18f47e57a2e28b4"
+      },
+      {
+        "file": "public/assets/companion/slingsip/poses/ask.png",
+        "sha256": "0e41f42bf23f54cf536ed99c30bf9b0c99dfa5b4bff1ee13cba4440c7b92cf9a"
+      },
+      {
+        "file": "public/assets/companion/slingsip/poses/disappointed.png",
+        "sha256": "9ad0da61a51a252775f2ded283425ebf709b968e2817c60b046c5bdb6ed4a4df"
+      },
+      {
+        "file": "public/assets/companion/slingsip/poses/happy.png",
+        "sha256": "4a624230d3c59b02ba33b406d3381d4ad88e26554ac932d96eed6a6302bac8b2"
+      },
+      {
+        "file": "public/assets/companion/slingsip/poses/idle.png",
+        "sha256": "326c9d8edaa808e9ed0cb2da7341c01e161fe508edd84eefbc8c1b9ae9a4e0ce"
+      },
+      {
+        "file": "public/assets/companion/slingsip/poses/upside-down.png",
+        "sha256": "9a79ec28c032e9dc70c509a0023ad98743851e6865c1e99f1f646b4aff98bcdc"
+      },
+      {
+        "file": "public/assets/companion/slingsip/props/bottle.png",
+        "sha256": "2ef42e8d9949047b24e37512718c448467c2ad6819109450aa83de8f20798975"
+      },
+      {
+        "file": "public/assets/companion/slingsip/reference/slingsip-asset-sheet.png",
+        "sha256": "684650583cf5e2f9143f31be38fa61c268d9844314780a40be7d7c1902aafd41"
+      },
+      {
+        "file": "public/assets/companion/slingsip/swing/swing-1.png",
+        "sha256": "3c076c11b4316cfe5bca45a6cd199094e988a00aaa9a36beaf6d48dfe15a1168"
+      },
+      {
+        "file": "public/assets/companion/slingsip/swing/swing-2.png",
+        "sha256": "f625519d532a132f69fc645ba51a37ee33b21861d3d832a1df2b1086083af41f"
+      },
+      {
+        "file": "public/assets/companion/slingsip/swing/swing-3.png",
+        "sha256": "4eabe49c9f66ed1d69a84656a80c5e643136a279a321ede6087dff826ca28f5b"
+      },
+      {
+        "file": "public/assets/companion/slingsip/swing/swing-4.png",
+        "sha256": "420ca790a6cf4e3e02a90c5ad4c9a5a3b49016667e627bbbce8a6f72505f71ed"
+      },
+      {
+        "file": "public/assets/companion/slingsip/swing/swing-5.png",
+        "sha256": "5ab7c1886cc41a7d3de8ea987ca01ee5f65a65ca92731a270ad18820bf16c6e1"
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/profile-idle.png",
+        "sha256": "ffb3ff0fba3ec0719679bd95b4e14a85e80f6873f2d5bc6a12126be031630b53"
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/routine-upside-down.png",
+        "sha256": "495cf9463df2b6750b16688e6b43a5178281651f66b5632c9c5a84a6a0041ef9"
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/success-ready.png",
+        "sha256": "86933bf2f5c495c377057c834d65c2ca0d8f5ab8d17a190610e7770d49359ef3"
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/tour-dashboard.png",
+        "sha256": "247f4b36f32e1068fda1d06c3d36b30effa96198a07a90f2cbd0db7d2a771e0b"
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/welcome-hero.png",
+        "sha256": "5507fb5a6d2e147c65dbb91017248f183af44bb205d147a2bd0e4617e3f06026"
+      },
+      {
+        "file": "public/slingsip-logo.svg",
+        "sha256": "ab1e57829144ca718242e2a44a836dd9b8b8736f86743318ad1f510f373056ba"
+      },
+      {
+        "file": "tests/windows-pointer.cs",
+        "sha256": "e7e6b0ccb879e0167c9f01b32bcb1b4b06cb2924da00a1ae39d9947de9f7f724"
+      },
+      {
+        "file": "package.json",
+        "sha256": "d2886e990b7eb1d1c7841e3df83ba277bc756897ddf0f9988f87cd09c867c9fe"
+      },
+      {
+        "file": "package-lock.json",
+        "sha256": "08ee7b7221883d21ee81432dc989d6540ee906ae0ca52ea60918ea56f0a02bed"
+      },
+      {
+        "file": "angular.json",
+        "sha256": "673f30370f0ba744846bbf12942b9fc22227e2830e4153dfc494d43e24bea897"
+      }
+    ]
+  },
+  "productionArtifacts": [
+    {
+      "file": "dist/electron/main.mjs",
+      "bytes": 68805,
+      "sha256": "c92043f7725fac34c7bdaf40b0e97c1c46d0958ca948a93249344b65c09ecf12"
+    },
+    {
+      "file": "dist/electron/preload.cjs",
+      "bytes": 4627,
+      "sha256": "dfe97aa2ca174121396982d21724d2872e4285080336539136770c08653b3df4"
+    },
+    {
+      "file": "dist/renderer/browser/index.html",
+      "bytes": 725,
+      "sha256": "db373848fee9403841ab9df62eab71da82bdc3aa99b65a62af98892c5a536f0e"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-B0YS35HO.js",
+      "bytes": 18080,
+      "sha256": "e7f3b937d258e63f3fc790866a2ec769a5541d7b56c3fe2b9044a5fe430e09b9"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-BkCUupQB.js",
+      "bytes": 368,
+      "sha256": "6454f435ac0e7147e13c07021cabd39dd77c8b7b26f969db2670545648d3ef64"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-BVWHtUpK.js",
+      "bytes": 52990,
+      "sha256": "1853eeecfada5a17b479b4c7743eb432db385b23395464ae79c5e6afda2f5309"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-B_IZd-sI.js",
+      "bytes": 115103,
+      "sha256": "558bd90b59d9d299c6e9bdc8c1d736389258c4ff7f05fef3f043c61f1cbb9f6d"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-C8tNCRs6.js",
+      "bytes": 45404,
+      "sha256": "c05e4176144693e8c00c0f81cf317d509d063a4930a04b14bd003c4650f585bd"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-CEPIVnaA.js",
+      "bytes": 8717,
+      "sha256": "c75a5d627eca1121ef86f9ec339415ad0470ff047f2f49db4ad7f79879aeb2ab"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-Cym94iUG.js",
+      "bytes": 1329,
+      "sha256": "e3bf967f975c9431a3fb25a2de04ff28342805b076b4e44fde7edd23bea766f9"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-DfTHi8J5.js",
+      "bytes": 132,
+      "sha256": "f31535955d1825e7dbc8280a1012d5ec3326b25ec323704c1c722c645a51f748"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-DoopVfn_.js",
+      "bytes": 14678,
+      "sha256": "683c8f681fac6cbaf1f94d7e0e4fd63e05f23340e28b8c0d4d5bff8b1cce1e43"
+    },
+    {
+      "file": "dist/renderer/browser/chunk-GMv3g0SL.js",
+      "bytes": 1610,
+      "sha256": "1f4c6ed487c1d7858a8ff035072265f3503df0db440169f3dfcada7fec9628c3"
+    },
+    {
+      "file": "dist/renderer/browser/main-4PW46JPB.js",
+      "bytes": 249896,
+      "sha256": "6e74c0656d57ca318d9194fc22e4e94720831960ccd15ae3f4288b8be1542a51"
+    },
+    {
+      "file": "dist/renderer/browser/styles-5PDZ2G7R.css",
+      "bytes": 8310,
+      "sha256": "013dc8fc4974fd81aed118f91e6651b7dd9f53b54927983f79fc24c2706858dc"
+    }
+  ],
+  "focusedTests": {
+    "record": ".cache/slingsip-demo-freeze-tests.json",
+    "command": "npx playwright test tests/advanced-companion.spec.mjs tests/onboarding.spec.mjs tests/branding.spec.mjs tests/final-qa.spec.mjs --grep 'Production behavior hides|Fresh onboarding reuses|Brand identity keeps|SlingSip loads existing v2|Production completion is independent' --reporter=list,json --output=.cache/slingsip-demo-freeze-test-results",
+    "stats": {
+      "startTime": "2026-10-08T10:53:58.151Z",
+      "duration": 152464.57299999997,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Production behavior hides the animation lab and rejects development triggers",
+        "status": "expected",
+        "durationMs": 16730
+      },
+      {
+        "file": "branding.spec.mjs",
+        "title": "Brand identity keeps legacy data/session directories and isolates test profiles",
+        "status": "expected",
+        "durationMs": 27
+      },
+      {
+        "file": "branding.spec.mjs",
+        "title": "SlingSip loads existing v2 water, settings, history and streaks across a native restart",
+        "status": "expected",
+        "durationMs": 37075
+      },
+      {
+        "file": "final-qa.spec.mjs",
+        "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+        "status": "expected",
+        "durationMs": 42771
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Fresh onboarding reuses settings, persists only final completion, and safely supports edit, replay, reset and relaunch",
+        "status": "expected",
+        "durationMs": 54796
+      }
+    ]
+  },
+  "liveUiInspection": {
+    "record": ".cache/slingsip-demo-freeze-ui.json",
+    "createdAt": "2026-10-08T11:00:49.915Z",
+    "profile": "demo-freeze-e6a6ad29-7574-4231-befa-7d9ee51565e9",
+    "normalProfileTouched": false,
+    "productionCodeChanged": false,
+    "productionBehavior": true,
+    "pages": [
+      {
+        "role": "overview",
+        "title": "SlingSip — Desktop Hydration Companion",
+        "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard",
+        "devControls": 0,
+        "images": [
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          },
+          {
+            "url": "assets/companion/slingsip/poses/idle.png",
+            "broken": false
+          }
+        ],
+        "rendererNodeApis": {
+          "require": "undefined",
+          "ipcRenderer": "undefined",
+          "fs": "undefined"
+        },
+        "visibleText": "SlingSip.\nSwing in.\nSip up.\nKeep going.\nYOUR SPACE\nOverview\nHistory\nSettings\n✦\n\nSmall habits.\nSomething worth building.\n\nYour hydration sidekick.\nVersion 0.1.0\nQuit app ↗\nYour space /Overview\nDesktop connected\nTU\nTest User\n⌄\nYOUR DAILY SIDEKICK\nStay hydrated.\nKeep moving.\n\nA playful desktop companion that swings in when it’s time to drink.\n\nGood afternoon, Test User. · Thursday, October 8\nYOUR DAILY RITUAL\nToday's progress\nOne glass at a time\n0%\nof your daily goal\n0 / 2000 ml\n\nEvery glass is a good start.\n\nA little closer to your daily goal.\nKeep the good habit going.\n\nDrink +250 ml\nEvery glass is a little care for yourself.\nRemaining water\n2000ml\n\nTo reach your daily goal.\n\nNext water break\n5:00 PM\n\nIn 29 min\n\nReminder status\nActive\n\nGentle reminders every 1 hour.\n\nAdjust your routine\nCurrent streak\n0days\n\nSmall steps make a lasting habit.\n\nPersonal best\n0 days\nQuick actions\nDrink +250 ml\nPause reminders\nOpen companion\nSettings\nA GENTLE RHYTHM\nYour daily ritual\n5:00 PM\nNext water break\n\n250 ml · In 29 min\n\nUp next\n\nA little space for yourself, throughout the day.\n\nA few good days\nView history\nToday\n0%\n2026-10-08\n0 / 2000 ml\nAt home on your desktop.\n\nA quiet companion, right when you need one.\n\nConnected\nCompanion\nResting offscreen\nMouse input\nPasses through\nNext reminder\n5:00 PM\nPrimary display\n1920 × 1032 · 100%\nSmall habits. A healthier day.",
+        "accessibleLabels": "Application sidebar\nSlingSip\nDashboard navigation\nOpen profile for Test User\nClose profile\nToday's hydration progress\nAdjust settings\nToday hydration"
+      },
+      {
+        "role": "history",
+        "title": "SlingSip — Desktop Hydration Companion",
+        "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard/history",
+        "devControls": 0,
+        "images": [
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          }
+        ],
+        "rendererNodeApis": {
+          "require": "undefined",
+          "ipcRenderer": "undefined",
+          "fs": "undefined"
+        },
+        "visibleText": "SlingSip.\nSwing in.\nSip up.\nKeep going.\nYOUR SPACE\nOverview\nHistory\nSettings\n✦\n\nSmall habits.\nSomething worth building.\n\nYour hydration sidekick.\nVersion 0.1.0\nQuit app ↗\nYour space /History\nDesktop connected\nTU\nTest User\n⌄\nSMALL STEPS, REMEMBERED\nYour days, one glass closer.\n\nA simple record of your ritual. Today's progress updates as you drink.\n\nCURRENT STREAK\n0\nconsecutive days\nBEST STREAK\n0\nconsecutive days\nTHIS WEEK\n0/ 7\ndaily goals completed\n\nReach your daily goal to count a day. Today's unfinished goal keeps yesterday's streak until midnight. Your week starts on Monday.\n\nYOUR HISTORY\nA day at a time.\n\nYour first glass starts the story. Logged days will appear here.\n\nToday\n2026-10-08\nIn progress\n0 / 2000 ml\n0%",
+        "accessibleLabels": "Application sidebar\nSlingSip\nDashboard navigation\nOpen profile for Test User\nClose profile\nDaily hydration"
+      },
+      {
+        "role": "settings",
+        "title": "SlingSip — Desktop Hydration Companion",
+        "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/dashboard/settings",
+        "devControls": 0,
+        "images": [
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          }
+        ],
+        "rendererNodeApis": {
+          "require": "undefined",
+          "ipcRenderer": "undefined",
+          "fs": "undefined"
+        },
+        "visibleText": "SlingSip.\nSwing in.\nSip up.\nKeep going.\nYOUR SPACE\nOverview\nHistory\nSettings\n✦\n\nSmall habits.\nSomething worth building.\n\nYour hydration sidekick.\nVersion 0.1.0\nQuit app ↗\nYour space /Settings\nDesktop connected\nTU\nTest User\n⌄\nMAKE IT YOUR RITUAL\nA rhythm that fits you.\n\nSmall adjustments for your day. Your logged water stays with you.\n\nHYDRATION\nA glass at a time.\n\nChoose a goal and a glass that fit your routine.\n\nDaily goal\nml\n500–5000 ml per day\nGlass size\nml\nThe amount logged with each glass\nSCHEDULE\nSpace for a water break.\n\nSlingSip spreads your water breaks across these hours.\n\nWorking start\nWorking end\nLocal time. Start included; end excluded.\nREMINDERS\nA gentle nudge.\nAutomatic reminders\nWater breaks during your working hours.\nRemind me again after\nminutes\nUsed when you postpone or miss a reminder\nDESKTOP\nYour desktop stays yours.\n\nSlingSip appears for a water break, then rests offscreen.\n\nCompanion\nResting offscreen\nMouse input\nPasses through\nTray\nAvailable\n\nThe speech bubble and painted character accept clicks during a reminder. Empty space lets you keep using your desktop.\n\nSTARTUP\nA quiet start.\nLaunch with Windows\nSlingSip starts quietly in your tray when you sign in.\n\nStartup registration is disabled in isolated tests.\n\nSave settings\nDiscard changes\nChanges apply when you save.\nYOUR SIDEKICK\nA little personality.\n\nSound and movement preferences apply to your companion. Your water schedule stays the same.\n\nSound effects\nOff\nSound volume\n20% maximum output\nLow power animations\nLighter idle movement, simple web, 30 fps and no cursor tracking.\nCursor awareness\nA subtle glance when your pointer is nearby.\nCharacter reactions\nTap the painted character during a reminder. Empty space passes clicks through.\n\nYour system’s reduced-motion preference always takes priority.\n\nSave companion preferences",
+        "accessibleLabels": "Application sidebar\nSlingSip\nDashboard navigation\nOpen profile for Test User\nClose profile\nSound volume"
+      },
+      {
+        "role": "production-reminder",
+        "title": "SlingSip — Desktop Hydration Companion",
+        "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/dist/renderer/browser/#/companion",
+        "devControls": 0,
+        "images": [
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          },
+          {
+            "url": "assets/companion/slingsip/poses/idle.png",
+            "broken": false
+          },
+          {
+            "url": "assets/companion/slingsip/swing/swing-5.png",
+            "broken": false
+          },
+          {
+            "url": null,
+            "broken": false
+          },
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          },
+          {
+            "url": "assets/companion/slingsip/poses/ask.png",
+            "broken": false
+          },
+          {
+            "url": null,
+            "broken": false
+          },
+          {
+            "url": "slingsip-logo.svg",
+            "broken": false
+          }
+        ],
+        "rendererNodeApis": {
+          "require": "undefined",
+          "ipcRenderer": "undefined",
+          "fs": "undefined"
+        },
+        "visibleText": " SLINGSIP • WATER BREAK\nDrink 250 ml\n\nTime to hydrate. Your sidekick is here.\n\n0 / 2000 ml\n0%\nDrank it\nRemind me later\nOpen dashboard ↗\nHide reminder",
+        "accessibleLabels": "SlingSip desktop hydration companion\nDaily water progress\nSlingSip companion, an original web-swinging water guardian\nSlingSip hooded hydration sidekick"
+      }
+    ],
+    "errors": [],
+    "assetFailures": [],
+    "drink": {
+      "currentWaterMl": 250,
+      "bottleVisible": true
+    },
+    "later": {
+      "heading": "Okay, I’ll swing back.",
+      "retryIntervalMs": 300000,
+      "returnReserved": true
+    },
+    "retakePreparation": {
+      "pendingReturnCancelled": true,
+      "resumed": true
+    },
+    "native": {
+      "appName": "SlingSip",
+      "trayLabels": [
+        "Open SlingSip",
+        "Drink +250 ml",
+        "Pause reminders",
+        "",
+        "Today: 250 / 2000 ml",
+        "Next break: 5:00 pm",
+        "",
+        "Settings",
+        "Restart SlingSip",
+        "Quit SlingSip"
+      ],
+      "windows": [
+        {
+          "title": "SlingSip — Desktop Hydration Companion",
+          "devToolsOpen": false,
+          "preferences": {
+            "contextIsolation": true,
+            "nodeIntegration": false,
+            "sandbox": true
+          }
+        },
+        {
+          "title": "SlingSip — Desktop Hydration Companion",
+          "devToolsOpen": false,
+          "preferences": {
+            "contextIsolation": true,
+            "nodeIntegration": false,
+            "sandbox": true
+          }
+        }
+      ]
+    },
+    "trayTooltipSource": "SlingSip — Your hydration sidekick",
+    "passed": true,
+    "ownedProcessExited": true,
+    "method": "Isolated profile with existing production behavior, built file renderer and DOM actions. Real startup registration is disabled by the test profile; physical input is supported by the prior user-performed manual QA."
+  },
+  "verificationToolIssue": {
+    "initialRecord": ".cache/slingsip-demo-freeze-ui-initial.json",
+    "finding": "The audit attempted an unavailable Tray tooltip getter after the UI flows passed.",
+    "fix": "Audit-only correction: verify configured tooltip copy in source, and native application/tray menu/window branding at runtime.",
+    "productionDefect": false,
+    "finalInspectionPassed": true
+  },
+  "onboardingDemoControls": {
+    "replay": "Profile chip -> Replay welcome tour: dashboard tour only; completion/profile/hydration/history preserved.",
+    "reset": "Profile chip -> Reset onboarding -> confirm: only completion becomes false; name/createdAt/water/history/streak/settings preserved.",
+    "immediateWelcome": "After reset use Continue setup, or close/reopen the dashboard from tray.",
+    "completion": "Start my day persists completion; retain routine values to avoid a settings change.",
+    "verification": "Focused native onboarding regression includes exact hydration file preservation during replay/reset and profile/settings restoration."
+  },
+  "branding": {
+    "passed": true,
+    "logo": "slingsip-logo.svg",
+    "mascot": "Approved SlingSip PNG poses only",
+    "trayTooltip": "SlingSip — Your hydration sidekick",
+    "legacyIdentifiers": [
+      "%APPDATA%/Mizu data/session directory",
+      "Mizu Windows startup registration",
+      "Isolated mizu-overlay-tests paths"
+    ],
+    "legitimateInputHints": "Your name is a normal input hint, not placeholder/demo status copy."
+  },
+  "priorFinalQa": {
+    "record": "docs/slingsip-final-qa-2026-10-08-validation.json",
+    "recommendation": "READY FOR DEMO WITH ONE KNOWN TEST-HARNESS LIMITATION",
+    "automatedUniqueOutcomes": {
+      "total": 111,
+      "passed": 110,
+      "failed": 1,
+      "skipped": 0
+    },
+    "manualPhysicalQa": {
+      "label": "MANUAL PHYSICAL QA",
+      "outcome": "passed",
+      "recordedAt": "2026-10-08T10:44:21.103Z",
+      "verifiedBy": "user",
+      "evidenceType": "user_reported_manual_attestation",
+      "source": "Explicit user confirmation in this conversation",
+      "environment": {
+        "platform": "Windows",
+        "desktop": "unlocked"
+      },
+      "agentPerformed": false,
+      "countsAsAutomatedPass": false,
+      "checks": [
+        {
+          "id": "transparent_overlay_pass_through",
+          "description": "Transparent overlay regions pass clicks through",
+          "outcome": "passed"
+        },
+        {
+          "id": "background_apps_clickable",
+          "description": "Chrome and VS Code remain clickable behind the companion",
+          "outcome": "passed"
+        },
+        {
+          "id": "drank_it_clickable",
+          "description": "Drank it is clickable",
+          "outcome": "passed"
+        },
+        {
+          "id": "remind_later_clickable",
+          "description": "Remind me later is clickable",
+          "outcome": "passed"
+        },
+        {
+          "id": "dashboard_close_tray_reopen",
+          "description": "Dashboard X -> tray -> reopen works",
+          "outcome": "passed"
+        },
+        {
+          "id": "restart_preserves_state",
+          "description": "Restart SlingSip preserves profile/settings/water",
+          "outcome": "passed"
+        },
+        {
+          "id": "no_duplicates",
+          "description": "No duplicate tray/window/application process appears",
+          "outcome": "passed"
+        }
+      ],
+      "scope": "The seven explicitly reported manual checks. This does not assert that every step of the broader automated native pointer regression passed."
+    },
+    "confirmedProductionClickThroughDefect": false,
+    "automatedNativePointerRegression": "flaky; latest recorded result failed; not reclassified as passed",
+    "buildPassed": true,
+    "typecheckPassed": true,
+    "securityChecksPassed": true,
+    "dependencyVulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "recording": {
+    "durationSeconds": 60,
+    "capture": "Primary display capture including dashboard, separate companion window and tray.",
+    "steps": [
+      {
+        "from": 0,
+        "to": 15,
+        "action": "Prepared Welcome -> name -> existing routine -> Meet SlingSip -> one tour highlight -> Skip -> Start my day"
+      },
+      {
+        "from": 15,
+        "to": 21,
+        "action": "Personalized dashboard/progress -> Open companion"
+      },
+      {
+        "from": 21,
+        "to": 31,
+        "action": "Swing-in -> Drank it once -> uninterrupted bottle/+water -> right exit"
+      },
+      {
+        "from": 31,
+        "to": 39,
+        "action": "After hidden, Open companion -> Remind me later -> retry copy -> left exit"
+      },
+      {
+        "from": 39,
+        "to": 44,
+        "action": "History: genuine Today and existing prior records"
+      },
+      {
+        "from": 44,
+        "to": 50,
+        "action": "Settings: inspect existing routine/preferences without changing"
+      },
+      {
+        "from": 50,
+        "to": 57,
+        "action": "Dashboard X -> desktop/tray menu -> Open SlingSip"
+      },
+      {
+        "from": 57,
+        "to": 60,
+        "action": "Reopened dashboard holds on preserved name/progress/branding"
+      }
+    ],
+    "preconditions": [
+      "Production tray label has no Dev suffix and no development controls.",
+      "Enabled/unpaused reminders and at least two configured glasses remaining below goal.",
+      "No active companion or pending return; Pause then Resume clears a previous pending return.",
+      "Actual display name, prefilled routine, approved current artwork.",
+      "Visible SlingSip tray icon, clean primary desktop, notifications quiet, recorder captures display.",
+      "Set motion preferences for the intended full-animation shot; preserve accessibility support."
+    ],
+    "dataPreservation": "No hydration reset, fake history, registry migration or system-clock change. Rehearsal drink actions record real water."
+  },
+  "manuallyHideOrPrepare": [
+    "IDE/terminals/development supervisor",
+    "Personal browser tabs/documents/QA galleries",
+    "Notifications and unrelated desktop clutter",
+    "Profile popover except during profile shot",
+    "SlingSip tray icon visible; avoid OS startup registry view with legacy identifier"
+  ],
+  "knownLimitations": [
+    "Automated native pointer test remains a documented flaky harness limitation; manual physical click-through passed.",
+    "Production Later uses configured retry, five minutes by default; show scheduling without waiting.",
+    "Bottle display is short: keep it continuously visible at normal speed.",
+    "Current character is approved 2.5D PNG artwork with source resolution/crop limits; avoid extreme zoom/historical 3D assets.",
+    "Primary work area only; secure desktop/exclusive fullscreen/physical multi-monitor DPI changes are outside the planned take.",
+    "Windows software rendering can increase visible CPU."
+  ],
+  "cleanup": {
+    "checkedAt": "2026-10-08T11:06:19.9645385Z",
+    "isolatedElectronProcesses": [],
+    "isolatedStartupEntryNames": [],
+    "normalMainAlive": true
+  },
+  "handoff": {
+    "guide": "docs/slingsip-demo-freeze.md",
+    "readme": "README.md",
+    "documentationUpdates": [
+      "docs/slingsip-demo-freeze.md",
+      "docs/slingsip-demo-freeze-validation.json",
+      "README.md"
+    ],
+    "testGeneratedCaptures": [
+      "docs/previews/onboarding/01-welcome.png",
+      "docs/previews/onboarding/02-profile.png",
+      "docs/previews/onboarding/03-routine.png",
+      "docs/previews/onboarding/04-meet.png",
+      "docs/previews/onboarding/05-tour-progress.png",
+      "docs/previews/onboarding/06-tour-profile.png",
+      "docs/previews/onboarding/07-tour-tray.png",
+      "docs/previews/onboarding/08-ready.png",
+      "docs/previews/onboarding/09-personalized-dashboard.png",
+      "docs/previews/onboarding/10-profile-menu.png"
+    ],
+    "captureNote": "The existing onboarding regression refreshed ten isolated QA screenshots. These are test evidence, not production artwork or normal-user demo data.",
+    "stopAfterLocalPreparation": true
+  }
+}

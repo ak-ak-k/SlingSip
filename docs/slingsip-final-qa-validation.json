@@ -1,0 +1,1332 @@
+{
+  "createdAt": "2026-10-07T13:10:48.327Z",
+  "recommendation": "NOT READY",
+  "reason": "Critical current Windows physical click-through cannot be verified: native pointer helper denied access to the input desktop in both full and targeted runs. No assertions were skipped or weakened.",
+  "scope": {
+    "localOnly": true,
+    "normalProfileTouched": false,
+    "deployed": false,
+    "installerCreated": false,
+    "hydrationSchedulerStorageContractChanged": false
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "passed": true,
+    "log": ".cache/final-qa-typecheck.txt"
+  },
+  "productionBuild": {
+    "command": "npm test (npm run build:renderer + npm run build:electron before Playwright)",
+    "passed": true,
+    "initialRendererRawKB": 257.7,
+    "output": [
+      "dist/renderer/browser/index.html",
+      "dist/electron/main.mjs",
+      "dist/electron/preload.cjs"
+    ],
+    "packaging": "No installer/package release pipeline exists in this repo; none was introduced."
+  },
+  "fullRun": {
+    "command": "npm test -- --reporter=list,json",
+    "record": ".cache/final-qa-full.json",
+    "stats": {
+      "startTime": "2026-10-07T12:47:03.945Z",
+      "duration": 1161056.351,
+      "expected": 98,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "passed": 98,
+    "failed": 1,
+    "total": 99,
+    "failures": [
+      {
+        "file": "phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "passed": false,
+        "statuses": [
+          "unexpected"
+        ],
+        "durationMs": 23180,
+        "errors": [
+          "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Move 1038 546\nThe system cannot find the file specified\r\nInput desktop unavailable (Win32 5); thread desktop: Default\r\n"
+        ]
+      }
+    ]
+  },
+  "physicalPointerRecheck": {
+    "command": "npx playwright test tests/phase-one.spec.mjs --reporter=list,json --output=.cache/final-qa-pointer-recheck-results",
+    "record": ".cache/final-qa-pointer-recheck.json",
+    "stats": {
+      "startTime": "2026-10-07T13:07:12.759Z",
+      "duration": 22897.084,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "results": [
+      {
+        "file": "phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "passed": false,
+        "statuses": [
+          "unexpected"
+        ],
+        "durationMs": 22080,
+        "errors": [
+          "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Move 1038 546\nThe system cannot find the file specified\r\nInput desktop unavailable (Win32 5); thread desktop: Default\r\n"
+        ]
+      }
+    ],
+    "availability": "Read-only Desktop probe returned Default/Default immediately before launching the retry. Inside the native case the helper reported input desktop unavailable, Win32 5. A probe alone did not establish pointer injection access.",
+    "assertions": "Retained; added requested/actual cursor positions and read-only desktop diagnostics. No desktop switch or lock bypass."
+  },
+  "baselineDefect": {
+    "record": ".cache/final-qa-baseline.json",
+    "results": [
+      {
+        "file": "final-qa.spec.mjs",
+        "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+        "passed": false,
+        "statuses": [
+          "unexpected"
+        ],
+        "durationMs": 16320,
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"disabled in production\"\u001b[39m\nReceived string:    \u001b[31m\"allowed\"\u001b[39m\n\n  24 |     await expect(dashboard.getByTestId('delayed-reminder')).toHaveCount(0);\n  25 |     const debug=await dashboard.evaluate(async()=>{try{await window.desktopCompanion.resetTestClicks();return 'allowed';}catch(error){return error.message;}});\n> 26 |     expect(debug).toContain('disabled in production');\n     |                   ^\n  27 |     await dashboard.getByTestId('open-companion').click();\n  28 |     await expect(overlay.getByTestId('character')).toHaveAttribute('data-state','reminder');\n  29 |     const counter=await overlay.evaluate(async()=>{try{await window.desktopCompanion.recordTestClick();return 'allowed';}catch(error){return error.message;}});\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\final-qa.spec.mjs:26:19"
+        ]
+      }
+    ]
+  },
+  "criticalFlows": [
+    {
+      "id": "AI",
+      "flow": "Drink, next background reminder, saved restart",
+      "evidence": [
+        {
+          "file": "hydration-persistence.spec.mjs",
+          "title": "Persist 500 ml, restart, synchronize 750 ml, validate secure settings, and cancel slots at goal",
+          "passed": true
+        },
+        {
+          "file": "hydration-persistence.spec.mjs",
+          "title": "A real daily slot triggers after dashboard closes and keeps a single native companion",
+          "passed": true
+        },
+        {
+          "file": "final-qa.spec.mjs",
+          "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+          "passed": true
+        },
+        {
+          "file": "restart.spec.mjs",
+          "title": "Real production tray restart from active exits old Electron, restores data/preferences/history and retains one window pair",
+          "passed": true
+        },
+        {
+          "file": "restart.spec.mjs",
+          "title": "Real production tray restart from idle exits old Electron, restores data/preferences/history and retains one window pair",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "method": "Combined native UI and controlled-clock main/runtime evidence; not one uninterrupted recording."
+    },
+    {
+      "id": "AJ",
+      "flow": "Later, one retry, Drank once",
+      "evidence": [
+        {
+          "file": "hydration-interaction.spec.mjs",
+          "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+          "passed": true
+        },
+        {
+          "file": "hydration-scheduler.spec.mjs",
+          "title": "Hidden retry retains one reminder reservation, returns once, and uses configured production timing",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "method": "Combined native UI and controlled-clock main/runtime evidence; not one uninterrupted recording."
+    },
+    {
+      "id": "AK",
+      "flow": "Pause, no automatic prompt, resume future slot",
+      "evidence": [
+        {
+          "file": "hydration-history.spec.mjs",
+          "title": "Session pause and persistent OFF cancel active and delayed reminders; resume selects only future slots",
+          "passed": true
+        },
+        {
+          "file": "phase-six.spec.mjs",
+          "title": "Settings routes, inline validation, saved routine, retained tray, quick-add, active success, pause and OFF",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "method": "Combined native UI and controlled-clock main/runtime evidence; not one uninterrupted recording."
+    },
+    {
+      "id": "AL",
+      "flow": "Goal complete, restart preserves, no additional prompt",
+      "evidence": [
+        {
+          "file": "final-qa.spec.mjs",
+          "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+          "passed": true
+        },
+        {
+          "file": "hydration-scheduler.spec.mjs",
+          "title": "Goal completion cancels normal slots; settings recalculate; midnight rebuilds the next day",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "method": "Combined native UI and controlled-clock main/runtime evidence; not one uninterrupted recording."
+    },
+    {
+      "id": "AM",
+      "flow": "Running midnight archive, streak, reset, new schedule",
+      "evidence": [
+        {
+          "file": "hydration-scheduler.spec.mjs",
+          "title": "Goal completion cancels normal slots; settings recalculate; midnight rebuilds the next day",
+          "passed": true
+        },
+        {
+          "file": "hydration-scheduler.spec.mjs",
+          "title": "Runtime persists immediately, reserves native creation, and handles overnight cancellation",
+          "passed": true
+        },
+        {
+          "file": "hydration-history.spec.mjs",
+          "title": "Current streak preserves yesterday until midnight, completed today extends it immediately",
+          "passed": true
+        },
+        {
+          "file": "hydration-history.spec.mjs",
+          "title": "Missing and incomplete days break streaks while the historical best stays intact",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "method": "Combined native UI and controlled-clock main/runtime evidence; not one uninterrupted recording."
+    }
+  ],
+  "dependencyAudit": {
+    "command": "npm audit --omit=dev --json",
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "scope": "Known production dependency advisories at the time of this audit; not dev dependencies or penetration testing."
+  },
+  "performance": {
+    "command": "node scripts/qa-desktop.mjs",
+    "record": "docs/slingsip-final-qa-performance.json",
+    "passed": true,
+    "scope": "Short isolated production samples and six drink cycles, not an all-day soak."
+  },
+  "screenshots": {
+    "command": "node scripts/qa-desktop.mjs --capture-only",
+    "record": "docs/slingsip-final-qa-captures.json",
+    "gallery": "docs/previews/final-qa/index.html",
+    "status": "PASSED",
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "dashboardCapturesReviewed": true,
+    "files": [
+      {
+        "file": "docs/previews/final-qa/overview.png",
+        "width": 1144,
+        "height": 781,
+        "sha256": "1a72e457ff837039e7e659a472a93e36ef40328d892f14908475ab4b71aca1e9"
+      },
+      {
+        "file": "docs/previews/final-qa/history.png",
+        "width": 1144,
+        "height": 781,
+        "sha256": "844239c6a4fd2810582a1dbf208a6d37d23724e21cfc039db4263259cc8b3565"
+      },
+      {
+        "file": "docs/previews/final-qa/settings.png",
+        "width": 1144,
+        "height": 781,
+        "sha256": "c26b609e061f72f09989d44acce3756a85e86c8ecf19ba4b6d20154288cde132"
+      },
+      {
+        "file": "docs/previews/final-qa/reminder.png",
+        "width": 1920,
+        "height": 1032,
+        "sha256": "02ad9a921f1048adc83b5327407646f6d837898e4ce4768c7033191c47329b28"
+      },
+      {
+        "file": "docs/previews/final-qa/success-bottle.png",
+        "width": 1920,
+        "height": 1032,
+        "sha256": "5a8d8cd2f2ed2c72625424f533b5d41edc30fac71ff19176edc4a98ac68592fd"
+      }
+    ],
+    "artworkNote": "Current small PNG source crops retained; checker in gallery is a viewer background. Overlay captures taken during benchmark, settled dashboard pages recaptured after full final build."
+  },
+  "productionRendererScan": {
+    "oldBrandAndHistoricalCharacterReferencesFound": false,
+    "patterns": [
+      "Mizu",
+      "mizu",
+      "development-placeholder",
+      "companion-guardian",
+      "temporary-3d",
+      "temporary-body"
+    ],
+    "scope": "Built runtime JavaScript; archived public files intentionally remain disconnected."
+  },
+  "manualRemaining": [
+    "Native clicks through blank overlay into Chrome, VS Code and desktop icons on recording desktop",
+    "Physical 125%/150% display changes and taskbar positions",
+    "Real Windows sign-in after startup registration",
+    "Extended sleep/lock and all-day CPU/memory observation",
+    "OS tray creation failure fault injection"
+  ],
+  "intentionalLegacy": [
+    "Mizu userData/session directory",
+    "Mizu Windows startup Run identifier",
+    "hydration.json schema and keys",
+    "Historical 3D/SVG/WebM/temporary assets and tests, original briefs/reports"
+  ],
+  "changedProductionFiles": [
+    {
+      "file": "electron/desktop-ipc.ts",
+      "sha256": "f038db2e9e4c92eb721f72b52a221eed218b9047b661e3f49bc0efb1e7e54a8b"
+    },
+    {
+      "file": "src/app/core/services/desktop.service.ts",
+      "sha256": "eef7e1665b39f905f83ce84f9b830f194b44da8d861dc03712d448e2f334a140"
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-asset-loader.service.ts",
+      "sha256": "11d9d5bde33d317ff855fd31d3ca7ae48135cf1deb41af5e8f75bfd3354832d3"
+    },
+    {
+      "file": "src/index.html",
+      "sha256": "d093435250a9082e0f8b0169e21ed4f2e87d1037cdc1c5b57fc5592282a86626"
+    },
+    {
+      "file": "src/index.development.html",
+      "sha256": "25a827b921859ac9af26f6abc2b97186977a050e5db0e3125e3fa66a0b235d34"
+    },
+    {
+      "file": "angular.json",
+      "sha256": "673f30370f0ba744846bbf12942b9fc22227e2830e4153dfc494d43e24bea897"
+    }
+  ],
+  "cases": [
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Four authored entry weights are conditional on the last variant and never repeat",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 158,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "All four paths settle at one local-DIP reminder and keep web grips anatomical at desktop/DPI sizes",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 25388,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Finite frame owner pauses without RAF or time jumps, caps rendering and aborts cleanly",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 6,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Visual/audio preferences validate independently, restore safely and start muted",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 9,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Lab previews every variant, local cursor/reactions and exits without water or scheduler side effects",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 35265,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 57702,
+      "errors": []
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Production behavior hides the animation lab and rejects development triggers",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 16631,
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Named production-style clips map without eighteen placeholder-specific names, and root travel is removed",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 32,
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Web grip aliases and model normalization keep the attachment fixed while real limbs move",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 88,
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Facial moods compose with blink, reset to neutral and discover independent left/right channels",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 4,
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Success, Later and Ignore body sequences fit the existing business phases and continuously sample generic SwingIn",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 4,
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "All missing body PNGs use only the brand mark; missing bottle keeps real drink feedback and no alternate mascot",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 22223,
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Temporary pack supplies genuinely different body frames and authored anchors for all requested clips",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 224,
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Two-web choreography clears the old strand before the next cast at all entry/exit variants and DIP sizes",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 127,
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Bottle web uses each frame hand, drops before 10-degree damped swing, feedback, retract and stays on desktop",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 25,
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Native approved-pose fallback changes body frames while the existing path moves, idles without JS RAF and delivers dynamic water feedback",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 23229,
+      "errors": []
+    },
+    {
+      "file": "branding.spec.mjs",
+      "title": "Brand identity keeps legacy data/session directories and isolates test profiles",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 15,
+      "errors": []
+    },
+    {
+      "file": "branding.spec.mjs",
+      "title": "SlingSip loads existing v2 water, settings, history and streaks across a native restart",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 36469,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing states allow complete success and later flows without walking or invalid shortcuts",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 7,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing timing and trajectory are independent of 30, 60 and 144 Hz, including stalls",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Responsive arcs enter left, dip, rise and exit either edge; entry web length stays fixed",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1638,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Arrival brakes smoothly, recoils and preserves body and web continuity into either exit",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 9,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Bottle stays on the animated hand and lowers within desktop bounds during a short delivery",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 249,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Native swing success logs immediately, delivers a bottle, exits right, stops RAF and reuses the window",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 29709,
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Reduced motion keeps the reminder usable without travel or ambient frame loops",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 20260,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard labels use local days and ceil the actual deadline without a seconds loop",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Next break reflects goal, OFF, pause, hidden retry, active and exhausted scheduling",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 24,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Manual Open companion respects single reminder, pause, OFF and goal without changing automatic hours",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard actions share canonical intake, prompt credits, tray state, pause and final-glass clamping",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 23490,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "New dashboard commands reject companion roles and malformed pause without exposing Node",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 16131,
+      "errors": []
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard layouts, real history and schedule, keyboard and reduced motion at desktop and compact sizes",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 21204,
+      "errors": []
+    },
+    {
+      "file": "development-refresh.spec.mjs",
+      "title": "Real dev workflow replaces main/preload without stale instances, preserves data, supports HMR and refreshes updated PNG bytes",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 69385,
+      "errors": []
+    },
+    {
+      "file": "final-qa.spec.mjs",
+      "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 42949,
+      "errors": []
+    },
+    {
+      "file": "final-qa.spec.mjs",
+      "title": "Failure of optional development completion telemetry cannot keep a successful reminder visible",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 22933,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Phase 6 settings validate limits and booleans while migrating Phase 5 preferences",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 11,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "History deduplicates dates and rebuilds derived fields without trusting corrupt records",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 2,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Current streak preserves yesterday until midnight, completed today extends it immediately",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 2,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Missing and incomplete days break streaks while the historical best stays intact",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Legacy previous-day migration finalizes once, preserves its original goal and skips absent dates",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Today is live and unique; goal changes preserve intake and finalized historical goals",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 5,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Tray quick add shares capped logging, persistence, broadcasts and active-reminder deduplication",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 6,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "Session pause and persistent OFF cancel active and delayed reminders; resume selects only future slots",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 10,
+      "errors": []
+    },
+    {
+      "file": "hydration-history.spec.mjs",
+      "title": "A tray drink during pending native creation satisfies that prompt without a second credit",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 2,
+      "errors": []
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Session water increases by one glass, deduplicates reminders, and caps at the goal",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 6,
+      "errors": []
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Hydration restores the underlying saved daily record on restart",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Production retries use five minutes; development uses ten seconds",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 82234,
+      "errors": []
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Secure intake IPC rejects stale/invalid requests, credits once, and renders goal completion at 100%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 25680,
+      "errors": []
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "Persist 500 ml, restart, synchronize 750 ml, validate secure settings, and cancel slots at goal",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 54809,
+      "errors": []
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "A real daily slot triggers after dashboard closes and keeps a single native companion",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 29315,
+      "errors": []
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "Electron storage recovers corruption, resets yesterday, and survives an unavailable store",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 50075,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Default schedule has eight dynamic start-inclusive/end-exclusive sessions",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Settings reject invalid numbers, clocks, reversed hours, and excessive sessions",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 23,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Late opening selects only a strictly future slot, respects boundaries, and stops at goal",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 4,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Local-day restoration keeps today, resets yesterday, and sanitizes corrupt data",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Water clamps a partial final glass and reminder credits reset only with the local day",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Main scheduler triggers automatically, skips overlapping slots, and resumes after hiding",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 7,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Main scheduler never backfills on late startup, resume, or a large clock jump",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Goal completion cancels normal slots; settings recalculate; midnight rebuilds the next day",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 5,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Runtime persists immediately, reserves native creation, and handles overnight cancellation",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 8,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Unavailable storage keeps the runtime usable and production rejects development triggers",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 8,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "The isolated 15-second development timer neither changes daily slots nor overlaps an active run",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 2,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Hidden retry retains one reminder reservation, returns once, and uses configured production timing",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 5,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Retry timing changes replace one pending timeout; hidden tray drink satisfies it without reappearance",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Pause, OFF, explicit hide, midnight and quit cancel hidden returns without affecting persisted water",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 11,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Suspension rejects stale tokens and hidden requests; completing a goal prevents a return",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "hydration-scheduler.spec.mjs",
+      "title": "Lowering the goal cancels a hidden reservation immediately; unrelated settings keep its deadline",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "phase-one.spec.mjs",
+      "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+      "passed": false,
+      "statuses": [
+        "unexpected"
+      ],
+      "durationMs": 23180,
+      "errors": [
+        "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Move 1038 546\nThe system cannot find the file specified\r\nInput desktop unavailable (Win32 5); thread desktop: Default\r\n"
+      ]
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Settings routes, inline validation, saved routine, retained tray, quick-add, active success, pause and OFF",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 46341,
+      "errors": []
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "History migrates and renders live today, historical goals, streaks and restart without duplicates",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 33510,
+      "errors": []
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Windows startup ON/OFF verifies an isolated OS registration with a spaced path",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 17032,
+      "errors": []
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Autostart stays quiet; tray Settings reopens once; pause resets after restart; tray Quit exits cleanly",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 40029,
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Production PNGs retain their original alpha and bytes; clipping excludes sheet captions and neighboring heads",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 107,
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "PNG poses follow the unchanged path progress, invert only once, release webs and attach a bounded damped bottle",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 109,
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native default uses five PNG swing frames, authored alpha/hit silhouettes, ask/happy, immediate water and PNG bottle; hidden work stops",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 23401,
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native inverted PNG stays inverted, pauses idle, returns to normal success; lab stays isolated and reduced motion skips frame cycling",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 26768,
+      "errors": []
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native Later and Ignore show the supplied disappointed head, exit left, preserve retry/window and cancel without extra water",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 46578,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Restart persists before cleanup, schedules one replacement and exits once; failed persistence keeps the session",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 5,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Development compilation failure keeps the old child; assets refresh only renderers and quit is graceful",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Development holds a manual restart during rebuilding and starts one child after the old process exits",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from active exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 42865,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from idle exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 40893,
+      "errors": []
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from paused exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 41026,
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Local GLB is a skinned original rig with all clips, real skeletal movement and facial morphs",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 34,
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Bottle is a real GLB prop and dynamic 3D web endpoints release without leftover geometry",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 17,
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native approved-only fallback retains alpha, body phases, two webs, one glass and hidden cleanup",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 22315,
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native approved fallback pause, reduced motion, retry and isolated lab preserve dashboard and saved water",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 28124,
+      "errors": []
+    },
+    {
+      "file": "webm-player.spec.mjs",
+      "title": "WebM decodes and plays, releases resources, rejects missing clips, and survives stale cancellation",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 16876,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1366 × 768 at 100%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1366 × 768 at 125%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1366 × 768 at 150%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 0,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1920 × 1080 at 100%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 0,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1920 × 1080 at 125%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 1920 × 1080 at 150%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 2560 × 1440 at 100%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 2560 × 1440 at 125%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 0,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work area: 2560 × 1440 at 150%",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 0,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "Work-area offsets account for taskbars on any edge and a primary monitor with a negative origin",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 1,
+      "errors": []
+    },
+    {
+      "file": "window-geometry.spec.mjs",
+      "title": "An unusually small work area contains the entire native window",
+      "passed": true,
+      "statuses": [
+        "expected"
+      ],
+      "durationMs": 3,
+      "errors": []
+    }
+  ],
+  "cleanup": {
+    "record": ".cache/final-qa-cleanup.json",
+    "createdAt": "2026-10-07T13:12:45.9434469Z",
+    "electronTestProcesses": [],
+    "nodeTestProcesses": [],
+    "testStartupEntries": [],
+    "normalProfileChanged": false
+  }
+}

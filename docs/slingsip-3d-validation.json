@@ -1,0 +1,59 @@
+{
+  "typecheck": "passed",
+  "productionRendererAndElectronBuild": "passed",
+  "focused": {
+    "startTime": "2026-10-06T12:16:03.433Z",
+    "duration": 99900.038,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "completeSuite": {
+    "startTime": "2026-10-06T12:21:02.016Z",
+    "duration": 814100.3339999999,
+    "expected": 84,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "newIntegrationTests": [
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Named production-style clips map without eighteen placeholder-specific names, and root travel is removed",
+      "status": "expected"
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Web grip aliases and model normalization keep the attachment fixed while real limbs move",
+      "status": "expected"
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Facial moods compose with blink, reset to neutral and discover independent left/right channels",
+      "status": "expected"
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Success, Later and Ignore body sequences fit the existing business phases and continuously sample generic SwingIn",
+      "status": "expected"
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Missing final files explicitly fall back to existing temporary GLBs without claiming production assets",
+      "status": "expected"
+    }
+  ],
+  "failures": [
+    {
+      "file": "phase-one.spec.mjs",
+      "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+      "status": "unexpected",
+      "errors": [
+        "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Move 1132 462\nThe system cannot find the file specified\r\n"
+      ]
+    }
+  ],
+  "physicalPointerAssertionsRetained": true,
+  "finalAssetCompatibilityVerified": false
+}

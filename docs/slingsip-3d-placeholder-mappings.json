@@ -1,0 +1,88 @@
+{
+  "source": "assets/character/temporary-3d/guardian.glb",
+  "temporary": true,
+  "clips": [
+    "swing-grab",
+    "swing-down",
+    "swing-bottom",
+    "swing-up",
+    "release",
+    "mid-air",
+    "attach",
+    "settle",
+    "idle",
+    "success",
+    "web-shot",
+    "bottle-hold",
+    "retract",
+    "hanging",
+    "asking",
+    "waiting",
+    "disappointed",
+    "exit-swing"
+  ],
+  "animationMapping": {
+    "SwingIn": "swing-down",
+    "ArriveSettle": "settle",
+    "AskGesture": "asking",
+    "Smile": "success",
+    "WebShoot": "web-shot",
+    "BottlePresent": "bottle-hold",
+    "Success": "success",
+    "SwingExitRight": "exit-swing",
+    "SwingExitLeft": "exit-swing",
+    "Wait": "waiting",
+    "Disappointed": "disappointed",
+    "Idle": "idle",
+    "swing-grab": "swing-grab",
+    "swing-down": "swing-down",
+    "swing-bottom": "swing-bottom",
+    "swing-up": "swing-up",
+    "release": "release",
+    "mid-air": "mid-air",
+    "attach": "attach",
+    "retract": "retract",
+    "hanging": "hanging"
+  },
+  "morphMapping": {
+    "neutral": [],
+    "blink": [
+      "Eye_L:blink",
+      "Eye_L_Rim:blink",
+      "Eye_R:blink",
+      "Eye_R_Rim:blink"
+    ],
+    "smile": [
+      "Mouth:smile"
+    ],
+    "happy": [],
+    "curious": [],
+    "waiting": [],
+    "disappointed": [
+      "Mouth:frown"
+    ],
+    "excited": []
+  },
+  "socketMapping": {
+    "grip": "WebGrip",
+    "freeHand": "BottleGrip",
+    "boot": "Foot_L",
+    "head": "Head",
+    "chest": "Chest"
+  },
+  "missingDedicatedMorphs": [
+    "neutral",
+    "happy",
+    "curious",
+    "waiting",
+    "excited"
+  ],
+  "strippedRootTracks": [],
+  "unboundTracks": [],
+  "warnings": [
+    "No dedicated happy morph target.",
+    "No dedicated curious morph target.",
+    "No dedicated waiting morph target.",
+    "No dedicated excited morph target."
+  ]
+}

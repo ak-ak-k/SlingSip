@@ -1,0 +1,12 @@
+<section class="speech-bubble" [class.appearing]="visible()" [class.is-success]="state() === 'success' || state() === 'delivering-bottle'"
+  [class.is-waiting]="state() === 'waiting'" [style.--bubble-time]="motion.bubbleAppearMs + 'ms'"
+  [style.--bubble-rise]="motion.bubbleRisePx + 'px'" [style.--bubble-scale]="motion.bubbleStartScale"
+  [style.--message-time]="motion.messageAppearMs + 'ms'" [style.--message-rise]="motion.messageRisePx + 'px'" data-overlay-interactive aria-labelledby="overlay-heading">
+  <div class="bubble-eyebrow"><img src="slingsip-logo.svg" alt=""> SLINGSIP • WATER BREAK</div>
+  <div class="bubble-message" role="status" aria-live="polite" aria-atomic="true" [attr.data-canonical-heading]="heading()">
+    @if (copy().confirmed) { <span class="confirmation" aria-hidden="true">✓</span> }
+    <div><h1 id="overlay-heading">{{ copy().title }}</h1><p class="message">{{ copy().body }}</p></div>
+  </div>
+  <ng-content />
+  @if (error()) { <p class="error" role="alert">{{ error() }}</p> }
+</section>

@@ -1,0 +1,7 @@
+:host { display: block; color: var(--text); }
+.page { max-width: 1400px; margin: 0 auto; padding: 37px clamp(22px, 3vw, 48px) 38px; }
+h1 { font-size: clamp(30px, 3vw, 40px); line-height: 1.25; margin: 13px 0; }h1 span { color: var(--mint); }
+.intro { color: var(--muted); font-size: 12px; line-height: 1.8; margin-bottom: 29px; }
+h2 { margin: 8px 0 15px; }
+p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+@media (max-width: 700px) { .page { padding: 30px 18px; }h1 { font-size: 30px; } }

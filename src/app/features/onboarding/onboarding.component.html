@@ -1,0 +1,75 @@
+<section class="onboarding" data-testid="onboarding" [attr.data-stage]="flow.stage()" aria-labelledby="onboarding-heading" (keydown)="keydown($event)">
+  <header class="welcome-top">
+    <div class="brand"><img src="slingsip-logo.svg" alt=""><span>SlingSip<span class="mint">.</span></span></div>
+    <button class="text-button" type="button" (click)="flow.defer()" [disabled]="desktop.busy()">Set up later <span aria-hidden="true">↗</span></button>
+  </header>
+  <div class="setup-wrap">
+    @if (index() >= 0) {
+      <ol class="step-list" aria-label="Setup progress">
+        @for (step of steps; track step; let i = $index) {
+          <li [class.current]="i === index()" [class.finished]="i < index()" [attr.aria-current]="i === index() ? 'step' : null"><span>{{ i + 1 }}</span>{{ step }}</li>
+        }
+      </ol>
+    }
+    <div class="setup-card" [class.routine-step]="flow.stage() === 'routine'" [class.ready-step]="flow.stage() === 'ready'">
+      <div class="art-panel" aria-hidden="true">
+        <svg class="web-lines" viewBox="0 0 440 460" fill="none"><path d="M-70 405 Q245 570 495 110 M-45 355 Q250 520 465 90" /><circle cx="218" cy="240" r="160"/><path class="fine-web" d="M425 -35 Q278 140 225 228"/></svg>
+        <div class="art-glow"></div>
+        <img class="setup-mascot" [src]="image()" alt="" [hidden]="imageFailed()" (error)="imageFailed.set(true)" data-testid="onboarding-art">
+        @if (imageFailed()) { <img class="asset-fallback" src="slingsip-logo.svg" alt=""> }
+        <span class="art-caption">A LITTLE COMPANY. A STRONGER HABIT.</span>
+      </div>
+      <form class="setup-copy" (submit)="next($event)">
+        <div class="eyebrow">{{ flow.stage() === 'ready' ? 'YOUR DAY STARTS HERE' : 'YOUR HYDRATION SIDEKICK' }}</div>
+        <h1 id="onboarding-heading" tabindex="-1">{{ heading() }}</h1>
+        @switch (flow.stage()) {
+          @case ('welcome') {
+            <p class="intro">Your desktop hydration sidekick.</p>
+            <p class="ritual">Swing in.<br><span>Sip up.</span><br>Keep going.</p>
+            <p class="muted">A little company for the habits that keep you moving.</p>
+            <p class="quote">Big days are built one small move at a time.</p>
+          }
+          @case ('profile') {
+            <p class="intro">A good sidekick always knows who it's helping.</p>
+            <label for="onboarding-name">Display name</label>
+            <input id="onboarding-name" data-testid="onboarding-name" type="text" placeholder="Your name" autocomplete="given-name" maxlength="96" required [value]="name()" (input)="input($event)" [attr.aria-invalid]="(attempted() || name().length > 0) && !!nameError()" aria-describedby="name-hint">
+            <p id="name-hint" class="field-hint" [class.invalid]="(attempted() || name().length > 0) && nameError()" [attr.role]="(attempted() || name().length > 0) && nameError() ? 'alert' : null">{{ (attempted() || name().length > 0) && nameError() ? nameError() : 'Just your name. Saved only on this device.' }}</p>
+            <div class="profile-preview" aria-live="polite"><span class="avatar">{{ initials() }}</span><div><strong>{{ previewName() }}</strong><span>Your next small habit starts here.</span></div></div>
+          }
+          @case ('routine') {
+            <p class="intro">Make room for a few small water breaks.</p>
+            <div class="field-grid">
+              <div><label for="onboarding-goal">Daily goal <span>ml</span></label><input id="onboarding-goal" data-testid="onboarding-goal" type="number" required step="1" [min]="limits.goalMin" [max]="limits.goalMax" [value]="routine().dailyGoalMl" (input)="number('dailyGoalMl', $event)" aria-describedby="routine-hint"></div>
+              <div><label for="onboarding-glass">Glass size <span>ml</span></label><input id="onboarding-glass" data-testid="onboarding-glass" type="number" required step="1" [min]="limits.glassMin" [max]="limits.glassMax" [value]="routine().glassSizeMl" (input)="number('glassSizeMl', $event)" aria-describedby="routine-hint"></div>
+              <div><label for="onboarding-start">Active from</label><input id="onboarding-start" data-testid="onboarding-start" type="time" required [value]="routine().workingStart" (input)="time('workingStart', $event)" aria-describedby="routine-hint"></div>
+              <div><label for="onboarding-end">Until</label><input id="onboarding-end" data-testid="onboarding-end" type="time" required [value]="routine().workingEnd" (input)="time('workingEnd', $event)" aria-describedby="routine-hint"></div>
+            </div>
+            <p id="routine-hint" class="field-hint" [class.invalid]="routineError()" [attr.role]="routineError() ? 'alert' : null">{{ routineError() || 'Local time. You can change your routine in Settings anytime.' }}</p>
+            <p class="quote">Small sips. Strong habits.</p>
+          }
+          @case ('intro') {
+            <div class="meet-copy"><p>I'll swing in when it's time for water.</p><p>If you're busy, send me away and I'll come back later.</p><p>I'll keep an eye on your progress while staying out of your way.</p></div>
+            <p class="quote">Stay light. Stay ready.</p>
+          }
+          @case ('ready') {
+            <p class="intro">I'll handle the reminders.<br>You handle the sipping.</p>
+            <p class="quote">Keep moving. Keep sipping.</p>
+          }
+          @default { <p class="intro">Getting your local routine ready. You can continue setup later.</p> }
+        }
+        @if (desktop.error() || desktop.snapshot()?.userProfileError || desktop.snapshot()?.storageError) {
+          <p class="save-error" role="alert">{{ desktop.error() || desktop.snapshot()?.userProfileError || desktop.snapshot()?.storageError }}</p>
+        }
+        <div class="setup-actions">
+          @if (['profile', 'routine', 'intro', 'ready'].includes(flow.stage())) { <button class="secondary" type="button" (click)="back()" [disabled]="desktop.busy()">Back</button> }
+          @if (flow.stage() !== 'loading') {
+            <button class="primary" data-testid="onboarding-next" type="submit" [disabled]="desktop.busy() || !desktop.nativeAvailable || (flow.stage() === 'routine' && !!routineError())">
+              {{ desktop.busy() ? 'Saving…' : flow.stage() === 'welcome' ? 'Get Started' : flow.stage() === 'intro' ? 'Show me around' : flow.stage() === 'ready' ? 'Start my day' : 'Continue' }} <span aria-hidden="true">→</span>
+            </button>
+          }
+        </div>
+        <div class="local-note"><span aria-hidden="true">◈</span> Yours, on this device. No account needed.</div>
+      </form>
+    </div>
+  </div>
+</section>

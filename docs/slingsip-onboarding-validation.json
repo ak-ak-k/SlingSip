@@ -1,0 +1,509 @@
+{
+  "task": "SlingSip onboarding and local user personalization",
+  "recordedAt": "2026-10-08T06:35:42.010Z",
+  "scope": "Local feature validation and affected regressions; not the complete next Final QA campaign",
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "fullSuiteCollection": {
+    "tests": 110,
+    "files": 21
+  },
+  "uniqueChecks": {
+    "passed": 47,
+    "failed": 0,
+    "skipped": 0
+  },
+  "runs": [
+    {
+      "name": "onboarding feature tests",
+      "startTime": "2026-10-08T06:04:37.745Z",
+      "duration": 163697.566,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "name": "affected regression run",
+      "startTime": "2026-10-08T06:07:47.686Z",
+      "duration": 951037.243,
+      "expected": 46,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    {
+      "name": "focused copy, fresh setup and long-name follow-up",
+      "startTime": "2026-10-08T06:29:03.769Z",
+      "duration": 183944.549,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    {
+      "name": "final native layout check",
+      "startTime": "2026-10-08T06:33:59.800Z",
+      "duration": 21744.186,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  ],
+  "resolvedFindings": [
+    {
+      "finding": "The tour did not start when Overview was already open.",
+      "resolution": "Handle same-URL Angular navigation without requiring a new navigation event."
+    },
+    {
+      "finding": "Long personalized reminder text added an extra line and changed the existing bubble dimensions.",
+      "resolution": "Shorten to Hydration check, {name}. The original exact geometry and retry assertions pass."
+    },
+    {
+      "finding": "The native zoom test inspected the profile card before its pending reposition frame.",
+      "resolution": "Await bounded geometry, then retain all explicit viewport, overflow, focus and cleanup assertions. Long names pass at 150% scaling."
+    }
+  ],
+  "screenshots": [
+    "docs/previews/onboarding/01-welcome.png",
+    "docs/previews/onboarding/02-profile.png",
+    "docs/previews/onboarding/03-routine.png",
+    "docs/previews/onboarding/04-meet.png",
+    "docs/previews/onboarding/05-tour-progress.png",
+    "docs/previews/onboarding/06-tour-profile.png",
+    "docs/previews/onboarding/07-tour-tray.png",
+    "docs/previews/onboarding/08-ready.png",
+    "docs/previews/onboarding/09-personalized-dashboard.png",
+    "docs/previews/onboarding/10-profile-menu.png",
+    "docs/previews/onboarding/11-welcome-minimum.png",
+    "docs/previews/onboarding/12-welcome-scaled.png",
+    "docs/previews/onboarding/13-tour-minimum.png"
+  ],
+  "storage": {
+    "architecture": "main-only electron-store, existing local architecture",
+    "normalWindowsProfile": "%APPDATA%/Mizu/user-profile.json",
+    "schemaVersion": 1,
+    "fields": [
+      "displayName",
+      "createdAt",
+      "hasCompletedOnboarding"
+    ],
+    "completion": "only final Start my day CTA after successful persistence",
+    "reset": "only completion flag; name/date and hydration data retained",
+    "isolatedTests": true,
+    "normalUserDataTouched": false
+  },
+  "profileChannels": [
+    "desktop:update-display-name",
+    "desktop:complete-onboarding",
+    "desktop:reset-onboarding"
+  ],
+  "preservation": {
+    "protectedFiles": [
+      {
+        "file": "electron/hydration-runtime.ts",
+        "sha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61",
+        "currentSha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61",
+        "unchanged": true
+      },
+      {
+        "file": "electron/hydration-storage.ts",
+        "sha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2",
+        "currentSha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2",
+        "unchanged": true
+      },
+      {
+        "file": "electron/reminder-scheduler.ts",
+        "sha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645",
+        "currentSha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645",
+        "unchanged": true
+      },
+      {
+        "file": "electron/restart-controller.ts",
+        "sha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b",
+        "currentSha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b",
+        "unchanged": true
+      },
+      {
+        "file": "electron/tray-controller.ts",
+        "sha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15",
+        "currentSha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15",
+        "unchanged": true
+      },
+      {
+        "file": "electron/window-manager.ts",
+        "sha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6",
+        "currentSha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6",
+        "unchanged": true
+      },
+      {
+        "file": "electron/windows-startup.ts",
+        "sha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8",
+        "currentSha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-history.ts",
+        "sha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574",
+        "currentSha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-schedule.ts",
+        "sha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131",
+        "currentSha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-settings.ts",
+        "sha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16",
+        "currentSha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration.ts",
+        "sha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f",
+        "currentSha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f",
+        "unchanged": true
+      }
+    ],
+    "assets": [
+      {
+        "name": "profile-idle.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1127573,
+        "sha256": "ffb3ff0fba3ec0719679bd95b4e14a85e80f6873f2d5bc6a12126be031630b53",
+        "builtCopyMatches": true
+      },
+      {
+        "name": "routine-upside-down.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1010100,
+        "sha256": "495cf9463df2b6750b16688e6b43a5178281651f66b5632c9c5a84a6a0041ef9",
+        "builtCopyMatches": true
+      },
+      {
+        "name": "success-ready.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1226351,
+        "sha256": "86933bf2f5c495c377057c834d65c2ca0d8f5ab8d17a190610e7770d49359ef3",
+        "builtCopyMatches": true
+      },
+      {
+        "name": "tour-dashboard.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1183267,
+        "sha256": "247f4b36f32e1068fda1d06c3d36b30effa96198a07a90f2cbd0db7d2a771e0b",
+        "builtCopyMatches": true
+      },
+      {
+        "name": "welcome-hero.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1146075,
+        "sha256": "5507fb5a6d2e147c65dbb91017248f183af44bb205d147a2bd0e4617e3f06026",
+        "builtCopyMatches": true
+      }
+    ]
+  },
+  "limitations": [
+    "Supplied PNG poses are static with subtle CSS motion and retain their authored red alpha fringe.",
+    "At narrow/scaled widths setup scrolls; large spotlight targets can overlap the bounded tour card.",
+    "Native content sizes and page zoom cover requested layouts; physical monitor/DPI and screen-reader review remain manual.",
+    "The prior physical Windows pointer access-denied finding remains in the preceding Final QA report and was not rerun here."
+  ],
+  "checks": [
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Four authored entry weights are conditional on the last variant and never repeat",
+      "passed": true,
+      "durationMs": 185
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "All four paths settle at one local-DIP reminder and keep web grips anatomical at desktop/DPI sizes",
+      "passed": true,
+      "durationMs": 33106
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Finite frame owner pauses without RAF or time jumps, caps rendering and aborts cleanly",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Visual/audio preferences validate independently, restore safely and start muted",
+      "passed": true,
+      "durationMs": 7
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Lab previews every variant, local cursor/reactions and exits without water or scheduler side effects",
+      "passed": true,
+      "durationMs": 36111
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+      "passed": true,
+      "durationMs": 57099
+    },
+    {
+      "file": "advanced-companion.spec.mjs",
+      "title": "Production behavior hides the animation lab and rejects development triggers",
+      "passed": true,
+      "durationMs": 16397
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Larger work-area layouts prefer free dashboard gutters and keep fallback panels above action cards",
+      "passed": true,
+      "durationMs": 47
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Exit paths travel monotonically toward their chosen edge, retain opacity and clear the full mascot",
+      "passed": true,
+      "durationMs": 299
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Local curved webs retain their sockets and release order; bottle visibility is 984ms with an 816ms opaque hold",
+      "passed": true,
+      "durationMs": 684
+    },
+    {
+      "file": "companion-polish.spec.mjs",
+      "title": "Native visual polish keeps real drink immediate, curved socket attachment, explicit exits and hidden cleanup",
+      "passed": true,
+      "durationMs": 29157
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard labels use local days and ceil the actual deadline without a seconds loop",
+      "passed": true,
+      "durationMs": 3
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Next break reflects goal, OFF, pause, hidden retry, active and exhausted scheduling",
+      "passed": true,
+      "durationMs": 23
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Manual Open companion respects single reminder, pause, OFF and goal without changing automatic hours",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard actions share canonical intake, prompt credits, tray state, pause and final-glass clamping",
+      "passed": true,
+      "durationMs": 23171
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "New dashboard commands reject companion roles and malformed pause without exposing Node",
+      "passed": true,
+      "durationMs": 16390
+    },
+    {
+      "file": "dashboard-redesign.spec.mjs",
+      "title": "Dashboard layouts, real history and schedule, keyboard and reduced motion at desktop and compact sizes",
+      "passed": true,
+      "durationMs": 21254
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Session water increases by one glass, deduplicates reminders, and caps at the goal",
+      "passed": true,
+      "durationMs": 8
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Hydration restores the underlying saved daily record on restart",
+      "passed": true,
+      "durationMs": 1
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Production retries use five minutes; development uses ten seconds",
+      "passed": true,
+      "durationMs": 1
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+      "passed": true,
+      "durationMs": 81151
+    },
+    {
+      "file": "hydration-interaction.spec.mjs",
+      "title": "Secure intake IPC rejects stale/invalid requests, credits once, and renders goal completion at 100%",
+      "passed": true,
+      "durationMs": 25636
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "Persist 500 ml, restart, synchronize 750 ml, validate secure settings, and cancel slots at goal",
+      "passed": true,
+      "durationMs": 54771
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "A real daily slot triggers after dashboard closes and keeps a single native companion",
+      "passed": true,
+      "durationMs": 29478
+    },
+    {
+      "file": "hydration-persistence.spec.mjs",
+      "title": "Electron storage recovers corruption, resets yesterday, and survives an unavailable store",
+      "passed": true,
+      "durationMs": 50232
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Local names normalize international text, reject invalid input and generate deterministic initials/greetings",
+      "passed": true,
+      "durationMs": 21
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Tour geometry stays inside compact and scaled viewports including missing and edge targets",
+      "passed": true,
+      "durationMs": 33
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Fresh onboarding reuses settings, persists only final completion, and safely supports edit, replay, reset and relaunch",
+      "passed": true,
+      "durationMs": 55588
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Incomplete setup can be deferred, skip leads to final CTA, and a failed disk write never marks completion",
+      "passed": true,
+      "durationMs": 35114
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Onboarding, tour and profile fit desktop sizes/scaling, honor reduced motion, and clean up when dismissed",
+      "passed": true,
+      "durationMs": 20743
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Profile IPC rejects companion writes and malformed input; corrupt profile never erases hydration",
+      "passed": true,
+      "durationMs": 16486
+    },
+    {
+      "file": "onboarding.spec.mjs",
+      "title": "Autostart opens onboarding when incomplete and preserves quiet tray startup when complete",
+      "passed": true,
+      "durationMs": 33818
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Settings routes, inline validation, saved routine, retained tray, quick-add, active success, pause and OFF",
+      "passed": true,
+      "durationMs": 46969
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "History migrates and renders live today, historical goals, streaks and restart without duplicates",
+      "passed": true,
+      "durationMs": 33762
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Windows startup ON/OFF verifies an isolated OS registration with a spaced path",
+      "passed": true,
+      "durationMs": 17402
+    },
+    {
+      "file": "phase-six.spec.mjs",
+      "title": "Autostart stays quiet; tray Settings reopens once; pause resets after restart; tray Quit exits cleanly",
+      "passed": true,
+      "durationMs": 39964
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Production PNGs retain their original alpha and bytes; clipping excludes sheet captions and neighboring heads",
+      "passed": true,
+      "durationMs": 103
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "PNG poses follow the unchanged path progress, invert only once, release webs and attach a bounded damped bottle",
+      "passed": true,
+      "durationMs": 105
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native default uses five PNG swing frames, authored alpha/hit silhouettes, ask/happy, immediate water and PNG bottle; hidden work stops",
+      "passed": true,
+      "durationMs": 23905
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native inverted PNG stays inverted, pauses idle, returns to normal success; lab stays isolated and reduced motion skips frame cycling",
+      "passed": true,
+      "durationMs": 26907
+    },
+    {
+      "file": "png-companion.spec.mjs",
+      "title": "Native Later and Ignore show the supplied disappointed head, exit left, preserve retry/window and cancel without extra water",
+      "passed": true,
+      "durationMs": 46901
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Restart persists before cleanup, schedules one replacement and exits once; failed persistence keeps the session",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Development compilation failure keeps the old child; assets refresh only renderers and quit is graceful",
+      "passed": true,
+      "durationMs": 3
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Development holds a manual restart during rebuilding and starts one child after the old process exits",
+      "passed": true,
+      "durationMs": 1
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from active exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "durationMs": 43315
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from idle exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "durationMs": 41397
+    },
+    {
+      "file": "restart.spec.mjs",
+      "title": "Real production tray restart from paused exits old Electron, restores data/preferences/history and retains one window pair",
+      "passed": true,
+      "durationMs": 41413
+    }
+  ],
+  "processAudit": {
+    "isolatedTestInstancesRemaining": 0,
+    "normalInstanceLeftRunning": true,
+    "normalMainPid": 9436
+  }
+}

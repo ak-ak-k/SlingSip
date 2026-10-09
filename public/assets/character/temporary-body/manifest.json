@@ -1,0 +1,2378 @@
+{
+  "id": "temporary-guardian-body-v1",
+  "temporary": true,
+  "width": 160,
+  "height": 220,
+  "clips": {
+    "swing-grab": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54,
+              "y": 204
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 31.333,
+              "y": 118.333
+            },
+            "boot": {
+              "x": 52.08012,
+              "y": 201.12018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.80005
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.3335
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 33.333,
+              "y": 111
+            },
+            "boot": {
+              "x": 50.64012,
+              "y": 198.23982
+            },
+            "head": {
+              "x": 80,
+              "y": 54.59995
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.6665
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-grab-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 36,
+              "y": 103
+            },
+            "boot": {
+              "x": 49.68,
+              "y": 195.36
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        }
+      ],
+      "durationMs": 170
+    },
+    "swing-down": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 36,
+              "y": 103
+            },
+            "boot": {
+              "x": 49.68,
+              "y": 195.36
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 39.2,
+              "y": 99
+            },
+            "boot": {
+              "x": 48.528,
+              "y": 192.336
+            },
+            "head": {
+              "x": 80,
+              "y": 54.16
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.2
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 42.4,
+              "y": 95
+            },
+            "boot": {
+              "x": 47.376,
+              "y": 189.312
+            },
+            "head": {
+              "x": 80,
+              "y": 53.92
+            },
+            "hit": {
+              "x": 77,
+              "y": 117.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 45.4,
+              "y": 92.2
+            },
+            "boot": {
+              "x": 46.368,
+              "y": 186.72
+            },
+            "head": {
+              "x": 80,
+              "y": 53.74
+            },
+            "hit": {
+              "x": 77,
+              "y": 116.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 48.2,
+              "y": 90.6
+            },
+            "boot": {
+              "x": 45.504,
+              "y": 184.56
+            },
+            "head": {
+              "x": 80,
+              "y": 53.62
+            },
+            "hit": {
+              "x": 77,
+              "y": 116.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-down-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 51,
+              "y": 89
+            },
+            "boot": {
+              "x": 44.64,
+              "y": 182.4
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        }
+      ],
+      "durationMs": 306
+    },
+    "swing-bottom": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 51,
+              "y": 89
+            },
+            "boot": {
+              "x": 44.64,
+              "y": 182.4
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 48.6,
+              "y": 87
+            },
+            "boot": {
+              "x": 44.352000000000004,
+              "y": 180.672
+            },
+            "head": {
+              "x": 80,
+              "y": 53.32
+            },
+            "hit": {
+              "x": 77,
+              "y": 115.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 46.2,
+              "y": 85
+            },
+            "boot": {
+              "x": 44.064,
+              "y": 178.944
+            },
+            "head": {
+              "x": 80,
+              "y": 53.14
+            },
+            "hit": {
+              "x": 77,
+              "y": 114.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 42.8,
+              "y": 85.2
+            },
+            "boot": {
+              "x": 44.352000000000004,
+              "y": 178.944
+            },
+            "head": {
+              "x": 80,
+              "y": 53.14
+            },
+            "hit": {
+              "x": 77,
+              "y": 114.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 38.4,
+              "y": 87.6
+            },
+            "boot": {
+              "x": 45.216,
+              "y": 180.672
+            },
+            "head": {
+              "x": 80,
+              "y": 53.32
+            },
+            "hit": {
+              "x": 77,
+              "y": 115.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-bottom-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 34,
+              "y": 90
+            },
+            "boot": {
+              "x": 46.08,
+              "y": 182.4
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        }
+      ],
+      "durationMs": 204
+    },
+    "swing-up": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 34,
+              "y": 90
+            },
+            "boot": {
+              "x": 46.08,
+              "y": 182.4
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 97.6
+            },
+            "boot": {
+              "x": 47.232,
+              "y": 185.424
+            },
+            "head": {
+              "x": 80,
+              "y": 53.8
+            },
+            "hit": {
+              "x": 77,
+              "y": 117
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 26,
+              "y": 105.2
+            },
+            "boot": {
+              "x": 48.384,
+              "y": 188.448
+            },
+            "head": {
+              "x": 80,
+              "y": 54.1
+            },
+            "hit": {
+              "x": 77,
+              "y": 118
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 23.2,
+              "y": 112
+            },
+            "boot": {
+              "x": 49.392,
+              "y": 191.472
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 21.6,
+              "y": 118
+            },
+            "boot": {
+              "x": 50.256,
+              "y": 194.496
+            },
+            "head": {
+              "x": 80,
+              "y": 54.7
+            },
+            "hit": {
+              "x": 77,
+              "y": 120
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#swing-up-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 20,
+              "y": 124
+            },
+            "boot": {
+              "x": 51.12,
+              "y": 197.52
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        }
+      ],
+      "durationMs": 204
+    },
+    "release": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 20,
+              "y": 124
+            },
+            "boot": {
+              "x": 51.12,
+              "y": 197.52
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 22,
+              "y": 115.333
+            },
+            "boot": {
+              "x": 47.76012,
+              "y": 193.2
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27.667,
+              "y": 105
+            },
+            "boot": {
+              "x": 45.240120000000005,
+              "y": 189.05982
+            },
+            "head": {
+              "x": 80,
+              "y": 53.90005
+            },
+            "hit": {
+              "x": 77,
+              "y": 117.3335
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#release-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 37,
+              "y": 93
+            },
+            "boot": {
+              "x": 43.56,
+              "y": 185.1
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        }
+      ],
+      "durationMs": 153
+    },
+    "mid-air": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 37,
+              "y": 93
+            },
+            "boot": {
+              "x": 43.56,
+              "y": 185.1
+            },
+            "head": {
+              "x": 80,
+              "y": 53.5
+            },
+            "hit": {
+              "x": 77,
+              "y": 116
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 41.8,
+              "y": 89
+            },
+            "boot": {
+              "x": 43.128,
+              "y": 182.724
+            },
+            "head": {
+              "x": 80,
+              "y": 53.38
+            },
+            "hit": {
+              "x": 77,
+              "y": 115.6
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 46.6,
+              "y": 85
+            },
+            "boot": {
+              "x": 42.696,
+              "y": 180.348
+            },
+            "head": {
+              "x": 80,
+              "y": 53.26
+            },
+            "hit": {
+              "x": 77,
+              "y": 115.2
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 47.6,
+              "y": 84.2
+            },
+            "boot": {
+              "x": 43.2,
+              "y": 180.456
+            },
+            "head": {
+              "x": 80,
+              "y": 53.32
+            },
+            "hit": {
+              "x": 77,
+              "y": 115.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 44.8,
+              "y": 86.6
+            },
+            "boot": {
+              "x": 44.64,
+              "y": 183.048
+            },
+            "head": {
+              "x": 80,
+              "y": 53.56
+            },
+            "hit": {
+              "x": 77,
+              "y": 116.2
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#mid-air-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 42,
+              "y": 89
+            },
+            "boot": {
+              "x": 46.08,
+              "y": 185.64
+            },
+            "head": {
+              "x": 80,
+              "y": 53.8
+            },
+            "hit": {
+              "x": 77,
+              "y": 117
+            }
+          }
+        }
+      ],
+      "durationMs": 119
+    },
+    "attach": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 42,
+              "y": 89
+            },
+            "boot": {
+              "x": 46.08,
+              "y": 185.64
+            },
+            "head": {
+              "x": 80,
+              "y": 53.8
+            },
+            "hit": {
+              "x": 77,
+              "y": 117
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 34,
+              "y": 97.667
+            },
+            "boot": {
+              "x": 47.52,
+              "y": 189.24018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.1
+            },
+            "hit": {
+              "x": 77,
+              "y": 118
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 32,
+              "y": 102.333
+            },
+            "boot": {
+              "x": 48.71988,
+              "y": 192.48018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.29995
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.6665
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#attach-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 36,
+              "y": 103
+            },
+            "boot": {
+              "x": 49.68,
+              "y": 195.36
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        }
+      ],
+      "durationMs": 170
+    },
+    "settle": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 20,
+              "y": 124
+            },
+            "boot": {
+              "x": 51.12,
+              "y": 197.52
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 23.429,
+              "y": 124.857
+            },
+            "boot": {
+              "x": 52.97148,
+              "y": 198.44556
+            },
+            "head": {
+              "x": 80,
+              "y": 54.67855
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.9285
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 26.857,
+              "y": 125.714
+            },
+            "boot": {
+              "x": 54.82296,
+              "y": 199.37166
+            },
+            "head": {
+              "x": 80,
+              "y": 54.3571
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.857
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 28.857,
+              "y": 125.143
+            },
+            "boot": {
+              "x": 54.72,
+              "y": 201.22278
+            },
+            "head": {
+              "x": 80,
+              "y": 54.55
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.5
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30.143,
+              "y": 123.857
+            },
+            "boot": {
+              "x": 53.64,
+              "y": 203.53722
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30.857,
+              "y": 123.286
+            },
+            "boot": {
+              "x": 53.07444,
+              "y": 204.92556
+            },
+            "head": {
+              "x": 80,
+              "y": 55.2571
+            },
+            "hit": {
+              "x": 77,
+              "y": 121.857
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-6-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-6-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30.429,
+              "y": 124.143
+            },
+            "boot": {
+              "x": 53.53704,
+              "y": 204.46278
+            },
+            "head": {
+              "x": 80,
+              "y": 55.12855
+            },
+            "hit": {
+              "x": 77,
+              "y": 121.4285
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-7-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#settle-7-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54,
+              "y": 204
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        }
+      ],
+      "durationMs": 420
+    },
+    "idle": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54,
+              "y": 204
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 53.79444,
+              "y": 203.69166
+            },
+            "head": {
+              "x": 80,
+              "y": 55.08565
+            },
+            "hit": {
+              "x": 77,
+              "y": 121.2855
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 53.69148,
+              "y": 203.53722
+            },
+            "head": {
+              "x": 80,
+              "y": 55.12855
+            },
+            "hit": {
+              "x": 77,
+              "y": 121.4285
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 53.89704,
+              "y": 203.84556
+            },
+            "head": {
+              "x": 80,
+              "y": 55.0429
+            },
+            "hit": {
+              "x": 77,
+              "y": 121.143
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54.10296,
+              "y": 204.15444
+            },
+            "head": {
+              "x": 80,
+              "y": 54.9571
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.857
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54.30852,
+              "y": 204.46278
+            },
+            "head": {
+              "x": 80,
+              "y": 54.87145
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.5715
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-6-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-6-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54.20556,
+              "y": 204.30834
+            },
+            "head": {
+              "x": 80,
+              "y": 54.91435
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.7145
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-7-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#idle-7-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54,
+              "y": 204
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        }
+      ],
+      "durationMs": 4200,
+      "loop": true
+    },
+    "success": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 30,
+              "y": 125
+            },
+            "boot": {
+              "x": 54,
+              "y": 204
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 28.2,
+              "y": 106.4
+            },
+            "boot": {
+              "x": 51.84,
+              "y": 200.112
+            },
+            "head": {
+              "x": 80,
+              "y": 54.64
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27.2,
+              "y": 91.6
+            },
+            "boot": {
+              "x": 49.968,
+              "y": 197.088
+            },
+            "head": {
+              "x": 80,
+              "y": 54.34
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27.8,
+              "y": 84.4
+            },
+            "boot": {
+              "x": 48.672,
+              "y": 195.792
+            },
+            "head": {
+              "x": 80,
+              "y": 54.16
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.2
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27.6,
+              "y": 86.8
+            },
+            "boot": {
+              "x": 49.392,
+              "y": 197.088
+            },
+            "head": {
+              "x": 80,
+              "y": 54.28
+            },
+            "hit": {
+              "x": 77,
+              "y": 118.6
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#success-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27,
+              "y": 94
+            },
+            "boot": {
+              "x": 51.12,
+              "y": 199.68
+            },
+            "head": {
+              "x": 80,
+              "y": 54.55
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.5
+            }
+          }
+        }
+      ],
+      "durationMs": 450
+    },
+    "web-shot": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 27,
+              "y": 94
+            },
+            "boot": {
+              "x": 51.12,
+              "y": 199.68
+            },
+            "head": {
+              "x": 80,
+              "y": 54.55
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.5
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 23.667,
+              "y": 98.667
+            },
+            "boot": {
+              "x": 51.36012,
+              "y": 200.04018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.55
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.5
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 20.667,
+              "y": 104
+            },
+            "boot": {
+              "x": 51.72012,
+              "y": 200.58018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.59995
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.6665
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#web-shot-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.2,
+              "y": 201.3
+            },
+            "head": {
+              "x": 80,
+              "y": 54.7
+            },
+            "hit": {
+              "x": 77,
+              "y": 120
+            }
+          }
+        }
+      ],
+      "durationMs": 216
+    },
+    "bottle-hold": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.2,
+              "y": 201.3
+            },
+            "head": {
+              "x": 80,
+              "y": 54.7
+            },
+            "hit": {
+              "x": 77,
+              "y": 120
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.344,
+              "y": 201.732
+            },
+            "head": {
+              "x": 80,
+              "y": 54.76
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.2
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.488,
+              "y": 202.164
+            },
+            "head": {
+              "x": 80,
+              "y": 54.82
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.4
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.704,
+              "y": 202.488
+            },
+            "head": {
+              "x": 80,
+              "y": 54.88
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.6
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-4-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-4-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 52.992,
+              "y": 202.704
+            },
+            "head": {
+              "x": 80,
+              "y": 54.94
+            },
+            "hit": {
+              "x": 77,
+              "y": 120.8
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-5-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#bottle-hold-5-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 53.28,
+              "y": 202.92
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        }
+      ],
+      "durationMs": 816
+    },
+    "retract": {
+      "frames": [
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-0-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-0-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 18,
+              "y": 110
+            },
+            "boot": {
+              "x": 53.28,
+              "y": 202.92
+            },
+            "head": {
+              "x": 80,
+              "y": 55
+            },
+            "hit": {
+              "x": 77,
+              "y": 121
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-1-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-1-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 22,
+              "y": 102
+            },
+            "boot": {
+              "x": 51.84,
+              "y": 200.04018
+            },
+            "head": {
+              "x": 80,
+              "y": 54.59995
+            },
+            "hit": {
+              "x": 77,
+              "y": 119.6665
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-2-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-2-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 28,
+              "y": 99.667
+            },
+            "boot": {
+              "x": 50.64012,
+              "y": 197.52
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        },
+        {
+          "body": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-3-body"
+          },
+          "head": {
+            "kind": "svg",
+            "src": "assets/character/temporary-body/frames.svg#retract-3-head"
+          },
+          "anchors": {
+            "grip": {
+              "x": 125,
+              "y": 22
+            },
+            "freeHand": {
+              "x": 36,
+              "y": 103
+            },
+            "boot": {
+              "x": 49.68,
+              "y": 195.36
+            },
+            "head": {
+              "x": 80,
+              "y": 54.4
+            },
+            "hit": {
+              "x": 77,
+              "y": 119
+            }
+          }
+        }
+      ],
+      "durationMs": 168
+    }
+  }
+}

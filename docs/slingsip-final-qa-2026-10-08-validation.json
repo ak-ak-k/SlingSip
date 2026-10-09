@@ -1,0 +1,1659 @@
+{
+  "createdAt": "2026-10-08T10:08:53.576Z",
+  "date": "2026-10-08",
+  "timezone": "Asia/Calcutta",
+  "recommendation": "READY FOR DEMO WITH ONE KNOWN TEST-HARNESS LIMITATION",
+  "reason": "User-performed manual physical QA passed on an unlocked Windows desktop. There is no confirmed production click-through defect. Production build, security and core flows passed. The automated native pointer regression remains flaky because of Windows cursor/target-ownership interference; failed results remain documented as one test-harness limitation.",
+  "scope": {
+    "localOnly": true,
+    "deployed": false,
+    "featuresAdded": false,
+    "productionSourceChanged": false,
+    "normalProfileTouched": false,
+    "normalStartupRegistrationChanged": false
+  },
+  "systemsChecklist": "docs/slingsip-final-qa-2026-10-08-checklist.md",
+  "typecheck": {
+    "command": "npm run typecheck",
+    "passed": true,
+    "exitCode": 0,
+    "log": ".cache/final-qa-2026-10-08-typecheck.txt"
+  },
+  "productionBuild": {
+    "command": "npm run build",
+    "passed": true,
+    "exitCode": 0,
+    "log": ".cache/final-qa-2026-10-08-build.txt",
+    "initialRawKB": 258.21,
+    "initialEstimatedTransferKB": 70.27,
+    "outputs": [
+      "dist/renderer/browser/index.html",
+      "dist/electron/main.mjs",
+      "dist/electron/preload.cjs"
+    ],
+    "packaging": "No installer was created or published."
+  },
+  "fullRun": {
+    "record": ".cache/final-qa-2026-10-08-full.json",
+    "stats": {
+      "startTime": "2026-10-08T09:15:29.423Z",
+      "duration": 1681606.8399999999,
+      "expected": 108,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "total": 111,
+    "passed": 108,
+    "failed": 3,
+    "skipped": 0,
+    "failures": [
+      {
+        "file": "development-refresh.spec.mjs",
+        "title": "Real dev workflow replaces main/preload without stale instances, preserves data, supports HMR and refreshes updated PNG bytes",
+        "status": "unexpected",
+        "durationMs": 360002,
+        "errors": [
+          "\u001b[31mTest timeout of 360000ms exceeded.\u001b[39m"
+        ]
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+        "status": "unexpected",
+        "durationMs": 88540,
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('character')\nExpected: \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"reminder\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('character') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('character')\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-x=\"-165.0904057109726\" data-y=\"62.020286879818116\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-down\" data-rotation=\"4.180904966471488\" data-body-progress=\"0.37920227920229577\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-y=\"64.52653648909843\" data-x=\"-151.0010754861416\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-down\" data-rotation=\"4.290683976034051\" data-body-progress=\"0.42364672364671524\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-y=\"76.58060676929654\" data-x=\"-87.49385197720473\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-down\" data-rotation=\"4.720586666062407\" data-body-progress=\"0.6019943019943101\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-x=\"49.887404212798344\" data-y=\"106.03652538411372\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-down\" data-rotation=\"5.398280956220057\" data-body-progress=\"0.9133903133903298\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-1\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-y=\"146.7863652322658\" data-x=\"218.83057059174524\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-bottom\" data-rotation=\"5.955124320404533\" data-body-progress=\"0.33760683760683763\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-body-state=\"release\" data-y=\"422.4560151333192\" data-x=\"1184.2203700028706\" _ngcontent-ng-c2477036825=\"\" data-web-stage=\"retract-old\" data-rotation=\"7.015013006671156\" data-body-progress=\"0.7213675213675542\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-web-stage=\"web-2\" data-direction=\"right\" data-testid=\"character\" data-state=\"swinging-in\" data-renderer=\"png-2.5d\" data-x=\"1665.646348179268\" data-y=\"555.8770813414973\" _ngcontent-ng-c2477036825=\"\" data-body-state=\"swing-down\" data-rotation=\"3.809151061163471\" data-body-progress=\"0.767307692307673\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"swinging-in\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-x=\"1698\" data-look=\"0,0\" class=\"character\" data-variant=\"high\" data-assets=\"ready\" data-state=\"arriving\" data-web-stage=\"web-2\" data-direction=\"right\" data-testid=\"character\" data-body-state=\"settle\" data-renderer=\"png-2.5d\" data-y=\"559.0832122584935\" _ngcontent-ng-c2477036825=\"\" data-rotation=\"-4.185120955589627\" data-body-progress=\"0.409047619047626\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"arriving\"\u001b[22m\n\u001b[2m    16 × locator resolved to <div data-x=\"1698\" data-look=\"0,0\" data-rotation=\"0\" data-variant=\"high\" data-assets=\"ready\" data-state=\"reminder\" data-body-state=\"idle\" data-body-progress=\"0\" data-web-stage=\"web-2\" data-direction=\"right\" data-testid=\"character\" data-renderer=\"png-2.5d\" class=\"character is-idle\" data-y=\"557.2800000000001\" _ngcontent-ng-c2477036825=\"\" aria-label=\"SlingSip companion, an original web-swinging water guardian\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"reminder\"\u001b[22m\n\n\n  124 |     expect(snapshot.reminderRetry.pending).toBe(false);\n  125 |     await new Promise(resolve => setTimeout(resolve, 11000));\n> 126 |     await expect(character).toHaveAttribute('data-state', 'hidden');\n      |                             ^\n  127 |     await reloadRenderer(app);\n  128 |     await dashboard.getByTestId('toggle-overlay').click();\n  129 |     await expect(character).toHaveAttribute('data-state', 'reminder');\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\hydration-interaction.spec.mjs:126:29"
+        ]
+      },
+      {
+        "file": "phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "status": "unexpected",
+        "durationMs": 20757,
+        "errors": [
+          "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Click 1603 475\nA pointer position and isolated owner for Click are required.\r\nInput desktop: Default; thread desktop: Default\r\n"
+        ]
+      }
+    ]
+  },
+  "targetedFollowup": {
+    "record": ".cache/final-qa-2026-10-08-followup.json",
+    "stats": {
+      "startTime": "2026-10-08T09:44:17.382Z",
+      "duration": 177211.723,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "skipped": 0,
+    "failures": [
+      {
+        "file": "phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "status": "unexpected",
+        "durationMs": 20044,
+        "errors": [
+          "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Click 1603 475 18900\nClick target is not owned by the isolated QA process (expected PID 18900, actual PID 16880 at 1603,475); no input was injected.\r\nInput desktop: Default; thread desktop: Default\r\n"
+        ]
+      }
+    ]
+  },
+  "latestUniqueOutcomes": {
+    "total": 111,
+    "passed": 110,
+    "failed": 1,
+    "skipped": 0,
+    "note": "Latest result per case across the original full run, focused followup and two unlocked-desktop pointer attempts. No new clean full-suite result is claimed.",
+    "cases": [
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Four authored entry weights are conditional on the last variant and never repeat",
+        "status": "expected",
+        "durationMs": 173,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "All four paths settle at one local-DIP reminder and keep web grips anatomical at desktop/DPI sizes",
+        "status": "expected",
+        "durationMs": 27417,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Finite frame owner pauses without RAF or time jumps, caps rendering and aborts cleanly",
+        "status": "expected",
+        "durationMs": 5,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Visual/audio preferences validate independently, restore safely and start muted",
+        "status": "expected",
+        "durationMs": 8,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Lab previews every variant, local cursor/reactions and exits without water or scheduler side effects",
+        "status": "expected",
+        "durationMs": 36048,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Native preferences save/restart, painted hit targets, cursor, sound gating, display suspension and cleanup",
+        "status": "expected",
+        "durationMs": 57383,
+        "errors": []
+      },
+      {
+        "file": "advanced-companion.spec.mjs",
+        "title": "Production behavior hides the animation lab and rejects development triggers",
+        "status": "expected",
+        "durationMs": 16258,
+        "errors": []
+      },
+      {
+        "file": "asset-integration.spec.mjs",
+        "title": "Named production-style clips map without eighteen placeholder-specific names, and root travel is removed",
+        "status": "expected",
+        "durationMs": 37,
+        "errors": []
+      },
+      {
+        "file": "asset-integration.spec.mjs",
+        "title": "Web grip aliases and model normalization keep the attachment fixed while real limbs move",
+        "status": "expected",
+        "durationMs": 58,
+        "errors": []
+      },
+      {
+        "file": "asset-integration.spec.mjs",
+        "title": "Facial moods compose with blink, reset to neutral and discover independent left/right channels",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      },
+      {
+        "file": "asset-integration.spec.mjs",
+        "title": "Success, Later and Ignore body sequences fit the existing business phases and continuously sample generic SwingIn",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      },
+      {
+        "file": "asset-integration.spec.mjs",
+        "title": "All missing body PNGs use only the brand mark; missing bottle keeps real drink feedback and no alternate mascot",
+        "status": "expected",
+        "durationMs": 22534,
+        "errors": []
+      },
+      {
+        "file": "body-rendering.spec.mjs",
+        "title": "Temporary pack supplies genuinely different body frames and authored anchors for all requested clips",
+        "status": "expected",
+        "durationMs": 222,
+        "errors": []
+      },
+      {
+        "file": "body-rendering.spec.mjs",
+        "title": "Two-web choreography clears the old strand before the next cast at all entry/exit variants and DIP sizes",
+        "status": "expected",
+        "durationMs": 133,
+        "errors": []
+      },
+      {
+        "file": "body-rendering.spec.mjs",
+        "title": "Bottle web uses each frame hand, drops before 10-degree damped swing, feedback, retract and stays on desktop",
+        "status": "expected",
+        "durationMs": 25,
+        "errors": []
+      },
+      {
+        "file": "body-rendering.spec.mjs",
+        "title": "Native approved-pose fallback changes body frames while the existing path moves, idles without JS RAF and delivers dynamic water feedback",
+        "status": "expected",
+        "durationMs": 23591,
+        "errors": []
+      },
+      {
+        "file": "branding.spec.mjs",
+        "title": "Brand identity keeps legacy data/session directories and isolates test profiles",
+        "status": "expected",
+        "durationMs": 15,
+        "errors": []
+      },
+      {
+        "file": "branding.spec.mjs",
+        "title": "SlingSip loads existing v2 water, settings, history and streaks across a native restart",
+        "status": "expected",
+        "durationMs": 36721,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Swing states allow complete success and later flows without walking or invalid shortcuts",
+        "status": "expected",
+        "durationMs": 8,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Swing timing and trajectory are independent of 30, 60 and 144 Hz, including stalls",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Responsive arcs enter left, dip, rise and exit either edge; entry web length stays fixed",
+        "status": "expected",
+        "durationMs": 1724,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Arrival brakes smoothly, recoils and preserves body and web continuity into either exit",
+        "status": "expected",
+        "durationMs": 8,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Bottle stays on the animated hand and lowers within desktop bounds during a short delivery",
+        "status": "expected",
+        "durationMs": 248,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Native swing success logs immediately, delivers a bottle, exits right, stops RAF and reuses the window",
+        "status": "expected",
+        "durationMs": 29760,
+        "errors": []
+      },
+      {
+        "file": "character-motion.spec.mjs",
+        "title": "Reduced motion keeps the reminder usable without travel or ambient frame loops",
+        "status": "expected",
+        "durationMs": 20271,
+        "errors": []
+      },
+      {
+        "file": "companion-polish.spec.mjs",
+        "title": "Larger work-area layouts prefer free dashboard gutters and keep fallback panels above action cards",
+        "status": "expected",
+        "durationMs": 30,
+        "errors": []
+      },
+      {
+        "file": "companion-polish.spec.mjs",
+        "title": "Exit paths travel monotonically toward their chosen edge, retain opacity and clear the full mascot",
+        "status": "expected",
+        "durationMs": 204,
+        "errors": []
+      },
+      {
+        "file": "companion-polish.spec.mjs",
+        "title": "Local curved webs retain their sockets and release order; bottle visibility is 984ms with an 816ms opaque hold",
+        "status": "expected",
+        "durationMs": 625,
+        "errors": []
+      },
+      {
+        "file": "companion-polish.spec.mjs",
+        "title": "Native visual polish keeps real drink immediate, curved socket attachment, explicit exits and hidden cleanup",
+        "status": "expected",
+        "durationMs": 29132,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "Dashboard labels use local days and ceil the actual deadline without a seconds loop",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "Next break reflects goal, OFF, pause, hidden retry, active and exhausted scheduling",
+        "status": "expected",
+        "durationMs": 25,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "Manual Open companion respects single reminder, pause, OFF and goal without changing automatic hours",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "Dashboard actions share canonical intake, prompt credits, tray state, pause and final-glass clamping",
+        "status": "expected",
+        "durationMs": 23466,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "New dashboard commands reject companion roles and malformed pause without exposing Node",
+        "status": "expected",
+        "durationMs": 16378,
+        "errors": []
+      },
+      {
+        "file": "dashboard-redesign.spec.mjs",
+        "title": "Dashboard layouts, real history and schedule, keyboard and reduced motion at desktop and compact sizes",
+        "status": "expected",
+        "durationMs": 21181,
+        "errors": []
+      },
+      {
+        "file": "development-refresh.spec.mjs",
+        "title": "Real dev workflow replaces main/preload without stale instances, preserves data, supports HMR and refreshes updated PNG bytes",
+        "status": "expected",
+        "durationMs": 73695,
+        "errors": []
+      },
+      {
+        "file": "final-qa.spec.mjs",
+        "title": "Production completion is independent of dev counters; double Drank records one glass, background survives and goal completion suppresses reminders",
+        "status": "expected",
+        "durationMs": 42167,
+        "errors": []
+      },
+      {
+        "file": "final-qa.spec.mjs",
+        "title": "Failure of optional development completion telemetry cannot keep a successful reminder visible",
+        "status": "expected",
+        "durationMs": 23169,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Phase 6 settings validate limits and booleans while migrating Phase 5 preferences",
+        "status": "expected",
+        "durationMs": 13,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "History deduplicates dates and rebuilds derived fields without trusting corrupt records",
+        "status": "expected",
+        "durationMs": 15,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Current streak preserves yesterday until midnight, completed today extends it immediately",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Missing and incomplete days break streaks while the historical best stays intact",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Legacy previous-day migration finalizes once, preserves its original goal and skips absent dates",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Today is live and unique; goal changes preserve intake and finalized historical goals",
+        "status": "expected",
+        "durationMs": 5,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Tray quick add shares capped logging, persistence, broadcasts and active-reminder deduplication",
+        "status": "expected",
+        "durationMs": 6,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "Session pause and persistent OFF cancel active and delayed reminders; resume selects only future slots",
+        "status": "expected",
+        "durationMs": 11,
+        "errors": []
+      },
+      {
+        "file": "hydration-history.spec.mjs",
+        "title": "A tray drink during pending native creation satisfies that prompt without a second credit",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Session water increases by one glass, deduplicates reminders, and caps at the goal",
+        "status": "expected",
+        "durationMs": 12,
+        "errors": []
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Hydration restores the underlying saved daily record on restart",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Production retries use five minutes; development uses ten seconds",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+        "status": "expected",
+        "durationMs": 82293,
+        "errors": []
+      },
+      {
+        "file": "hydration-interaction.spec.mjs",
+        "title": "Secure intake IPC rejects stale/invalid requests, credits once, and renders goal completion at 100%",
+        "status": "expected",
+        "durationMs": 24167,
+        "errors": []
+      },
+      {
+        "file": "hydration-persistence.spec.mjs",
+        "title": "Persist 500 ml, restart, synchronize 750 ml, validate secure settings, and cancel slots at goal",
+        "status": "expected",
+        "durationMs": 56041,
+        "errors": []
+      },
+      {
+        "file": "hydration-persistence.spec.mjs",
+        "title": "A real daily slot triggers after dashboard closes and keeps a single native companion",
+        "status": "expected",
+        "durationMs": 30328,
+        "errors": []
+      },
+      {
+        "file": "hydration-persistence.spec.mjs",
+        "title": "Electron storage recovers corruption, resets yesterday, and survives an unavailable store",
+        "status": "expected",
+        "durationMs": 50871,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Default schedule has eight dynamic start-inclusive/end-exclusive sessions",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Settings reject invalid numbers, clocks, reversed hours, and excessive sessions",
+        "status": "expected",
+        "durationMs": 13,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Late opening selects only a strictly future slot, respects boundaries, and stops at goal",
+        "status": "expected",
+        "durationMs": 11,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Local-day restoration keeps today, resets yesterday, and sanitizes corrupt data",
+        "status": "expected",
+        "durationMs": 12,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Water clamps a partial final glass and reminder credits reset only with the local day",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Main scheduler triggers automatically, skips overlapping slots, and resumes after hiding",
+        "status": "expected",
+        "durationMs": 9,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Main scheduler never backfills on late startup, resume, or a large clock jump",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Goal completion cancels normal slots; settings recalculate; midnight rebuilds the next day",
+        "status": "expected",
+        "durationMs": 7,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Runtime persists immediately, reserves native creation, and handles overnight cancellation",
+        "status": "expected",
+        "durationMs": 11,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Unavailable storage keeps the runtime usable and production rejects development triggers",
+        "status": "expected",
+        "durationMs": 12,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "The isolated 15-second development timer neither changes daily slots nor overlaps an active run",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Hidden retry retains one reminder reservation, returns once, and uses configured production timing",
+        "status": "expected",
+        "durationMs": 6,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Retry timing changes replace one pending timeout; hidden tray drink satisfies it without reappearance",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Pause, OFF, explicit hide, midnight and quit cancel hidden returns without affecting persisted water",
+        "status": "expected",
+        "durationMs": 12,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Suspension rejects stale tokens and hidden requests; completing a goal prevents a return",
+        "status": "expected",
+        "durationMs": 5,
+        "errors": []
+      },
+      {
+        "file": "hydration-scheduler.spec.mjs",
+        "title": "Lowering the goal cancels a hidden reservation immediately; unrelated settings keep its deadline",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Local names normalize international text, reject invalid input and generate deterministic initials/greetings",
+        "status": "expected",
+        "durationMs": 16,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Tour geometry stays inside compact and scaled viewports including missing and edge targets",
+        "status": "expected",
+        "durationMs": 22,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Fresh onboarding reuses settings, persists only final completion, and safely supports edit, replay, reset and relaunch",
+        "status": "expected",
+        "durationMs": 55209,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Fresh onboarding deferral and Escape never create a profile or completion and return on dashboard reopen",
+        "status": "expected",
+        "durationMs": 19285,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Incomplete setup can be deferred, skip leads to final CTA, and a failed disk write never marks completion",
+        "status": "expected",
+        "durationMs": 35448,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Onboarding, tour and profile fit desktop sizes/scaling, honor reduced motion, and clean up when dismissed",
+        "status": "expected",
+        "durationMs": 20752,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Profile IPC rejects companion writes and malformed input; corrupt profile never erases hydration",
+        "status": "expected",
+        "durationMs": 16472,
+        "errors": []
+      },
+      {
+        "file": "onboarding.spec.mjs",
+        "title": "Autostart opens onboarding when incomplete and preserves quiet tray startup when complete",
+        "status": "expected",
+        "durationMs": 33954,
+        "errors": []
+      },
+      {
+        "file": "phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "status": "unexpected",
+        "durationMs": 19918,
+        "errors": [
+          "Error: Physical pointer moved during Move: expected (1256,725), observed (1250,754). Run on an unlocked desktop with the physical mouse idle.\n\n  28 |   const actual = JSON.parse(stdout.trim());\n  29 |   if (action !== 'Position' && Math.hypot(actual.x - Math.round(point.x), actual.y - Math.round(point.y)) > 1) {\n> 30 |     throw new Error(`Physical pointer moved during ${action}: expected (${Math.round(point.x)},${Math.round(point.y)}), observed (${actual.x},${actual.y}). Run on an unlocked desktop with the physical mouse idle.`);\n     |           ^\n  31 |   }\n  32 |   return actual;\n  33 | }\n    at pointer (D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:30:11)\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:356:25"
+        ]
+      },
+      {
+        "file": "phase-six.spec.mjs",
+        "title": "Settings routes, inline validation, saved routine, retained tray, quick-add, active success, pause and OFF",
+        "status": "expected",
+        "durationMs": 47013,
+        "errors": []
+      },
+      {
+        "file": "phase-six.spec.mjs",
+        "title": "History migrates and renders live today, historical goals, streaks and restart without duplicates",
+        "status": "expected",
+        "durationMs": 34361,
+        "errors": []
+      },
+      {
+        "file": "phase-six.spec.mjs",
+        "title": "Windows startup ON/OFF verifies an isolated OS registration with a spaced path",
+        "status": "expected",
+        "durationMs": 17409,
+        "errors": []
+      },
+      {
+        "file": "phase-six.spec.mjs",
+        "title": "Autostart stays quiet; tray Settings reopens once; pause resets after restart; tray Quit exits cleanly",
+        "status": "expected",
+        "durationMs": 40797,
+        "errors": []
+      },
+      {
+        "file": "png-companion.spec.mjs",
+        "title": "Production PNGs retain their original alpha and bytes; clipping excludes sheet captions and neighboring heads",
+        "status": "expected",
+        "durationMs": 107,
+        "errors": []
+      },
+      {
+        "file": "png-companion.spec.mjs",
+        "title": "PNG poses follow the unchanged path progress, invert only once, release webs and attach a bounded damped bottle",
+        "status": "expected",
+        "durationMs": 125,
+        "errors": []
+      },
+      {
+        "file": "png-companion.spec.mjs",
+        "title": "Native default uses five PNG swing frames, authored alpha/hit silhouettes, ask/happy, immediate water and PNG bottle; hidden work stops",
+        "status": "expected",
+        "durationMs": 23788,
+        "errors": []
+      },
+      {
+        "file": "png-companion.spec.mjs",
+        "title": "Native inverted PNG stays inverted, pauses idle, returns to normal success; lab stays isolated and reduced motion skips frame cycling",
+        "status": "expected",
+        "durationMs": 27062,
+        "errors": []
+      },
+      {
+        "file": "png-companion.spec.mjs",
+        "title": "Native Later and Ignore show the supplied disappointed head, exit left, preserve retry/window and cancel without extra water",
+        "status": "expected",
+        "durationMs": 47086,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Restart persists before cleanup, schedules one replacement and exits once; failed persistence keeps the session",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Development compilation failure keeps the old child; assets refresh only renderers and quit is graceful",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Development holds a manual restart during rebuilding and starts one child after the old process exits",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Real production tray restart from active exits old Electron, restores data/preferences/history and retains one window pair",
+        "status": "expected",
+        "durationMs": 44116,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Real production tray restart from idle exits old Electron, restores data/preferences/history and retains one window pair",
+        "status": "expected",
+        "durationMs": 41601,
+        "errors": []
+      },
+      {
+        "file": "restart.spec.mjs",
+        "title": "Real production tray restart from paused exits old Electron, restores data/preferences/history and retains one window pair",
+        "status": "expected",
+        "durationMs": 41875,
+        "errors": []
+      },
+      {
+        "file": "three-companion.spec.mjs",
+        "title": "Local GLB is a skinned original rig with all clips, real skeletal movement and facial morphs",
+        "status": "expected",
+        "durationMs": 37,
+        "errors": []
+      },
+      {
+        "file": "three-companion.spec.mjs",
+        "title": "Bottle is a real GLB prop and dynamic 3D web endpoints release without leftover geometry",
+        "status": "expected",
+        "durationMs": 18,
+        "errors": []
+      },
+      {
+        "file": "three-companion.spec.mjs",
+        "title": "Native approved-only fallback retains alpha, body phases, two webs, one glass and hidden cleanup",
+        "status": "expected",
+        "durationMs": 22753,
+        "errors": []
+      },
+      {
+        "file": "three-companion.spec.mjs",
+        "title": "Native approved fallback pause, reduced motion, retry and isolated lab preserve dashboard and saved water",
+        "status": "expected",
+        "durationMs": 28924,
+        "errors": []
+      },
+      {
+        "file": "webm-player.spec.mjs",
+        "title": "WebM decodes and plays, releases resources, rejects missing clips, and survives stale cancellation",
+        "status": "expected",
+        "durationMs": 17014,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1366 × 768 at 100%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1366 × 768 at 125%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1366 × 768 at 150%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1920 × 1080 at 100%",
+        "status": "expected",
+        "durationMs": 0,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1920 × 1080 at 125%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 1920 × 1080 at 150%",
+        "status": "expected",
+        "durationMs": 2,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 2560 × 1440 at 100%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 2560 × 1440 at 125%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work area: 2560 × 1440 at 150%",
+        "status": "expected",
+        "durationMs": 1,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "Work-area offsets account for taskbars on any edge and a primary monitor with a negative origin",
+        "status": "expected",
+        "durationMs": 3,
+        "errors": []
+      },
+      {
+        "file": "window-geometry.spec.mjs",
+        "title": "An unusually small work area contains the entire native window",
+        "status": "expected",
+        "durationMs": 4,
+        "errors": []
+      }
+    ]
+  },
+  "physicalInput": {
+    "outcome": "manual_passed_automated_flaky",
+    "testStatus": "unexpected",
+    "assertionsRetained": true,
+    "skipped": false,
+    "unlockedDesktopReportedByUser": true,
+    "productionDefectEstablished": false,
+    "latestAttemptRecord": ".cache/final-qa-2026-10-08-pointer-unlocked-retry.json",
+    "error": [
+      "Error: Physical pointer moved during Move: expected (1256,725), observed (1250,754). Run on an unlocked desktop with the physical mouse idle.\n\n  28 |   const actual = JSON.parse(stdout.trim());\n  29 |   if (action !== 'Position' && Math.hypot(actual.x - Math.round(point.x), actual.y - Math.round(point.y)) > 1) {\n> 30 |     throw new Error(`Physical pointer moved during ${action}: expected (${Math.round(point.x)},${Math.round(point.y)}), observed (${actual.x},${actual.y}). Run on an unlocked desktop with the physical mouse idle.`);\n     |           ^\n  31 |   }\n  32 |   return actual;\n  33 | }\n    at pointer (D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:30:11)\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:356:25"
+    ],
+    "nativeOwnershipAttempt": {
+      "expectedQaPid": 5880,
+      "observedWindowOwnerPid": 19332,
+      "observedOwner": "not identified; process absent at post-run inspection",
+      "position": {
+        "x": 1603,
+        "y": 475
+      },
+      "clickInjected": false,
+      "inputDesktop": "Default",
+      "threadDesktop": "Default"
+    },
+    "cursorObservation": {
+      "expected": {
+        "x": 1256,
+        "y": 725
+      },
+      "observed": {
+        "x": 1250,
+        "y": 754
+      },
+      "failureLocation": "tests/phase-one.spec.mjs:356 (final cursor restoration)",
+      "note": "The final restoration failure masks the original caught error. Captured native event diagnostics also show cursor movement away from the bubble during the case; the retained assertions did not all finish successfully."
+    },
+    "ownerProbe": {
+      "record": ".cache/final-qa-2026-10-08-owner-inspection.json",
+      "readOnly": true,
+      "mainPid": 15040,
+      "rootWindowOwnerPid": 15040,
+      "note": "The isolated native window owned the probe target at this moment. This does not substitute for successful native-click assertions."
+    },
+    "priorBlockedAttempt": {
+      "outcome": "blocked_by_environment",
+      "testStatus": "unexpected",
+      "assertionsRetained": true,
+      "skipped": false,
+      "expectedQaPid": 18900,
+      "observedWindowOwnerPid": 16880,
+      "observedOwner": "LockApp.exe",
+      "position": {
+        "x": 1603,
+        "y": 475
+      },
+      "inputDesktop": "Default",
+      "threadDesktop": "Default",
+      "clickInjected": false,
+      "error": [
+        "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Click 1603 475 18900\nClick target is not owned by the isolated QA process (expected PID 18900, actual PID 16880 at 1603,475); no input was injected.\r\nInput desktop: Default; thread desktop: Default\r\n"
+      ],
+      "diagnosis": "CIM identified PID 16880 as Windows LockApp in session 1. This does not establish an application click-through defect. DOM and native visibility checks cannot substitute for physical input verification.",
+      "initialRunIssue": "The full run hit the old three-argument Click caller against the new four-argument guarded helper. The fresh worker used the synchronized caller/helper and reached the explicit owner refusal.",
+      "manualFollowup": "Unlock the desktop and leave the physical mouse idle; rerun the unchanged physical assertions. Do not dismiss LockApp or bypass desktop security."
+    },
+    "manualFollowup": "The listed physical demo checks are complete according to the user. Automated native pointer interference remains a test-harness limitation; no automated pass is claimed.",
+    "manualOutcome": "passed",
+    "manualEvidenceReference": "manualPhysicalQa",
+    "automatedOutcome": "failed",
+    "automatedRegressionFlaky": true,
+    "limitationClassification": "test_harness"
+  },
+  "bugsFoundAndFixed": [
+    {
+      "area": "dev-workflow fixture",
+      "finding": "An existing-user regression started with a fresh profile and waited for an inert dashboard beneath onboarding.",
+      "fix": "Seed only the absent isolated completed profile through the shared helper; onboarding tests still launch fresh."
+    },
+    {
+      "area": "Later/Ignore fixture",
+      "finding": "The cancellation observation crossed the ordinary 15:00 daily reminder boundary. Pending retry was already false.",
+      "fix": "Use existing settings to isolate manual retries from normal working-hour slots and wait for native dashboard visibility; retain original retry and geometry assertions."
+    },
+    {
+      "area": "physical pointer test harness",
+      "finding": "A helper update and an already-loaded caller were out of sync during the full run; unrestricted click injection could hit another process.",
+      "fix": "Require isolated owner PID in all Click callers; guard requested cursor and native root-window ownership before SendInput."
+    },
+    {
+      "area": "performance/capture tool",
+      "finding": "Fresh-profile startup and a capture during the 90 ms approved pose crossfade.",
+      "fix": "Launch the existing-user fixture and wait only for finite animations before screenshots, preserving infinite idle animation."
+    }
+  ],
+  "productionPreservation": {
+    "baseline": ".cache/final-qa-2026-10-08-baseline.json",
+    "baselineFiles": 193,
+    "checkedProductionFiles": 153,
+    "allProductionBytesUnchanged": true,
+    "productionChanges": [],
+    "hashedChangedFiles": [
+      {
+        "file": "scripts/qa-desktop.mjs",
+        "bytes": 7106,
+        "sha256": "fe072ef035a645eaf685b606c704eaf492e3f5361594a03df2a38e8717ecd4bc",
+        "currentSha256": "438b33bf099db75357741300e9f4410cc66c3ba8c931c3e763de8309c208ecfa"
+      },
+      {
+        "file": "tests/development-refresh.spec.mjs",
+        "bytes": 8319,
+        "sha256": "a2d4296be160cf0da0c27b361fac547556b4ab8a90312ef6e252b992ef566abb",
+        "currentSha256": "a067601b18a814efca266a37834e0263fca46861bfe54310fa9876bc2e60c7f8"
+      },
+      {
+        "file": "tests/final-qa.spec.mjs",
+        "bytes": 6895,
+        "sha256": "cfad862dace002f6b9528b6c23a69ec439b0098bb4ba973b3555f83e3cc7eb62",
+        "currentSha256": "7c9b15e93d15e8bcf4dc3e35cb636f1329e013bdabdb84a9dd3db06d5bde9a94"
+      },
+      {
+        "file": "tests/helpers/existing-user-electron.mjs",
+        "bytes": 1388,
+        "sha256": "bab03e16aa9ed99ff1dba69014d63bf0d299d5c2f558edebab0efba621a660dc",
+        "currentSha256": "79d3f8bbdf46e8ea3348a5d21851539e2c505c328e435a426c7b6681db4e97c7"
+      },
+      {
+        "file": "tests/hydration-interaction.spec.mjs",
+        "bytes": 12919,
+        "sha256": "ac6544ad4ae26380da85dad2e9e5bb06a5b3a79e53cc6c6df53f153afa040aa0",
+        "currentSha256": "e743ce22af022ee465aefd240848eac0172fb6d9bd6e0fb9c5b47f3f50d37053"
+      },
+      {
+        "file": "tests/hydration-persistence.spec.mjs",
+        "bytes": 9883,
+        "sha256": "6e84fb1e5563f2b5cda9cc7a52e98687413b6bffcfa9fc203a05ffaa6da91781",
+        "currentSha256": "cfbe63ae9e2c3a93ad25c7edfc20c9181ab9b58002ccd72ce7cfe637b5db99b8"
+      },
+      {
+        "file": "tests/phase-one.spec.mjs",
+        "bytes": 24053,
+        "sha256": "660e3d6f041205a336cebc66205a5ad980fcb414c2054d43e3908d4006837cf7",
+        "currentSha256": "1f7a1a15102be4e2fadd91ced61f99b80f36db04ea4c8097b139edc18d5d20b6"
+      }
+    ],
+    "changedQaToolFiles": [
+      "scripts/qa-desktop.mjs",
+      "tests/development-refresh.spec.mjs",
+      "tests/final-qa.spec.mjs",
+      "tests/helpers/existing-user-electron.mjs",
+      "tests/hydration-interaction.spec.mjs",
+      "tests/hydration-persistence.spec.mjs",
+      "tests/phase-one.spec.mjs",
+      "tests/windows-pointer.cs"
+    ],
+    "baselineLimit": "The baseline extension filter omitted .cs; windows-pointer.cs is explicitly included from the edit record without an invented prior hash.",
+    "lastRecheckedAt": "2026-10-08T10:44:21.103Z"
+  },
+  "security": {
+    "contextIsolation": true,
+    "sandbox": true,
+    "nodeIntegration": false,
+    "rawRendererApisExposed": false,
+    "mainFrameRoleOriginValidation": true,
+    "productionDevRequestsRejected": true,
+    "strictProductionCsp": true,
+    "navigationAndPermissionsDenied": true,
+    "productionDependencyAudit": {
+      "record": ".cache/final-qa-2026-10-08-audit.json",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 30,
+        "dev": 350,
+        "optional": 142,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 379
+      }
+    },
+    "completeDependencyAudit": {
+      "record": ".cache/final-qa-2026-10-08-audit-all.json",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 30,
+        "dev": 350,
+        "optional": 142,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 379
+      }
+    }
+  },
+  "performance": {
+    "record": "docs/slingsip-final-qa-2026-10-08-performance.json",
+    "exitCode": 0,
+    "samples": [
+      {
+        "name": "hidden/dashboard-open",
+        "durationMs": 5000,
+        "rafDelta": 0,
+        "work": {
+          "raf": 0,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        },
+        "cpuPercent": 2.172525326231167,
+        "privateMB": 173.79296875,
+        "workingSetMB": 593.59765625,
+        "heapMB": 3.9739418029785156,
+        "processes": [
+          {
+            "pid": 19288,
+            "type": "Browser",
+            "cpuPercent": 0.32316316851910404,
+            "workingSetMB": 146.46875,
+            "privateMB": 44.15625
+          },
+          {
+            "pid": 18964,
+            "type": "GPU",
+            "cpuPercent": 0.7397762884049535,
+            "workingSetMB": 112.67578125,
+            "privateMB": 14.6875
+          },
+          {
+            "pid": 17036,
+            "type": "Utility",
+            "cpuPercent": 0.019451653744415934,
+            "workingSetMB": 81.796875,
+            "privateMB": 11.4453125
+          },
+          {
+            "pid": 9184,
+            "type": "Tab",
+            "cpuPercent": 0.0009120300652953722,
+            "workingSetMB": 101.79296875,
+            "privateMB": 34.734375
+          },
+          {
+            "pid": 18312,
+            "type": "Tab",
+            "cpuPercent": 1.0892221854973978,
+            "workingSetMB": 150.86328125,
+            "privateMB": 68.76953125
+          }
+        ]
+      },
+      {
+        "name": "hidden/dashboard-closed",
+        "durationMs": 8000,
+        "rafDelta": 0,
+        "work": {
+          "raf": 1,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        },
+        "cpuPercent": 0.0640099947775239,
+        "privateMB": 105.078125,
+        "workingSetMB": 423.57421875,
+        "heapMB": 4.001953125,
+        "processes": [
+          {
+            "pid": 19288,
+            "type": "Browser",
+            "cpuPercent": 0.0640099947775239,
+            "workingSetMB": 146.44921875,
+            "privateMB": 44.2578125
+          },
+          {
+            "pid": 18964,
+            "type": "GPU",
+            "cpuPercent": 0,
+            "workingSetMB": 93.48828125,
+            "privateMB": 14.640625
+          },
+          {
+            "pid": 17036,
+            "type": "Utility",
+            "cpuPercent": 0,
+            "workingSetMB": 81.796875,
+            "privateMB": 11.4453125
+          },
+          {
+            "pid": 9184,
+            "type": "Tab",
+            "cpuPercent": 0,
+            "workingSetMB": 101.83984375,
+            "privateMB": 34.734375
+          }
+        ]
+      },
+      {
+        "name": "visible/hanging-idle",
+        "durationMs": 5000,
+        "rafDelta": 0,
+        "work": {
+          "raf": 110,
+          "intervals": 1,
+          "animations": 1,
+          "images": 6,
+          "mascots": 1
+        },
+        "cpuPercent": 13.01777562571555,
+        "privateMB": 169.703125,
+        "workingSetMB": 605.421875,
+        "heapMB": 5.537239074707031,
+        "processes": [
+          {
+            "pid": 19288,
+            "type": "Browser",
+            "cpuPercent": 3.672142728566431,
+            "workingSetMB": 153.7421875,
+            "privateMB": 42.83203125
+          },
+          {
+            "pid": 18964,
+            "type": "GPU",
+            "cpuPercent": 8.576292783618847,
+            "workingSetMB": 123.19140625,
+            "privateMB": 17.8984375
+          },
+          {
+            "pid": 17036,
+            "type": "Utility",
+            "cpuPercent": 0.001863002488731582,
+            "workingSetMB": 81.7890625,
+            "privateMB": 11.41796875
+          },
+          {
+            "pid": 9184,
+            "type": "Tab",
+            "cpuPercent": 0.7577825055974984,
+            "workingSetMB": 113.65625,
+            "privateMB": 44.875
+          },
+          {
+            "pid": 18608,
+            "type": "Tab",
+            "cpuPercent": 0.009694605444042896,
+            "workingSetMB": 133.04296875,
+            "privateMB": 52.6796875
+          }
+        ]
+      },
+      {
+        "name": "hidden/after-six-cycles",
+        "durationMs": 8000,
+        "rafDelta": 0,
+        "work": {
+          "raf": 1855,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        },
+        "cpuPercent": 0.04213012195052809,
+        "privateMB": 177.58203125,
+        "workingSetMB": 622.0390625,
+        "heapMB": 4.9052886962890625,
+        "processes": [
+          {
+            "pid": 19288,
+            "type": "Browser",
+            "cpuPercent": 0.013203330287115598,
+            "workingSetMB": 154.984375,
+            "privateMB": 41.8203125
+          },
+          {
+            "pid": 18964,
+            "type": "GPU",
+            "cpuPercent": 0.013284525557565966,
+            "workingSetMB": 118.4921875,
+            "privateMB": 15.41796875
+          },
+          {
+            "pid": 17036,
+            "type": "Utility",
+            "cpuPercent": 0.0010711313670484267,
+            "workingSetMB": 81.67578125,
+            "privateMB": 11.26171875
+          },
+          {
+            "pid": 9184,
+            "type": "Tab",
+            "cpuPercent": 0.010458362974209783,
+            "workingSetMB": 126.921875,
+            "privateMB": 50.4296875
+          },
+          {
+            "pid": 18608,
+            "type": "Tab",
+            "cpuPercent": 0.004112771764588317,
+            "workingSetMB": 139.96484375,
+            "privateMB": 58.65234375
+          }
+        ]
+      }
+    ],
+    "cycles": [
+      {
+        "cycle": 1,
+        "heapMB": 4.458660125732422,
+        "work": {
+          "raf": 284,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      },
+      {
+        "cycle": 2,
+        "heapMB": 4.6001434326171875,
+        "work": {
+          "raf": 618,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      },
+      {
+        "cycle": 3,
+        "heapMB": 4.709007263183594,
+        "work": {
+          "raf": 934,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      },
+      {
+        "cycle": 4,
+        "heapMB": 4.743320465087891,
+        "work": {
+          "raf": 1211,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      },
+      {
+        "cycle": 5,
+        "heapMB": 4.820281982421875,
+        "work": {
+          "raf": 1523,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      },
+      {
+        "cycle": 6,
+        "heapMB": 4.880287170410156,
+        "work": {
+          "raf": 1855,
+          "intervals": 0,
+          "animations": 0,
+          "images": 0,
+          "mascots": 0
+        }
+      }
+    ],
+    "ownedProcessExited": true,
+    "errors": [],
+    "warnings": [],
+    "stderr": "",
+    "finalWaterMl": 1500,
+    "finalProfile": {
+      "displayName": "Test User",
+      "createdAt": "2026-10-01T10:00:00.000Z",
+      "hasCompletedOnboarding": true
+    },
+    "finalHidden": true,
+    "heapDeltaFirstToSixthMB": 0.4216270446777344,
+    "limitations": [
+      "Short isolated observation, not an all-day memory soak.",
+      "CPU is the sum of Electron process metrics and may vary; working sets include shared pages.",
+      "Windows software rendering remains enabled; visible idle CPU cost remains higher than background."
+    ]
+  },
+  "inventory": {
+    "record": "docs/slingsip-final-qa-2026-10-08-inventory.json",
+    "textFiles": 168,
+    "markerCount": 220,
+    "projectMarkerFiles": ".cache/final-qa-2026-10-08-leftover-files.txt",
+    "classification": "Historical/offline Three/SVG/WebM and temporary graphics; gated tests/lab; input placeholders; retained Mizu data/session/startup compatibility names. No old mascot appears in active runtime."
+  },
+  "displayCoverage": {
+    "nativeContentWidths": [
+      760,
+      1366,
+      1920,
+      2560
+    ],
+    "pageZoomFactors": [
+      1,
+      1.25,
+      1.5
+    ],
+    "workAreaGeometryScales": [
+      1,
+      1.25,
+      1.5
+    ],
+    "physicalObservation": {
+      "id": 734882164,
+      "label": "DELL E2218HN",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "workArea": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1032
+      },
+      "scaleFactor": 1
+    },
+    "limitations": [
+      "Native page zoom and DIP fixtures do not certify physical Windows 125/150% multi-monitor input.",
+      "Real sign-in, prolonged sleep/lock, secure desktop/fullscreen and extended soak remain manual."
+    ]
+  },
+  "cleanup": {
+    "record": ".cache/final-qa-2026-10-08-pointer-cleanup.json",
+    "checkedAt": "2026-10-08T10:26:12.4362433Z",
+    "isolatedElectronProcesses": [],
+    "isolatedStartupEntryNames": [],
+    "normalMainAlive": true
+  },
+  "screenshots": [
+    {
+      "file": "docs/previews/final-qa-2026-10-08/history.png",
+      "bytes": 243591,
+      "width": 1144,
+      "height": 781,
+      "sha256": "12514a11084990180ccc2400a535132fa4ef2247bb44bc54dcc5c4a96d859cd9"
+    },
+    {
+      "file": "docs/previews/final-qa-2026-10-08/overview.png",
+      "bytes": 410659,
+      "width": 1144,
+      "height": 781,
+      "sha256": "88e64b7655f19f54b6c273d07730d4e924cd798cd8e49766766ab74a86eb36d4"
+    },
+    {
+      "file": "docs/previews/final-qa-2026-10-08/reminder.png",
+      "bytes": 137804,
+      "width": 1920,
+      "height": 1032,
+      "sha256": "fefe4e70db9bfe62d57176af4c6ddb93f0706fb4b692dd2a916e168b63dbe36a"
+    },
+    {
+      "file": "docs/previews/final-qa-2026-10-08/settings.png",
+      "bytes": 266879,
+      "width": 1144,
+      "height": 781,
+      "sha256": "5b887b19a7ef5d4256e933a0be0a4d5a8849106536bd5848d4ab50881be0a55a"
+    },
+    {
+      "file": "docs/previews/final-qa-2026-10-08/success-bottle.png",
+      "bytes": 149306,
+      "width": 1920,
+      "height": 1032,
+      "sha256": "b17ca1faf76cad6e9edaf92cc2d2c8f791c5b6a0251931ab05cdfef97eab11d9"
+    }
+  ],
+  "artifacts": {
+    "report": "docs/slingsip-final-qa-2026-10-08.md",
+    "gallery": "docs/previews/final-qa-2026-10-08/index.html",
+    "previousCheckpoint": "docs/slingsip-final-qa.md"
+  },
+  "updatedAt": "2026-10-08T10:44:21.103Z",
+  "physicalPointerRechecks": [
+    {
+      "record": ".cache/final-qa-2026-10-08-pointer-unlocked.json",
+      "sha256": "1249986738d0470c27877c7ea19b20e69fe3a052a1e61a391ba9deae31f24326",
+      "command": "npx playwright test tests/phase-one.spec.mjs --reporter=list,json --output=.cache/final-qa-2026-10-08-pointer-unlocked-results",
+      "stats": {
+        "startTime": "2026-10-08T10:20:16.246Z",
+        "duration": 22170.426000000003,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "cases": [
+        {
+          "file": "phase-one.spec.mjs",
+          "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+          "status": "unexpected",
+          "durationMs": 21153,
+          "errors": [
+            "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Click 1603 475 5880\nClick target is not owned by the isolated QA process (expected PID 5880, actual PID 19332 at 1603,475); no input was injected.\r\nInput desktop: Default; thread desktop: Default\r\n"
+          ]
+        }
+      ]
+    },
+    {
+      "record": ".cache/final-qa-2026-10-08-pointer-unlocked-retry.json",
+      "sha256": "63d4642c3235b8726733021f6ee6eedf90410aa7503cf331f1e50cbef317e3b5",
+      "command": "npx playwright test tests/phase-one.spec.mjs --reporter=list,json --output=.cache/final-qa-2026-10-08-pointer-unlocked-retry-results",
+      "stats": {
+        "startTime": "2026-10-08T10:23:17.878Z",
+        "duration": 20737.419,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "cases": [
+        {
+          "file": "phase-one.spec.mjs",
+          "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+          "status": "unexpected",
+          "durationMs": 19918,
+          "errors": [
+            "Error: Physical pointer moved during Move: expected (1256,725), observed (1250,754). Run on an unlocked desktop with the physical mouse idle.\n\n  28 |   const actual = JSON.parse(stdout.trim());\n  29 |   if (action !== 'Position' && Math.hypot(actual.x - Math.round(point.x), actual.y - Math.round(point.y)) > 1) {\n> 30 |     throw new Error(`Physical pointer moved during ${action}: expected (${Math.round(point.x)},${Math.round(point.y)}), observed (${actual.x},${actual.y}). Run on an unlocked desktop with the physical mouse idle.`);\n     |           ^\n  31 |   }\n  32 |   return actual;\n  33 | }\n    at pointer (D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:30:11)\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\phase-one.spec.mjs:356:25"
+          ]
+        }
+      ]
+    }
+  ],
+  "physicalTestFiles": [
+    {
+      "file": "tests/phase-one.spec.mjs",
+      "sha256": "1f7a1a15102be4e2fadd91ced61f99b80f36db04ea4c8097b139edc18d5d20b6",
+      "changedDuringThisFollowup": false
+    },
+    {
+      "file": "tests/windows-pointer.cs",
+      "sha256": "e7e6b0ccb879e0167c9f01b32bcb1b4b06cb2924da00a1ae39d9947de9f7f724",
+      "changedDuringThisFollowup": false
+    }
+  ],
+  "priorCleanup": {
+    "checkedAt": "2026-10-08T10:08:52.7470703Z",
+    "isolatedElectronProcesses": [],
+    "isolatedStartupEntryNames": [],
+    "normalMainAlive": true
+  },
+  "recommendationHistory": [
+    {
+      "recordedAt": "2026-10-08T10:28:16.795Z",
+      "recommendation": "NOT READY",
+      "reason": "The retained physical Windows regression did not pass after unlocked-desktop confirmation. Native target ownership and cursor-position guards failed in fresh attempts; a passing saved result has not been found. No production defect is established."
+    }
+  ],
+  "manualPhysicalQa": {
+    "label": "MANUAL PHYSICAL QA",
+    "outcome": "passed",
+    "recordedAt": "2026-10-08T10:44:21.103Z",
+    "verifiedBy": "user",
+    "evidenceType": "user_reported_manual_attestation",
+    "source": "Explicit user confirmation in this conversation",
+    "environment": {
+      "platform": "Windows",
+      "desktop": "unlocked"
+    },
+    "agentPerformed": false,
+    "countsAsAutomatedPass": false,
+    "checks": [
+      {
+        "id": "transparent_overlay_pass_through",
+        "description": "Transparent overlay regions pass clicks through",
+        "outcome": "passed"
+      },
+      {
+        "id": "background_apps_clickable",
+        "description": "Chrome and VS Code remain clickable behind the companion",
+        "outcome": "passed"
+      },
+      {
+        "id": "drank_it_clickable",
+        "description": "Drank it is clickable",
+        "outcome": "passed"
+      },
+      {
+        "id": "remind_later_clickable",
+        "description": "Remind me later is clickable",
+        "outcome": "passed"
+      },
+      {
+        "id": "dashboard_close_tray_reopen",
+        "description": "Dashboard X -> tray -> reopen works",
+        "outcome": "passed"
+      },
+      {
+        "id": "restart_preserves_state",
+        "description": "Restart SlingSip preserves profile/settings/water",
+        "outcome": "passed"
+      },
+      {
+        "id": "no_duplicates",
+        "description": "No duplicate tray/window/application process appears",
+        "outcome": "passed"
+      }
+    ],
+    "scope": "The seven explicitly reported manual checks. This does not assert that every step of the broader automated native pointer regression passed."
+  },
+  "readinessDecision": {
+    "recommendation": "READY FOR DEMO WITH ONE KNOWN TEST-HARNESS LIMITATION",
+    "basis": {
+      "manualPhysicalClickThrough": "passed - user performed",
+      "productionBuild": "passed",
+      "securityChecks": "passed",
+      "coreFlows": "passed"
+    },
+    "confirmedProductionClickThroughDefect": false,
+    "knownTestHarnessLimitations": [
+      {
+        "testFile": "tests/phase-one.spec.mjs",
+        "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+        "classification": "flaky_test_harness",
+        "latestAutomatedResult": "failed",
+        "cause": "Windows cursor/target-ownership interference",
+        "assertionsRetained": true,
+        "countsUnchanged": true
+      }
+    ]
+  },
+  "documentationOnlySignoff": {
+    "recordedAt": "2026-10-08T10:44:21.103Z",
+    "productionCodeChanged": false,
+    "testCodeChanged": false,
+    "automatedTestsRerun": false,
+    "updatedFiles": [
+      "docs/slingsip-final-qa-2026-10-08.md",
+      "docs/slingsip-final-qa-2026-10-08-validation.json",
+      "docs/slingsip-final-qa-2026-10-08-checklist.md",
+      "docs/previews/final-qa-2026-10-08/index.html",
+      "README.md"
+    ]
+  }
+}

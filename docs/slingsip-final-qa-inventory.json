@@ -1,0 +1,2581 @@
+{
+  "createdAt": "2026-10-07T12:30:10.274Z",
+  "phase": "Final QA inventory captured before production fixes",
+  "sourceFiles": 148,
+  "activeRenderer": "approved SlingSip PNG 2.5D; dashboard hero static",
+  "legacyIdentifiers": [
+    "Mizu userData/sessionData",
+    "Mizu Windows Run registration",
+    "hydration.json and persisted schema/keys"
+  ],
+  "historicalOnly": [
+    "three/* except companion-visual-hit-test.service.ts",
+    "companion-3d.component.ts",
+    "body-sprite-renderer.component.ts",
+    "temporary-body-pack.ts",
+    "sprite/WebM renderers",
+    "historical generator/capture scripts"
+  ],
+  "files": [
+    {
+      "file": "electron/app-identity.ts",
+      "bytes": 778,
+      "lines": 17,
+      "sha256": "5e7cb2881e8751be53e1fe188878a59ad54ea814bbcf701f7427493760fe8387",
+      "imports": [
+        "electron",
+        "node:fs",
+        "node:path"
+      ],
+      "exports": [
+        "PRODUCT_NAME",
+        "WINDOW_TITLE",
+        "configureAppIdentity"
+      ],
+      "markers": [
+        {
+          "line": 11,
+          "text": "const directory = testProfile ?? path.join(application.getPath('appData'), 'Mizu');"
+        }
+      ]
+    },
+    {
+      "file": "electron/companion-preferences-storage.ts",
+      "bytes": 1347,
+      "lines": 23,
+      "sha256": "50346effc12f6e691037b35bc0ac42f760f20f579cdc27b77e3663a5c80c3d95",
+      "imports": [
+        "electron-store",
+        "../shared/companion-preferences"
+      ],
+      "exports": [
+        "CompanionPreferencesStorage"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/desktop-ipc.ts",
+      "bytes": 10154,
+      "lines": 202,
+      "sha256": "d678a207cb71f01c6ece4a9537a23f4821d5eb0044b659b0434ead73959b3171",
+      "imports": [
+        "electron",
+        "../shared/desktop-contract",
+        "./window-manager",
+        "./hydration-runtime",
+        "./hydration-storage",
+        "../shared/hydration-settings",
+        "./windows-startup",
+        "../shared/product-contract",
+        "./companion-preferences-storage"
+      ],
+      "exports": [
+        "registerDesktopIpc"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/hydration-runtime.ts",
+      "bytes": 11134,
+      "lines": 235,
+      "sha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61",
+      "imports": [
+        "../shared/hydration",
+        "../shared/hydration-schedule",
+        "../shared/reminder-policy",
+        "./hydration-storage",
+        "./reminder-scheduler",
+        "./window-manager"
+      ],
+      "exports": [
+        "HydrationRuntime"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/hydration-storage.ts",
+      "bytes": 1346,
+      "lines": 40,
+      "sha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2",
+      "imports": [
+        "electron-store",
+        "../shared/hydration"
+      ],
+      "exports": [
+        "HydrationPersistence",
+        "HydrationStorage"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/main.ts",
+      "bytes": 7808,
+      "lines": 142,
+      "sha256": "e24e2c779f57fb7cd4d90db60c178376dad8632d3a4892b31a354c4e51c4c688",
+      "imports": [
+        "electron",
+        "node:crypto",
+        "node:path",
+        "node:url",
+        "./desktop-ipc",
+        "./window-manager",
+        "./windows-startup",
+        "./tray-controller",
+        "./app-identity",
+        "./restart-controller",
+        "../shared/development-contract"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "electron/preload.ts",
+      "bytes": 2737,
+      "lines": 42,
+      "sha256": "7339de8fe9eab3e782655408ed22adfbc1e1dd445b04983b7ccafc51be8a211b",
+      "imports": [
+        "electron",
+        "../shared/desktop-contract"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "electron/reminder-scheduler.ts",
+      "bytes": 4323,
+      "lines": 88,
+      "sha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645",
+      "imports": [
+        "../shared/hydration",
+        "../shared/hydration-schedule"
+      ],
+      "exports": [
+        "SchedulerClock",
+        "SYSTEM_SCHEDULER_CLOCK",
+        "CLOCK_RECHECK_MS",
+        "MAX_REMINDER_LATENESS_MS",
+        "ReminderScheduler"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/restart-controller.ts",
+      "bytes": 756,
+      "lines": 26,
+      "sha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b",
+      "imports": [],
+      "exports": [
+        "RestartOperations",
+        "RestartController"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/tray-controller.ts",
+      "bytes": 2959,
+      "lines": 53,
+      "sha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15",
+      "imports": [
+        "electron",
+        "../shared/desktop-contract",
+        "../shared/product-contract",
+        "./window-manager",
+        "./hydration-runtime",
+        "./tray-icon"
+      ],
+      "exports": [
+        "SlingSipTray"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/tray-icon.ts",
+      "bytes": 2661,
+      "lines": 39,
+      "sha256": "152b96ac2ab078a147fddab056dcb83272355942c589695b44a44b46b2e4c789",
+      "imports": [
+        "electron",
+        "node:zlib"
+      ],
+      "exports": [
+        "trayIcon"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/window-geometry.ts",
+      "bytes": 327,
+      "lines": 8,
+      "sha256": "e9ea1c027de50a409a115ee0f59fc4cd6bb2ea9fe14af7c788c7c60a99f52f97",
+      "imports": [
+        "../shared/desktop-contract"
+      ],
+      "exports": [
+        "getCompanionBounds"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/window-manager.ts",
+      "bytes": 10062,
+      "lines": 261,
+      "sha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6",
+      "imports": [
+        "electron",
+        "node:events",
+        "node:url",
+        "../shared/desktop-contract",
+        "../shared/desktop-contract",
+        "../shared/product-contract",
+        "./window-geometry",
+        "./app-identity",
+        "./tray-icon"
+      ],
+      "exports": [
+        "DesktopWindows"
+      ],
+      "markers": []
+    },
+    {
+      "file": "electron/windows-startup.ts",
+      "bytes": 3055,
+      "lines": 58,
+      "sha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8",
+      "imports": [
+        "electron",
+        "../shared/product-contract"
+      ],
+      "exports": [
+        "WindowsStartup"
+      ],
+      "markers": [
+        {
+          "line": 15,
+          "text": "this.name = isolatedLoginTest ? `Mizu-Test-${app.getPath('userData').split(/[\\\\/]/).pop()}` : 'Mizu';"
+        }
+      ]
+    },
+    {
+      "file": "scripts/build-electron.mjs",
+      "bytes": 1154,
+      "lines": 28,
+      "sha256": "0768dfd333e42e94c9f07497b8ab5490ffb61e8a98ffb2b29ceb22eb78b85824",
+      "imports": [
+        "esbuild",
+        "node:url",
+        "node:path",
+        "node:fs/promises"
+      ],
+      "exports": [
+        "buildElectron"
+      ],
+      "markers": []
+    },
+    {
+      "file": "scripts/build-png-review.mjs",
+      "bytes": 8883,
+      "lines": 58,
+      "sha256": "8f37c538d76a90ea1b9e42aa2afc6d73ed37086b93a2f03852b3d5f10e1121c9",
+      "imports": [
+        "node:fs/promises"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 57,
+          "text": "console.log(JSON.stringify({flows:flows.length,frames:flows.reduce((n,f)=>n+f.frames.length,0),screenshots:screenshots.length,htmlBytes:Buffer.byteLength(html)}));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/build-reference-review.mjs",
+      "bytes": 9138,
+      "lines": 58,
+      "sha256": "6e3e5c862c46844f0483a8d6b46ce5ba2edccccb133db141de922b9982dc68cb",
+      "imports": [
+        "node:fs/promises"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 30,
+          "text": "</style><main><h1>SlingSip · reference-style motion review</h1><p>Native Electron screenshots of the temporary rig, four entries and real success/Later/Ignore flows. This is a development approximatio"
+        },
+        {
+          "line": 57,
+          "text": "console.log(JSON.stringify({flows:flows.length,frames:flows.reduce((n,f)=>n+f.frames.length,0),screenshots:screenshots.length,htmlBytes:Buffer.byteLength(html)}));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/capture-png-companion.mjs",
+      "bytes": 6355,
+      "lines": 72,
+      "sha256": "48055f65bb1bcbc5f7ddc7ab860d9b230c51e08be415667316116d83c53a0c02",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:perf_hooks"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 70,
+          "text": "console.log(JSON.stringify(flows.map(f => ({name:f.name,frames:f.frames.length,durationMs:f.frames.at(-1)?.time,states:[...new Set(f.frames.map(s => s.state))]}))));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/capture-reference-style.mjs",
+      "bytes": 6161,
+      "lines": 72,
+      "sha256": "d9116c22f35bd25967bf8599356bd32d9e7fa877ccf94531cf5442c159dbee61",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:perf_hooks"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 70,
+          "text": "console.log(JSON.stringify(flows.map(f => ({name:f.name,frames:f.frames.length,durationMs:f.frames.at(-1)?.time,states:[...new Set(f.frames.map(s => s.state))]}))));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/capture-visual-identity.mjs",
+      "bytes": 6553,
+      "lines": 54,
+      "sha256": "09ef7a657186bfe84e0feef855ffdd68b9336bc7ca98929bd4b0e443b9af3f50",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:crypto",
+        "node:os",
+        "node:path"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 52,
+          "text": "console.log(JSON.stringify({screens:screens.length,errors}));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/create-development-character.mjs",
+      "bytes": 7567,
+      "lines": 107,
+      "sha256": "eb84ba20b56f751b8c3ea8c8fb076a0d3114972839a697dbf33fb2ed02515b19",
+      "imports": [
+        "node:fs/promises",
+        "node:path"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 106,
+          "text": "console.log('Generated original development walk/idle sprite sheets.');"
+        }
+      ]
+    },
+    {
+      "file": "scripts/dev-workflow.mjs",
+      "bytes": 4016,
+      "lines": 88,
+      "sha256": "e25ec3a0300ec443dce00ca1280103b63e62a2a0ee7a9da1c0dfba4cf0b9bbda",
+      "imports": [
+        "../shared/development-contract.ts"
+      ],
+      "exports": [
+        "DevelopmentWorkflow"
+      ],
+      "markers": [
+        {
+          "line": 5,
+          "text": "constructor({ launch, build, prepareAssets, stopServer, log=console.log, debounceMs=250 }) {"
+        }
+      ]
+    },
+    {
+      "file": "scripts/dev.mjs",
+      "bytes": 3516,
+      "lines": 61,
+      "sha256": "7e0b5623698ee2ce03aaf9a87f5b6b8d3b0776c4be624e508461021a5d935a7d",
+      "imports": [
+        "electron",
+        "node:child_process",
+        "node:fs",
+        "node:fs/promises",
+        "./build-electron.mjs",
+        "./prepare-slingsip-pngs.mjs",
+        "./dev-workflow.mjs"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 58,
+          "text": "console.log('[SlingSip dev] Angular HMR enabled. Main/preload changes restart Electron; assets regenerate masks and refresh both renderers. Ctrl+Alt+Shift+R restarts the app.');"
+        }
+      ]
+    },
+    {
+      "file": "scripts/generate-placeholder-3d.mjs",
+      "bytes": 1171,
+      "lines": 12,
+      "sha256": "4bc3b9a0d0afe3e9f461f9769d4fb58e2ae89f27bb23b015739ebe1530b4027f",
+      "imports": [
+        "three/addons/exporters/GLTFExporter.js",
+        "node:fs/promises",
+        "./placeholder-3d.mjs"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 3,
+          "text": "import {placeholderCharacter,placeholderBottle} from './placeholder-3d.mjs';"
+        },
+        {
+          "line": 6,
+          "text": "const dir='public/assets/character/temporary-3d';await mkdir(dir,{recursive:true});"
+        },
+        {
+          "line": 7,
+          "text": "const exporter=new GLTFExporter(),character=placeholderCharacter();"
+        },
+        {
+          "line": 9,
+          "text": "const bottle=await exporter.parseAsync(placeholderBottle(),{binary:true});"
+        },
+        {
+          "line": 11,
+          "text": "console.log(JSON.stringify({characterBytes:model.byteLength,bottleBytes:bottle.byteLength,bones:character.skeleton.bones.length,bodyTriangles:character.triangles,clips:character.clips.map(c=>c.name)})"
+        }
+      ]
+    },
+    {
+      "file": "scripts/generate-temporary-body-frames.mjs",
+      "bytes": 6816,
+      "lines": 70,
+      "sha256": "1550472a5f078f05e4241afbfac4e85dbc5d0c42b943b4207231e570b0aff22b",
+      "imports": [
+        "node:fs",
+        "node:path",
+        "./body-animation.model"
+      ],
+      "exports": [
+        "TEMPORARY_BODY_PACK"
+      ],
+      "markers": [
+        {
+          "line": 5,
+          "text": "const directory = resolve('public/assets/character/temporary-body');"
+        },
+        {
+          "line": 61,
+          "text": "frames.push({body:{kind:'svg',src:`assets/character/temporary-body/frames.svg#${name}-body`},head:{kind:'svg',src:`assets/character/temporary-body/frames.svg#${name}-head`},anchors:art.anchors});"
+        },
+        {
+          "line": 66,
+          "text": "const manifest = {id:'temporary-guardian-body-v1',temporary:true,width:160,height:220,clips};"
+        },
+        {
+          "line": 67,
+          "text": "writeFileSync('src/app/features/companion/animation/temporary-body-pack.ts',`// Generated by scripts/generate-temporary-body-frames.mjs. Replace the pack, not motion logic.\\nimport type { BodyAnimatio"
+        },
+        {
+          "line": 69,
+          "text": "console.log(`Generated ${Object.values(clips).reduce((n,c)=>n+c.frames.length,0)} distinct temporary frames across ${Object.keys(clips).length} clips.`);"
+        }
+      ]
+    },
+    {
+      "file": "scripts/inspect-3d-assets.mjs",
+      "bytes": 1982,
+      "lines": 23,
+      "sha256": "74604354759c1c739407ffc9773d3b5a1e2f2baefcba402d3809dd702507804d",
+      "imports": [
+        "node:fs/promises"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 20,
+          "text": "const report={assets,finalCompatibilityVerified:false,note:'Inventory only; run native GLTFLoader validation after providing actual GLBs. Existing development placeholders are not final assets.'};"
+        },
+        {
+          "line": 22,
+          "text": "console.log(JSON.stringify(report,null,2));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/lib/png-rgba.mjs",
+      "bytes": 1655,
+      "lines": 21,
+      "sha256": "ea350710cce4e1101980e1bbbdd4f31c647344156f1b42ebc32ccd713df3ad22",
+      "imports": [
+        "node:zlib"
+      ],
+      "exports": [
+        "decodePng"
+      ],
+      "markers": []
+    },
+    {
+      "file": "scripts/placeholder-3d.mjs",
+      "bytes": 11445,
+      "lines": 94,
+      "sha256": "e7d87363a390803cb31becfe6e39cb4711033d5a92bce88b946e6544261409a6",
+      "imports": [
+        "three",
+        "three/addons/utils/BufferGeometryUtils.js"
+      ],
+      "exports": [
+        "placeholderCharacter",
+        "placeholderBottle"
+      ],
+      "markers": [
+        {
+          "line": 14,
+          "text": "export function placeholderCharacter(){"
+        },
+        {
+          "line": 15,
+          "text": "const root=new T.Group();root.name='SlingSip_Guardian_Placeholder';root.userData={temporary:true,author:'SlingSip development placeholder',height:2.2};"
+        },
+        {
+          "line": 54,
+          "text": "const pupil=new T.Mesh(new T.SphereGeometry(.021,8,6),material(colours.dark));pupil.name=name+'_Pupil';pupil.position.set(x,.035,.352);pupil.userData={temporaryExpressionVisibility:['happy','curious',"
+        },
+        {
+          "line": 80,
+          "text": "export function placeholderBottle(){"
+        },
+        {
+          "line": 81,
+          "text": "const root=new T.Group();root.name='SlingSip_Bottle_Placeholder';root.userData={temporary:true,topAnchor:[0,0,0]};"
+        }
+      ]
+    },
+    {
+      "file": "scripts/prepare-slingsip-pngs.mjs",
+      "bytes": 7091,
+      "lines": 70,
+      "sha256": "208f2d62c53f08b46f2845e4d9c256bb93f77381904f85bfb23514d0851d4c49",
+      "imports": [
+        "node:fs/promises",
+        "node:crypto",
+        "node:url",
+        "../src/app/features/companion/animation/slingsip-assets.ts",
+        "./lib/png-rgba.mjs"
+      ],
+      "exports": [
+        "prepareSlingSipPngs",
+        "SLINGSIP_SPRITE_GEOMETRY"
+      ],
+      "markers": [
+        {
+          "line": 69,
+          "text": "if(process.argv[1]&&fileURLToPath(import.meta.url)===process.argv[1])console.log(JSON.stringify(await prepareSlingSipPngs()));"
+        }
+      ]
+    },
+    {
+      "file": "scripts/start-electron.mjs",
+      "bytes": 567,
+      "lines": 13,
+      "sha256": "25784bef3c2ed4be75aa9278bb7c834e24069cc2fab30b37586e24e65c9249f3",
+      "imports": [
+        "electron",
+        "node:child_process"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "shared/companion-preferences.ts",
+      "bytes": 2204,
+      "lines": 39,
+      "sha256": "c3f2f1ff0f10e7387ac820a17dc814b1cd80143c2deb3f02813699b21341d67f",
+      "imports": [],
+      "exports": [
+        "CompanionPreferences",
+        "DEFAULT_COMPANION_PREFERENCES",
+        "validateCompanionPreferences",
+        "restoreCompanionPreferences"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/desktop-contract.ts",
+      "bytes": 4178,
+      "lines": 106,
+      "sha256": "e784eaeb34a5d1cef5bd2ed764867b41a540f4b7dd7c3d904d26e880e53f1b13",
+      "imports": [
+        "./hydration",
+        "./hydration-settings",
+        "./hydration-schedule",
+        "./reminder-policy",
+        "./hydration-history",
+        "./product-contract",
+        "./companion-preferences"
+      ],
+      "exports": [
+        "WindowRole",
+        "Rectangle",
+        "DesktopSnapshot",
+        "DesktopBridge",
+        "DESKTOP_CHANNELS"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/development-contract.ts",
+      "bytes": 277,
+      "lines": 5,
+      "sha256": "b2412b6ce4cad35bac2b20cd0cfb55b188fc1735d383ec7bd8c2f10a44dd5805",
+      "imports": [],
+      "exports": [
+        "DEV_RESTART_EXIT_CODE",
+        "DEV_PROFILE_CONFLICT_EXIT_CODE",
+        "DevelopmentCommand"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/hydration-history.ts",
+      "bytes": 3275,
+      "lines": 58,
+      "sha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574",
+      "imports": [
+        "./hydration-schedule"
+      ],
+      "exports": [
+        "HydrationHistoryEntry",
+        "StreakStats",
+        "parseLocalDay",
+        "previousDay",
+        "historyEntry",
+        "upsertHistory",
+        "normalizeHistory",
+        "streakStats"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/hydration-schedule.ts",
+      "bytes": 2371,
+      "lines": 52,
+      "sha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131",
+      "imports": [
+        "./hydration-settings"
+      ],
+      "exports": [
+        "HydrationSchedulerSnapshot",
+        "localDateKey",
+        "nextLocalMidnight",
+        "localWorkingBoundary",
+        "hydrationSessionCount",
+        "generateTodaySchedule",
+        "isWorkingHours",
+        "selectNextReminder",
+        "clampWater"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/hydration-settings.ts",
+      "bytes": 4558,
+      "lines": 75,
+      "sha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16",
+      "imports": [],
+      "exports": [
+        "HydrationSettings",
+        "DEFAULT_HYDRATION_SETTINGS",
+        "HYDRATION_SETTING_LIMITS",
+        "timeMinutes",
+        "validateHydrationSettings",
+        "restoreHydrationSettings"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/hydration.ts",
+      "bytes": 5123,
+      "lines": 99,
+      "sha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f",
+      "imports": [
+        "./hydration-settings",
+        "./hydration-schedule",
+        "./hydration-history"
+      ],
+      "exports": [
+        "HydrationSnapshot",
+        "HYDRATION_DEFAULTS",
+        "PersistedHydrationState",
+        "restoreHydrationState",
+        "HydrationSession"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/product-contract.ts",
+      "bytes": 234,
+      "lines": 4,
+      "sha256": "80b517706688691c60d69cf5ecaa5ce9cbbaacaab8741559bfc26ed27f70b9f1",
+      "imports": [],
+      "exports": [
+        "DashboardPage",
+        "StartupStatus",
+        "TrayStatus"
+      ],
+      "markers": []
+    },
+    {
+      "file": "shared/reminder-policy.ts",
+      "bytes": 836,
+      "lines": 16,
+      "sha256": "426cf5e8552cb500263b4a1071aa810278368d9fa5fdd1b0a8aee3ac7f486bcb",
+      "imports": [
+        "./hydration-settings"
+      ],
+      "exports": [
+        "ReminderTiming",
+        "PRODUCTION_REMINDER_TIMING",
+        "DEVELOPMENT_REMINDER_TIMING",
+        "reminderTiming"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/app.component.ts",
+      "bytes": 297,
+      "lines": 11,
+      "sha256": "63ae68f0e2d0e8790cfaab4ee7e5bb0e46d92a1feb4c233be874fb055e995864",
+      "imports": [
+        "@angular/core",
+        "@angular/router"
+      ],
+      "exports": [
+        "AppComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/app.config.ts",
+      "bytes": 516,
+      "lines": 13,
+      "sha256": "4e97cf93c5305d1bd8b002e34f5df69c62689b910e90f4a4ea665bca246432a0",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "./app.routes",
+        "./core/services/desktop.service"
+      ],
+      "exports": [
+        "appConfig"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/app.routes.ts",
+      "bytes": 1170,
+      "lines": 23,
+      "sha256": "623dad7b044bf952c9cbc9af8d688a622b27df8766853be235b0c42ff1ce8838",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "./core/services/desktop.service",
+        "./features/dashboard/dashboard-shell.component",
+        "./features/dashboard/dashboard.component",
+        "./features/history/history.component",
+        "./features/settings/settings.component",
+        "./features/companion/companion.component"
+      ],
+      "exports": [
+        "routes"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/core/services/desktop.service.ts",
+      "bytes": 6378,
+      "lines": 160,
+      "sha256": "11172c99708dc03b61e96d500d24c9017e6392c6b1a15cd295959257390cd916",
+      "imports": [
+        "@angular/core",
+        "../../../../shared/desktop-contract",
+        "../../../../shared/hydration-settings",
+        "../../../../shared/companion-preferences",
+        "@angular/router"
+      ],
+      "exports": [
+        "DesktopService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/core/services/hydration.service.ts",
+      "bytes": 1240,
+      "lines": 22,
+      "sha256": "7c7c07b7fa82ce799b9957edef5ae217fccac2309f7fca36d732e27fc3abc305",
+      "imports": [
+        "@angular/core",
+        "../../../../shared/hydration",
+        "./desktop.service"
+      ],
+      "exports": [
+        "HydrationService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation-lab.component.ts",
+      "bytes": 7760,
+      "lines": 67,
+      "sha256": "bd6c901b654645309fc5b61157635bee577fa67ba464a0def862a52cbb04d0fd",
+      "imports": [
+        "@angular/core",
+        "../../core/services/desktop.service",
+        "./animation/character-state.service",
+        "./animation/character.model",
+        "./animation/swing-animation.service",
+        "./animation/audio.service",
+        "./animation/entry-variants",
+        "./companion-character.component",
+        "./speech-bubble.component",
+        "./three/companion-visual-hit-test.service"
+      ],
+      "exports": [
+        "AnimationLabComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/animation-renderer.component.ts",
+      "bytes": 6055,
+      "lines": 124,
+      "sha256": "de8f2ead62ee48ffe6d5e3e9eae27dba7780e8ddac3f8f5d1b54a74640256198",
+      "imports": [
+        "@angular/core",
+        "./character.model",
+        "./sprite-animation.component",
+        "./webm-player"
+      ],
+      "exports": [
+        "PlaybackInfo",
+        "CharacterPlayer",
+        "AnimationRendererComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/audio.service.ts",
+      "bytes": 3562,
+      "lines": 52,
+      "sha256": "dd7010f33789532effac47120513028d3c343f6cb5e04251f71cddaafa3283d8",
+      "imports": [
+        "@angular/core",
+        "./swing-config",
+        "../../../../../shared/companion-preferences"
+      ],
+      "exports": [
+        "AudioCue",
+        "AudioService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/body-animation.model.ts",
+      "bytes": 1144,
+      "lines": 21,
+      "sha256": "133d657570fef3c7d7278ce991f7905a84efaeb1784ae134bfa18a75900d06b9",
+      "imports": [
+        "./swing-motion"
+      ],
+      "exports": [
+        "BodyAnimationState",
+        "SpriteLayer",
+        "BodySpriteFrame",
+        "BodyAnimationClip",
+        "BodyAnimationPack",
+        "BodyCue"
+      ],
+      "markers": [
+        {
+          "line": 17,
+          "text": "id: string; temporary: boolean; width: number; height: number;"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/animation/body-choreography.ts",
+      "bytes": 6336,
+      "lines": 84,
+      "sha256": "eeca1fe080adb536e2d24cd32bc82c060617248265fae7cd4a3295aeb61eedd8",
+      "imports": [
+        "./character.model",
+        "./body-animation.model",
+        "./entry-variants",
+        "./entry-variants",
+        "./swing-motion",
+        "./swing-config"
+      ],
+      "exports": [
+        "bodyCue",
+        "spriteFrame",
+        "bodyWebs",
+        "webChoreography",
+        "bodyBottle",
+        "bottlePresentation"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/body-sprite-renderer.component.ts",
+      "bytes": 6761,
+      "lines": 88,
+      "sha256": "09e58692a71049a4dc10a7941bae169f732f32c53f5197db5358072d5e670e6d",
+      "imports": [
+        "@angular/core",
+        "./body-animation.model",
+        "./temporary-body-pack",
+        "./body-choreography"
+      ],
+      "exports": [
+        "BODY_ANIMATION_PACK",
+        "BodySpriteRendererComponent"
+      ],
+      "markers": [
+        {
+          "line": 3,
+          "text": "import { TEMPORARY_BODY_PACK } from './temporary-body-pack';"
+        },
+        {
+          "line": 10,
+          "text": "template:`<svg class=\"mascot\" [attr.viewBox]=\"'0 0 '+pack.width+' '+pack.height\" role=\"img\" aria-label=\"Animated navy guardian with coral scarf and mint water emblem\" [attr.data-asset-pack]=\"pack.id\" "
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/animation/character-assets.ts",
+      "bytes": 1145,
+      "lines": 33,
+      "sha256": "6e343b91630616e701890984f8b3317cd568ec1c7215d6978dd9f5c8ba02cf49",
+      "imports": [
+        "./character.model"
+      ],
+      "exports": [
+        "CHARACTER_ANIMATIONS",
+        "CHARACTER_CONFIG"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/character-state.service.ts",
+      "bytes": 963,
+      "lines": 25,
+      "sha256": "bd7c169d5dc5e53d81bba8b907e29b827b6e53ddb80c5e35e5867b88a99e741e",
+      "imports": [
+        "@angular/core",
+        "./character.model"
+      ],
+      "exports": [
+        "CharacterStateService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/character.model.ts",
+      "bytes": 2264,
+      "lines": 72,
+      "sha256": "aad1c1f5dadbd89f4e3ff93dcd142931c495adb3661a60bd30f69f611d102e15",
+      "imports": [],
+      "exports": [
+        "CharacterDirection",
+        "AnimationName",
+        "SpriteAnimation",
+        "WebmAnimation",
+        "AnimationAsset",
+        "CharacterConfig",
+        "canTransition"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/companion-motion.service.ts",
+      "bytes": 10482,
+      "lines": 142,
+      "sha256": "27e8873b2241b30913471c43726d1af58629c9ca38dae86b4427b320371ab7e0",
+      "imports": [
+        "@angular/core",
+        "../../../../../shared/companion-preferences",
+        "./character-state.service",
+        "./character.model",
+        "./swing-config",
+        "./swing-motion",
+        "./entry-variants",
+        "./swing-controller",
+        "./audio.service",
+        "./webm-player"
+      ],
+      "exports": [
+        "MotionFrame",
+        "CompanionMotionService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/entry-variants.ts",
+      "bytes": 3987,
+      "lines": 54,
+      "sha256": "3cdc56545b3603e6173324179acd8857ac6f9175bfbf495781463cb344e54a55",
+      "imports": [
+        "./swing-config",
+        "./swing-motion"
+      ],
+      "exports": [
+        "EntryVariant",
+        "ENTRY_VARIANTS",
+        "chooseEntryVariant",
+        "entryDuration",
+        "entrySample"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-asset-loader.service.ts",
+      "bytes": 1980,
+      "lines": 35,
+      "sha256": "abf8fcc6168f1ad516334be054ba37fc1cd9d89e8505aefef4e78c84a5227d04",
+      "imports": [
+        "@angular/core",
+        "./slingsip-assets",
+        "./slingsip-sprite-geometry"
+      ],
+      "exports": [
+        "SlingSipAssetLoader"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-assets.ts",
+      "bytes": 2493,
+      "lines": 40,
+      "sha256": "99078cd3c41bd9d46e3136bba05ebfc078885bf28397301a6fe4595f2422104f",
+      "imports": [],
+      "exports": [
+        "SLINGSIP_ASSETS",
+        "SlingSipAssetKey",
+        "SLINGSIP_ASSET_ENTRIES",
+        "SLINGSIP_SOURCE_POINTS"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-png-choreography.ts",
+      "bytes": 3695,
+      "lines": 44,
+      "sha256": "0f29972caa3448939c343e0ba2f4943d6f36db63eb665e29aaf888ef8b7373ad",
+      "imports": [
+        "./slingsip-assets",
+        "./slingsip-sprite-geometry",
+        "./character.model",
+        "./entry-variants",
+        "./body-choreography",
+        "./swing-motion"
+      ],
+      "exports": [
+        "PNG_SWING_FRAMES",
+        "pngAsset",
+        "PngAssetResolver",
+        "pngPose",
+        "pngRenderPose",
+        "pngWebs",
+        "pngBottle"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-png-renderer.component.ts",
+      "bytes": 8222,
+      "lines": 95,
+      "sha256": "6a3d51aedae82f39350f867fa99ba65f7fac20bef5fdb2f589dda916b0b93e9d",
+      "imports": [
+        "@angular/core",
+        "./swing-animation.service",
+        "./character.model",
+        "./slingsip-assets",
+        "./slingsip-asset-loader.service",
+        "./slingsip-png-choreography"
+      ],
+      "exports": [
+        "SlingSipPngRendererComponent"
+      ],
+      "markers": [
+        {
+          "line": 11,
+          "text": "template:`<svg class=\"mascot slingsip-png\" viewBox=\"0 0 160 220\" role=\"img\" aria-label=\"SlingSip hooded hydration sidekick\" data-testid=\"slingsip-png\" data-asset-pack=\"slingsip-production-png\" data-te"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/animation/slingsip-sprite-geometry.ts",
+      "bytes": 65862,
+      "lines": 488,
+      "sha256": "6e269737821b92c61a01dff4edca4724efe9918c8c3e425ad1fd3956afe9f3d0",
+      "imports": [],
+      "exports": [
+        "SLINGSIP_SPRITE_GEOMETRY"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/sprite-animation.component.ts",
+      "bytes": 2115,
+      "lines": 32,
+      "sha256": "e10ea1265dea4e5dd030f000eb3e40c7edf33f336f771999920a3e2e86dd7d97",
+      "imports": [
+        "@angular/core",
+        "./character.model"
+      ],
+      "exports": [
+        "SpriteAnimationComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-animation.service.ts",
+      "bytes": 191,
+      "lines": 3,
+      "sha256": "75ba7bbda2d3f22269e07491c6d50ac91c91510571b3c462b5b5e6730b5cad4a",
+      "imports": [
+        "./companion-motion.service"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-config.ts",
+      "bytes": 2653,
+      "lines": 107,
+      "sha256": "b75c1d6d90cc04c43a9a4b49d7a9f324de969f407e6e25ef1dc1ca4755b55ff1",
+      "imports": [],
+      "exports": [
+        "COMPANION_MOTION_CONFIG",
+        "SWING_CONFIG"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-controller.ts",
+      "bytes": 2600,
+      "lines": 47,
+      "sha256": "c05ce7637917ee2e10121ccd3b19c91ff2fea94494e665ddc4c78dadb7d50965",
+      "imports": [
+        "./swing-motion",
+        "./webm-player"
+      ],
+      "exports": [
+        "FrameClock",
+        "SwingController"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/swing-motion.ts",
+      "bytes": 9801,
+      "lines": 137,
+      "sha256": "3e83e1f8a96daee71570a9dfbcda1f94a96aff45551787258603b530796f1785",
+      "imports": [
+        "./swing-config"
+      ],
+      "exports": [
+        "Point",
+        "SwingLayout",
+        "SwingSample",
+        "clamp",
+        "smoothStep",
+        "swingLayout",
+        "swingSample",
+        "settleSample",
+        "deliveryPose",
+        "bottleSample",
+        "advanceSwing",
+        "artworkPoint"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/animation/temporary-body-pack.ts",
+      "bytes": 56473,
+      "lines": 2381,
+      "sha256": "949d52b5cd87e4362d7ab3ceaf26d99a82b1557d28a28fa8f553849b55c3ebd8",
+      "imports": [
+        "./body-animation.model"
+      ],
+      "exports": [
+        "TEMPORARY_BODY_PACK"
+      ],
+      "markers": [
+        {
+          "line": 1,
+          "text": "// Generated by scripts/generate-temporary-body-frames.mjs. Replace the pack, not motion logic."
+        },
+        {
+          "line": 4,
+          "text": "\"id\": \"temporary-guardian-body-v1\","
+        },
+        {
+          "line": 5,
+          "text": "\"temporary\": true,"
+        },
+        {
+          "line": 14,
+          "text": "\"src\": \"assets/character/temporary-body/frames.svg#swing-grab-0-body\""
+        },
+        {
+          "line": 18,
+          "text": "\"src\": \"assets/character/temporary-body/frames.svg#swing-grab-0-head\""
+        },
+        {
+          "line": 46,
+          "text": "\"src\": \"assets/character/temporary-body/frames.svg#swing-grab-1-body\""
+        },
+        {
+          "line": 50,
+          "text": "\"src\": \"assets/character/temporary-body/frames.svg#swing-grab-1-head\""
+        },
+        {
+          "line": 78,
+          "text": "\"src\": \"assets/character/temporary-body/frames.svg#swing-grab-2-body\""
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/animation/webm-player.ts",
+      "bytes": 2455,
+      "lines": 61,
+      "sha256": "eebbd931640776b12cf9ac438ac9a4c62d7291ab42f771bb52f969cae4d28620",
+      "imports": [
+        "./character.model"
+      ],
+      "exports": [
+        "abortError",
+        "releaseVideo",
+        "prepareWebm"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion-3d.component.ts",
+      "bytes": 4521,
+      "lines": 41,
+      "sha256": "93292c67287cc83a0a36030927ef24e7fd3efbba5ca33a37b969b9bcadb32ca1",
+      "imports": [
+        "@angular/core",
+        "./animation/swing-animation.service",
+        "./three/companion-3d-assets",
+        "./three/companion-visual-hit-test.service",
+        "./three/companion-3d-scene",
+        "./three/companion-3d-scene"
+      ],
+      "exports": [
+        "Companion3DComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion-character.component.html",
+      "bytes": 4156,
+      "lines": 44,
+      "sha256": "59b9325262b1f6bac0ede18a25f4763188d38fa527fdc4c26ffe520f0f1c7071",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion-character.component.scss",
+      "bytes": 1207,
+      "lines": 13,
+      "sha256": "f0bd118e2971bcdd732e24013ca363c91a14d70dc9cd27005b1ca0858c96af68",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion-character.component.ts",
+      "bytes": 7095,
+      "lines": 80,
+      "sha256": "773e6a496affc4e4bbc6ba0a421484023d4290ee1385b0b160bf464fed5bf014",
+      "imports": [
+        "@angular/core",
+        "./animation/swing-animation.service",
+        "./animation/body-choreography",
+        "./animation/character.model",
+        "./web-renderer.component",
+        "./animation/slingsip-png-renderer.component",
+        "./animation/slingsip-asset-loader.service",
+        "./animation/slingsip-assets",
+        "./animation/slingsip-png-choreography"
+      ],
+      "exports": [
+        "CompanionCharacterComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion-input.service.ts",
+      "bytes": 4289,
+      "lines": 107,
+      "sha256": "5404725eafc2c2f2e259e18bdf469ec5f55672b865a87807e1e62ef81e6419a3",
+      "imports": [
+        "@angular/core",
+        "./animation/swing-animation.service",
+        "../../core/services/desktop.service",
+        "./three/companion-visual-hit-test.service"
+      ],
+      "exports": [
+        "CompanionInputService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion.component.html",
+      "bytes": 2199,
+      "lines": 20,
+      "sha256": "aef6c4f3ba7d50ff4020ab6a4c4adbe9bf62d72242e7f5e8b6b06e004bf26109",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion.component.scss",
+      "bytes": 2025,
+      "lines": 19,
+      "sha256": "23ffdb04d1a54584d77637ee861525d2f966ca13754620ad20b1fa3ed1157273",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/companion.component.ts",
+      "bytes": 2837,
+      "lines": 54,
+      "sha256": "8db1fd7a2ba4cb2c11cdae66d7496184ab0830ef34c34accf97035b47df7eba2",
+      "imports": [
+        "@angular/core",
+        "@angular/common",
+        "../../core/services/desktop.service",
+        "./companion-character.component",
+        "./companion-input.service",
+        "./speech-bubble.component",
+        "./animation/swing-animation.service",
+        "./animation/character-state.service",
+        "./animation/audio.service",
+        "./reminder-interaction.service",
+        "./three/companion-visual-hit-test.service"
+      ],
+      "exports": [
+        "CompanionComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/reminder-interaction.service.ts",
+      "bytes": 9279,
+      "lines": 191,
+      "sha256": "5b05611ffefc43c311dc1291940636ae1b90d6e15bde39c1513f247a3e57c5a6",
+      "imports": [
+        "@angular/core",
+        "../../core/services/desktop.service",
+        "../../core/services/hydration.service",
+        "./animation/swing-animation.service",
+        "./animation/character.model"
+      ],
+      "exports": [
+        "ReminderInteractionService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/speech-bubble.component.html",
+      "bytes": 1029,
+      "lines": 13,
+      "sha256": "f5d5ae41f1c8cd07a4e14485b25cbc2a761c07e3567ae0034dd1f5e77251e512",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/speech-bubble.component.scss",
+      "bytes": 2421,
+      "lines": 18,
+      "sha256": "5def38eb82bf5ea3b3b6f969132a0bcd67c15f6b2ecd2a74c4cc30c496528c22",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/speech-bubble.component.ts",
+      "bytes": 1291,
+      "lines": 27,
+      "sha256": "b2c3402223e10c809873defc0ba0d14c94004d3d4c5c520238f9c07893a22a4c",
+      "imports": [
+        "@angular/core",
+        "./animation/swing-config"
+      ],
+      "exports": [
+        "SpeechBubbleComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/three/bottle-controller.ts",
+      "bytes": 4124,
+      "lines": 58,
+      "sha256": "902be410e41879cd6b98e9dd25ed5b893c706de5ef67b55cbc598623f5cd6c22",
+      "imports": [
+        "three",
+        "three/addons/loaders/GLTFLoader.js",
+        "./character-model-controller",
+        "./companion-3d-assets"
+      ],
+      "exports": [
+        "BottleController"
+      ],
+      "markers": [
+        {
+          "line": 23,
+          "text": "if(!assets.temporary)return;"
+        },
+        {
+          "line": 43,
+          "text": "bottle.warnings.unshift('Preferred bottle '+assets.bottle+' unavailable/incompatible: '+(error instanceof Error?error.message:String(error))+'. Using explicitly temporary '+bottle.assets.bottle);"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/three/character-animation-controller.ts",
+      "bytes": 5741,
+      "lines": 92,
+      "sha256": "4ad46ef616e2eaeeed13ea0dfffc1274326ce65a26eb4a372eee652e42ca1e09",
+      "imports": [
+        "three"
+      ],
+      "exports": [
+        "ANIMATION_ALIASES",
+        "CharacterAnimationRole",
+        "normalizeAssetName",
+        "CharacterAnimationController"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/three/character-animation-sequence.ts",
+      "bytes": 2364,
+      "lines": 36,
+      "sha256": "79848bc4a7090ffc6e775bc7bdb0aa3d09d1b5619428984c8155cb796a2a55a7",
+      "imports": [
+        "../animation/character.model",
+        "../animation/body-animation.model",
+        "./character-animation-controller",
+        "./character-facial-controller"
+      ],
+      "exports": [
+        "characterAnimationSequence"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/three/character-facial-controller.ts",
+      "bytes": 3236,
+      "lines": 49,
+      "sha256": "ff053e8342ac74c64a5ae5ec575c050a8fc8542ab6dd027bc5e661a8c58d06e1",
+      "imports": [
+        "three",
+        "./character-animation-controller"
+      ],
+      "exports": [
+        "FacialExpression",
+        "CharacterFacialController"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/three/character-model-controller.ts",
+      "bytes": 8265,
+      "lines": 115,
+      "sha256": "21293cf1fd7e7e14ba55f3668d95fc3fc1f6c47f564727d8b3505ce7cb2ecf01",
+      "imports": [
+        "three",
+        "three/addons/loaders/GLTFLoader.js",
+        "./companion-3d-assets",
+        "./character-animation-controller",
+        "./character-facial-controller"
+      ],
+      "exports": [
+        "CharacterModelController",
+        "disposeModel"
+      ],
+      "markers": [
+        {
+          "line": 63,
+          "text": "model.warnings.unshift('Preferred character '+assets.character+' unavailable/incompatible: '+(error instanceof Error?error.message:String(error))+'. Using explicitly temporary '+model.assets.character"
+        },
+        {
+          "line": 85,
+          "text": "if(this.assets.temporary)this.pupils.forEach(({node})=>{"
+        },
+        {
+          "line": 86,
+          "text": "const moods=node.userData['temporaryExpressionVisibility'];"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/three/companion-3d-assets.ts",
+      "bytes": 1507,
+      "lines": 30,
+      "sha256": "35e5ff49ab9afa99d94db709094dd49a7f2f9c02adf6f33024d944f244bcc780",
+      "imports": [
+        "@angular/core"
+      ],
+      "exports": [
+        "Companion3DAssets",
+        "PLACEHOLDER_3D_ASSETS",
+        "SLINGSIP_3D_ASSETS",
+        "COMPANION_3D_ASSETS"
+      ],
+      "markers": [
+        {
+          "line": 4,
+          "text": "character: string; bottle: string; temporary: boolean;"
+        },
+        {
+          "line": 19,
+          "text": "character:'assets/character/temporary-3d/guardian.glb',bottle:'assets/character/temporary-3d/bottle.glb',temporary:true,"
+        },
+        {
+          "line": 27,
+          "text": "temporary:false,normalize:true,fallback:PLACEHOLDER_3D_ASSETS,"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/three/companion-3d-scene.ts",
+      "bytes": 11422,
+      "lines": 136,
+      "sha256": "5798e04b072706d89f265ab909226c861a81ac7d818a79f00d5aee6f3fcd50da",
+      "imports": [
+        "three",
+        "../animation/character.model",
+        "../animation/body-choreography",
+        "../animation/swing-motion",
+        "../animation/companion-motion.service",
+        "../animation/entry-variants",
+        "./companion-3d-assets",
+        "./character-model-controller",
+        "./bottle-controller",
+        "./web-controller",
+        "./character-animation-sequence"
+      ],
+      "exports": [
+        "Companion3DFrame",
+        "Companion3DSceneController"
+      ],
+      "markers": [
+        {
+          "line": 51,
+          "text": "this.scene.add(this.character.root,this.bottle.root);this.canvas.dataset['modelReady']='true';this.canvas.dataset['temporary']=String(this.character.assets.temporary||this.bottle.assets.temporary);"
+        },
+        {
+          "line": 54,
+          "text": "this.canvas.dataset['characterTemporary']=String(this.character.assets.temporary);this.canvas.dataset['bottleTemporary']=String(this.bottle.assets.temporary);"
+        }
+      ]
+    },
+    {
+      "file": "src/app/features/companion/three/companion-visual-hit-test.service.ts",
+      "bytes": 429,
+      "lines": 10,
+      "sha256": "2abab907b74111f8ae9537670e4bf4693f31245fc3aaaa7ec3a4564204238147",
+      "imports": [
+        "@angular/core"
+      ],
+      "exports": [
+        "CompanionVisualHitTestService"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/three/web-controller.ts",
+      "bytes": 2891,
+      "lines": 39,
+      "sha256": "2da322f137ed1c329a6b748b800aa4175086bfbdedf1583c94f79cc9357c6c2b",
+      "imports": [
+        "three",
+        "../animation/swing-motion"
+      ],
+      "exports": [
+        "WebController"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/companion/web-renderer.component.ts",
+      "bytes": 2794,
+      "lines": 40,
+      "sha256": "a328440f12e84cfb18d2e2ed6e6ce61d0cb70259be7ccbfa3f5640adbc5eff63",
+      "imports": [
+        "@angular/core",
+        "./animation/swing-animation.service",
+        "./animation/slingsip-asset-loader.service",
+        "./animation/slingsip-png-choreography"
+      ],
+      "exports": [
+        "WebRendererComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/daily-schedule.component.ts",
+      "bytes": 2623,
+      "lines": 13,
+      "sha256": "0600871064305044b485abd70950b2b6b797cb221ed8a9e417e65fca4ba0220c",
+      "imports": [
+        "@angular/core",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "DailyScheduleComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard-shell.component.html",
+      "bytes": 2430,
+      "lines": 19,
+      "sha256": "29b9c865292ed90fc88edc3bd20afd26d3277dc4c83d104d19204d1bc4130fc9",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard-shell.component.scss",
+      "bytes": 4319,
+      "lines": 34,
+      "sha256": "c811fab6f5ee242fa2dff92cc082dd26af6d8a99407d3873432b0e7446962a6c",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard-shell.component.ts",
+      "bytes": 1268,
+      "lines": 28,
+      "sha256": "a6134af66ce226f0a7667141bf9f0646d01f4e8e673b7d7f1dba92efa17f4093",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "@angular/core/rxjs-interop",
+        "../../core/services/desktop.service"
+      ],
+      "exports": [
+        "DashboardShellComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard.component.html",
+      "bytes": 2229,
+      "lines": 29,
+      "sha256": "bee250e2e42aa28414e1c124e5c7f44b5553e1e52bf19f85d7c9ea013496cb70",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard.component.scss",
+      "bytes": 1554,
+      "lines": 13,
+      "sha256": "4f6983468aa82e237ee7ef9c30113d58c52a014b367f7def2c663dcdc71c0f4f",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/dashboard.component.ts",
+      "bytes": 1515,
+      "lines": 26,
+      "sha256": "785dd3a4e3d7d282a4583ee89c2380c74c2bff6cf06e3ac5696dca1e043cc672",
+      "imports": [
+        "@angular/core",
+        "../companion/animation-lab.component",
+        "./overview-state.service",
+        "./overview-hero.component",
+        "./today-progress.component",
+        "./remaining-water.component",
+        "./next-break.component",
+        "./reminder-status.component",
+        "./streak-card.component",
+        "./quick-actions.component",
+        "./daily-schedule.component",
+        "./history-preview.component",
+        "./desktop-integration.component"
+      ],
+      "exports": [
+        "DashboardComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/desktop-integration.component.ts",
+      "bytes": 2705,
+      "lines": 13,
+      "sha256": "77f2f487c71b4ddbfb5aeaf37d413690bdf80bbb08d450c37638ce131dd806cc",
+      "imports": [
+        "@angular/core",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "DesktopIntegrationComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/history-preview.component.ts",
+      "bytes": 2282,
+      "lines": 14,
+      "sha256": "38b102b7d81cfcd8ed2aad9db6ea7d0c5ff5f26b6594c2e5c5d3957af3f0d066",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "HistoryPreviewComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/next-break.component.ts",
+      "bytes": 965,
+      "lines": 11,
+      "sha256": "9b26a93d84542be7dc25234ed1fd29d0570c3374b801a99997cfb2c82f26fd2a",
+      "imports": [
+        "@angular/core",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "NextBreakComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/overview-card.scss",
+      "bytes": 54,
+      "lines": 2,
+      "sha256": "5119810d30fad6a5cd88bd70806eacfadef34ed2f54d10e9fef51a38ae809d33",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/overview-format.ts",
+      "bytes": 3118,
+      "lines": 43,
+      "sha256": "d0a965ad9306ac44303692e5df7136f71c11d03e18e414e52a12f2bb6bb8dd63",
+      "imports": [
+        "../../../../shared/hydration-history",
+        "../../../../shared/desktop-contract"
+      ],
+      "exports": [
+        "clockLabel",
+        "countdownLabel",
+        "cadenceLabel",
+        "historyLabel",
+        "nextBreakView"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/overview-hero.component.scss",
+      "bytes": 1645,
+      "lines": 13,
+      "sha256": "757898d75416eab93f8d9270c1a0066b07541b745d8c427480568ad928a7b0e4",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/overview-hero.component.ts",
+      "bytes": 1524,
+      "lines": 12,
+      "sha256": "cc19ca497bee79a607e4eebe2f8b39bfacd2eb81e98b125af73a94cfe4306a8a",
+      "imports": [
+        "@angular/core",
+        "../../shared/slingsip-artwork.component",
+        "./overview-state.service"
+      ],
+      "exports": [
+        "OverviewHeroComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/overview-state.service.ts",
+      "bytes": 4147,
+      "lines": 56,
+      "sha256": "5050f2ee0a3919c343edd9b497f634507bad3450e957662779bc338baa341ef7",
+      "imports": [
+        "@angular/core",
+        "../../core/services/desktop.service",
+        "../../core/services/hydration.service",
+        "./overview-format",
+        "../../../../shared/hydration-history"
+      ],
+      "exports": [
+        "OverviewState"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/quick-actions.component.ts",
+      "bytes": 2089,
+      "lines": 17,
+      "sha256": "ddf0383af6421c4f08180ff620f85d176476746204c370db87d98d456d9ab8df",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "QuickActionsComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/remaining-water.component.ts",
+      "bytes": 964,
+      "lines": 10,
+      "sha256": "8533a35c12a2aff7feb1112b827069ae960a5ba0d5498fd40bc58f0ac67ef2cc",
+      "imports": [
+        "@angular/core",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "RemainingWaterComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/reminder-status.component.ts",
+      "bytes": 1277,
+      "lines": 12,
+      "sha256": "dd19c80430b65c0ed5b5115720e6dd13079ce6c6cdd4730002ec4f533135fdef",
+      "imports": [
+        "@angular/core",
+        "@angular/router",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "ReminderStatusComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/ritual-page.scss",
+      "bytes": 502,
+      "lines": 8,
+      "sha256": "0c4469ca381707b877e62f0fa85ab94279091399219a4f31c1a3468b0e881494",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/streak-card.component.ts",
+      "bytes": 1370,
+      "lines": 11,
+      "sha256": "c6447b48d512b25cecfb0e8a15a13fa6ed98e256eb8ab68f99cbbd858808c659",
+      "imports": [
+        "@angular/core",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "StreakCardComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/today-progress.component.html",
+      "bytes": 2382,
+      "lines": 14,
+      "sha256": "1046dc175dfffe19ecf350f3f4b364ed19e0ab01594189953bfb89ef90916e35",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/today-progress.component.scss",
+      "bytes": 2390,
+      "lines": 15,
+      "sha256": "a19c05463be209c48467af5a2ca296c9df788a82ae8a1dc9c2fdb3b6eaac3a7f",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/dashboard/today-progress.component.ts",
+      "bytes": 564,
+      "lines": 11,
+      "sha256": "c36464744b141430f2e3672734965a9ec16945a71a0420bcda0a338295e33473",
+      "imports": [
+        "@angular/core",
+        "@angular/common",
+        "./overview-state.service",
+        "../../shared/ui-icon.component"
+      ],
+      "exports": [
+        "TodayProgressComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/history/history.component.html",
+      "bytes": 2846,
+      "lines": 15,
+      "sha256": "4f4d188191e8f6964d9792dc7fc4358bf9e1740de8d2af596460244cdb56d054",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/history/history.component.scss",
+      "bytes": 2476,
+      "lines": 19,
+      "sha256": "262542d6e0f93bdaf11aadf045b355191d488735d2ec01f13f443b1ec961174d",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/history/history.component.ts",
+      "bytes": 1356,
+      "lines": 25,
+      "sha256": "379f40402a51dd7cfb6512651109fa19d8cb076245edfa0001ddf1b47b56fc35",
+      "imports": [
+        "@angular/core",
+        "../../../../shared/hydration-history",
+        "../../core/services/desktop.service"
+      ],
+      "exports": [
+        "HistoryComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/settings/companion-preferences.component.ts",
+      "bytes": 4345,
+      "lines": 33,
+      "sha256": "d740ac12843e0efafc9f2cf4ade40e2fdc5b36ba61c20412396e3d622166e18d",
+      "imports": [
+        "@angular/core",
+        "../../../../shared/companion-preferences",
+        "../../core/services/desktop.service"
+      ],
+      "exports": [
+        "CompanionPreferencesComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/settings/settings.component.html",
+      "bytes": 6077,
+      "lines": 37,
+      "sha256": "c7bdd04fc21f265b2723f4ffe7c0ab6431cfcffe91dff0f31929bc70bd5c638f",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/settings/settings.component.scss",
+      "bytes": 2473,
+      "lines": 14,
+      "sha256": "93be9658bba6152df697331aba6ec5a10bc623eca7b891bf83118a891099595b",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/app/features/settings/settings.component.ts",
+      "bytes": 3560,
+      "lines": 59,
+      "sha256": "733f84601b4f1a818a43a93463c0a25e87b294488e34315973e2b6eb2a302fe2",
+      "imports": [
+        "@angular/core",
+        "../../../../shared/hydration-settings",
+        "./companion-preferences.component",
+        "../../core/services/desktop.service"
+      ],
+      "exports": [
+        "SettingsComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/shared/drop.component.ts",
+      "bytes": 705,
+      "lines": 16,
+      "sha256": "537c035def80df3259d749e91aa509052ba06c74d2a4aa498e627b59b887e9ff",
+      "imports": [
+        "@angular/core"
+      ],
+      "exports": [
+        "DropComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/shared/slingsip-artwork.component.ts",
+      "bytes": 1935,
+      "lines": 26,
+      "sha256": "4c5b50cca26fcdb3022957b6a5c61e93d1d047b2802dac24653cf25d6b7b3b54",
+      "imports": [
+        "@angular/core",
+        "../features/companion/animation/slingsip-asset-loader.service",
+        "../features/companion/animation/slingsip-assets",
+        "../features/companion/animation/slingsip-png-choreography"
+      ],
+      "exports": [
+        "SlingSipArtworkComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/app/shared/ui-icon.component.ts",
+      "bytes": 1362,
+      "lines": 28,
+      "sha256": "5566c538ba868568bfb589777f57f02514041eb8fbec2ac670072513ea8c50e1",
+      "imports": [
+        "@angular/core"
+      ],
+      "exports": [
+        "UiIconComponent"
+      ],
+      "markers": []
+    },
+    {
+      "file": "src/assets/3d/README.md",
+      "bytes": 1145,
+      "lines": 15,
+      "sha256": "10c75c52824eca8c6d54e81c38daa02f6bc39b126c5e1d4e782b03d9ff4783d7",
+      "imports": [],
+      "exports": [],
+      "markers": [
+        {
+          "line": 12,
+          "text": "When activated, the 3D fallback attempts the preferred files, then loads the clearly isolated existing placeholders under `public/assets/character/temporary-3d/`. Its canvas diagnostics identify actua"
+        }
+      ]
+    },
+    {
+      "file": "src/dashboard-theme.scss",
+      "bytes": 4827,
+      "lines": 59,
+      "sha256": "9e2bf77a247162f2bec7f20a1fbe3127ed0820893eeb9851369c873ff163f6ab",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/index.html",
+      "bytes": 662,
+      "lines": 15,
+      "sha256": "345696726328c2eaeeb803323371bf6b43c33e3db2194e116020052018bdf4bb",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/main.ts",
+      "bytes": 233,
+      "lines": 6,
+      "sha256": "81e57c2a84d8da9e8221d8faa9b543c59eae67a8877952e1c53b33c6f549748b",
+      "imports": [
+        "@angular/platform-browser",
+        "./app/app.component",
+        "./app/app.config"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/slingsip-theme.scss",
+      "bytes": 3106,
+      "lines": 52,
+      "sha256": "290b5983b496b7236ca79ce4d543adc27c7edf6c0386188773cc7a2ab76cb7b8",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "src/styles.scss",
+      "bytes": 1038,
+      "lines": 27,
+      "sha256": "11780f07384f66305a1524944980dfdbed64ef080593f2df417a614542e2ca6d",
+      "imports": [],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/advanced-companion.spec.mjs",
+      "bytes": 17975,
+      "lines": 195,
+      "sha256": "a2f1ccb482b4e78de163b414575311a2a7d10f4c7d8e7274a24d24c64d2e2698",
+      "imports": [
+        "./helpers/companion-visuals.mjs",
+        "@playwright/test",
+        "node:crypto",
+        "node:fs/promises",
+        "../src/app/features/companion/animation/entry-variants.ts",
+        "../src/app/features/companion/animation/swing-motion.ts",
+        "../src/app/features/companion/animation/swing-config.ts",
+        "../src/app/features/companion/animation/swing-controller.ts",
+        "../shared/companion-preferences.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/asset-integration.spec.mjs",
+      "bytes": 8825,
+      "lines": 81,
+      "sha256": "af9eca07a4910f0b85b717c2c0b8effa8d4f70e1e912beb38583281f203507d5",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "./helpers/companion-visuals.mjs",
+        "three",
+        "three/addons/loaders/GLTFLoader.js",
+        "../src/app/features/companion/three/character-animation-controller.ts",
+        "../src/app/features/companion/three/character-facial-controller.ts",
+        "../src/app/features/companion/three/character-model-controller.ts",
+        "../src/app/features/companion/three/character-animation-sequence.ts",
+        "../src/app/features/companion/animation/body-choreography.ts",
+        "../src/app/features/companion/animation/character.model.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 13,
+          "text": "const assets={temporary:false,normalize:true,character:'',bottle:'',characterHeight:2.2,nodes:{grip:'WebGrip',freeHand:'BottleGrip',boot:'Foot_L',head:'Head',chest:'Chest'},morphs:{blink:'blink',smile"
+        },
+        {
+          "line": 14,
+          "text": "const load=async()=>{const bytes=await readFile('public/assets/character/temporary-3d/guardian.glb');return new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteL"
+        },
+        {
+          "line": 16,
+          "text": "test('Named production-style clips map without eighteen placeholder-specific names, and root travel is removed',async()=>{"
+        }
+      ]
+    },
+    {
+      "file": "tests/body-rendering.spec.mjs",
+      "bytes": 9596,
+      "lines": 121,
+      "sha256": "7f222fab3aee1abc4c5582507dcb1784d22aa9a1393379b7584c890d83a4c60a",
+      "imports": [
+        "node:assert/strict",
+        "@playwright/test",
+        "node:fs/promises",
+        "./helpers/companion-visuals.mjs",
+        "../src/app/features/companion/animation/temporary-body-pack.ts",
+        "../src/app/features/companion/animation/body-choreography.ts",
+        "../src/app/features/companion/animation/character.model.ts",
+        "../src/app/features/companion/animation/entry-variants.ts",
+        "../src/app/features/companion/animation/swing-motion.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 5,
+          "text": "import {TEMPORARY_BODY_PACK as pack} from '../src/app/features/companion/animation/temporary-body-pack.ts';"
+        },
+        {
+          "line": 12,
+          "text": "expect(pack.temporary).toBe(true);"
+        },
+        {
+          "line": 13,
+          "text": "const assets=await readFile('public/assets/character/temporary-body/frames.svg','utf8');"
+        }
+      ]
+    },
+    {
+      "file": "tests/branding.spec.mjs",
+      "bytes": 7677,
+      "lines": 107,
+      "sha256": "0a2a01ba0f0909fdd67ffe8dd37216205769dcca43184887a1c5f0f88f859292",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:fs",
+        "node:os",
+        "node:crypto",
+        "node:path",
+        "../electron/app-identity.ts",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-schedule.ts",
+        "../shared/hydration-history.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 15,
+          "text": "const legacy = path.join(root, 'Mizu'), testProfile = path.join(root, 'isolated-test');"
+        }
+      ]
+    },
+    {
+      "file": "tests/character-motion.spec.mjs",
+      "bytes": 18126,
+      "lines": 244,
+      "sha256": "aae398fba6083f7b565fbeb0b6f0d19133ddc4f0ec5afaaa452eb7e281f38a35",
+      "imports": [
+        "./helpers/companion-visuals.mjs",
+        "@playwright/test",
+        "../src/app/features/companion/animation/character.model.ts",
+        "../src/app/features/companion/animation/swing-motion.ts",
+        "../src/app/features/companion/animation/swing-config.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/dashboard-redesign.spec.mjs",
+      "bytes": 18033,
+      "lines": 217,
+      "sha256": "f14f575f963a74f2e820952e96979f932673a641d16f52548774a43f780a6727",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:os",
+        "node:crypto",
+        "node:path",
+        "../src/app/features/dashboard/overview-format.ts",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-schedule.ts",
+        "../shared/hydration-history.ts",
+        "../electron/hydration-runtime.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/development-refresh.spec.mjs",
+      "bytes": 8319,
+      "lines": 83,
+      "sha256": "a2d4296be160cf0da0c27b361fac547556b4ab8a90312ef6e252b992ef566abb",
+      "imports": [
+        "@playwright/test",
+        "node:net",
+        "node:child_process",
+        "node:fs/promises",
+        "node:crypto",
+        "node:path"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 33,
+          "text": "const root=await mkdtemp(path.resolve('.cache/dev-refresh-')),profile='dev-refresh-'+randomUUID(),rendererPort=await port(),debugPort=await port(),inspectorPort=await port();"
+        },
+        {
+          "line": 37,
+          "text": "const dev=spawn(process.execPath,['scripts/dev.mjs','--companion-test',`--companion-test-profile=${profile}`,`--remote-debugging-port=${debugPort}`,`--inspect=${inspectorPort}`],{cwd:root,env,windowsH"
+        },
+        {
+          "line": 42,
+          "text": "await expect.poll(async()=>{try{browser=await chromium.connectOverCDP(`http://127.0.0.1:${debugPort}`);return true;}catch{return false;}},{timeout:60000}).toBe(true);"
+        }
+      ]
+    },
+    {
+      "file": "tests/helpers/companion-visuals.mjs",
+      "bytes": 1817,
+      "lines": 30,
+      "sha256": "8aa9ee6a0654f524d5ea1419917274d39cfc5c322c1c07ecba69ce72d59b47e5",
+      "imports": [
+        "@playwright/test"
+      ],
+      "exports": [
+        "useApprovedFallback",
+        "failBodyArtwork",
+        "ambientPose",
+        "connectionDistance",
+        "expectBottleVisible",
+        "expectWebVisible"
+      ],
+      "markers": []
+    },
+    {
+      "file": "tests/hydration-history.spec.mjs",
+      "bytes": 8956,
+      "lines": 130,
+      "sha256": "abb94e25b3c4627873bcb3890c88fb6e7f213b987e5bd11a3fb89a99460603fa",
+      "imports": [
+        "@playwright/test",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-history.ts",
+        "../shared/hydration.ts",
+        "../electron/hydration-runtime.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/hydration-interaction.spec.mjs",
+      "bytes": 11850,
+      "lines": 180,
+      "sha256": "5468ecda11b6e924481ca3a030ce35b650a2a2b0809e1fbca7a3ef5dd25215bb",
+      "imports": [
+        "@playwright/test",
+        "../shared/hydration.ts",
+        "../shared/reminder-policy.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/hydration-persistence.spec.mjs",
+      "bytes": 9841,
+      "lines": 153,
+      "sha256": "30e923205758c47f6e9aa2efec8dbd63c494afa30fb209fcbcf81e5de5054ac7",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:os",
+        "node:crypto",
+        "node:path",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-schedule.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/hydration-scheduler.spec.mjs",
+      "bytes": 18522,
+      "lines": 330,
+      "sha256": "ab5928381ba083ae064111b2e1127236795b2192f39dc2c3f6100b81cf545952",
+      "imports": [
+        "@playwright/test",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-schedule.ts",
+        "../shared/hydration.ts",
+        "../shared/reminder-policy.ts",
+        "../electron/reminder-scheduler.ts",
+        "../electron/hydration-runtime.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/phase-one.spec.mjs",
+      "bytes": 23653,
+      "lines": 352,
+      "sha256": "603bedb88ffb6eba174aeb24ac4f7797634e47eaec09d58f35828896b26372d6",
+      "imports": [
+        "@playwright/test",
+        "node:child_process",
+        "node:util",
+        "node:fs/promises",
+        "node:path"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 345,
+          "text": "console.log(JSON.stringify({ diagnostics, input }, null, 2));"
+        }
+      ]
+    },
+    {
+      "file": "tests/phase-six.spec.mjs",
+      "bytes": 14178,
+      "lines": 193,
+      "sha256": "21b4e21d0e45c4ab993fa11484eb12dc0da7bdc2da245454b81bf05d63461459",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:os",
+        "node:crypto",
+        "node:path",
+        "node:child_process",
+        "electron",
+        "../shared/hydration-settings.ts",
+        "../shared/hydration-history.ts",
+        "../shared/hydration-schedule.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 153,
+          "text": "const command = execFileSync('reg.exe', ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run', '/v', `Mizu-Test-${profile}`], { encoding: 'utf8', windowsHide: true });"
+        },
+        {
+          "line": 158,
+          "text": "expect(() => execFileSync('reg.exe', ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run', '/v', `Mizu-Test-${profile}`], { stdio: 'pipe', windowsHide: true })).toThrow();"
+        },
+        {
+          "line": 161,
+          "text": "await app.evaluate(({ app }, profile) => app.setLoginItemSettings({ name: `Mizu-Test-${profile}`, openAtLogin: false }), profile).catch(() => {});"
+        }
+      ]
+    },
+    {
+      "file": "tests/png-companion.spec.mjs",
+      "bytes": 14509,
+      "lines": 141,
+      "sha256": "492a8f43c7e8248a3ffd8c862edd0a0aaebc715983c6eb4651702aa3449508af",
+      "imports": [
+        "node:assert/strict",
+        "@playwright/test",
+        "node:fs/promises",
+        "node:crypto",
+        "../scripts/lib/png-rgba.mjs",
+        "../src/app/features/companion/animation/slingsip-assets.ts",
+        "../src/app/features/companion/animation/slingsip-png-choreography.ts",
+        "../src/app/features/companion/animation/character.model.ts",
+        "../src/app/features/companion/animation/entry-variants.ts",
+        "../src/app/features/companion/animation/swing-motion.ts",
+        "./helpers/companion-visuals.mjs"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/restart.spec.mjs",
+      "bytes": 9017,
+      "lines": 104,
+      "sha256": "75ec67b239c99e617263d8944feb35dd46df4a9bba15fd2d8673d36c7858360c",
+      "imports": [
+        "@playwright/test",
+        "node:events",
+        "node:child_process",
+        "electron",
+        "node:net",
+        "node:fs/promises",
+        "node:crypto",
+        "node:os",
+        "node:path",
+        "../electron/restart-controller.ts",
+        "../scripts/dev-workflow.mjs",
+        "../shared/development-contract.ts",
+        "../shared/hydration-schedule.ts",
+        "../shared/hydration-history.ts",
+        "../shared/hydration-settings.ts",
+        "../shared/companion-preferences.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 69,
+          "text": "let app=await electron.launch({args:['.','--companion-test',`--companion-test-profile=${profile}`,'--companion-test-production','--companion-test-login-items',`--remote-debugging-port=${port}`],env,ch"
+        },
+        {
+          "line": 99,
+          "text": "if(process.platform==='win32')try{execFileSync('reg.exe',['delete','HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run','/v',`Mizu-Test-${profile}`,'/f'],{stdio:'ignore',windowsHide:true});}catch"
+        }
+      ]
+    },
+    {
+      "file": "tests/three-companion.spec.mjs",
+      "bytes": 12909,
+      "lines": 120,
+      "sha256": "e88455941569ba7999d6d2689b4cdb3267d4f1bef0211e3752829ea1a7eb19fa",
+      "imports": [
+        "@playwright/test",
+        "node:fs/promises",
+        "node:zlib",
+        "./helpers/companion-visuals.mjs",
+        "three/addons/loaders/GLTFLoader.js",
+        "three",
+        "../src/app/features/companion/three/character-model-controller.ts",
+        "../src/app/features/companion/three/bottle-controller.ts",
+        "../src/app/features/companion/three/web-controller.ts"
+      ],
+      "exports": [],
+      "markers": [
+        {
+          "line": 10,
+          "text": "const assets={character:'',bottle:'',temporary:true,characterHeight:2.2,nodes:{grip:'WebGrip',freeHand:'BottleGrip',boot:'Foot_L',head:'Head',chest:'Chest'},morphs:{blink:'blink',smile:'smile',frown:'"
+        },
+        {
+          "line": 14,
+          "text": "const result=await load('public/assets/character/temporary-3d/guardian.glb');"
+        },
+        {
+          "line": 26,
+          "text": "const result=await load('public/assets/character/temporary-3d/bottle.glb');expect(result.scene.getObjectByName('BottleLabel')).toBeTruthy();"
+        },
+        {
+          "line": 42,
+          "text": "const bottle=new BottleController(source,{...assets,temporary:false}),sample={x:100,y:200,size:80,rotation:10};"
+        }
+      ]
+    },
+    {
+      "file": "tests/webm-player.spec.mjs",
+      "bytes": 4404,
+      "lines": 83,
+      "sha256": "25c9f2896deb8ca4205b95c6df1273e1cb67eb2312fe4eaff2d5b3ef4a8a7529",
+      "imports": [
+        "@playwright/test",
+        "esbuild",
+        "node:fs/promises",
+        "node:path"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/window-geometry.spec.mjs",
+      "bytes": 1671,
+      "lines": 38,
+      "sha256": "4ee73a947f8c01d4f731d7036492403e96c562f532f21640515665bb5d923136",
+      "imports": [
+        "@playwright/test",
+        "../electron/window-geometry.ts"
+      ],
+      "exports": [],
+      "markers": []
+    },
+    {
+      "file": "tests/windows-pointer.cs",
+      "bytes": 2527,
+      "lines": 63,
+      "sha256": "b482b0d538a641de1d58b9cde0446f103e7a30bed2613d976c7d4aad285c53d6",
+      "imports": [],
+      "exports": [],
+      "markers": [
+        {
+          "line": 7,
+          "text": "// A test-only helper. The application does not depend on .NET or native pointer injection."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<button class="profile-chip" type="button" data-testid="profile-chip" aria-haspopup="dialog" [attr.aria-expanded]="opened()" aria-controls="profile-popover" [attr.aria-label]="profile.name() ? 'Open profile for ' + profile.name() : 'Open your local profile'" [disabled]="!desktop.snapshot()" (click)="toggle()">
+  <span class="avatar">{{ profile.initials() }}</span><span class="chip-name">{{ profile.name() || 'Your profile' }}</span><span class="chevron" aria-hidden="true">⌄</span>
+</button>
+<dialog id="profile-popover" class="profile-popover" aria-labelledby="profile-heading" data-testid="profile-popover" (keydown)="keydown($event)">
+  <header class="popover-top"><span class="eyebrow">ON THIS DEVICE</span><button class="close" type="button" aria-label="Close profile" (click)="close()">×</button></header>
+  @switch (view()) {
+    @case ('edit') {
+      <h2 id="profile-heading">Edit your profile</h2>
+      <form (submit)="save($event)">
+        <label for="edit-display-name">Display name</label><input id="edit-display-name" data-testid="edit-display-name" type="text" required maxlength="96" autocomplete="given-name" placeholder="Your name" [value]="draft()" (input)="input($event)" [attr.aria-invalid]="!!error()" aria-describedby="profile-edit-hint">
+        <p id="profile-edit-hint" class="hint" [class.invalid]="error()" [attr.role]="error() ? 'alert' : null">{{ error() || 'Your progress and routine stay as they are.' }}</p>
+        <div class="actions"><button class="secondary" type="button" (click)="view.set('profile')">Cancel</button><button class="primary" type="submit" data-testid="save-profile" [disabled]="desktop.busy()">{{ desktop.busy() ? 'Saving…' : 'Save name' }}</button></div>
+      </form>
+    }
+    @case ('reset') {
+      <h2 id="profile-heading">Reset onboarding?</h2><p class="hint">The welcome setup will return next time you open SlingSip. Your name, water progress, history, streak and settings stay saved.</p>
+      @if (error()) { <p class="hint invalid" role="alert">{{ error() }}</p> }
+      <div class="actions"><button class="secondary" data-testid="cancel-profile-reset" type="button" (click)="view.set('profile')">Cancel</button><button class="reset-confirm" type="button" data-testid="confirm-profile-reset" (click)="reset()" [disabled]="desktop.busy()">Reset onboarding</button></div>
+    }
+    @default {
+      <div class="identity"><span class="avatar large">{{ profile.initials() }}</span><div><h2 id="profile-heading">{{ profile.name() || 'Your local profile' }}</h2><p>Your hydration sidekick</p></div></div>
+      <dl><div><dt>Daily goal</dt><dd>{{ desktop.snapshot()?.hydration.dailyGoal }} ml</dd></div><div><dt>Member since</dt><dd>{{ profile.memberSince() }}</dd></div></dl>
+      @if (resetDone()) { <p class="hint" role="status">Welcome setup is ready for your next launch.</p> }
+      @if (!profile.profile()?.hasCompletedOnboarding) { <button class="popover-action" type="button" (click)="resume()">Continue setup <span aria-hidden="true">→</span></button> }
+      <button class="popover-action" data-testid="edit-profile" type="button" (click)="edit()">Edit profile <span aria-hidden="true">↗</span></button>
+      <button class="popover-action" data-testid="replay-tour" type="button" (click)="replay()">Replay welcome tour <span aria-hidden="true">↗</span></button>
+      <button class="popover-action reset-action" data-testid="reset-onboarding" type="button" (click)="view.set('reset'); error.set('')">Reset onboarding <span aria-hidden="true">↺</span></button>
+    }
+  }
+</dialog>

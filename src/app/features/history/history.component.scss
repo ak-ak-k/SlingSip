@@ -1,0 +1,18 @@
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.stats .card { position: relative; overflow: hidden; background: radial-gradient(ellipse at 100% 0, var(--slingsip-tint), transparent 65%), var(--surface); }
+.stats strong { display: block; color: var(--mint); font-size: 40px; font-weight: 500; letter-spacing: -1px; margin: 18px 0 8px; font-variant-numeric: tabular-nums; }
+.stats strong small { color: var(--muted); font-size: 17px; font-weight: 400; margin-left: 8px; }
+.stats .card > span { color: var(--muted); font-size: 11px; }
+.streak-note { color: var(--muted); font-size: 11px; margin: 20px 0 27px; }
+.days { padding: 25px; }
+.day { padding: 22px 0; border-bottom: 1px solid var(--line); }.day:last-of-type { border-bottom: none; }
+.day-heading, .day-water { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.day h3 { margin: 0 0 7px; font-size: 14px; font-weight: 500; }.day time { font-size: 10px; color: var(--muted); }
+.badge { border: 1px solid var(--slingsip-border-secondary); color: var(--slingsip-error); border-radius: 20px; background: var(--slingsip-glow-secondary); font-size: 10px; padding: 6px 10px; white-space: nowrap; }
+.badge.complete { color: var(--mint); border-color: var(--slingsip-border-accent); background: var(--slingsip-tint-soft); }
+.badge.ongoing { color: var(--muted); border-color: var(--line); background: var(--slingsip-highlight); }
+.day-water { margin: 17px 0 12px; font-size: 12px; }.day-water strong { font-weight: 550; }.day-water strong span { color: var(--muted); font-weight: 400; }.day-water > span { color: var(--mint); font-size: 11px; }
+.progress { height: 6px; border-radius: 7px; background: var(--slingsip-track); overflow: hidden; }.progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--slingsip-accent-cyan), var(--mint)); border-radius: inherit; transition: width .45s ease; }
+.day > small { display: block; margin-top: 10px; color: var(--muted); font-size: 10px; }.more { margin-top: 20px; }
+@media (max-width: 900px) { .stats { gap: 12px; }.stats .card { padding: 18px; }.stats .kicker { font-size: 9px; letter-spacing: 1px; } }
+@media (max-width: 700px) { .stats { grid-template-columns: 1fr; }.stats .card { display: flex; align-items: center; gap: 15px; }.stats strong { margin: 0 0 0 auto; font-size: 32px; }.stats .card > span { display: none; }.day-heading { flex-wrap: wrap; }.days { padding: 21px; } }

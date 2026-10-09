@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>SlingSip — Your hydration sidekick</title>
+  <!-- Keep the geometry and colours synchronized with electron/tray-icon.ts. -->
+  <path d="M51.151 15.930 A25 25 0 1 1 11.521 46.339" fill="none" stroke="#83d2dd" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M32 10 L44 36 A12 12 0 0 1 20 36 Z" fill="#8ce8ca"/>
+  <path d="M26 36 A6 6 0 0 0 32 42" fill="none" stroke="#0b1118" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="51.151" cy="15.930" r="3" fill="#ee8490"/>
+</svg>

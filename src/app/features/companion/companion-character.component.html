@@ -1,0 +1,43 @@
+<img hidden data-testid="slingsip-asset-probe" [src]="assetProbe" alt="" (error)="assets.fail('idle')" />
+@if (pngReady()) { <app-web-renderer /> }
+<div class="character" data-testid="character" aria-label="SlingSip companion, an original web-swinging water guardian"
+  [attr.data-state]="animation.state.current()" [attr.data-direction]="animation.state.direction()"
+  [attr.data-x]="animation.pose().x" [attr.data-y]="animation.pose().y" [attr.data-rotation]="animation.pose().rotation"
+  [style.width.px]="animation.dimensions().width" [style.height.px]="animation.dimensions().height"
+  [style.transform-origin]="grip().x + 'px ' + grip().y + 'px'" [style.transform]="transform()"
+  [style.--scarf-angle]="animation.pose().scarf + 'deg'"
+  [style.--front-leg-angle]="animation.pose().frontLeg + 'deg'" [style.--rear-leg-angle]="animation.pose().rearLeg + 'deg'"
+  [style.--arm-angle]="animation.pose().arm + 'deg'" [style.--head-angle]="animation.pose().head + 'deg'"
+  [style.--idle-sway]="animation.config.idleSwayDegrees + 'deg'" [style.--idle-sway-time]="animation.config.idleSwayMs + 'ms'"
+  [style.--idle-breath]="animation.config.idleBreathScale" [style.--idle-breath-time]="animation.config.idleBreathMs + 'ms'"
+  [style.--idle-scarf]="animation.config.idleScarfDegrees + 'deg'" [style.--idle-scarf-time]="animation.config.idleScarfMs + 'ms'"
+  [style.--idle-blink-time]="animation.config.idleBlinkMs + 'ms'" [style.--reaction-time]="animation.config.reactionMs + 'ms'"
+  [style.--success-reaction]="animation.config.successReactionDegrees + 'deg'" [style.--waiting-reaction]="animation.config.waitingReactionDegrees + 'deg'"
+  [attr.data-variant]="animation.variant()" [attr.data-renderer]="pngReady() ? (assets.select('idle') ? 'png-2.5d' : 'brand-mark') : 'loading'" [attr.data-assets]="assets.status()" [class.is-inactive]="!animation.active()"
+  [class.is-low-power]="animation.preferences().lowPowerAnimations" [class.is-reduced]="animation.reducedMotion()"
+  [style.--idle-vertical]="animation.config.idleVerticalPx * 220 / animation.dimensions().height + 'px'"
+  [style.--reduced-slide]="animation.config.reducedSlidePx + 'px'"
+  [style.--arrival-time]="animation.config.bubbleAppearMs + 'ms'"
+  [style.--cursor-time]="animation.config.cursorTransitionMs + 'ms'"
+  [class.is-exiting]="animation.state.current() === 'swinging-out-right' || animation.state.current() === 'swinging-back-left'"
+  [class.is-idle]="animation.state.current() === 'reminder'" [class.is-waiting]="animation.state.current() === 'waiting'"
+  [class.is-success]="animation.state.current() === 'success' || animation.state.current() === 'delivering-bottle'"
+  [style.visibility]="animation.state.visible() ? 'visible' : 'hidden'">
+  @if (animation.state.visible()) {
+    <div class="character-visual"><div class="character-interaction"
+      [attr.data-overlay-interactive]="animation.state.current() === 'reminder' && animation.preferences().characterReactions && animation.active() ? '' : null"
+      [style.--painted-pointer]="animation.state.current() === 'reminder' && animation.preferences().characterReactions && animation.active() ? 'visiblePainted' : 'none'"
+      (click)="animation.reactToClick()">
+      @if (pngReady()) { <app-slingsip-png-renderer /> }
+    </div></div>
+  }
+</div>
+@if (pngReady() && animation.bottleProgress() !== null) {
+  @if (assets.select('bottle')) {
+  <svg class="bottle" data-testid="companion-bottle" aria-label="SlingSip bottle delivered by web" [attr.viewBox]="'0 0 '+bottleAsset.bounds.width+' '+bottleAsset.bounds.height" data-asset-pack="slingsip-production-png">
+    <defs><clipPath id="slingsip-bottle-mask" clipPathUnits="userSpaceOnUse"><path [attr.d]="bottleAsset.clipPath" clip-rule="evenodd"/></clipPath></defs>
+    <g [attr.transform]="'translate('+bottleAsset.transform.x+' '+bottleAsset.transform.y+')'"><image [attr.href]="bottleAsset.src" [attr.width]="bottleAsset.width" [attr.height]="bottleAsset.height" clip-path="url(#slingsip-bottle-mask)" (error)="assets.fail('bottle')"/></g>
+  </svg>
+  }
+  <span class="water-feedback" data-testid="bottle-water-feedback" aria-hidden="true">{{ feedback() }}</span>
+}

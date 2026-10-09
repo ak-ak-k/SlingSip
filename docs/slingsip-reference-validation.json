@@ -1,0 +1,248 @@
+{
+  "typecheck": "passed",
+  "productionRendererAndElectronBuild": "passed",
+  "completeSuite": {
+    "startTime": "2026-10-06T13:03:39.900Z",
+    "duration": 808233.867,
+    "expected": 84,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "file": "phase-one.spec.mjs",
+      "title": "Native swing regression: transparent overlay, native hydration clicks, secure IPC, reuse, and recovery",
+      "status": "unexpected",
+      "errors": [
+        "Error: Command failed: D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\native-tests\\windows-pointer.exe Move 1038 543\nThe system cannot find the file specified\r\n"
+      ]
+    }
+  ],
+  "affectedChecks": [
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Named production-style clips map without eighteen placeholder-specific names, and root travel is removed",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Web grip aliases and model normalization keep the attachment fixed while real limbs move",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Facial moods compose with blink, reset to neutral and discover independent left/right channels",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Success, Later and Ignore body sequences fit the existing business phases and continuously sample generic SwingIn",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "asset-integration.spec.mjs",
+      "title": "Missing final files explicitly fall back to existing temporary GLBs without claiming production assets",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Temporary pack supplies genuinely different body frames and authored anchors for all requested clips",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Two-web choreography clears the old strand before the next cast at all entry/exit variants and DIP sizes",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Bottle web uses each frame hand, drops before 10-degree damped swing, feedback, retract and stays on desktop",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "body-rendering.spec.mjs",
+      "title": "Native sprite fallback changes body frames while the existing path moves, idles without JS RAF and delivers dynamic water feedback",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "branding.spec.mjs",
+      "title": "Brand identity keeps legacy data/session directories and isolates test profiles",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "branding.spec.mjs",
+      "title": "SlingSip loads existing v2 water, settings, history and streaks across a native restart",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing states allow complete success and later flows without walking or invalid shortcuts",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Swing timing and trajectory are independent of 30, 60 and 144 Hz, including stalls",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Responsive arcs enter left, dip, rise and exit either edge; entry web length stays fixed",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Arrival brakes smoothly, recoils and preserves body and web continuity into either exit",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Bottle stays on the animated hand and lowers within desktop bounds during a short delivery",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Native swing success logs immediately, delivers a bottle, exits right, stops RAF and reuses the window",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "character-motion.spec.mjs",
+      "title": "Reduced motion keeps the reminder usable without travel or ambient frame loops",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Local GLB is a skinned original rig with all clips, real skeletal movement and facial morphs",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Bottle is a real GLB prop and dynamic 3D web endpoints release without leftover geometry",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native 3D overlay has alpha, plays bodily clips and two-web handoffs, smiles, blinks, delivers one glass and cleans up",
+      "status": "expected",
+      "errors": []
+    },
+    {
+      "file": "three-companion.spec.mjs",
+      "title": "Native 3D pause/reduced motion/retry and isolated lab preserve 2D dashboard and saved water",
+      "status": "expected",
+      "errors": []
+    }
+  ],
+  "precedingFocused": {
+    "startTime": "2026-10-06T12:54:05.542Z",
+    "duration": 188316.021,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "precedingFocusedNote": "21 passed; the blink mapping assertion expected two meshes before the new blinking rims. Updated to the actual four meshes. The final full run validates the corrected assertion.",
+  "transparencyAndWebUnitCheck": "2 passed after material fix",
+  "nativeCapture": {
+    "errors": [],
+    "frames": 156,
+    "flows": [
+      {
+        "name": "Classic",
+        "frames": 12,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ]
+      },
+      {
+        "name": "High",
+        "frames": 13,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ]
+      },
+      {
+        "name": "Fast Zip",
+        "frames": 12,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ]
+      },
+      {
+        "name": "Upside Down",
+        "frames": 13,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder"
+        ]
+      },
+      {
+        "name": "Success",
+        "frames": 20,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder",
+          "success",
+          "delivering-bottle",
+          "swinging-out-right"
+        ]
+      },
+      {
+        "name": "Later",
+        "frames": 21,
+        "states": [
+          "swinging-in",
+          "arriving",
+          "reminder",
+          "waiting",
+          "swinging-back-left"
+        ]
+      },
+      {
+        "name": "Ignore",
+        "frames": 65,
+        "states": [
+          "swinging-in",
+          "reminder",
+          "waiting",
+          "swinging-back-left"
+        ]
+      }
+    ],
+    "desktopWorkArea": "1920x1032",
+    "minimumDashboardWindow": "760x560"
+  },
+  "physicalPointerAssertionsRetained": true,
+  "finalAssetCompatibilityVerified": false,
+  "finalCharacterAndBottle": "missing",
+  "temporaryArtIsFinal": false,
+  "deployed": false
+}

@@ -1,0 +1,17 @@
+
+meeting 
+water
+
+Finish SlingSip properly
+↓
+Final QA
+↓
+Record excellent desktop demo
+↓
+Prepare GitHub/README
+↓
+Build portfolio web showcase
+↓
+Vercel
+↓
+Windows installer/download

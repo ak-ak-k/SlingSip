@@ -1,0 +1,14 @@
+:host { display: block; min-width: 0; height: 100%; }
+.today-panel { display: flex; flex-direction: column; background: radial-gradient(ellipse at 25% 54%, var(--slingsip-tint-soft), transparent 65%), linear-gradient(135deg, var(--slingsip-panel-top), var(--slingsip-panel-bottom)); }
+.card-top h2 { margin-top: 7px; }.card-top { align-items: flex-start; }
+.progress-body { display: flex; align-items: center; gap: clamp(20px, 2.3vw, 38px); margin: auto 0; padding: 12px 0 23px; }
+.progress-ring { position: relative; width: 186px; height: 186px; flex-shrink: 0; }
+.progress-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+.ring-track, .ring-value { fill: none; stroke-width: 9; }.ring-track { stroke: var(--slingsip-track); }.ring-value { stroke: url(#water-ring); stroke-linecap: round; stroke-dasharray: 100; transition: stroke-dashoffset .6s cubic-bezier(.2,.65,.35,1); filter: drop-shadow(0 0 5px var(--slingsip-glow-primary)); }
+.ring-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 7px; }
+.ring-content app-ui-icon { color: var(--mint); width: 21px; height: 21px; }.ring-content strong { font-size: 36px; font-weight: 550; letter-spacing: -1.4px; font-variant-numeric: tabular-nums; }.ring-content span { font-size: 10px; color: var(--muted); }
+.progress-copy { min-width: 0; }.water-amount { font-size: 19px; letter-spacing: -.5px; font-weight: 550; font-variant-numeric: tabular-nums; }.positive-copy { color: var(--mint); font-size: 13px; margin: 11px 0 9px; }.progress-copy .muted { font-size: 11px; margin-bottom: 19px; }
+.today-foot { display: flex; align-items: center; gap: 8px; padding-top: 15px; border-top: 1px solid var(--line); font-size: 10px; }.today-foot app-ui-icon { color: var(--mint); width: 14px; height: 14px; }
+@media (max-width: 1500px) { .progress-ring { width: 164px; height: 164px; }.progress-body { gap: 20px; }.water-amount { font-size: 17px; }.card-top .pill { font-size: 9px; } }
+@media (min-width: 1001px) and (max-width: 1150px) { .progress-ring { width: 140px; height: 140px; }.progress-body { gap: 15px; } }
+@media (max-width: 700px) { .progress-body { flex-direction: column; text-align: center; }.card-top { flex-wrap: wrap; gap: 8px; }.progress-ring { width: 175px; height: 175px; }.today-foot { justify-content: center; } }

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SlingSip — Final QA, 8 October 2026</title>
+  <style>
+    :root { color-scheme: dark; font: 16px/1.6 system-ui, sans-serif; background: #0d141d; color: #e5f1f8; }
+    body { margin: 0 auto; padding: 32px 24px 64px; max-width: 1440px; }
+    h1 { font-size: clamp(24px, 3vw, 36px); line-height: 1.2; margin-bottom: 12px; }
+    h2 { font-size: 20px; margin: 0 0 8px; }
+    p { max-width: 100ch; }
+    a { color: #76e6d2; text-underline-offset: 3px; }
+    nav { display: flex; gap: 12px 24px; flex-wrap: wrap; margin: 24px 0; }
+    .status { border: 1px solid #b58556; border-radius: 12px; background: #251f1a; padding: 12px 18px; }
+    figure { margin: 30px 0; padding: 18px; border: 1px solid #283b4c; background: #111c26; border-radius: 14px; }
+    .image { overflow: auto; border-radius: 6px; background: repeating-conic-gradient(#1b2631 0 25%, #25313c 0 50%) 0 0 / 24px 24px; }
+    img { display: block; max-width: 100%; height: auto; margin: auto; }
+    figcaption { margin-top: 12px; color: #b2c6d5; }
+    .overlay img { width: 100%; }
+    small { color: #b2c6d5; }
+  </style>
+</head>
+<body>
+  <h1>SlingSip final QA · 8 October 2026</h1>
+  <p>Native Angular/Electron captures from an isolated completed-user profile. Existing dashboard, companion artwork and application logic are preserved.</p>
+  <p class="status"><strong>READY FOR DEMO WITH ONE KNOWN TEST-HARNESS LIMITATION</strong><br>User-performed manual physical click-through passed. No confirmed production click-through defect. Production build, security and core flows passed. Automated results remain 110 passed, 1 failed, 0 skipped; the native pointer regression remains flaky because of Windows cursor/target-ownership interference.</p>
+  <nav aria-label="QA evidence">
+    <a href="../../slingsip-final-qa-2026-10-08.md">Final report</a>
+    <a href="../../slingsip-final-qa-2026-10-08-validation.json">Validation record</a>
+    <a href="../../slingsip-final-qa-2026-10-08-checklist.md">Coverage checklist</a>
+    <a href="../../slingsip-final-qa-2026-10-08-performance.json">Performance observation</a>
+    <a href="../onboarding/index.html">Onboarding captures</a>
+  </nav>
+  <small>Primary display: 1920 × 1080, 100% scaling, 1920 × 1032 work area. Overlay PNGs retain transparency; the checkerboard is gallery background.</small>
+  <figure>
+    <h2>Overview</h2>
+    <div class="image"><a href="overview.png"><img src="overview.png" alt="Current SlingSip overview with Test User profile, progress, reminder status and approved hero mascot."></a></div>
+    <figcaption>Restored completed profile; onboarding does not cover the dashboard. Layout is unchanged.</figcaption>
+  </figure>
+  <figure>
+    <h2>History</h2>
+    <div class="image"><a href="history.png"><img src="history.png" loading="lazy" alt="SlingSip history with live Today row and streak cards for the isolated profile."></a></div>
+    <figcaption>This capture uses a fresh hydration archive. Automated seeded fixtures separately verify frozen past goals and missing/incomplete-day streaks.</figcaption>
+  </figure>
+  <figure>
+    <h2>Settings</h2>
+    <div class="image"><a href="settings.png"><img src="settings.png" loading="lazy" alt="Existing SlingSip hydration routine and preferences settings."></a></div>
+    <figcaption>Existing settings service and explicit save behavior are preserved.</figcaption>
+  </figure>
+  <figure class="overlay">
+    <h2>Settled reminder</h2>
+    <div class="image"><a href="reminder.png"><img src="reminder.png" loading="lazy" alt="Transparent companion overlay with approved SlingSip ask pose, local web and dark water reminder bubble in a safe right-side region."></a></div>
+    <figcaption>Captured after the finite pose fade. Infinite lightweight idle animation remains enabled. This image does not certify physical click-through.</figcaption>
+  </figure>
+  <figure class="overlay">
+    <h2>Successful bottle delivery</h2>
+    <div class="image"><a href="success-bottle.png"><img src="success-bottle.png" loading="lazy" alt="Approved happy SlingSip pose delivering a cyan bottle on its web with immediate plus 250 milliliter feedback."></a></div>
+    <figcaption>Configured water is credited immediately. Existing short bottle pendulum and right exit are verified by native and geometry cases.</figcaption>
+  </figure>
+  <p>Local review only. No deployment or publishing.</p>
+</body>
+</html>

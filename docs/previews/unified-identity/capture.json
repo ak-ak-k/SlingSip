@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-07T08:44:41.793Z",
+  "isolatedProfile": "identity-capture-a7a8dafd-72fd-495f-90a8-c50eabe4c65a",
+  "fixtureWaterMl": 1250,
+  "screens": [
+    {
+      "file": "overview-1366.png",
+      "label": "Overview 1366 x 768"
+    },
+    {
+      "file": "overview-1920.png",
+      "label": "Overview 1920 x 1080"
+    },
+    {
+      "file": "overview-2560.png",
+      "label": "Overview 2560 x 1440"
+    },
+    {
+      "file": "overview-760.png",
+      "label": "Overview 760 x 560"
+    },
+    {
+      "file": "history.png",
+      "label": "History"
+    },
+    {
+      "file": "settings.png",
+      "label": "Settings"
+    },
+    {
+      "file": "preferences.png",
+      "label": "Sidekick preferences"
+    },
+    {
+      "file": "reminder.png",
+      "label": "Transparent desktop reminder"
+    },
+    {
+      "file": "success-bottle.png",
+      "label": "Approved Happy and bottle delivery"
+    },
+    {
+      "file": "later.png",
+      "label": "Approved disappointed head and Later bubble"
+    },
+    {
+      "file": "animation-lab.png",
+      "label": "Animation lab in shared theme"
+    }
+  ],
+  "errors": []
+}

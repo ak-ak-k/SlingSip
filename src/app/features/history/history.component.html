@@ -1,0 +1,14 @@
+<div class="page" data-testid="history-page">
+  <div class="eyebrow">SMALL STEPS, REMEMBERED</div><h1>Your days, <span>one glass closer.</span></h1><p class="intro">A simple record of your ritual. Today's progress updates as you drink.</p>
+  @if (!desktop.nativeAvailable) { <div class="notice" role="status">Open the SlingSip desktop app to see your saved days.</div> }
+  @if (desktop.snapshot()?.storageError) { <div class="notice error" role="alert">{{ desktop.snapshot()?.storageError }}</div> }
+  <div class="stats"><section class="card"><div class="kicker">CURRENT STREAK</div><strong data-testid="current-streak">{{ desktop.snapshot() ? stats().currentStreak : '—' }}</strong><span>consecutive days</span></section><section class="card"><div class="kicker">BEST STREAK</div><strong data-testid="best-streak">{{ desktop.snapshot() ? stats().bestStreak : '—' }}</strong><span>consecutive days</span></section><section class="card"><div class="kicker">THIS WEEK</div><strong data-testid="week-completed">{{ desktop.snapshot() ? stats().weekCompletedDays : '—' }}<small>/ 7</small></strong><span>daily goals completed</span></section></div>
+  <p class="streak-note">Reach your daily goal to count a day. Today's unfinished goal keeps yesterday's streak until midnight. Your week starts on Monday.</p>
+  <section class="card days" aria-labelledby="days-title"><div class="kicker">YOUR HISTORY</div><h2 id="days-title">A day at a time.</h2>
+    @if (entries().length <= 1 && !entries()[0]?.consumedMl) { <p class="empty-note">Your first glass starts the story. Logged days will appear here.</p> }
+    @for (entry of visible(); track entry.date) {
+      <article class="day" [attr.data-testid]="'history-' + entry.date"><div class="day-heading"><div><h3>{{ label(entry.date) }}</h3><time [attr.datetime]="entry.date">{{ entry.date }}</time></div><span class="badge" [class.complete]="entry.completed" [class.ongoing]="!entry.completed && entry.date === desktop.snapshot()?.hydrationState.date">{{ entry.completed ? 'Goal complete' : entry.date === desktop.snapshot()?.hydrationState.date ? 'In progress' : 'Goal not reached' }}</span></div><div class="day-water"><strong>{{ entry.consumedMl }} <span>/ {{ entry.goalMl }} ml</span></strong><span>{{ entry.percentage }}%</span></div><div class="progress" role="progressbar" aria-label="Daily hydration" [attr.aria-valuenow]="entry.percentage" aria-valuemin="0" aria-valuemax="100"><span [style.width.%]="entry.percentage"></span></div>@if (entry.lastDrinkAt) { <small>Last glass at {{ time(entry.lastDrinkAt) }}</small> }</article>
+    } @empty { <p class="empty-note">Open SlingSip in Electron to see your saved days.</p> }
+    @if (entries().length > limit()) { <button class="secondary more" type="button" (click)="limit.set(limit() + 30)">Show earlier days</button> }
+  </section>
+</div>

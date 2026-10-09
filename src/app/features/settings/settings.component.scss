@@ -1,0 +1,13 @@
+form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.group-intro { margin-bottom: 0; font-size: 11px; }.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; margin-top: 22px; }
+label { display: flex; flex-direction: column; gap: 9px; font-size: 12px; color: var(--text); min-width: 0; }
+input { width: 100%; min-width: 0; border: 1px solid var(--slingsip-border); border-radius: 9px; background: var(--slingsip-field); color: var(--text); padding: 12px; font: inherit; color-scheme: dark; }
+input:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }input[aria-invalid="true"] { outline: 1px solid var(--coral); outline-offset: -1px; }
+.input-wrap { display: flex; align-items: center; background: var(--slingsip-field); border: 1px solid var(--slingsip-border); border-radius: 9px; }.input-wrap:focus-within { border-color: var(--slingsip-border-strong); }.input-wrap input { border: 0; background: transparent; }.input-wrap > span { padding-right: 12px; color: var(--muted); font-size: 11px; }
+small { display: block; color: var(--muted); font-size: 10px; line-height: 1.65; }.invalid { color: var(--slingsip-error); }
+.preference { flex-direction: row; align-items: center; justify-content: space-between; gap: 20px; padding: 8px 0; }.preference strong { display: block; font-size: 12px; font-weight: 550; margin-bottom: 6px; }.preference input { width: 19px; height: 19px; flex-shrink: 0; accent-color: var(--mint); }.preference input:disabled { opacity: .48; }
+.hours { margin-bottom: 10px; }.retry { max-width: 290px; margin-top: 21px; }.hint { color: var(--muted); font-size: 10px; margin: 10px 0 0; }
+.desktop-preferences { margin: 20px 0; }.desktop-preferences > div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 11px; }.desktop-preferences dt { color: var(--muted); }.desktop-preferences dd { margin: 0; text-align: right; color: var(--mint); }
+.startup-card, .save-row { grid-column: span 2; }.save-row { display: flex; align-items: center; gap: 12px; padding: 8px 0 0; flex-wrap: wrap; }.save-row > span { margin-left: auto; color: var(--muted); font-size: 10px; }
+@media (max-width: 1250px) { form { grid-template-columns: 1fr; }.startup-card, .save-row { grid-column: auto; } }
+@media (max-width: 700px) { .fields { grid-template-columns: 1fr; }.save-row > span { width: 100%; margin-left: 0; } }

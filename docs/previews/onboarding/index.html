@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SlingSip — Onboarding native review</title>
+<style>
+  :root{color-scheme:dark;font-family:system-ui,sans-serif;color:#eff7fb;background:#09121c}
+  body{max-width:1400px;margin:0 auto;padding:32px}h1{font-size:28px}p{color:#a4b7c7;line-height:1.7}a{color:#8ce8ca}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(480px,100%),1fr));gap:24px}
+  figure{margin:0;border:1px solid #294653;background:#13212e;border-radius:14px;overflow:hidden}
+  img{display:block;width:100%;height:auto}figcaption{padding:16px;font-size:14px}
+  .details{display:block;color:#a4b7c7;font-size:12px;margin-top:6px}
+</style>
+<h1>SlingSip onboarding and local profile</h1>
+<p>Actual isolated Electron screenshots refreshed during focused onboarding QA on 8 October 2026. Existing dashboard, assets and hydration records are retained. <a href="../../slingsip-onboarding-qa.md">Focused QA report</a> · <a href="../../slingsip-onboarding-qa-validation.json">QA validation</a> · <a href="../../slingsip-onboarding.md">Original implementation</a></p>
+<main class="gallery">
+  <figure><a href="01-welcome.png"><img src="01-welcome.png" alt="Welcome to SlingSip with its supplied swinging mascot"></a><figcaption>Welcome<span class="details">Original short copy, local setup, existing logo and supplied artwork.</span></figcaption></figure>
+  <figure><a href="02-profile.png"><img src="02-profile.png" alt="Display name form with live AK initials preview"></a><figcaption>Your name<span class="details">Trimmed preview and local profile, with idle mascot.</span></figcaption></figure>
+  <figure><a href="03-routine.png"><img src="03-routine.png" alt="Existing water routine fields with upside-down mascot"></a><figcaption>Your routine<span class="details">Existing hydration settings API; no duplicate settings.</span></figcaption></figure>
+  <figure><a href="04-meet.png"><img src="04-meet.png" alt="Meet SlingSip explaining how its reminders work"></a><figcaption>Meet SlingSip</figcaption></figure>
+  <figure><a href="05-tour-progress.png"><img src="05-tour-progress.png" alt="Tour spotlight highlighting today's progress"></a><figcaption>Dashboard tour: progress<span class="details">25% larger mascot; slightly stronger target border and glow. Native dialog and positioning retained.</span></figcaption></figure>
+  <figure><a href="06-tour-profile.png"><img src="06-tour-profile.png" alt="Tour spotlight on the compact profile chip"></a><figcaption>Dashboard tour: profile</figcaption></figure>
+  <figure><a href="07-tour-tray.png"><img src="07-tour-tray.png" alt="Centered tour card explaining background tray behavior"></a><figcaption>Dashboard tour: system tray<span class="details">The native tray is outside the renderer; this step is centered.</span></figcaption></figure>
+  <figure><a href="08-ready.png"><img src="08-ready.png" alt="Ready screen with Start my day and the success mascot"></a><figcaption>Ready<span class="details">Keep moving. Keep sipping. Only Start my day persists onboarding completion.</span></figcaption></figure>
+  <figure><a href="09-personalized-dashboard.png"><img src="09-personalized-dashboard.png" alt="Existing SlingSip dashboard with personalized greeting and profile chip"></a><figcaption>Personalized dashboard<span class="details">The saved 750 ml and historical records survive relaunch.</span></figcaption></figure>
+  <figure><a href="10-profile-menu.png"><img src="10-profile-menu.png" alt="Small profile menu with edit replay and reset actions"></a><figcaption>Local profile menu</figcaption></figure>
+  <figure><a href="11-welcome-minimum.png"><img src="11-welcome-minimum.png" alt="Welcome screen at the 760 by 560 minimum window size"></a><figcaption>Minimum window: 760 × 560<span class="details">Scrollable where necessary; primary action stays reachable.</span></figcaption></figure>
+  <figure><a href="12-welcome-scaled.png"><img src="12-welcome-scaled.png" alt="Welcome screen with 150 percent page scaling"></a><figcaption>150% scaling proxy</figcaption></figure>
+  <figure><a href="13-tour-minimum.png"><img src="13-tour-minimum.png" alt="Tour card clamped inside the minimum window"></a><figcaption>Tour at minimum window<span class="details">When no adjacent space fits, the card remains bounded.</span></figcaption></figure>
+</main>
+</html>

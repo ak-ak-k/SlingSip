@@ -1,0 +1,518 @@
+{
+  "task": "Focused SlingSip onboarding QA and small polish",
+  "recordedAt": "2026-10-08T08:45:46.768Z",
+  "scope": "Local onboarding QA only; next main Final QA and deployment not performed",
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "requestedChecks": [
+    {
+      "number": 1,
+      "check": "Fresh/reset users only",
+      "status": "passed",
+      "evidence": "Fresh and incomplete profiles show Welcome. Completed profiles bypass it after relaunch. Reset restores Welcome on a subsequent dashboard launch."
+    },
+    {
+      "number": 2,
+      "check": "Completion persistence",
+      "status": "passed",
+      "evidence": "Final **Start my day** writes `hasCompletedOnboarding: true` to the canonical version-1 profile. Tour Skip/Finish/Escape alone does not write completion. A real disk-write failure retains false and succeeds after recovery."
+    },
+    {
+      "number": 3,
+      "check": "Name survives restart",
+      "status": "passed",
+      "evidence": "Saved names restore after full Electron shutdown/relaunch and real production tray restart."
+    },
+    {
+      "number": 4,
+      "check": "Stable creation/member-since",
+      "status": "passed",
+      "evidence": "The entire profile, including `createdAt`, matches after relaunch; the displayed Member since value also matches. Editing and reset preserve the date."
+    },
+    {
+      "number": 5,
+      "check": "Existing settings service",
+      "status": "passed",
+      "evidence": "Routine saves through the existing hydration settings API and validator. A seeded 750 ml survives changing goal/glass to 2400/300; unrelated settings and archived history remain."
+    },
+    {
+      "number": 6,
+      "check": "Replay preserves records",
+      "status": "passed",
+      "evidence": "Repeated replay compares progress, history, streaks, settings, preferences and startup. `hydration.json` is byte-identical before/after replay."
+    },
+    {
+      "number": 7,
+      "check": "Replay tour only",
+      "status": "passed",
+      "evidence": "Replay from History returns to Overview and opens only the six-step tour. Skip, Finish and Escape return directly to the dashboard, without setup/Ready."
+    },
+    {
+      "number": 8,
+      "check": "Reset preserves records",
+      "status": "passed",
+      "evidence": "Cancel leaves completion true; confirm changes only completion to false. Hydration file bytes and canonical hydration/history/streak/settings remain unchanged."
+    },
+    {
+      "number": 9,
+      "check": "Deterministic defer/skip",
+      "status": "passed",
+      "evidence": "Set up later/Escape expose the current dashboard without creating a fresh profile or completing setup. Closing/reopening returns Welcome. Continue setup resumes at Welcome with any saved name/current routine. Initial tour Skip/Escape goes to Ready; only its final CTA completes setup."
+    },
+    {
+      "number": 10,
+      "check": "Profile edit updates UI/text",
+      "status": "passed",
+      "evidence": "Edit updates greeting, chip, initials and active personalized reminder text. Goal-completion text uses the saved name."
+    },
+    {
+      "number": 11,
+      "check": "Missing targets",
+      "status": "passed",
+      "evidence": "Removing the next-break target produces a bounded explanation without a spotlight or crash; Skip still works."
+    },
+    {
+      "number": 12,
+      "check": "Dismissal cleanup",
+      "status": "passed",
+      "evidence": "Skip/Finish/Escape remove the tour component, spotlight, shade and modal dialog. Dashboard becomes interactive; no backdrop remains."
+    },
+    {
+      "number": 13,
+      "check": "Keyboard/Escape",
+      "status": "passed",
+      "evidence": "Enter submits name and advances the tour, Back works, Tab remains within the modal, Escape dismisses, and profile dismissal restores chip focus."
+    },
+    {
+      "number": 14,
+      "check": "Images load",
+      "status": "passed",
+      "evidence": "All five supplied onboarding PNGs decode at their original dimensions via production relative URLs, with no failed onboarding asset requests. Built copies match source hashes. Logo fallback also works."
+    },
+    {
+      "number": 15,
+      "check": "Current mascot only",
+      "status": "passed",
+      "evidence": "Native screenshots, image URLs and requests use the supplied SlingSip artwork. Live hero/companion renderers use the approved PNG pipeline; no guardian/temporary-body asset request appears. Dormant historical assets were not deleted."
+    },
+    {
+      "number": 16,
+      "check": "Electron restart",
+      "status": "passed",
+      "evidence": "Onboarding completion/profile restore through real tray relaunch. Incomplete autostart opens setup; completed autostart remains quiet in the tray until dashboard is reopened."
+    },
+    {
+      "number": 17,
+      "check": "No duplicate state",
+      "status": "passed",
+      "evidence": "One canonical `user-profile.json` has exactly the version-1 profile fields. No additional profile/onboarding file or localStorage profile exists. Real relaunch/single-instance checks retain one window pair."
+    }
+  ],
+  "uniqueChecks": {
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0
+  },
+  "runs": [
+    {
+      "name": "onboarding",
+      "rawReport": ".cache/onboarding-qa-results.json",
+      "startTime": "2026-10-08T08:32:48.040Z",
+      "duration": 194269.269,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "checks": [
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Local names normalize international text, reject invalid input and generate deterministic initials/greetings",
+          "status": "passed",
+          "durationMs": 56,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Tour geometry stays inside compact and scaled viewports including missing and edge targets",
+          "status": "passed",
+          "durationMs": 46,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Fresh onboarding reuses settings, persists only final completion, and safely supports edit, replay, reset and relaunch",
+          "status": "passed",
+          "durationMs": 57272,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Fresh onboarding deferral and Escape never create a profile or completion and return on dashboard reopen",
+          "status": "passed",
+          "durationMs": 19451,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Incomplete setup can be deferred, skip leads to final CTA, and a failed disk write never marks completion",
+          "status": "passed",
+          "durationMs": 42842,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Onboarding, tour and profile fit desktop sizes/scaling, honor reduced motion, and clean up when dismissed",
+          "status": "passed",
+          "durationMs": 21231,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Profile IPC rejects companion writes and malformed input; corrupt profile never erases hydration",
+          "status": "passed",
+          "durationMs": 16584,
+          "errors": []
+        },
+        {
+          "file": "onboarding.spec.mjs",
+          "title": "Autostart opens onboarding when incomplete and preserves quiet tray startup when complete",
+          "status": "passed",
+          "durationMs": 35088,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "name": "reminder and tray restart",
+      "rawReport": ".cache/onboarding-qa-regressions.json",
+      "startTime": "2026-10-08T08:36:32.150Z",
+      "duration": 105917.76800000001,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0,
+      "checks": [
+        {
+          "file": "hydration-interaction.spec.mjs",
+          "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+          "status": "failed",
+          "durationMs": 34920,
+          "errors": [
+            "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 1\n\n  Object {\n    \"height\": 196,\n    \"width\": 300,\n-   \"x\": 1548,\n+   \"x\": 1462.796875,\n    \"y\": 305.046875,\n  }\n\n  92 |     await expect(character).toHaveAttribute('data-state', 'reminder');\n  93 |     await expect.poll(() => overlay.locator('.speech-bubble').evaluate(el => el.getAnimations().every(a => a.playState === 'finished'))).toBe(true);\n> 94 |     expect(await overlay.locator('.speech-bubble').boundingBox()).toEqual(box);\n     |                                                                   ^\n  95 |     expect((await dashboard.evaluate(() => window.desktopCompanion.getSnapshot())).reminderRetry.count).toBe(1);\n  96 |     await expect(overlay.locator('.message')).toHaveText('Hydration check, Test User.');\n  97 |     await dashboard.evaluate(() => window.desktopCompanion.updateDisplayName('Aditya'));\n    at D:\\Aditya\\pratice\\project\\Desktop Companion\\tests\\hydration-interaction.spec.mjs:94:67"
+          ]
+        },
+        {
+          "file": "hydration-interaction.spec.mjs",
+          "title": "Secure intake IPC rejects stale/invalid requests, credits once, and renders goal completion at 100%",
+          "status": "passed",
+          "durationMs": 25787,
+          "errors": []
+        },
+        {
+          "file": "restart.spec.mjs",
+          "title": "Real production tray restart from idle exits old Electron, restores data/preferences/history and retains one window pair",
+          "status": "passed",
+          "durationMs": 43305,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "name": "reminder placement and personalization follow-up",
+      "rawReport": ".cache/onboarding-qa-copy-followup.json",
+      "startTime": "2026-10-08T08:41:04.644Z",
+      "duration": 83375.798,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "checks": [
+        {
+          "file": "hydration-interaction.spec.mjs",
+          "title": "Later and Ignore exit left, hide natively, return once on the same window, and cancel cleanly",
+          "status": "passed",
+          "durationMs": 82342,
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "persistence": {
+    "normalProfile": "%APPDATA%/Mizu/user-profile.json",
+    "schemaVersion": 1,
+    "fields": [
+      "displayName",
+      "createdAt",
+      "hasCompletedOnboarding"
+    ],
+    "fullElectronRestart": "passed",
+    "memberSinceUnchanged": "passed",
+    "trayRestartSingleInstance": "passed",
+    "hydrationBytesUnchangedByReplayAndReset": "passed",
+    "freshDeferralCreatesNoProfile": "passed",
+    "duplicateProfileOrLocalStorageState": "none"
+  },
+  "polish": {
+    "labels": [
+      "Welcome",
+      "Your name",
+      "Your routine",
+      "Meet SlingSip"
+    ],
+    "tooltipMascot": {
+      "before": [
+        68,
+        78
+      ],
+      "after": [
+        85,
+        97.5
+      ],
+      "increasePercent": 25
+    },
+    "spotlight": {
+      "borderPx": 1.5,
+      "glowPx": 26,
+      "cyanOpacityPercent": 24
+    },
+    "finalCopy": "Keep moving. Keep sipping."
+  },
+  "preservation": {
+    "protectedFiles": [
+      {
+        "file": "electron/hydration-runtime.ts",
+        "sha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61",
+        "currentSha256": "744ca63520491d876869de9c665b4e35caaeb9f9b3ecf612b3ad08f1797d5c61",
+        "unchanged": true
+      },
+      {
+        "file": "electron/hydration-storage.ts",
+        "sha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2",
+        "currentSha256": "2363fc8e78860560a2a448f079c424ff0aeda4dfe93915ba30f576c13fb506f2",
+        "unchanged": true
+      },
+      {
+        "file": "electron/reminder-scheduler.ts",
+        "sha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645",
+        "currentSha256": "b12b6dfcf494b4b57da1e6f88393588475019aecba07b645314d9044fe528645",
+        "unchanged": true
+      },
+      {
+        "file": "electron/restart-controller.ts",
+        "sha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b",
+        "currentSha256": "9d2662a938c36868fa565ea819a5ff1e95f0488bd33d88540cada6d73492e33b",
+        "unchanged": true
+      },
+      {
+        "file": "electron/tray-controller.ts",
+        "sha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15",
+        "currentSha256": "5d267dc94b19bdaeee0b519ff5469aadda5de8e56bedeb3c4284edd1e355ea15",
+        "unchanged": true
+      },
+      {
+        "file": "electron/window-manager.ts",
+        "sha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6",
+        "currentSha256": "44c2dbcb7dc4149468a5b7bbaef1d42537e976de43f213db064b25bf63acefd6",
+        "unchanged": true
+      },
+      {
+        "file": "electron/windows-startup.ts",
+        "sha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8",
+        "currentSha256": "51a73573833e47959b1af0d067ca92e72d4c411233f0e21b79100dbf60d577e8",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-history.ts",
+        "sha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574",
+        "currentSha256": "d8e98c90e54ca5cdc978f2c66df705eb35ce45d331a31f64deb1a48392051574",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-schedule.ts",
+        "sha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131",
+        "currentSha256": "40c280c86da8c4c14af5dd17e1a3cc8364fe7f8580e480b6c562640fb4db0131",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration-settings.ts",
+        "sha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16",
+        "currentSha256": "b396b9506642e882c2f6275fb70cac780ddd398bd7e7877dab8614646aeebd16",
+        "unchanged": true
+      },
+      {
+        "file": "shared/hydration.ts",
+        "sha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f",
+        "currentSha256": "e2d72d7204b71785ae9cd5348dd66f8eeca3bbf5c2cbcc2c109c7c971ff20b0f",
+        "unchanged": true
+      },
+      {
+        "file": "electron/main.ts",
+        "sha256": "1c0847d8e5b6ce4d1c6f2c2cf4920bdb64e48c2d7ba6953307982bbb606a20b7",
+        "currentSha256": "1c0847d8e5b6ce4d1c6f2c2cf4920bdb64e48c2d7ba6953307982bbb606a20b7",
+        "unchanged": true
+      },
+      {
+        "file": "electron/preload.ts",
+        "sha256": "07ed5a7587562f19e5740000566b845f0bea7e182c1849c7bf48a76bdcd11b61",
+        "currentSha256": "07ed5a7587562f19e5740000566b845f0bea7e182c1849c7bf48a76bdcd11b61",
+        "unchanged": true
+      },
+      {
+        "file": "electron/user-profile-storage.ts",
+        "sha256": "8909bd994df4843922fb58d2e51de3952b8759c759f498eeb77834d2fd48d88b",
+        "currentSha256": "8909bd994df4843922fb58d2e51de3952b8759c759f498eeb77834d2fd48d88b",
+        "unchanged": true
+      },
+      {
+        "file": "shared/desktop-contract.ts",
+        "sha256": "ab60c8c0934ab070f7decb908e92aaa489b528ae29d68bfd6e9edc34f15f0e0f",
+        "currentSha256": "ab60c8c0934ab070f7decb908e92aaa489b528ae29d68bfd6e9edc34f15f0e0f",
+        "unchanged": true
+      },
+      {
+        "file": "shared/user-profile.ts",
+        "sha256": "30dbf33f4501a804814e67c4431bfc81130f1c0ee0b174b5cc538459f87eaf3e",
+        "currentSha256": "30dbf33f4501a804814e67c4431bfc81130f1c0ee0b174b5cc538459f87eaf3e",
+        "unchanged": true
+      },
+      {
+        "file": "src/app/features/onboarding/onboarding.service.ts",
+        "sha256": "3e896fe20c9015f084b1c0c5225a66c2a7bddd76b55468d39b431cba8048928c",
+        "currentSha256": "3e896fe20c9015f084b1c0c5225a66c2a7bddd76b55468d39b431cba8048928c",
+        "unchanged": true
+      },
+      {
+        "file": "src/app/core/services/local-profile.service.ts",
+        "sha256": "88cbd491631649b7d09dc0ad7128596e63da1e8f03139f192375ce5a4b8c272c",
+        "currentSha256": "88cbd491631649b7d09dc0ad7128596e63da1e8f03139f192375ce5a4b8c272c",
+        "unchanged": true
+      }
+    ],
+    "assets": [
+      {
+        "file": "public/assets/onboarding/slingsip/profile-idle.png",
+        "sha256": "ffb3ff0fba3ec0719679bd95b4e14a85e80f6873f2d5bc6a12126be031630b53",
+        "currentSha256": "ffb3ff0fba3ec0719679bd95b4e14a85e80f6873f2d5bc6a12126be031630b53",
+        "unchanged": true,
+        "builtFile": "dist/renderer/browser/assets/onboarding/slingsip/profile-idle.png",
+        "builtCopyMatches": true
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/routine-upside-down.png",
+        "sha256": "495cf9463df2b6750b16688e6b43a5178281651f66b5632c9c5a84a6a0041ef9",
+        "currentSha256": "495cf9463df2b6750b16688e6b43a5178281651f66b5632c9c5a84a6a0041ef9",
+        "unchanged": true,
+        "builtFile": "dist/renderer/browser/assets/onboarding/slingsip/routine-upside-down.png",
+        "builtCopyMatches": true
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/success-ready.png",
+        "sha256": "86933bf2f5c495c377057c834d65c2ca0d8f5ab8d17a190610e7770d49359ef3",
+        "currentSha256": "86933bf2f5c495c377057c834d65c2ca0d8f5ab8d17a190610e7770d49359ef3",
+        "unchanged": true,
+        "builtFile": "dist/renderer/browser/assets/onboarding/slingsip/success-ready.png",
+        "builtCopyMatches": true
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/tour-dashboard.png",
+        "sha256": "247f4b36f32e1068fda1d06c3d36b30effa96198a07a90f2cbd0db7d2a771e0b",
+        "currentSha256": "247f4b36f32e1068fda1d06c3d36b30effa96198a07a90f2cbd0db7d2a771e0b",
+        "unchanged": true,
+        "builtFile": "dist/renderer/browser/assets/onboarding/slingsip/tour-dashboard.png",
+        "builtCopyMatches": true
+      },
+      {
+        "file": "public/assets/onboarding/slingsip/welcome-hero.png",
+        "sha256": "5507fb5a6d2e147c65dbb91017248f183af44bb205d147a2bd0e4617e3f06026",
+        "currentSha256": "5507fb5a6d2e147c65dbb91017248f183af44bb205d147a2bd0e4617e3f06026",
+        "unchanged": true,
+        "builtFile": "dist/renderer/browser/assets/onboarding/slingsip/welcome-hero.png",
+        "builtCopyMatches": true
+      }
+    ],
+    "isolatedProfiles": true,
+    "normalUserInstanceStoppedOrReset": false
+  },
+  "screenshots": [
+    "docs/previews/onboarding/01-welcome.png",
+    "docs/previews/onboarding/02-profile.png",
+    "docs/previews/onboarding/03-routine.png",
+    "docs/previews/onboarding/04-meet.png",
+    "docs/previews/onboarding/05-tour-progress.png",
+    "docs/previews/onboarding/06-tour-profile.png",
+    "docs/previews/onboarding/07-tour-tray.png",
+    "docs/previews/onboarding/08-ready.png",
+    "docs/previews/onboarding/09-personalized-dashboard.png",
+    "docs/previews/onboarding/10-profile-menu.png",
+    "docs/previews/onboarding/11-welcome-minimum.png",
+    "docs/previews/onboarding/12-welcome-scaled.png",
+    "docs/previews/onboarding/13-tour-minimum.png"
+  ],
+  "remainingIssues": [
+    {
+      "issue": "Initial exact reminder-position assertion failed, then passed focused rerun with all original assertions retained.",
+      "initial": {
+        "expected": {
+          "x": 1548,
+          "y": 305.046875,
+          "width": 300,
+          "height": 196
+        },
+        "received": {
+          "x": 1462.796875,
+          "y": 305.046875,
+          "width": 300,
+          "height": 196
+        }
+      },
+      "resolution": "No application behavior change; diagnostic attachment added. Initial cause not established; observe in main Final QA.",
+      "passingRerunPlacement": {
+        "initialPlacement": {
+          "dashboard": {
+            "x": 388,
+            "y": 137,
+            "width": 1144,
+            "height": 781
+          },
+          "workArea": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1032
+          },
+          "overlay": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1032
+          }
+        },
+        "retryPlacement": {
+          "dashboard": {
+            "x": 388,
+            "y": 137,
+            "width": 1144,
+            "height": 781
+          },
+          "workArea": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1032
+          },
+          "overlay": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1032
+          }
+        }
+      }
+    },
+    {
+      "issue": "Previous physical Windows pointer check: Win32 5 input-desktop access failure.",
+      "scope": "Not rerun or modified during focused onboarding QA.",
+      "report": "docs/slingsip-final-qa.md"
+    }
+  ]
+}
