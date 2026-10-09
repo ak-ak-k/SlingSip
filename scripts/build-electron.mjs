@@ -15,7 +15,7 @@ export async function buildElectron() {
   // electron-store's dependencies use CommonJS Node built-ins. Load them natively from ESM.
   // Neither output is replaced when either source fails to compile.
   const results = await Promise.all([
-    build({ ...options, write: false, external: ['electron', 'electron-store'], entryPoints: ['electron/main.ts'], outfile: 'dist/electron/main.mjs', format: 'esm' }),
+    build({ ...options, write: false, external: ['electron', 'electron-store', 'electron-updater', 'js-yaml'], entryPoints: ['electron/main.ts'], outfile: 'dist/electron/main.mjs', format: 'esm' }),
     build({ ...options, write: false, entryPoints: ['electron/preload.ts'], outfile: 'dist/electron/preload.cjs', format: 'cjs' }),
   ]);
   await mkdir('dist/electron', { recursive: true });

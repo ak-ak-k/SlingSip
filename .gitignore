@@ -5,3 +5,9 @@ dist/
 test-results/
 playwright-report/
 *.log
+release/
+.env
+.env.*
+*.pfx
+*.p12
+*.key.pem

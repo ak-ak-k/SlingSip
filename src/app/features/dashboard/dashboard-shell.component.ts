@@ -6,10 +6,11 @@ import { ProfileChipComponent } from '../profile/profile-chip.component';
 import { OnboardingService } from '../onboarding/onboarding.service';
 import { OnboardingComponent } from '../onboarding/onboarding.component';
 import { DashboardTourComponent } from '../onboarding/dashboard-tour.component';
+import { UpdateStatusComponent } from '../updates/update-status.component';
 
 @Component({
   selector: 'app-dashboard-shell',
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, ProfileChipComponent, OnboardingComponent, DashboardTourComponent],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, ProfileChipComponent, OnboardingComponent, DashboardTourComponent, UpdateStatusComponent],
   templateUrl: './dashboard-shell.component.html',
   styleUrl: './dashboard-shell.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

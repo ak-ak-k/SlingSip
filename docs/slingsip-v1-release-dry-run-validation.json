@@ -1,0 +1,408 @@
+{
+  "recordedAt": "2026-10-09T06:58:34.761Z",
+  "clientDate": "2026-10-09",
+  "clientTimezone": "Asia/Calcutta",
+  "readiness": "NOT READY FOR PUBLIC v1.0.0 — VERSION STAMP, SIGNING AND SIGNED INSTALLED-APP ACCEPTANCE PENDING",
+  "scope": {
+    "dryRun": true,
+    "productionCodeChanged": false,
+    "featuresAdded": false,
+    "uiRedesigned": false,
+    "versionChanged": false,
+    "v2Implemented": false,
+    "installedApplication": false,
+    "gitCommitCreated": false,
+    "gitTagCreated": false,
+    "gitPushPerformed": false,
+    "githubReleaseCreated": false,
+    "published": false,
+    "installerUploaded": false
+  },
+  "version": {
+    "package": "0.1.0",
+    "lock": "0.1.0",
+    "lockRoot": "0.1.0",
+    "packaged": "0.1.0",
+    "runtime": "0.1.0",
+    "isV1": false,
+    "required": "1.0.0",
+    "changeCommand": "npm version 1.0.0 --no-git-tag-version",
+    "canonicalSource": "package.json.version -> Electron app.getVersion() -> snapshot/UI"
+  },
+  "productionChecks": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "passed": true
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "angularPassed": true,
+      "electronPassed": true
+    },
+    "regressions": {
+      "command": "npx playwright test tests/updater.spec.mjs tests/restart.spec.mjs --reporter=list,json",
+      "exitCode": 0,
+      "startTime": "2026-10-09T06:32:24.446Z",
+      "duration": 220924.26499999998,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "errors": [],
+      "rawRecord": ".cache/slingsip-v1-dry-run-regressions.json"
+    }
+  },
+  "packaging": {
+    "format": "NSIS",
+    "architecture": "x64",
+    "perUser": true,
+    "oneClick": true,
+    "appId": "com.slingsip.desktop",
+    "deleteAppDataOnUninstall": false,
+    "preview": {
+      "command": "node scripts/package-windows.mjs --preview",
+      "exitCode": 0,
+      "passed": true
+    },
+    "signedRelease": {
+      "command": "node scripts/package-windows.mjs",
+      "exitCode": 1,
+      "expectedConfigurationGate": true,
+      "reason": "Exact signing publisher is empty; no signing credentials configured.",
+      "signedInstallerProduced": false
+    },
+    "unsignedNsisDiagnostic": {
+      "helper": ".cache/slingsip-v1-unsigned-nsis.mjs",
+      "exitCode": 0,
+      "passed": true,
+      "usesUpdateDisabledPreviewConfig": true,
+      "productionSigningGatesUnchanged": true,
+      "publish": "never",
+      "installerExecuted": false,
+      "attempts": [
+        {
+          "result": "failed",
+          "error": "EPERM renaming extracted 7zip cache directory"
+        },
+        {
+          "result": "failed",
+          "change": "Workspace-local builder cache",
+          "error": "Same 7zip cache rename EPERM"
+        },
+        {
+          "result": "failed",
+          "change": "Verified official 7zip path override",
+          "error": "NSIS cache directory rename EPERM"
+        },
+        {
+          "result": "passed",
+          "change": "Verified official 7zip, NSIS and NSIS resources path overrides"
+        }
+      ]
+    },
+    "buildToolWorkaround": {
+      "productionCodeChanged": false,
+      "usesSupportedEnvironmentOverrides": true,
+      "environment": {
+        "ELECTRON_BUILDER_7ZIP_PATH": ".cache/v1-build-tools/7za.exe",
+        "ELECTRON_BUILDER_NSIS_DIR": ".cache/v1-build-tools/nsis",
+        "ELECTRON_BUILDER_NSIS_RESOURCES_DIR": ".cache/v1-build-tools/nsis-resources",
+        "ELECTRON_BUILDER_CACHE": ".cache/v1-electron-builder"
+      },
+      "verifiedArchives": {
+        "7zip-win-x64.tar.gz": "be071f15bd6da2f78fe81c6ddef2009b0c4d8a51f36b780cb806c7e6df95e1b3",
+        "nsis-3.0.4.1.7z": "9877df902530f96357d13a7a31ae2b9df67f48b11ffc9a1700a7c961574ec5fa",
+        "nsis-resources-3.4.1.7z": "593a9a92ef958321293ac6a2ee61e64bf1bd543142a5bd6b3d310709cc924103"
+      },
+      "archiveSource": "Official electron-userland/electron-builder-binaries; checksums match pinned installed builder.",
+      "freshEnvironmentNeedsProvisioning": true
+    }
+  },
+  "provider": {
+    "type": "github",
+    "owner": "ak-ak-k",
+    "repo": "slingsip",
+    "publicRepositoryVerified": true,
+    "publicRepositoryUrl": "https://github.com/ak-ak-k/slingsip",
+    "channel": "stable",
+    "updaterChannel": "latest",
+    "allowPrerelease": false,
+    "allowDowngrade": false,
+    "origin": {
+      "matchesProvider": true,
+      "hasCredentialInUrl": false
+    },
+    "embeddedGithubTokenDetected": false,
+    "publisherNameConfigured": false,
+    "currentUserCodeSigningCertificateFound": false,
+    "configuredSigningEnvironment": false,
+    "publishCommandsExecuted": false
+  },
+  "packagedAppSmoke": {
+    "date": "2026-10-09",
+    "executable": "D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\preview\\win-unpacked\\SlingSip.exe",
+    "profileDirectory": "D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\v1-packaged-profile-dySzxs\\Mizu",
+    "method": "Unmodified packaged executable/resources; external first-line inspector overrides only appData/userData/sessionData before readiness and observes real native Tray menus. DOM actions exercise production APIs. No test-mode implementation or updater mock is activated.",
+    "physicalPointerQa": false,
+    "checks": {
+      "packagedStarts": true,
+      "dashboardOpens": true,
+      "trayWorks": true,
+      "productionGates": true,
+      "companionReminderWorks": true,
+      "drinkAndBottleSuccess": true,
+      "closeToTray": true,
+      "trayReopensDashboard": true,
+      "packagedNormalRestart": true,
+      "fullQuit": true
+    },
+    "startedAt": "2026-10-09T06:40:25.546Z",
+    "native": {
+      "isPackaged": true,
+      "version": "0.1.0",
+      "userData": "D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\v1-packaged-profile-dySzxs\\Mizu",
+      "sessionData": "D:\\Aditya\\pratice\\project\\Desktop Companion\\.cache\\v1-packaged-profile-dySzxs\\Mizu",
+      "trayCount": 1,
+      "labels": [
+        "Open SlingSip",
+        "Drink +300 ml",
+        "Pause reminders",
+        "",
+        "Today: 600 / 2400 ml",
+        "Next break: tomorrow",
+        "",
+        "Settings",
+        "Restart SlingSip",
+        "Quit SlingSip"
+      ],
+      "testTrayExposed": false,
+      "testUpdaterExposed": false,
+      "windows": [
+        {
+          "title": "SlingSip — Desktop Hydration Companion",
+          "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/release/preview/win-unpacked/resources/app.asar/dist/renderer/browser/#/dashboard",
+          "preferences": {
+            "sandbox": true,
+            "contextIsolation": true,
+            "nodeIntegration": false
+          }
+        },
+        {
+          "title": "SlingSip — Desktop Hydration Companion",
+          "url": "file:///D:/Aditya/pratice/project/Desktop%20Companion/release/preview/win-unpacked/resources/app.asar/dist/renderer/browser/#/companion",
+          "preferences": {
+            "sandbox": true,
+            "contextIsolation": true,
+            "nodeIntegration": false
+          }
+        }
+      ]
+    },
+    "restart": {
+      "oldPid": 6264,
+      "newPid": 16948,
+      "waterMl": 900,
+      "profileAndSettingsAndHistoryPreserved": true,
+      "oneTray": true
+    },
+    "passed": true,
+    "normalUserDataUnchanged": true,
+    "normalStartupEntryUnchanged": true,
+    "completedAt": "2026-10-09T06:41:03.790Z"
+  },
+  "updateSeparation": {
+    "normalRestart": "persist -> cleanup -> app.relaunch -> app.exit",
+    "restartAndUpdate": "persist -> electron-updater.quitAndInstall(false, true) -> normal before-quit cleanup",
+    "autoInstallOnAppQuit": false,
+    "autoDownload": false,
+    "activeReminderGuardVerified": true,
+    "regressionEvidence": "13 current updater/restart tests; real packaged normal restart; update installation initiation/failures use a development-only fake backend.",
+    "actualSignedUpdateInstalled": false
+  },
+  "developmentProtection": {
+    "realBackendUnavailableWhenUnpackaged": true,
+    "testBackendCannotInstallRealUpdate": true,
+    "packagedTestFlagsIgnored": true,
+    "packagedDevelopmentRendererUrlIgnored": true,
+    "actualPackagedProductionGateCheck": true
+  },
+  "persistence": {
+    "normalUserData": "%APPDATA%\\Mizu",
+    "normalSessionData": "%APPDATA%\\Mizu",
+    "records": [
+      "hydration.json",
+      "user-profile.json",
+      "companion-preferences.json"
+    ],
+    "outsideReplaceableBinaries": true,
+    "migrationPerformed": false,
+    "legacyStartupEntry": "Mizu retained",
+    "normalProfileHashesUnchanged": true,
+    "normalStartupEntryHashUnchanged": true,
+    "fixtureNormalRestartPreserved": true,
+    "signedInstalledUpgradePreservationTested": false
+  },
+  "artifactInspection": {
+    "preview": {
+      "root": "release/preview/win-unpacked",
+      "archiveEntries": 5111,
+      "archiveFilesScanned": 4783,
+      "externalFilesScanned": 75,
+      "credentialPatternCandidates": [],
+      "dataOrEnvironmentOrSigningFiles": [],
+      "missingRequiredFiles": [],
+      "sourceMaps": [],
+      "policy": {
+        "schemaVersion": 1,
+        "enabled": false,
+        "provider": "github",
+        "owner": "ak-ak-k",
+        "repo": "slingsip",
+        "channel": "stable",
+        "publisherName": ""
+      },
+      "realUpdateFeedPresent": false,
+      "bundles": [
+        {
+          "file": "dist/electron/main.mjs",
+          "built": "72bc741f88c92c2f1e8df6bbb3e827c9ab7b8508abb636d52a30ef937f7a3699",
+          "packaged": "72bc741f88c92c2f1e8df6bbb3e827c9ab7b8508abb636d52a30ef937f7a3699"
+        },
+        {
+          "file": "dist/electron/preload.cjs",
+          "built": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47",
+          "packaged": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47"
+        }
+      ],
+      "versions": {
+        "package": "0.1.0",
+        "lock": "0.1.0",
+        "lockRoot": "0.1.0",
+        "packaged": "0.1.0"
+      },
+      "passed": true
+    },
+    "nsis": {
+      "previewAsarSha256": "236b3c9b31e162cda052f5c641449a163e75c644d89124e3ede67ae1b4d0e17e",
+      "nsisAsarSha256": "236b3c9b31e162cda052f5c641449a163e75c644d89124e3ede67ae1b4d0e17e",
+      "identicalAsar": true,
+      "nsisMainMatchesBuild": true,
+      "nsisPolicy": {
+        "schemaVersion": 1,
+        "enabled": false,
+        "provider": "github",
+        "owner": "ak-ak-k",
+        "repo": "slingsip",
+        "channel": "stable",
+        "publisherName": ""
+      },
+      "origin": {
+        "matchesProvider": true,
+        "hasCredentialInUrl": false
+      },
+      "branch": "main"
+    },
+    "identities": {
+      "Artifacts": [
+        {
+          "Path": "release/preview/win-unpacked/SlingSip.exe",
+          "Bytes": 245726720,
+          "SHA256": "fba1506b5ac0f9721df3f6fe79aa0977eb5e5c77f7a998c65f66b71491041fb9",
+          "ProductName": "SlingSip",
+          "ProductVersion": "0.1.0.0",
+          "SignatureStatus": "NotSigned"
+        },
+        {
+          "Path": "release/dry-run-unsigned/SlingSip-Setup-0.1.0-x64.exe",
+          "Bytes": 123944757,
+          "SHA256": "7d409b88894aa8a6645eb28aeb842ec344b0c0d5f71bd48f54d66470919c1788",
+          "ProductName": "SlingSip",
+          "ProductVersion": "0.1.0",
+          "SignatureStatus": "NotSigned"
+        },
+        {
+          "Path": "release/dry-run-unsigned/SlingSip-Setup-0.1.0-x64.exe.blockmap",
+          "Bytes": 130550,
+          "SHA256": "7c0f500d92d3a4b15909d40a08a8d5c58e181da78b1dd20e81f22ee1bc948c28",
+          "ProductName": null,
+          "ProductVersion": null,
+          "SignatureStatus": null
+        }
+      ],
+      "StableFolderExists": false,
+      "DryRunLatestYmlExists": false
+    },
+    "blockmap": {
+      "parsed": true,
+      "version": "2",
+      "files": [
+        {
+          "name": "file",
+          "blocks": 5902,
+          "offset": 0
+        }
+      ]
+    },
+    "expectedFutureUploadAssets": [
+      "release/stable/SlingSip-Setup-1.0.0-x64.exe",
+      "release/stable/SlingSip-Setup-1.0.0-x64.exe.blockmap",
+      "release/stable/latest.yml"
+    ],
+    "expectedFutureUploadAssetsGenerated": false,
+    "unsignedDiagnosticsEligibleForUpload": false
+  },
+  "git": {
+    "trackedBuildOrInstallerOutputs": [],
+    "ignoredOutputEvidence": [
+      ".gitignore:8:release/\trelease/dry-run-unsigned/SlingSip-Setup-0.1.0-x64.exe",
+      ".gitignore:8:release/\trelease/dry-run-unsigned/SlingSip-Setup-0.1.0-x64.exe.blockmap",
+      ".gitignore:2:dist/\tdist/electron/main.mjs",
+      ".gitignore:4:.cache/\t.cache/v1-build-tools/7za.exe"
+    ],
+    "branch": "main",
+    "reviewedSourceReleaseCommitStillNeeded": true,
+    "ignoredSigningAndEnvironmentPatterns": [
+      ".env",
+      ".env.*",
+      "*.pfx",
+      "*.p12",
+      "*.key.pem"
+    ]
+  },
+  "sourcePreservation": {
+    "mainAndPreloadByteIdenticalToPriorVerifiedUpdaterBuild": true,
+    "priorValidation": "docs/slingsip-updates-validation.json",
+    "applicationSourceEditedDuringDryRun": false,
+    "documentationAndTestCapturesOnly": true
+  },
+  "priorPhysicalPointerLimitation": {
+    "automatedRegressionRerun": false,
+    "reclassifiedAsPassed": false,
+    "knownIssue": "Windows cursor/target-ownership interference in the existing automated native pointer harness.",
+    "manualPhysicalEvidence": "Prior user-reported manual pass retained; this packaged DOM/inspector smoke is not a new physical pointer pass.",
+    "confirmedProductionClickThroughDefect": false,
+    "report": "docs/slingsip-final-qa-2026-10-08.md"
+  },
+  "blockersBeforeV1": [
+    "Stamp canonical version 1.0.0 and rebuild/retest.",
+    "Provision a real Windows signing certificate and exact publisher subject.",
+    "Build signed NSIS package and verify application/installer signatures, app-update.yml and latest.yml.",
+    "Complete signed installed-app/upgrade acceptance on an isolated Windows account or VM.",
+    "Use the verified tool-path workaround here, or provision/fix cache extraction on a fresh build environment.",
+    "Review/commit the intended release source and tag the exact release commit only when authorized."
+  ],
+  "metadataWarning": "Package author field is absent; select the intended public author identity before distribution.",
+  "handoff": {
+    "report": "docs/slingsip-v1-release-dry-run.md",
+    "gallery": "docs/previews/v1-dry-run/index.html",
+    "realReleaseCommands": "See the report; none of the version/tag/upload/release commands were executed.",
+    "stopAfterDryRun": true
+  },
+  "documentationLinks": {
+    "checked": 22,
+    "broken": [],
+    "passed": true
+  }
+}

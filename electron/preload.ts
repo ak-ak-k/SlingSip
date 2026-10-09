@@ -5,6 +5,9 @@ const role: WindowRole = process.argv.includes('--companion-window=companion') ?
 const bridge: DesktopBridge = {
   role,
   getSnapshot: () => ipcRenderer.invoke(channels.snapshot),
+  checkForUpdates: () => ipcRenderer.invoke(channels.updateCheck),
+  downloadUpdate: () => ipcRenderer.invoke(channels.updateDownload),
+  restartAndUpdate: () => ipcRenderer.invoke(channels.updateInstall),
   getHydrationState: () => ipcRenderer.invoke(channels.hydrationState),
   getHydrationSettings: () => ipcRenderer.invoke(channels.hydrationSettings),
   updateHydrationSettings: (settings) => ipcRenderer.invoke(channels.updateHydrationSettings, settings),

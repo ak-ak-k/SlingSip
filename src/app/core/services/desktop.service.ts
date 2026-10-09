@@ -18,6 +18,7 @@ export class DesktopService {
   readonly nativeAvailable = !!this.bridge;
   readonly error = signal<string | null>(null);
   readonly busy = signal(false);
+  readonly updateActionError = signal<string | null>(null);
   readonly overlayVisible = computed(() => this.snapshot()?.overlay.visible ?? false);
   readonly testClicks = computed(() => this.snapshot()?.overlay.testClicks ?? 0);
 
@@ -35,6 +36,16 @@ export class DesktopService {
 
   async toggleOverlay(): Promise<void> {
     await this.perform(async (bridge) => this.acceptSnapshot(await bridge.setOverlayVisible(!this.overlayVisible())));
+  }
+
+  checkForUpdates(): Promise<void> { return this.performUpdate(bridge => bridge.checkForUpdates()); }
+  downloadUpdate(): Promise<void> { return this.performUpdate(bridge => bridge.downloadUpdate()); }
+  restartAndUpdate(): Promise<void> { return this.performUpdate(bridge => bridge.restartAndUpdate()); }
+  private async performUpdate(action: (bridge: DesktopBridge) => Promise<DesktopSnapshot>): Promise<void> {
+    if (!this.bridge) return;
+    this.updateActionError.set(null);
+    try { this.acceptSnapshot(await action(this.bridge)); }
+    catch { this.updateActionError.set('This update action could not be completed. Please try again.'); }
   }
 
   async showOverlay(): Promise<void> {

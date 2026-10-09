@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } 
 import { DEFAULT_HYDRATION_SETTINGS, HYDRATION_SETTING_LIMITS, timeMinutes, validateHydrationSettings, type HydrationSettings } from '../../../../shared/hydration-settings';
 import { CompanionPreferencesComponent } from './companion-preferences.component';
 import { DesktopService } from '../../core/services/desktop.service';
+import { AboutUpdatesComponent } from '../updates/about-updates.component';
 
 @Component({
   selector: 'app-settings',
-  imports: [CompanionPreferencesComponent],
+  imports: [CompanionPreferencesComponent, AboutUpdatesComponent],
   templateUrl: './settings.component.html',
   styleUrls: ['../dashboard/ritual-page.scss', './settings.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

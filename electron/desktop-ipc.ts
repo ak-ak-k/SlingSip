@@ -8,9 +8,10 @@ import { WindowsStartup } from './windows-startup';
 import { type TrayStatus } from '../shared/product-contract';
 import { CompanionPreferencesStorage } from './companion-preferences-storage';
 import { UserProfileStorage } from './user-profile-storage';
+import { type UpdateService } from './update-service';
 
 export function registerDesktopIpc(windows: DesktopWindows, developmentMode: boolean, startup: WindowsStartup,
-  trayStatus: () => TrayStatus, published: (snapshot: DesktopSnapshot) => void) {
+  trayStatus: () => TrayStatus, published: (snapshot: DesktopSnapshot) => void, updates: UpdateService) {
   let revision = 0;
   let testClicks = 0;
   let displayActive = true;
@@ -23,6 +24,7 @@ export function registerDesktopIpc(windows: DesktopWindows, developmentMode: boo
     return {
       revision,
       appVersion: app.getVersion(),
+      updates: updates.snapshot(),
       electronVersion: process.versions.electron,
       angularVersion: '22.2.1',
       platform: process.platform,
@@ -102,6 +104,15 @@ export function registerDesktopIpc(windows: DesktopWindows, developmentMode: boo
   };
 
   ipcMain.handle(channels.snapshot, (event) => { authorize(event); hydration.refresh(); return snapshot(); });
+  const updateCommand = (event: IpcMainInvokeEvent, args: unknown[], action: () => void) => {
+    authorize(event, 'dashboard');
+    if (args.length) throw new Error('Update commands do not accept parameters.');
+    action();
+    return publish();
+  };
+  ipcMain.handle(channels.updateCheck, (event, ...args: unknown[]) => updateCommand(event, args, () => { void updates.check(); }));
+  ipcMain.handle(channels.updateDownload, (event, ...args: unknown[]) => updateCommand(event, args, () => { void updates.download(); }));
+  ipcMain.handle(channels.updateInstall, (event, ...args: unknown[]) => updateCommand(event, args, () => updates.install()));
   ipcMain.handle(channels.hydrationState, (event) => { authorize(event); hydration.refresh(); return hydration.session.persisted(); });
   ipcMain.handle(channels.hydrationSettings, (event) => { authorize(event); return hydration.session.persisted().settings; });
   ipcMain.handle(channels.nextReminder, (event) => { authorize(event); hydration.refresh(); return hydration.scheduler.snapshot(); });

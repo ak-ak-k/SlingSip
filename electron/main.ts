@@ -8,6 +8,9 @@ import { WindowsStartup } from './windows-startup';
 import { SlingSipTray } from './tray-controller';
 import { configureAppIdentity } from './app-identity';
 import { RestartController } from './restart-controller';
+import { UpdateService, type UpdateBackend } from './update-service';
+import { createElectronUpdateBackend, updateAvailability } from './update-backend';
+import { UpdateTestDriver } from './update-test-driver';
 import { DEV_PROFILE_CONFLICT_EXIT_CODE, DEV_RESTART_EXIT_CODE } from '../shared/development-contract';
 
 const electronDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -67,8 +70,28 @@ if (!app.requestSingleInstanceLock()) {
     const quickRetry = !app.isPackaged && (!!process.env['ELECTRON_RENDERER_URL'] || testMode) && !(testMode && process.argv.includes('--companion-test-production'));
     const startup = new WindowsStartup(testMode);
     let tray: SlingSipTray | undefined;
+    let updateDesktop: ReturnType<typeof registerDesktopIpc> | undefined;
+    // This test adapter is main-only, explicitly opted in and impossible in packaged builds.
+    const updateTestDriver = testMode && process.argv.includes('--companion-test-updater') ? new UpdateTestDriver() : undefined;
+    let updateDisabledReason = updateAvailability(app.isPackaged, process.platform, process.resourcesPath);
+    let updateBackend: UpdateBackend | undefined = updateTestDriver;
+    if (!updateBackend && updateDisabledReason === null) {
+      try { updateBackend = createElectronUpdateBackend(); }
+      catch { updateDisabledReason = 'The update service could not start. SlingSip can still be used normally.'; }
+    }
+    const updates = new UpdateService({
+      currentVersion: app.getVersion(),
+      backend: updateBackend,
+      disabledReason: updateTestDriver ? undefined : updateDisabledReason ?? undefined,
+      automaticChecking: !updateTestDriver && updateDisabledReason === null,
+      changed: () => { updateDesktop?.publish(); },
+      persist: () => { if (!updateDesktop) throw new Error('Application is not ready.'); updateDesktop.persistForRestart(); },
+      canInstall: () => !!updateDesktop && !windows.quitting && !windows.companion?.isVisible()
+        && (!updateDesktop.hydration.active() || updateDesktop.hydration.retrySnapshot().pending),
+    });
     const desktop = registerDesktopIpc(windows, quickRetry, startup,
-      () => tray?.status ?? { available: false, error: null }, (state) => tray?.update(state));
+      () => tray?.status ?? { available: false, error: null }, (state) => tray?.update(state), updates);
+    updateDesktop = desktop;
     const hydration = desktop.hydration;
     const actualStartup = startup.snapshot();
     if (actualStartup.supported && !actualStartup.error && hydration.session.persisted().settings.launchAtStartup !== actualStartup.enabled) {
@@ -79,6 +102,7 @@ if (!app.requestSingleInstanceLock()) {
       if (cleaned) return;
       cleaned = true;
       windows.quitting = true;
+      updates.stop();
       hydration.stop();
       windows.destroyAll();
       tray?.destroy();
@@ -100,9 +124,10 @@ if (!app.requestSingleInstanceLock()) {
       },
     });
     restartController = restart;
-    tray = new SlingSipTray(windows, hydration, () => { restart.restart(); });
+    tray = new SlingSipTray(windows, hydration, () => { if (!updates.snapshot().installing) restart.restart(); }, () => updates.install());
     // Native test access exists only in the isolated main process, never in preload.
     if (testMode) Object.assign(globalThis, { __slingSipTestTray: tray });
+    if (updateTestDriver) Object.assign(globalThis, { __slingSipTestUpdater: updateTestDriver });
     // Install cleanup before any renderer await: Quit also works during initial loading.
     app.on('before-quit', cleanup);
     if (developmentManaged) {
@@ -132,6 +157,7 @@ if (!app.requestSingleInstanceLock()) {
     screen.on('display-added', reposition);
     screen.on('display-removed', reposition);
     hydration.start();
+    updates.start();
     desktop.publish();
     await windows.ensureCompanion();
     if (windows.quitting) return;

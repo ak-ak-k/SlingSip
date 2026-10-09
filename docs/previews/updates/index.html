@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlingSip — update UI validation</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,sans-serif;background:#09121b;color:#deedf2}
+    body{max-width:1100px;margin:0 auto;padding:32px 20px}h1{font-size:25px}p{color:#aec4ce;line-height:1.6}a{color:#8ce8ca}figure{margin:32px 0;padding:16px;background:#142431;border:1px solid #284756;border-radius:14px}figcaption{margin-bottom:14px;line-height:1.5}img{display:block;max-width:100%;height:auto;border-radius:8px}small{display:block;color:#aec4ce;margin-top:6px}
+  </style>
+</head>
+<body>
+  <h1>SlingSip application updates — native UI evidence</h1>
+  <p>Captured on 9 October 2026 using the built production renderer and isolated Electron test profiles. The 2.0.0 offers, progress and ready states use a main-only test backend. These images are not evidence of a published release, signed installer or completed installed update.</p>
+  <p><a href="../../slingsip-updates.md">Implementation and release checklist</a> · <a href="../../slingsip-updates-validation.json">Validation record</a></p>
+  <figure><figcaption>01 — Normal source build: actual version, real updater disabled.</figcaption><a href="01-local-about.png"><img src="01-local-about.png" alt="SlingSip About and Updates showing version 0.1.0 and unavailable automatic updates in a local source build"></a></figure>
+  <figure><figcaption>02 — Available update: explicit Download update and Later.</figcaption><a href="02-available.png"><img src="02-available.png" alt="Simulated SlingSip 2.0.0 offer with download and Later actions"></a></figure>
+  <figure><figcaption>03 — Downloading: 64% from backend progress events.</figcaption><a href="03-downloading.png"><img src="03-downloading.png" alt="SlingSip update download showing 64 percent progress"></a></figure>
+  <figure><figcaption>04 — Ready header at the existing 760 × 660 minimum content size.</figcaption><a href="04-ready-header-minimum.png"><img src="04-ready-header-minimum.png" alt="Minimum-width dashboard with Desktop connected, Update ready and profile controls fitting within the window"></a></figure>
+  <figure><figcaption>05 — Ready panel after a reminder-safe installation guard.<small>The earlier blocked attempt remains visible as feedback; after the reminder exits, Restart &amp; Update is enabled. No installer runs in this mock.</small></figcaption><a href="05-ready.png"><img src="05-ready.png" alt="Ready update panel with Restart and Update and Later, plus feedback from an earlier attempt during an active water break"></a></figure>
+  <figure><figcaption>06 — Check failure: non-disruptive inline error.</figcaption><a href="06-check-error.png"><img src="06-check-error.png" alt="About and Updates showing a recoverable update-check error"></a></figure>
+</body>
+</html>

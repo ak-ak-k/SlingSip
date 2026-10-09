@@ -33,4 +33,5 @@
     <div class="save-row"><button class="primary" data-testid="save-settings" type="submit" [disabled]="!valid() || !dirty() || !desktop.snapshot() || desktop.busy()">{{ desktop.busy() ? 'Saving…' : 'Save settings' }}</button><button class="secondary" type="button" (click)="reset()" [disabled]="!dirty() || desktop.busy()">Discard changes</button><span>Changes apply when you save.</span></div>
   </form>
   <app-companion-preferences />
+  <app-about-updates />
 </div>

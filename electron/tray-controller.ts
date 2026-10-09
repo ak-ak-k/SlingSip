@@ -11,7 +11,7 @@ export class SlingSipTray {
   readonly status: TrayStatus;
 
   constructor(private readonly windows: DesktopWindows, private readonly hydration: HydrationRuntime,
-    private readonly restart: () => void) {
+    private readonly restart: () => void, private readonly installUpdate: () => void) {
     try {
       this.tray = new Tray(trayIcon());
       this.tray.setToolTip('SlingSip — Your hydration sidekick');
@@ -42,6 +42,9 @@ export class SlingSipTray {
       { id: 'next', label: next, enabled: false },
       { type: 'separator' },
       { id: 'settings', label: 'Settings', click: () => { void this.windows.openDashboard('settings').catch(console.error); } },
+      ...(state.updates.status === 'downloaded' ? [{ id: 'restart-update', label: 'Update ready — Restart & Update',
+        enabled: !state.updates.installing && !state.overlay.visible && (!schedule.reminderActive || state.reminderRetry.pending),
+        click: this.installUpdate }] : []),
       { id: 'restart', label: this.hydration.developmentMode ? 'Restart SlingSip (Dev)' : 'Restart SlingSip', click: this.restart },
       { id: 'quit', label: 'Quit SlingSip', click: () => app.quit() },
     ]);

@@ -6,6 +6,7 @@ import { type HydrationHistoryEntry, type StreakStats } from './hydration-histor
 import { type DashboardPage, type StartupStatus, type TrayStatus } from './product-contract';
 import { type CompanionPreferences } from './companion-preferences';
 import { type UserProfile } from './user-profile';
+import { type UpdateSnapshot } from './update-contract';
 
 export type WindowRole = 'dashboard' | 'companion';
 
@@ -19,6 +20,7 @@ export interface Rectangle {
 export interface DesktopSnapshot {
   revision: number;
   appVersion: string;
+  updates: UpdateSnapshot;
   electronVersion: string;
   angularVersion: string;
   platform: string;
@@ -63,6 +65,9 @@ export interface DesktopSnapshot {
 export interface DesktopBridge {
   readonly role: WindowRole;
   getSnapshot(): Promise<DesktopSnapshot>;
+  checkForUpdates(): Promise<DesktopSnapshot>;
+  downloadUpdate(): Promise<DesktopSnapshot>;
+  restartAndUpdate(): Promise<DesktopSnapshot>;
   getHydrationState(): Promise<PersistedHydrationState>;
   getHydrationSettings(): Promise<HydrationSettings>;
   updateHydrationSettings(settings: HydrationSettings): Promise<DesktopSnapshot>;
@@ -91,6 +96,9 @@ export interface DesktopBridge {
 export const DESKTOP_CHANNELS = {
   snapshot: 'desktop:snapshot',
   snapshotChanged: 'desktop:snapshot-changed',
+  updateCheck: 'desktop:update-check',
+  updateDownload: 'desktop:update-download',
+  updateInstall: 'desktop:update-install',
   hydrationState: 'desktop:hydration-state',
   hydrationSettings: 'desktop:hydration-settings',
   updateHydrationSettings: 'desktop:update-hydration-settings',

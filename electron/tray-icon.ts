@@ -2,14 +2,13 @@ import { nativeImage } from 'electron';
 import { deflateSync } from 'node:zlib';
 
 /** Raster adaptation of public/slingsip-logo.svg, also used by native window icons. */
-export function trayIcon() {
-  const size = 32;
+export function trayIcon(size = 32) {
   const rows = Buffer.alloc((size * 4 + 1) * size);
   for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
     let coverage = 0; const colour = [0, 0, 0];
     for (let sy = 0; sy < 4; sy++) for (let sx = 0; sx < 4; sx++) {
-      // Work in the SVG's 64-unit viewBox; supersample the 32 px native image.
-      const px = (x + (sx + .5) / 4) * 2; const py = (y + (sy + .5) / 4) * 2;
+      // Work in the SVG's 64-unit viewBox; native tray calls retain the default 32 px.
+      const px = (x + (sx + .5) / 4) * (64 / size); const py = (y + (sy + .5) / 4) * (64 / size);
       const angle = Math.atan2(py - 32, px - 32) * 180 / Math.PI;
       const arc = Math.abs(Math.hypot(px - 32, py - 32) - 25) <= 1.75 && angle >= -40 && angle <= 145
         || Math.hypot(px - 51.151, py - 15.930) <= 1.75 || Math.hypot(px - 11.521, py - 46.339) <= 1.75;
