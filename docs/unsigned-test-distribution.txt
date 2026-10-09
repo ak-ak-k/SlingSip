@@ -1,0 +1,21 @@
+SLINGSIP - UNSIGNED TEST DISTRIBUTION
+
+For friends and manual testing only. This installer is not digitally signed
+and is not the signed public production release. Windows may identify it as
+an unknown publisher. Automatic updates and update installation are disabled.
+
+Installer/shortcut/installed-app labels: SlingSip (Unsigned Test).
+The app itself retains the normal SlingSip dashboard and companion behavior.
+
+Quit any running SlingSip through its tray menu before installing or launching
+this test build. Only one SlingSip profile owner should run at a time.
+
+The test install has a separate Windows application/install identity, but uses
+the normal data directory: %APPDATA%\Mizu. Existing hydration, history, profile,
+settings and startup preferences are shared with your normal SlingSip app.
+For an entirely fresh onboarding test, use a separate Windows user or VM.
+Do not delete/reset existing data to obtain a fresh onboarding screen.
+
+Uninstalling this build is configured to retain app data. Do not upload this
+installer, its blockmap, or build files to the signed stable update channel.
+Future test builds must be installed manually; this build never auto-updates.

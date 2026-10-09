@@ -1,7 +1,7 @@
 {
   "name": "slingsip-desktop-companion",
   "productName": "SlingSip",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A playful desktop hydration companion.",
   "author": {
     "name": "Aditya Kirtane",
@@ -23,7 +23,9 @@
     "test": "npm run build && playwright test",
     "test:electron": "playwright test",
     "package:dir": "npm run build && node scripts/package-windows.mjs --preview",
-    "package:win": "npm run build && node scripts/package-windows.mjs"
+    "package:win": "npm run build && node scripts/package-windows.mjs",
+    "package:win:test-unsigned": "npm run build && node scripts/package-windows-test-unsigned.mjs",
+    "package:win:public-unsigned": "npm run build && node scripts/package-windows-public-unsigned.mjs"
   },
   "dependencies": {
     "@angular/common": "22.2.1",
@@ -55,5 +57,8 @@
     "electron-builder": "26.15.3",
     "esbuild": "0.28.2",
     "typescript": "6.0.3"
+  },
+  "allowScripts": {
+    "electron@44.5.1": true
   }
 }

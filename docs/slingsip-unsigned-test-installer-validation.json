@@ -1,0 +1,153 @@
+{
+  "recordedAt": "2026-10-09T08:57:57.134Z",
+  "status": "BUILT; MANUAL INSTALLED-APP ACCEPTANCE PENDING",
+  "scope": "Explicit unsigned test installer for friends/manual testing only",
+  "version": "1.0.0",
+  "versionChangedByThisTask": false,
+  "buildCommand": "npm run package:win:test-unsigned",
+  "installerCreationPassed": true,
+  "artifacts": [
+    {
+      "path": "release/test-unsigned/SlingSip-Setup-1.0.0-x64.exe",
+      "bytes": 123945865,
+      "SHA256": "e026d1d3eb4a3a4def452bf68e4f36bfc1aa6579b16dee4490c9c1a75c47c6c9"
+    },
+    {
+      "path": "release/test-unsigned/SlingSip-Setup-1.0.0-x64.exe.blockmap",
+      "bytes": 130696,
+      "SHA256": "2d2878f81b11e1b1b37e42d3ebb24b81405641db9597ee60676f745eb96e8828"
+    },
+    {
+      "path": "release/test-unsigned/README-UNSIGNED-TEST.txt",
+      "bytes": 1179,
+      "SHA256": "55535de35a0fe0aeb2f0a676a031f76dde7b6cdd8f128d9a4c32c0455f1e8774"
+    }
+  ],
+  "installerFormat": "Windows x64 NSIS; oneClick=true; perMachine=false",
+  "installerAndShortcutLabel": "SlingSip (Unsigned Test)",
+  "packagedAppId": "com.slingsip.desktop.testunsigned",
+  "packagedName": "slingsip-desktop-companion-test-unsigned",
+  "perUserInstallFolder": "%LOCALAPPDATA%/Programs/slingsip-desktop-companion-test-unsigned",
+  "userData": "%APPDATA%/Mizu",
+  "sessionData": "%APPDATA%/Mizu",
+  "profileSharedWithNormalApp": true,
+  "deleteAppDataOnUninstall": false,
+  "signatures": [
+    {
+      "Path": "D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\test-unsigned\\win-unpacked\\SlingSip.exe",
+      "Subject": null,
+      "Issuer": null,
+      "Thumbprint": null,
+      "Status": "NotSigned",
+      "StatusMessage": "The file D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\test-unsigned\\win-unpacked\\SlingSip.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170"
+    },
+    {
+      "Path": "D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\test-unsigned\\SlingSip-Setup-1.0.0-x64.exe",
+      "Subject": null,
+      "Issuer": null,
+      "Thumbprint": null,
+      "Status": "NotSigned",
+      "StatusMessage": "The file D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\test-unsigned\\SlingSip-Setup-1.0.0-x64.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170"
+    }
+  ],
+  "updatesEnabled": false,
+  "publisherName": "",
+  "latestYmlGenerated": false,
+  "appUpdateYmlPackaged": false,
+  "packagedPolicy": {
+    "schemaVersion": 1,
+    "enabled": false,
+    "provider": "github",
+    "owner": "ak-ak-k",
+    "repo": "slingsip",
+    "channel": "test-unsigned",
+    "publisherName": "",
+    "distribution": "unsigned-test"
+  },
+  "productionProtection": {
+    "normalPackageWinCommandUnchanged": true,
+    "productionSigningFilesUnchanged": true,
+    "productionUpdaterFilesUnchanged": true,
+    "unchangedFiles": [
+      "package-lock.json",
+      "scripts/package-windows.mjs",
+      "scripts/windows-package-config.mjs",
+      "scripts/windows-signing.mjs",
+      "scripts/verify-windows-release.mjs",
+      "release.config.json",
+      "electron/update-backend.ts",
+      "docs/previews/updates/02-available.png",
+      "docs/previews/updates/03-downloading.png",
+      "docs/previews/updates/05-ready.png",
+      "docs/previews/updates/06-check-error.png"
+    ],
+    "stableDirectoryCreatedOrModified": false,
+    "previewBuildModified": false,
+    "signingRequirementsWeakened": false,
+    "trustedPolicyModifiedToAcceptUnsignedUpdates": false,
+    "publish": "never"
+  },
+  "verification": {
+    "typecheck": "passed",
+    "angularProductionBuild": "passed",
+    "electronProductionBuild": "passed",
+    "nsisBuild": "passed",
+    "postBuildUnsignedAndPolicyChecks": "passed",
+    "tests": {
+      "command": "npx playwright test tests/unsigned-installer.spec.mjs tests/windows-signing.spec.mjs --reporter=list",
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "coverage": {
+        "unsignedInstaller": 5,
+        "productionSigning": 6
+      }
+    },
+    "packagedVersionVerified": true,
+    "windowsInstallerAndApplicationProductLabelsVerified": true,
+    "archiveFilesScanned": 4783,
+    "credentialPatternHits": [],
+    "forbiddenPackagedFiles": [],
+    "bundles": [
+      {
+        "file": "dist/electron/main.mjs",
+        "built": "72bc741f88c92c2f1e8df6bbb3e827c9ab7b8508abb636d52a30ef937f7a3699",
+        "packaged": "72bc741f88c92c2f1e8df6bbb3e827c9ab7b8508abb636d52a30ef937f7a3699"
+      },
+      {
+        "file": "dist/electron/preload.cjs",
+        "built": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47",
+        "packaged": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47"
+      }
+    ],
+    "releaseArtifactsIgnoredByGit": true,
+    "userPackageVersionAuthorAndLockfileChangesPreserved": true,
+    "userScreenshotChangesPreserved": true,
+    "manualInstallPerformed": false,
+    "manualInstalledAppFlows": "pending; see checklist",
+    "nativePointerRegression": "not rerun; existing harness limitation unchanged"
+  },
+  "filesModified": [
+    "package.json",
+    "README.md"
+  ],
+  "filesAdded": [
+    "scripts/windows-unsigned-test-config.mjs",
+    "scripts/package-windows-test-unsigned.mjs",
+    "tests/unsigned-installer.spec.mjs",
+    "docs/unsigned-test-distribution.txt",
+    "docs/slingsip-unsigned-test-installer.md",
+    "docs/slingsip-unsigned-test-installer-validation.json"
+  ],
+  "sideEffects": {
+    "applicationSourceChanged": false,
+    "installed": false,
+    "normalProfileReset": false,
+    "runningPreviewStopped": false,
+    "published": false,
+    "uploaded": false,
+    "tagsCreated": false,
+    "productionReleaseArtifactsCreated": false
+  }
+}

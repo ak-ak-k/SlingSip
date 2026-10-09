@@ -29,7 +29,7 @@ export function updateAvailability(packaged: boolean, platform: string, resource
       || feed['protocol'] != null && feed['protocol'] !== 'https'
       || feed['channel'] != null && feed['channel'] !== 'latest') throw new Error('Untrusted feed or signer');
     return null;
-  } catch { return 'Updates are unavailable in this preview or incomplete release build.'; }
+  } catch { return 'Updates are unavailable in this build.'; }
 }
 
 export function createElectronUpdateBackend(): UpdateBackend {

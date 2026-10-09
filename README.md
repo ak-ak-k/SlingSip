@@ -106,7 +106,7 @@ Retry uses the saved interval, five minutes by default in production. Pause, rem
 
 No cloud account, login or application backend is required. Hydration/settings/history, the local profile and companion preferences are saved by Electron main in `hydration.json`, `user-profile.json` and `companion-preferences.json`. The application does not encrypt these local JSON files or provide cloud sync.
 
-Configured signed Windows installations check the public GitHub release feed for updates. Downloads and installation require explicit actions; update networking is handled in Electron main.
+The public unsigned V1 build has automatic updates disabled and uses manual downloads from the official GitHub repository. Future configured signed Windows installations can use the public GitHub update feed; update networking is handled in Electron main.
 
 For compatibility with existing data, the normal Windows profile remains under `%APPDATA%\Mizu` and Windows startup retains the `Mizu` registration name. These legacy identifiers are intentional; current application branding is SlingSip. See the [branding/storage compatibility report](docs/slingsip-branding.md).
 
@@ -155,16 +155,18 @@ See the [Final QA report](docs/slingsip-final-qa-2026-10-08.md), [validation rec
 
 Settings → **About & Updates** shows the actual version, check status and update actions. Meaningful availability/progress/ready state appears in the header; downloaded updates also appear in the tray. **Restart & Update** saves local state before the updater's install/relaunch handoff. Normal **Restart SlingSip** remains independent.
 
-The provider is public GitHub Releases for **ak-ak-k/slingsip**, with stable-only selection and no embedded token. Source/development runs and unsigned previews cannot install updates. Windows distribution uses a signed NSIS installation; the signing identity and real installed update acceptance test remain prerequisites before distribution.
+The future signed updater provider is public GitHub Releases for **ak-ak-k/slingsip**, with stable-only selection and no embedded token. Source/development runs and all unsigned build modes cannot install updates. The current public V1 distribution is an unsigned Windows x64 NSIS installer with the normal SlingSip name and icon. Windows may show Unknown Publisher / SmartScreen; download only from the [official SlingSip repository](https://github.com/ak-ak-k/slingsip).
 
 - `npm run package:dir`: build an unsigned, update-disabled local preview.
+- `npm run package:win:public-unsigned`: build the final **SlingSip 1.0.0** installer in `release/public-unsigned`, with signing and updates disabled. See the [public unsigned V1 build guide, validation and manual checklist](docs/slingsip-public-unsigned-v1.md).
 - `npm run package:win`: build signed NSIS artifacts after configuring signing. It does not publish.
+- `npm run package:win:test-unsigned`: build a separate **SlingSip (Unsigned Test)** NSIS installer for friends/manual testing in `release/test-unsigned`, with signing and updates disabled. See the [unsigned test installer guide and manual checklist](docs/slingsip-unsigned-test-installer.md).
 
 See the [update infrastructure report and release checklist](docs/slingsip-updates.md) and its [separate validation record](docs/slingsip-updates-validation.json). No installer or release has been published.
 
-The [V1 release readiness dry run](docs/slingsip-v1-release-dry-run.md) verifies local packaging and the packaged application. Version stamping, signing and signed installed-app acceptance remain pending.
+The [V1 release readiness dry run](docs/slingsip-v1-release-dry-run.md) records the earlier packaging checks. The current package version is **1.0.0**. The final public unsigned installer has been built locally and its setup window verified; a full installation/installed-app acceptance pass remains manual. Signing and signed update acceptance apply only to the future signed distribution.
 
-Maintainers: see [Windows code-signing onboarding](docs/windows-code-signing.md) for PFX/store setup, exact publisher verification and the future signed V1 release commands. The version remains **0.1.0** until the real release is authorized and certificate details are ready. Public author metadata is still a documented placeholder; fill `package.json.author.name` with the intended public identity before release.
+Maintainers: see [Windows code-signing onboarding](docs/windows-code-signing.md) for PFX/store setup, exact publisher verification and future signed release commands. Both unsigned modes leave the protected signed `package:win` path intact. No certificate is needed for the public unsigned command.
 
 ## Project structure
 

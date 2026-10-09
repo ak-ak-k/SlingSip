@@ -90,7 +90,7 @@ test('Packaging uses one stable public NSIS identity, requires signing and keeps
   const feed = `provider: github\nowner: ak-ak-k\nrepo: slingsip\nchannel: latest\npublisherName: ${publisher}\n`;
   await writeFile(path.join(directory, 'app-update.yml'), feed);
   await writeFile(path.join(directory, 'slingsip-update-policy.json'), JSON.stringify(releasePolicy({ preview: true })));
-  expect(updateAvailability(true, 'win32', directory)).toContain('preview');
+  expect(updateAvailability(true, 'win32', directory)).toContain('unavailable');
   await writeFile(path.join(directory, 'slingsip-update-policy.json'), JSON.stringify(releasePolicy({ publisherName: publisher })));
   expect(updateAvailability(true, 'win32', directory)).toBeNull();
   for (const invalidFeed of [feed.replace(`publisherName: ${publisher}`, ''), feed.replace('Test Publisher', 'Wrong Publisher'),

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-09T10:13:55.301Z",
+  "status": "BUILT_LOCALLY_INSTALLER_LAUNCH_VERIFIED_MANUAL_INSTALLED_APP_ACCEPTANCE_PENDING",
+  "distribution": "unsigned-public",
+  "published": false,
+  "productionCodeChanged": true,
+  "version": {
+    "package": "1.0.0",
+    "lockfile": "1.0.0",
+    "lockRoot": "1.0.0",
+    "packaged": "1.0.0"
+  },
+  "identity": {
+    "productName": "SlingSip",
+    "packageName": "slingsip-desktop-companion",
+    "appId": "com.slingsip.desktop",
+    "shortcutName": "SlingSip",
+    "uninstallDisplayName": "SlingSip 1.0.0",
+    "normalIconPreserved": true,
+    "iconSHA256": "f9b178025dc676a948d3d7fc4200261a01487db6788c15225e2026593aee1e97"
+  },
+  "installer": {
+    "path": "release/public-unsigned/SlingSip-Setup-1.0.0-x64.exe",
+    "format": "NSIS assisted installer",
+    "architecture": "x64",
+    "perUserDefault": true,
+    "bytes": 111772527,
+    "mebibytes": 106.59,
+    "sha256": "33e65b9cb439ca0ab97a89b6f3f62718f8a581ea9fdf3143c03d54ff82027443"
+  },
+  "signing": {
+    "required": false,
+    "enabled": false,
+    "fakePublisher": false,
+    "signatures": [
+      {
+        "file": "SlingSip.exe",
+        "status": "NotSigned",
+        "subject": null
+      },
+      {
+        "file": "SlingSip-Setup-1.0.0-x64.exe",
+        "status": "NotSigned",
+        "subject": null
+      }
+    ]
+  },
+  "updater": {
+    "enabled": false,
+    "packagedPolicy": {
+      "schemaVersion": 1,
+      "enabled": false,
+      "provider": "github",
+      "owner": "ak-ak-k",
+      "repo": "slingsip",
+      "channel": "public-unsigned",
+      "publisherName": "",
+      "distribution": "unsigned-public"
+    },
+    "backendGateTestPassed": true,
+    "accidentalFeedRejected": true,
+    "latestYmlGenerated": false,
+    "channelMetadataGenerated": false,
+    "blockmapGenerated": false,
+    "packagedAppUpdateYml": false,
+    "manualUpdatesOnly": true
+  },
+  "verification": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "result": "passed"
+    },
+    "build": {
+      "command": "npm run package:win:public-unsigned",
+      "result": "passed",
+      "angularProduction": "passed",
+      "electronProduction": "passed",
+      "nsisCompilation": "passed",
+      "postBuildAssertions": "passed"
+    },
+    "tests": {
+      "commands": [
+        "npx playwright test tests/public-unsigned-installer.spec.mjs tests/unsigned-installer.spec.mjs tests/windows-signing.spec.mjs --reporter=list",
+        "npx playwright test tests/updater.spec.mjs --grep 'Packaging uses one stable public NSIS identity' --reporter=list"
+      ],
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "fullApplicationSuiteRerun": false,
+      "screenshotWritingTestsRerun": false
+    },
+    "installerLaunch": {
+      "passed": true,
+      "method": "native Win32 inspection of hidden installer, no pointer input",
+      "windowTitle": "SlingSip Setup",
+      "observedProductText": "SlingSip 1.0.0",
+      "cancelledBeforeInstallation": true,
+      "installationPerformed": false,
+      "exitCode": 1,
+      "exitCodeMeaning": "Expected setup cancellation",
+      "preExistingAppProcessesStillRunning": true,
+      "rawEvidence": ".cache/public-unsigned-installer-launch.json",
+      "startedAt": "2026-10-09T10:13:16.0271781Z",
+      "finishedAt": "2026-10-09T10:13:17.3673302Z"
+    },
+    "firstLaunchHarnessAttempt": {
+      "result": "hidden window not found by UI Automation; timed out",
+      "resolvedBy": "native Win32 window inspection",
+      "installerDefectConfirmed": false,
+      "rawEvidence": ".cache/public-unsigned-installer-launch-uia-attempt.json"
+    },
+    "installedApplicationAcceptance": "Not performed in this task; manual checklist in slingsip-public-unsigned-v1.md",
+    "nativePhysicalPointerRegression": "Not rerun; existing harness limitation remains documented in Final QA",
+    "payload": {
+      "archiveFilesScanned": 4783,
+      "externalFilesScanned": 75,
+      "unsignedTestLabelsFound": false,
+      "githubCredentialPatternMatches": 0,
+      "privateKeyPatternMatches": 0,
+      "environmentFilesFound": 0,
+      "certificateOrKeyFilesFound": 0,
+      "limitation": "Pattern and file inspection cannot identify arbitrary unknown secret formats",
+      "packagedBundles": [
+        {
+          "file": "dist/electron/main.mjs",
+          "sha256": "1c465f778d9252499cd21ea1dafb5fa5fb51f7d300071426aa7fe04d7cf15d33",
+          "matchesCurrentBuild": true
+        },
+        {
+          "file": "dist/electron/preload.cjs",
+          "sha256": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47",
+          "matchesCurrentBuild": true
+        }
+      ],
+      "misleadingPreviewStatusFound": false
+    },
+    "preservedFiles": {
+      "beforeTaskHashesMatched": 172,
+      "unexpectedChanges": [],
+      "signedPackagingUnchanged": true,
+      "lockfileUnchanged": true,
+      "priorUnsignedTestModeUnchanged": true,
+      "signedStableArtifactsGenerated": false,
+      "updaterBackendChangeVerified": "Disabled-status sentence only; replacing it in memory reproduces original SHA-256",
+      "trustedUpdaterPolicyConditionsUnchanged": true
+    },
+    "git": {
+      "releaseDirectoryIgnored": true,
+      "trackedReleaseArtifacts": 0
+    }
+  },
+  "persistence": {
+    "userData": "%APPDATA%\\Mizu",
+    "sessionData": "%APPDATA%\\Mizu",
+    "compatibilityIdentifierIntentional": true,
+    "dataMigration": false,
+    "deleteAppDataOnUninstall": false,
+    "businessLogicUnchanged": true,
+    "sharedSingleInstanceLockPreserved": true
+  },
+  "futureUpload": {
+    "required": [
+      "SlingSip-Setup-1.0.0-x64.exe"
+    ],
+    "optional": [
+      "README-UNSIGNED.txt",
+      "SHA256SUMS.txt"
+    ],
+    "excluded": [
+      "win-unpacked/",
+      "public-unsigned-build.json"
+    ],
+    "updaterMetadata": []
+  },
+  "filesAdded": [
+    "scripts/windows-public-unsigned-config.mjs",
+    "scripts/package-windows-public-unsigned.mjs",
+    "tests/public-unsigned-installer.spec.mjs",
+    "docs/slingsip-public-unsigned-release-notes.txt",
+    "docs/slingsip-public-unsigned-v1.md",
+    "docs/slingsip-public-unsigned-v1-validation.json"
+  ],
+  "filesModified": [
+    "package.json (new packaging script only)",
+    "README.md (current unsigned distribution instructions)",
+    "electron/update-backend.ts (disabled-status copy only)",
+    "tests/updater.spec.mjs (copy assertion only)"
+  ],
+  "productionChange": "Disabled-update status copy only: Updates are unavailable in this build.",
+  "businessLogicChanged": false
+}

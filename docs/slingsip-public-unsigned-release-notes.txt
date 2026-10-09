@@ -1,0 +1,12 @@
+SlingSip 1.0.0 for Windows x64
+
+This build is currently unsigned.
+Windows may display an Unknown Publisher / SmartScreen warning.
+Download only from the official SlingSip GitHub repository:
+https://github.com/ak-ak-k/slingsip
+
+Automatic updates are disabled in this build. Future releases must be downloaded
+and installed manually from the official repository.
+
+Existing profile, hydration progress, history and settings remain under
+%APPDATA%\Mizu. Quit a running SlingSip through its tray menu before installing.
