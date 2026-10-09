@@ -164,6 +164,8 @@ See the [update infrastructure report and release checklist](docs/slingsip-updat
 
 The [V1 release readiness dry run](docs/slingsip-v1-release-dry-run.md) verifies local packaging and the packaged application. Version stamping, signing and signed installed-app acceptance remain pending.
 
+Maintainers: see [Windows code-signing onboarding](docs/windows-code-signing.md) for PFX/store setup, exact publisher verification and the future signed V1 release commands. The version remains **0.1.0** until the real release is authorized and certificate details are ready. Public author metadata is still a documented placeholder; fill `package.json.author.name` with the intended public identity before release.
+
 ## Project structure
 
 ```text

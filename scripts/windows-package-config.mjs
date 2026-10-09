@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import { assertPublisherSubject, certificateThumbprint } from './windows-signing.mjs';
 
 export const WINDOWS_APP_ID = 'com.slingsip.desktop';
 export const PACKAGING_DIRECTORY = '.cache/slingsip-packaging';
@@ -16,15 +17,15 @@ export function releasePolicy({ preview = false, publisherName } = {}) {
     || config.provider !== 'github' || config.owner !== 'ak-ak-k' || config.repo !== 'slingsip' || config.channel !== 'stable') {
     throw new Error('Release configuration must use the approved public GitHub stable provider; URLs and tokens are not accepted.');
   }
-  const publisher = (publisherName ?? config.publisherName).trim();
+  const publisher = preview ? '' : assertPublisherSubject(publisherName ?? config.publisherName);
   if (!preview) assertStableReleaseVersion(JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version);
-  if (!preview && !publisher) throw new Error('Set SLINGSIP_WINDOWS_PUBLISHER or release.config.json publisherName to the exact signing certificate subject before building a release.');
   return { schemaVersion: 1, enabled: !preview, provider: config.provider, owner: config.owner, repo: config.repo,
     channel: 'stable', publisherName: preview ? '' : publisher };
 }
 
 export function windowsPackageConfig(options = {}) {
   const policy = releasePolicy(options);
+  const certificateSha1 = policy.enabled ? certificateThumbprint(options.certificateSha1) : undefined;
   return {
     appId: WINDOWS_APP_ID,
     productName: 'SlingSip',
@@ -39,7 +40,9 @@ export function windowsPackageConfig(options = {}) {
       channel: 'latest', releaseType: 'release' }] : null,
     generateUpdatesFilesForAllChannels: false,
     win: { target: [{ target: 'nsis', arch: ['x64'] }], icon: `${PACKAGING_DIRECTORY}/slingsip.ico`,
-      verifyUpdateCodeSignature: true, ...(policy.enabled ? { publisherName: policy.publisherName } : {}) },
+      verifyUpdateCodeSignature: true, signExecutable: policy.enabled,
+      ...(policy.enabled ? { signtoolOptions: { publisherName: policy.publisherName,
+        ...(certificateSha1 ? { certificateSha1, certificateSubjectName: policy.publisherName } : {}) } } : {}) },
     nsis: { oneClick: true, perMachine: false, deleteAppDataOnUninstall: false,
       artifactName: 'SlingSip-Setup-${version}-${arch}.${ext}' },
   };

@@ -79,20 +79,21 @@ test('Packaging uses one stable public NSIS identity, requires signing and keeps
   expect(() => releasePolicy({ publisherName: '' })).toThrow('signing certificate');
   const config = windowsPackageConfig({ publisherName: 'CN=Test Publisher, O=Test Organisation, C=IN' });
   expect(config).toMatchObject({ appId: 'com.slingsip.desktop', forceCodeSigning: true, asar: true,
-    win: { verifyUpdateCodeSignature: true, publisherName: 'CN=Test Publisher, O=Test Organisation, C=IN' },
+    win: { verifyUpdateCodeSignature: true, signtoolOptions: { publisherName: 'CN=Test Publisher, O=Test Organisation, C=IN' } },
     nsis: { deleteAppDataOnUninstall: false }, publish: [{ provider: 'github', owner: 'ak-ak-k', repo: 'slingsip', private: false, channel: 'latest' }] });
   expect(config.win.target).toEqual([{ target: 'nsis', arch: ['x64'] }]);
   expect(() => assertStableReleaseVersion('2.0.0-beta.1')).toThrow('prerelease');
   expect(() => assertStableReleaseVersion('1.0.0+build-beta')).not.toThrow();
   const preview = windowsPackageConfig({ preview: true }); expect(preview.publish).toBeNull(); expect(preview.forceCodeSigning).toBe(false);
   const directory = path.resolve('.cache/update-policy-tests-' + randomUUID()); await mkdir(directory, { recursive: true });
-  const feed = 'provider: github\nowner: ak-ak-k\nrepo: slingsip\nchannel: latest\npublisherName: Test Publisher\n';
+  const publisher = 'CN=Test Publisher, O=Test Organisation, C=IN'; // Public metadata fixture, never a signing credential.
+  const feed = `provider: github\nowner: ak-ak-k\nrepo: slingsip\nchannel: latest\npublisherName: ${publisher}\n`;
   await writeFile(path.join(directory, 'app-update.yml'), feed);
   await writeFile(path.join(directory, 'slingsip-update-policy.json'), JSON.stringify(releasePolicy({ preview: true })));
   expect(updateAvailability(true, 'win32', directory)).toContain('preview');
-  await writeFile(path.join(directory, 'slingsip-update-policy.json'), JSON.stringify(releasePolicy({ publisherName: 'Test Publisher' })));
+  await writeFile(path.join(directory, 'slingsip-update-policy.json'), JSON.stringify(releasePolicy({ publisherName: publisher })));
   expect(updateAvailability(true, 'win32', directory)).toBeNull();
-  for (const invalidFeed of [feed.replace('publisherName: Test Publisher', ''), feed.replace('Test Publisher', 'Wrong Publisher'),
+  for (const invalidFeed of [feed.replace(`publisherName: ${publisher}`, ''), feed.replace('Test Publisher', 'Wrong Publisher'),
     feed.replace('repo: slingsip', 'repo: unexpected'), feed + 'token: forbidden-fixture\n', feed + 'protocol: http\n', feed.replace('channel: latest', 'channel: beta')]) {
     await writeFile(path.join(directory, 'app-update.yml'), invalidFeed);
     expect(updateAvailability(true, 'win32', directory)).toContain('unavailable');

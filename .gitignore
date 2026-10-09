@@ -8,6 +8,14 @@ playwright-report/
 release/
 .env
 .env.*
+# No tracked public-certificate fixtures currently require exceptions. Review any future
+# public trust certificate explicitly; never exempt a private key or signing bundle.
 *.pfx
 *.p12
-*.key.pem
+*.pem
+*.key
+*.cer
+*.crt
+signing/
+certificates/
+secrets/

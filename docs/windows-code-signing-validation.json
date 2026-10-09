@@ -1,0 +1,177 @@
+{
+  "recordedAt": "2026-10-09T07:39:27.996Z",
+  "scope": "Windows code-signing preparation only",
+  "status": "PREPARATION COMPLETE; REAL CERTIFICATE AND SIGNED V1 ACCEPTANCE PENDING",
+  "canonicalVersion": "0.1.0",
+  "lockfileVersion": "0.1.0",
+  "versionChanged": false,
+  "updaterProvider": {
+    "provider": "github",
+    "owner": "ak-ak-k",
+    "repo": "slingsip",
+    "channel": "stable"
+  },
+  "actualPublisherConfigured": false,
+  "signingEnvironmentPresenceOnly": {
+    "SLINGSIP_WINDOWS_PUBLISHER": false,
+    "SLINGSIP_WINDOWS_CERTIFICATE_SHA1": false,
+    "CSC_LINK": false,
+    "CSC_KEY_PASSWORD": false,
+    "WIN_CSC_LINK": false,
+    "WIN_CSC_KEY_PASSWORD": false
+  },
+  "filesChanged": [
+    ".gitignore",
+    "README.md",
+    "scripts/package-windows.mjs",
+    "scripts/windows-package-config.mjs",
+    "scripts/windows-signing.mjs",
+    "scripts/verify-windows-release.mjs",
+    "tests/updater.spec.mjs",
+    "tests/windows-signing.spec.mjs",
+    "docs/windows-code-signing.md",
+    "docs/windows-code-signing-validation.json"
+  ],
+  "defectFixed": {
+    "previous": "win.publisherName was not in the installed electron-builder 26.15.3 schema",
+    "current": "win.signtoolOptions.publisherName, tested against installed schema and real publisher resolver"
+  },
+  "architecture": {
+    "signer": "Built-in electron-builder SignTool; no custom signer",
+    "pfx": "CSC_LINK / CSC_KEY_PASSWORD or matching WIN_CSC aliases; passwordless PFX compatibility retained",
+    "store": "SLINGSIP_WINDOWS_CERTIFICATE_SHA1 -> signtoolOptions.certificateSha1; exact full Subject also constrains certificateSubjectName",
+    "mandatoryReleaseSigning": true,
+    "mandatoryPostBuildAuthenticodeAndPublisherVerification": true,
+    "previewSigningDisabled": true,
+    "previewUpdatesDisabled": true,
+    "publish": "never",
+    "restartSeparationChanged": false,
+    "trustedPublisherSource": "Same full certificate Subject in signing config, public policy and generated app-update.yml; checked against actual signer after build"
+  },
+  "validation": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "passed": true
+    },
+    "productionBuild": {
+      "command": "npm run build",
+      "angular": "passed",
+      "electron": "passed"
+    },
+    "regressions": {
+      "command": "npx playwright test tests/updater.spec.mjs tests/restart.spec.mjs tests/windows-signing.spec.mjs --reporter=list",
+      "distinctPassed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "coverage": {
+        "restart": 6,
+        "updater": 7,
+        "signing": 6
+      }
+    },
+    "finalSigningRerun": {
+      "command": "npx playwright test tests/windows-signing.spec.mjs --reporter=json",
+      "stats": {
+        "startTime": "2026-10-09T07:38:16.582Z",
+        "duration": 2978.255,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "rawRecord": ".cache/windows-signing-tests.json",
+      "countsAreNotAdditionalDistinctTests": true
+    },
+    "missingPublisherGate": {
+      "command": "node scripts/package-windows.mjs",
+      "expectedExitCode": 1,
+      "result": "Rejected before artifact preparation or signing because publisher is missing"
+    },
+    "realAuthenticodeNegativeCheck": {
+      "artifacts": [
+        {
+          "path": "D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\preview\\win-unpacked\\SlingSip.exe",
+          "status": "NotSigned",
+          "subject": null,
+          "issuer": null,
+          "thumbprint": null
+        },
+        {
+          "path": "D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\dry-run-unsigned\\SlingSip-Setup-0.1.0-x64.exe",
+          "status": "NotSigned",
+          "subject": null,
+          "issuer": null,
+          "thumbprint": null
+        }
+      ],
+      "accepted": false,
+      "rejection": "Authenticode must be Valid for D:\\Aditya\\pratice\\project\\Desktop Companion\\release\\preview\\win-unpacked\\SlingSip.exe; received NotSigned.",
+      "rawRecord": ".cache/windows-signing-negative-authenticode.json"
+    },
+    "realDefaultUpdaterVerifierNegativeCheck": {
+      "unsignedInstallerRejected": true,
+      "rawRecord": ".cache/windows-signing-upstream-verifier-negative.json",
+      "contactedReleaseFeed": false,
+      "installedAnything": false
+    },
+    "acceptanceUnitFixtures": "Public metadata projections only; no real signed-positive acceptance, certificates, private keys or signing credentials created",
+    "ignoreCoverage": {
+      "checkedProbes": [
+        "probe.pfx",
+        "probe.p12",
+        "probe.pem",
+        "probe.key",
+        "probe.cer",
+        "probe.crt",
+        "signing/probe",
+        "certificates/probe",
+        "secrets/probe",
+        ".env.signing"
+      ],
+      "allIgnored": true,
+      "trackedCertificateOrKeyFilesFound": 0,
+      "intentionalPublicCertificateExceptionsNeeded": false
+    },
+    "mainBundleSHA256": "72bc741f88c92c2f1e8df6bbb3e827c9ab7b8508abb636d52a30ef937f7a3699",
+    "preloadBundleSHA256": "56bbb0aefe6f7b724f76b08cf1a63b8f385eb65a0359981a15e590b01df2ac47",
+    "applicationBundleHashesMatchPriorDryRun": true,
+    "applicationSourceChanged": false,
+    "screenshotsRegeneratedByTestsRestoredToBaseline": true,
+    "nativePointerRegression": "Not rerun; existing flaky Windows harness limitation retained; no assertion weakened or passing result invented"
+  },
+  "authorMetadata": {
+    "currentPackageAuthor": null,
+    "status": "Public identity unknown; explicit documentation placeholder only",
+    "fillAt": "package.json.author.name (then sync package-lock.json with npm and update README Author section)"
+  },
+  "futureArtifacts": [
+    "release/stable/SlingSip-Setup-1.0.0-x64.exe",
+    "release/stable/SlingSip-Setup-1.0.0-x64.exe.blockmap",
+    "release/stable/latest.yml"
+  ],
+  "buildToolOverrides": {
+    "preserved": true,
+    "embedded": false,
+    "details": "docs/windows-code-signing.md#build-machine-tools"
+  },
+  "remainingBlockers": [
+    "Actual certificate and complete Subject",
+    "Key access and real PFX or SignTool-compatible store/token provider",
+    "Public author metadata",
+    "Authorized 1.0.0 stamp",
+    "Valid trusted signed application/installer and timestamp acceptance",
+    "Isolated signed installation and higher-version update/publisher-rejection acceptance",
+    "Build-machine tool cache provisioning where required"
+  ],
+  "sideEffects": {
+    "signed": false,
+    "installed": false,
+    "published": false,
+    "uploaded": false,
+    "tagCreated": false,
+    "tagPushed": false,
+    "unsignedDiagnosticDistributed": false,
+    "productionApplicationModified": false
+  }
+}

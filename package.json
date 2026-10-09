@@ -3,6 +3,10 @@
   "productName": "SlingSip",
   "version": "0.1.0",
   "description": "A playful desktop hydration companion.",
+  "author": {
+    "name": "Aditya Kirtane",
+    "url": "https://github.com/ak-ak-k"
+  },
   "private": true,
   "type": "module",
   "main": "dist/electron/main.mjs",
