@@ -1,20 +1,47 @@
 # SlingSip
-<!-- https://www.tajmirul.site/   -->
 **Desktop Hydration Companion**
 
 *Swing in. Sip up. Keep going.*
 
+- **Live Website:** [sling-sip.vercel.app](https://sling-sip.vercel.app/)
+- **Download for Windows:** [SlingSip Windows x64 installer](https://github.com/ak-ak-k/slingsip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe)
+- **GitHub Repository:** [ak-ak-k/slingsip](https://github.com/ak-ak-k/slingsip)
+
+![SlingSip — Stay hydrated. Keep moving.](docs/screenshots/slingsip-hero.png)
+
 SlingSip is a local-first desktop application built with Angular and Electron. It runs quietly from the system tray, schedules hydration reminders around your routine, and brings a web-swinging companion onto the screen when it is time to drink. Brief, interactive water breaks help you keep track of hydration during long desktop sessions.
 
-## Demo
+## Product Experience
 
-**Demo Video Coming Soon**
+Screenshots from the [live SlingSip website](https://sling-sip.vercel.app/), captured at 1920 × 1080. The interactive story previews the desktop experience.
 
-**Portfolio Showcase Coming Soon**
+### Hydration reminders
 
-A separate [SlingSip landing page](landing/README.md) is available locally. It follows the companion-led scroll storyboard, uses the approved artwork and real dashboard captures, and has its own build dependencies. Run `npm --prefix landing ci`, then `npm --prefix landing run dev`. It is not included in the Electron installer or deployed.
+![SlingSip reminder flow](docs/screenshots/slingsip-how-it-works.png)
 
-The [demo freeze guide](docs/slingsip-demo-freeze.md) includes production setup and a 60-second recording sequence.
+SlingSip swings in when it is time to drink. Record water with **Drank it**, or choose **Remind me later**. Water is recorded immediately while the companion celebrates.
+
+### Dashboard
+
+![SlingSip dashboard](docs/screenshots/slingsip-dashboard.png)
+
+Track daily hydration, remaining water, reminders and streaks from the desktop dashboard, with History and Settings a click away.
+
+### What's next
+
+![SlingSip V2 roadmap concepts](docs/screenshots/slingsip-features-v2.png)
+
+Email alerts, interview invites, meeting reminders and Smart Sidekick Alerts are **future V2 concepts**, as labelled in the screenshot. They are not available in v1.0.0.
+
+### Download
+
+![Download SlingSip for Windows](docs/screenshots/slingsip-download.png)
+
+[Download SlingSip for Windows](https://github.com/ak-ak-k/slingsip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe) — Windows 10 / 11, x64.
+
+Current public build: **v1.0.0** ([official release](https://github.com/ak-ak-k/slingsip/releases/tag/v1.0.0)).
+
+This Windows build is currently unsigned. Windows may show an Unknown Publisher or SmartScreen warning. Download SlingSip only from the [official GitHub repository](https://github.com/ak-ak-k/slingsip). Automatic updates are disabled in this unsigned build; install future releases manually.
 
 ## Product features
 
@@ -141,6 +168,10 @@ Quit the current instance through **tray → Quit SlingSip** before switching de
 
 Tests use isolated profiles. No Playwright browser download is needed. The native pointer test moves/clicks the physical mouse and requires an unlocked desktop with the mouse idle.
 
+The separate [landing page](landing/README.md) has its own dependencies and is deployed on Vercel; it is not included in the Electron installer. Run `npm --prefix landing ci`, then `npm --prefix landing run dev` to work on it locally.
+
+To refresh the README screenshots from the deployed website, run `node landing/scripts/capture-live-readme.mjs` after installing the landing dependencies. The script uses Microsoft Edge on Windows, captures five PNGs without mocked responses, and writes temporary diagnostics to Git-ignored `test-results/`. Its dashboard capture uses the site's supported reduced-motion view to avoid overlapping animation layers. Inspect every PNG before committing it.
+
 ## Quality assurance
 
 Recorded hydration demo Final QA: **8 October 2026**, before the release-infrastructure addition.
@@ -164,7 +195,7 @@ The future signed updater provider is public GitHub Releases for **ak-ak-k/sling
 - `npm run package:win`: build signed NSIS artifacts after configuring signing. It does not publish.
 - `npm run package:win:test-unsigned`: build a separate **SlingSip (Unsigned Test)** NSIS installer for friends/manual testing in `release/test-unsigned`, with signing and updates disabled. See the [unsigned test installer guide and manual checklist](docs/slingsip-unsigned-test-installer.md).
 
-See the [update infrastructure report and release checklist](docs/slingsip-updates.md) and its [separate validation record](docs/slingsip-updates-validation.json). No installer or release has been published.
+See the [update infrastructure report and release checklist](docs/slingsip-updates.md) and its [separate validation record](docs/slingsip-updates-validation.json) for historical implementation evidence. The unsigned [v1.0.0 release](https://github.com/ak-ak-k/slingsip/releases/tag/v1.0.0) is now public; the signed update channel remains for future use.
 
 The [V1 release readiness dry run](docs/slingsip-v1-release-dry-run.md) records the earlier packaging checks. The current package version is **1.0.0**. The final public unsigned installer has been built locally and its setup window verified; a full installation/installed-app acceptance pass remains manual. Signing and signed update acceptance apply only to the future signed distribution.
 
@@ -182,27 +213,11 @@ tests/     Domain and native Electron regression tests
 docs/      QA evidence, compatibility reports and demo preparation
 ```
 
-## Screenshots
-
-| View | Placeholder |
-| --- | --- |
-| Overview | Overview screenshot to add |
-| Companion Reminder | Desktop reminder screenshot to add |
-| History | History screenshot to add |
-| Settings | Settings screenshot to add |
-| Onboarding | Welcome/profile/tour screenshot to add |
-
-Existing test captures are indexed in the [native Final QA gallery](docs/previews/final-qa-2026-10-08/index.html); recruiter-facing captures can be added above after recording.
-
 ## Roadmap — FUTURE
 
 - Optional email/calendar smart alerts.
 - Expanded desktop sidekick capabilities.
-- Packaged Windows release.
-- Portfolio web showcase.
 
 ## Author
 
-- **Name:** To add.
-- **GitHub:** Profile link to add.
-- **Portfolio:** Showcase link to add.
+Built by **Aditya Kirtane**.
