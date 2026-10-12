@@ -4,6 +4,8 @@ dist/
 .cache/
 test-results/
 playwright-report/
+# Optional local motion recordings are not repository documentation assets.
+docs/previews/landing-motion/*.webm
 *.log
 release/
 .env

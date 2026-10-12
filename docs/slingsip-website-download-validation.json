@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-12T07:33:58.515Z",
+  "status": "LOCAL_VALIDATION_PASSED_BINARY_TRANSFER_UNCONFIRMED",
+  "scope": "Website download/copy/docs only; prior motion work preserved",
+  "productionBuild": {
+    "command": "npm --prefix landing run build",
+    "passed": true,
+    "files": [
+      {
+        "name": "index-C4seYnAp.js",
+        "bytes": 150055,
+        "sha256": "32ed7ba58d36c4f7d7e0dadd2f8da5889d50b49a51eaa6817e180cd72e5cda5c"
+      },
+      {
+        "name": "index-DdZy-eGQ.css",
+        "bytes": 35726,
+        "sha256": "8a1a254f671b3083f7030fcb645ba65b0693606c3ab537eab740c2f0c036210a"
+      }
+    ]
+  },
+  "browserTests": {
+    "command": "LANDING_TEST_PORT=5174 npm --prefix landing test -- --reporter=list,json",
+    "passed": 41,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "durationMs": 148636.81,
+    "reruns": 0,
+    "rawIgnoredReport": "test-results/landing-download-full-report.json",
+    "fixtureDirectNavigationWidths": [
+      320,
+      390,
+      1440
+    ],
+    "coverage": [
+      "shared request/loading/ready/fallback",
+      "canonical GitHub repository casing",
+      "future stable version from metadata",
+      "unsafe owner/repository/host/credentials/query/http",
+      "draft/prerelease/missing installer/version mismatch",
+      "malformed JSON/assets/null response",
+      "rate-limit/404/timeout",
+      "clickable fallback/no JavaScript",
+      "all existing story/motion/reduced-motion/low-power tests"
+    ]
+  },
+  "realApiAudit": {
+    "endpoint": "https://api.github.com/repos/ak-ak-k/slingsip/releases/latest",
+    "tag": "v1.0.0",
+    "draft": false,
+    "prerelease": false,
+    "installer": "https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe",
+    "installerBytes": 111772527,
+    "installerUploaded": true,
+    "pages": [
+      {
+        "kind": "local-production",
+        "url": "http://127.0.0.1:5174/",
+        "width": 1440,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedAssets": [],
+        "apiResponses": [
+          {
+            "url": "https://api.github.com/repos/ak-ak-k/slingsip/releases/latest",
+            "status": 200
+          }
+        ],
+        "httpStatus": 200,
+        "download": {
+          "links": [
+            {
+              "href": "https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe",
+              "state": "ready",
+              "text": "Download SlingSip for Windows"
+            },
+            {
+              "href": "https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe",
+              "state": "ready",
+              "text": "Download SlingSip for Windows"
+            }
+          ],
+          "versions": [
+            "v1.0.0",
+            "v1.0.0"
+          ],
+          "status": "Windows installer · SlingSip-Setup-1.0.0-x64.exe"
+        },
+        "horizontalOverflow": false,
+        "loadedImageCount": 13,
+        "totalImageCount": 13
+      },
+      {
+        "kind": "local-production",
+        "url": "http://127.0.0.1:5174/",
+        "width": 390,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedAssets": [],
+        "apiResponses": [
+          {
+            "url": "https://api.github.com/repos/ak-ak-k/slingsip/releases/latest",
+            "status": 200
+          }
+        ],
+        "httpStatus": 200,
+        "download": {
+          "links": [
+            {
+              "href": "https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe",
+              "state": "ready",
+              "text": "Download SlingSip for Windows"
+            },
+            {
+              "href": "https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe",
+              "state": "ready",
+              "text": "Download SlingSip for Windows"
+            }
+          ],
+          "versions": [
+            "v1.0.0",
+            "v1.0.0"
+          ],
+          "status": "Windows installer · SlingSip-Setup-1.0.0-x64.exe"
+        },
+        "horizontalOverflow": false,
+        "loadedImageCount": 13,
+        "totalImageCount": 13
+      },
+      {
+        "kind": "existing-live-deployment",
+        "url": "https://sling-sip.vercel.app/",
+        "width": 1440,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedAssets": [],
+        "apiResponses": [
+          {
+            "url": "https://api.github.com/repos/ak-ak-k/slingsip/releases/latest",
+            "status": 200
+          }
+        ],
+        "httpStatus": 200,
+        "download": {
+          "links": [
+            {
+              "href": "https://github.com/ak-ak-k/slingsip/releases",
+              "state": "fallback",
+              "text": "Download for Windows"
+            },
+            {
+              "href": "https://github.com/ak-ak-k/slingsip/releases",
+              "state": "fallback",
+              "text": "Download SlingSip for Windows"
+            }
+          ],
+          "versions": [
+            "v1.0.0",
+            "v1.0.0"
+          ],
+          "status": "The download button opens official GitHub Releases. If no release is listed yet, please check back soon."
+        },
+        "horizontalOverflow": false,
+        "loadedImageCount": 13,
+        "totalImageCount": 13
+      }
+    ],
+    "assetResponses": [
+      {
+        "name": "ask.png",
+        "status": 200
+      },
+      {
+        "name": "bottle.svg",
+        "status": 200
+      },
+      {
+        "name": "dashboard-1000.png",
+        "status": 200
+      },
+      {
+        "name": "dashboard-1500.png",
+        "status": 200
+      },
+      {
+        "name": "dashboard-500.png",
+        "status": 200
+      },
+      {
+        "name": "idle.png",
+        "status": 200
+      },
+      {
+        "name": "index-C4seYnAp.js",
+        "status": 200
+      },
+      {
+        "name": "index-DdZy-eGQ.css",
+        "status": 200
+      },
+      {
+        "name": "logo.svg",
+        "status": 200
+      },
+      {
+        "name": "point.png",
+        "status": 200
+      },
+      {
+        "name": "success.png",
+        "status": 200
+      },
+      {
+        "name": "swing.png",
+        "status": 200
+      }
+    ],
+    "rawIgnoredReport": "test-results/landing-download-live-audit.json"
+  },
+  "actualBinaryTransfer": {
+    "confirmed": false,
+    "officialUrlHeadStatus": 302,
+    "redirectHost": "release-assets.githubusercontent.com",
+    "commandLineError": "ECONNRESET",
+    "browserError": "net::ERR_CONNECTION_RESET",
+    "downloadEventReceived": false,
+    "completedBinaryDownload": false,
+    "installerRun": false,
+    "remaining": "Confirm actual transfer on a network that can reach the GitHub release-assets CDN."
+  },
+  "productionScan": {
+    "localhostUrlsFound": false,
+    "developmentEndpointsOrBridgeFound": false,
+    "gitLabFound": false,
+    "githubTokenPatternsFound": false,
+    "latestReleaseEndpointOccurrences": 1,
+    "externalPageLinksOnlyOfficialRepository": true,
+    "releasesSectionAdded": false
+  },
+  "safety": {
+    "desktopProductionSourceAndConfigUnchanged": true,
+    "desktopVersionUnchanged": "1.0.0",
+    "motionSourceAndCssUnchangedByThisPass": true,
+    "gitignoreUnchanged": true,
+    "generatedAssetsBuildsAndTemporaryQaIgnored": true,
+    "diffCheckPassed": true,
+    "pushed": false,
+    "deployed": false,
+    "releaseCreated": false,
+    "repositoryAboutChanged": false
+  },
+  "manualGitHubWebsite": "https://sling-sip.vercel.app/",
+  "remaining": [
+    "Deploy local website changes when authorized; current live site still uses old fallback.",
+    "Set repository About Website manually if needed.",
+    "Confirm complete binary transfer from deployed CTAs on a working CDN connection."
+  ]
+}

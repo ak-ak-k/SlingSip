@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const api = 'https://api.github.com/repos/ak-ak-k/slingsip/releases/latest';
 const release = { draft: false, prerelease: false, tag_name: 'v1.0.0', assets: [{ name: 'SlingSip-Setup-1.0.0-x64.exe',
-  browser_download_url: 'https://github.com/ak-ak-k/slingsip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe' }] };
+  browser_download_url: 'https://github.com/ak-ak-k/SlingSip/releases/download/v1.0.0/SlingSip-Setup-1.0.0-x64.exe' }] };
 async function routeRelease(page, body = release, status = 200) {
   await page.route(api, route => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(body) }));
 }
@@ -36,10 +36,28 @@ test('Pinned story supports manual Drank it, bottle delivery, scroll progress, r
   await routeRelease(page); await page.goto('/');
   await scrollTo(page, '.how-section', 300);
   await expect(page.locator('.how-section')).toHaveAttribute('data-demo-phase', '0');
+  // Observe short-lived visuals at the click, rather than after several
+  // browser-protocol round trips. Detailed duration is covered in motion QA.
+  await page.evaluate(() => {
+    window.__deliverySeen = new Promise(resolve => {
+      document.querySelector('#demo-drank').addEventListener('click', () => {
+        let bottle = false, feedback = false; const began = performance.now();
+        const visible = selector => {
+          const style = getComputedStyle(document.querySelector(selector));
+          return style.visibility !== 'hidden' && Number(style.opacity) > .1;
+        };
+        function frame(time) {
+          bottle ||= visible('.delivery-bottle'); feedback ||= visible('.water-feedback');
+          if (bottle && feedback || time - began > 4000) resolve({ bottle, feedback });
+          else requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }, { once: true });
+    });
+  });
   await page.locator('#demo-drank').click();
   await expect(page.locator('[data-reminder-title]')).toHaveText('Nice! One glass closer.');
-  await expect(page.locator('.delivery-bottle')).toBeVisible();
-  await expect(page.locator('.water-feedback')).toBeVisible();
+  expect(await page.evaluate(() => window.__deliverySeen)).toEqual({ bottle: true, feedback: true });
   await expect(page.locator('.delivery-bottle')).toBeHidden({ timeout: 4000 });
   const how = await page.locator('.how-section').evaluate(element => ({ top:element.getBoundingClientRect().top+scrollY, height:innerHeight }));
   await page.evaluate(({ top, height }) => window.scrollTo({ top:top+height*2.16, behavior:'instant' }),how);
@@ -139,7 +157,11 @@ for (const [name, body, status] of [
 ]) test(`Download gracefully falls back for ${name}`, async ({ page }) => {
   await routeRelease(page,body,status); await page.goto('/');
   await expect(page.locator('#release-status')).toContainText('opens official GitHub Releases');
-  for(const link of await page.locator('.download-link').all()) await expect(link).toHaveAttribute('href','https://github.com/ak-ak-k/slingsip/releases');
+  for(const link of await page.locator('.download-link').all()) {
+    await expect(link).toHaveAttribute('href','https://github.com/ak-ak-k/slingsip/releases');
+    await expect(link).toHaveAttribute('data-download-state','fallback');
+  }
+  await expect(page.locator('.release-version')).toHaveText(['Version on GitHub','Version on GitHub']);
 });
 
 test('Release request timeout and missing artwork do not prevent using the page', async ({ page }) => {
@@ -150,12 +172,13 @@ test('Release request timeout and missing artwork do not prevent using the page'
   await scrollTo(page,'.how-section',200);
   await page.locator('#demo-drank').click();
   await expect(page.locator('[data-reminder-title]')).toHaveText('Nice! One glass closer.');
-  await expect(page.locator('.traveler-art')).toBeVisible();
+  await expect(page.locator('.character-rig')).toBeVisible();
+  await expect(page.locator('.traveler')).toHaveAttribute('data-pose', /swing|happy/);
 });
 
 test('Without JavaScript the content, future labels, and release links remain available', async ({ browser }) => {
-  const context=await browser.newContext({javaScriptEnabled:false}); const page=await context.newPage();
-  try { await page.goto('http://127.0.0.1:5173/');
+  const context=await browser.newContext({javaScriptEnabled:false,baseURL:test.info().project.use.baseURL}); const page=await context.newPage();
+  try { await page.goto('/');
     await expect(page.locator('h1')).toBeVisible(); await expect(page.locator('.future-badge')).toHaveText('COMING IN V2');
     await expect(page.locator('.noscript-note')).toBeAttached();
     await expect(page.locator('.finale-cta')).toHaveAttribute('href','https://github.com/ak-ak-k/slingsip/releases');
@@ -181,7 +204,7 @@ test('Desktop cursor motion is bounded and suspends on hidden-page visibility ev
 
 test('Download click opens the validated official installer URL without fetching a real binary in the test', async ({ page, context }) => {
   await routeRelease(page);
-  await context.route('https://github.com/ak-ak-k/slingsip/releases/download/**', route =>
+  await context.route('https://github.com/ak-ak-k/SlingSip/releases/download/**', route =>
     route.fulfill({status:200,contentType:'text/plain',body:'Navigation fixture. No installer downloaded.'}));
   await page.goto('/');
   await expect(page.locator('.download-link').first()).toHaveAttribute('data-download-state','ready');

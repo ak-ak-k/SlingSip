@@ -1,0 +1,40 @@
+{
+  "capturedAt": "2026-10-12T06:45:48.558Z",
+  "source": "http://127.0.0.1:5174",
+  "pageErrors": [],
+  "githubResponse": "Intentionally mocked 404; no fake release metadata or installer download.",
+  "performance": {
+    "scenario": "Headless browser RAF intervals, no video encoding; not a physical-device certification.",
+    "initialIdle": {
+      "samples": 120,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "over33ms": 1,
+      "hardwareConcurrency": 4,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+      "cachedPosesAtEnd": 6
+    },
+    "warmedIdle": {
+      "samples": 120,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.799999999999272,
+      "over33ms": 0,
+      "hardwareConcurrency": 4,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+      "cachedPosesAtEnd": 6
+    },
+    "scrollJourney": {
+      "samples": 120,
+      "medianFrameMs": 16.799999999999272,
+      "p95FrameMs": 50,
+      "over33ms": 11,
+      "hardwareConcurrency": 4,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+      "cachedPosesAtEnd": 6
+    }
+  },
+  "video": "motion-review.webm",
+  "screenshots": 9,
+  "videoLocalOnly": true,
+  "videoExcludedFromGit": true
+}

@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-12T06:46:21.250Z",
+  "status": "VALIDATED_WITH_ONE_NAVIGATION_RERUN",
+  "sourceBrief": "User attachment 0ac5af5a-2d10-4c3c-8777-b3565876321d",
+  "scope": {
+    "location": "landing/",
+    "desktopUnchangedComparedTo": "c416974381407c423b6e5a0c5b24ca5835154045",
+    "desktopUnchanged": true,
+    "dependenciesUnchanged": true,
+    "deployed": false,
+    "published": false,
+    "committed": false,
+    "pushed": false,
+    "userDataTouched": false,
+    "modifiedTrackedFiles": [
+      "landing/README.md",
+      "landing/index.html",
+      "landing/package.json",
+      "landing/playwright.config.mjs",
+      "landing/src/demo.ts",
+      "landing/src/motion.ts",
+      "landing/src/style.css",
+      "landing/tests/landing.spec.mjs"
+    ],
+    "onlyLandingAndReviewChanges": true
+  },
+  "checks": {
+    "productionBuild": {
+      "command": "npm --prefix landing run build",
+      "result": "PASS",
+      "modules": 18,
+      "includesStrictTypeScript": true,
+      "bundles": [
+        {
+          "path": "landing/dist/assets/index-D5thUT8K.js",
+          "bytes": 149870,
+          "gzipBytes": 58086,
+          "sha256": "70ae89dfc38e93ea6e9e9ca121309cebc57835a9e21d314b384afa3b1d8e4e6c"
+        },
+        {
+          "path": "landing/dist/assets/index-DdZy-eGQ.css",
+          "bytes": 35726,
+          "gzipBytes": 8705,
+          "sha256": "8a1a254f671b3083f7030fcb645ba65b0693606c3ab537eab740c2f0c036210a"
+        }
+      ]
+    },
+    "browserSuite": {
+      "command": "$env:LANDING_TEST_PORT='5174'; npm --prefix landing test -- --reporter=list,json",
+      "result": "PASS_AFTER_TARGETED_RERUN",
+      "browser": "Installed Microsoft Edge, headless Chromium engine on Windows",
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 768,
+          "height": 844
+        },
+        {
+          "width": 1366,
+          "height": 844
+        }
+      ],
+      "coverage": [
+        "hero overlap",
+        "quadratic arc and acceleration",
+        "independent joints and blink",
+        "actual hand socket/web geometry",
+        "bottle visible >=950ms with changing transforms",
+        "progress morph",
+        "hidden pause",
+        "low-power throttle",
+        "reduced-motion teardown/recreation",
+        "reverse travel and web release",
+        "tray manual/keyboard controls",
+        "missing asset fallback",
+        "GitHub download metadata safety",
+        "no JavaScript fallback"
+      ],
+      "uniqueTestsPassed": 26,
+      "remainingFailed": 0,
+      "fullRun": {
+        "passed": 25,
+        "failed": 1,
+        "skipped": 0,
+        "flaky": 0,
+        "durationSeconds": 153.616986
+      },
+      "targetedRerun": {
+        "command": "$env:LANDING_TEST_PORT='5174'; npm --prefix landing test -- --last-failed --reporter=list,json",
+        "passed": 1,
+        "failed": 0,
+        "durationSeconds": 6.901391
+      },
+      "navigationTimeout": {
+        "test": "Tray pointer close stays in its scene after reopening settles",
+        "phase": "page.goto before assertions",
+        "timeoutMs": 30000,
+        "cause": "Not established; isolated unchanged rerun passed. Do not call the final full run clean or infer a confirmed production tray defect."
+      }
+    },
+    "desktopSourceDiff": {
+      "command": "git diff --exit-code HEAD -- . ':(exclude)landing' ':(exclude)docs'",
+      "result": "PASS"
+    },
+    "whitespace": {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    "repositoryPlatformAudit": {
+      "productionGitLabReferences": false,
+      "releasesHeading": false,
+      "officialGitHubFallbackRetained": true,
+      "unverifiedStaticVersionRemoved": true
+    },
+    "generatedOutputsIgnored": {
+      "build": true,
+      "assetCopies": true,
+      "nodeModules": true,
+      "temporaryTestResults": true,
+      "ignoreRulesChanged": false
+    }
+  },
+  "architecture": {
+    "traveler": "One persistent mascot, viewport-derived story geometry",
+    "renderer": "SVG joints containing progressively cached, cropped, predecoded approved artwork partitions; no live masks after cache readiness",
+    "macro": "ScrollTrigger with smoothed scrub and time-based hero entrance; curved Bezier/cosine travel",
+    "secondary": "Shared GSAP ticker, elapsed-time life, staggered damped springs, independent 470ms arrival",
+    "web": "Dynamic animated hand socket, short directional fixed anchors, speed-dependent sag, retract before reattach",
+    "bottle": "Separate existing prop, free-hand web, overshoot, diminishing pendulum, about 1.3s visibility, 1.53s complete",
+    "dashboard": "Real captures plus matching illustrative live SVG ring/counters and shallow depth",
+    "lowPower": "Approximately 30Hz life on mobile/save-data/<=4 logical processors",
+    "reducedMotion": "No cinematic travel, pinning or cursor parallax; controls/readable states preserved",
+    "hiddenCleanup": "Life ticker removal; owned timelines paused; media/page disposal releases resources",
+    "cache": "One-time browser canvas work, shared idle/happy cache, abort pending jobs and revoke blob URLs on teardown; immediate pose selection and SVG fallback during caching; resolution follows CSS maximum mascot size and DPR, capped at 1000 pixels (440 at DPR 1)",
+    "refresh": "Suspend story-state selection between refreshInit and completed refresh; rebuild from final geometry"
+  },
+  "review": {
+    "gallery": "docs/previews/landing-motion/index.html",
+    "captureEvidence": "docs/previews/landing-motion/capture.json",
+    "video": "docs/previews/landing-motion/motion-review.webm",
+    "screenshots": 9,
+    "performance": "Final capture records initial/warmed idle and scroll RAF distributions with cached pose counts. No physical-device 60FPS certification.",
+    "manualAcceptance": "Review continuous motion and frame pacing on intended recording hardware; Safari/Firefox and physical weaker hardware remain manual.",
+    "recordedCaptureAt": "2026-10-12T06:45:48.558Z",
+    "pageErrors": [],
+    "frameIntervals": {
+      "scenario": "Headless browser RAF intervals, no video encoding; not a physical-device certification.",
+      "initialIdle": {
+        "samples": 120,
+        "medianFrameMs": 16.699999999999818,
+        "p95FrameMs": 16.800000000000182,
+        "over33ms": 1,
+        "hardwareConcurrency": 4,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+        "cachedPosesAtEnd": 6
+      },
+      "warmedIdle": {
+        "samples": 120,
+        "medianFrameMs": 16.699999999999818,
+        "p95FrameMs": 16.799999999999272,
+        "over33ms": 0,
+        "hardwareConcurrency": 4,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+        "cachedPosesAtEnd": 6
+      },
+      "scrollJourney": {
+        "samples": 120,
+        "medianFrameMs": 16.799999999999272,
+        "p95FrameMs": 50,
+        "over33ms": 11,
+        "hardwareConcurrency": 4,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.2365.106 Safari/537.36 HeadlessEdg/122.0.2365.106",
+        "cachedPosesAtEnd": 6
+      }
+    },
+    "artifacts": [
+      {
+        "path": "docs/previews/landing-motion/01-layered-hero.png",
+        "bytes": 626261,
+        "sha256": "18690cf2e6f68889d8cc1c911843f9d9acf6d9a62bc71b25f6dbab48cce40871"
+      },
+      {
+        "path": "docs/previews/landing-motion/02-attentive-reminder.png",
+        "bytes": 790826,
+        "sha256": "7456c5e29daf3a5d035fbd8015e05609e0c9a883a24f8df988d4102c702f0a89"
+      },
+      {
+        "path": "docs/previews/landing-motion/03-bottle-reaction.png",
+        "bytes": 829227,
+        "sha256": "f58e59318bd5aa211f7e3ef03408b92b54c2d15f7607cd3e071d0e3775fff842"
+      },
+      {
+        "path": "docs/previews/landing-motion/04-progress.png",
+        "bytes": 648868,
+        "sha256": "1de36dc4c21b3c6d03c14e629bccc9cb384ee398fb7a0b4efe26b5f1e7d8eb80"
+      },
+      {
+        "path": "docs/previews/landing-motion/05-dashboard-depth.png",
+        "bytes": 521464,
+        "sha256": "67248677c5f1f7cad6fc254b3c7b62f1899d4450d22bcaa0f3f4730d2babcd88"
+      },
+      {
+        "path": "docs/previews/landing-motion/06-relaxed-tray.png",
+        "bytes": 407320,
+        "sha256": "42aa132c8daee78a33a1eecbd2b54d10e3b57a9986b5f920c1c2d0ef8c6933b2"
+      },
+      {
+        "path": "docs/previews/landing-motion/07-future.png",
+        "bytes": 580852,
+        "sha256": "cd9e740b45add6d1b2ded456147a3fe10f950bf1fe78abc9bba05afef2363440"
+      },
+      {
+        "path": "docs/previews/landing-motion/08-finale.png",
+        "bytes": 555256,
+        "sha256": "361a6281ff9c739009e568dba3df68625eb42e6254db12ec3b979befca099eaa"
+      },
+      {
+        "path": "docs/previews/landing-motion/09-mobile-reduced.png",
+        "bytes": 256774,
+        "sha256": "61983dde4d6c4c24b74b752761cd884f7687610e4c3feda7fb1570f91e5c105b"
+      },
+      {
+        "path": "docs/previews/landing-motion/capture.json",
+        "bytes": 1592,
+        "sha256": "34e8cb20d1a5a3acab729ce035f3b185cd5587acce09959d7093a3d85cdac666"
+      },
+      {
+        "path": "docs/previews/landing-motion/index.html",
+        "bytes": 4173,
+        "sha256": "87b9ba62356491dc5e4d63bf5121c13d9102318bd1946c50f072370ce746abc4"
+      },
+      {
+        "path": "docs/previews/landing-motion/motion-review.webm",
+        "bytes": 3010238,
+        "sha256": "120f9943fc4b30bc4b7315e2bd65556af4baa91c441a67df17a73040dfdb3fa6",
+        "excludedFromGit": true
+      }
+    ],
+    "videoLocalOnly": true,
+    "videoExcludedFromGit": true
+  },
+  "knownAssetLimits": [
+    "Flattened PNGs lack authored joint exports/hidden surfaces; use small ranges and seam underlap",
+    "Paired leg layer; no skeletal mesh deformation",
+    "Approved eyes support masked blink/look, not new authored expression frames",
+    "Happy reuses approved smiling relaxed artwork with distinct reaction",
+    "Existing bottle source is relatively low resolution"
+  ],
+  "priorIssuesResolved": [
+    "Native pin visibility vs scrub-lag cancellation of early manual drink delivery",
+    "Duplicate baked-rope edge",
+    "Overwide dashboard card crop",
+    "Protocol-overhead bottle timing assertion and polling that missed short blinks",
+    "Live SVG mask repaint cost during scroll; progressively cache identical cropped bitmaps",
+    "Early pose selection must not wait for cache completion",
+    "Temporary pin measurements changing hero pose during hidden-page resume"
+  ]
+}
